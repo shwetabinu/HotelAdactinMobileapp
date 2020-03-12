@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Properties;
+import org.openqa.selenium.Platform;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.CapabilityType;
@@ -19,10 +20,13 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 
+
 public class BaseClass {
 	
 	protected static AppiumDriver<MobileElement> driver;
 	DesiredCapabilities caps=new DesiredCapabilities();
+	public static final String currentDir = System.getProperty("user.dir");
+
 	public BaseClass() throws IOException
 	{
 		//Log.info("invoking baseclass constructor");
@@ -56,7 +60,14 @@ public class BaseClass {
 		caps.setCapability("platformVersion", platformVersion);
 		caps.setCapability("automationName", "XCUITest");
 		caps.setCapability("connectHardwareKeyboard", "true");
-		caps.setCapability("app", "/Users/aswinvijayan/Documents/Shweta/adactinhotelapp-master/build/ios/iphonesimulator/Runner.app");
+		//caps.setCapability("app", "//src/test/resources/apps/Runner.app");
+		//caps.setCapability("app", "/Users/aswinvijayan/Documents/Shweta/adactinhotelapp-master/build/ios/iphonesimulator/Runner.app");
+	
+		if (Platform.getCurrent().toString().equalsIgnoreCase("MAC")) {
+			caps.setCapability("app", currentDir + "/src/test/resources/apps/Runner.app"); 
+		} else if (Platform.getCurrent().toString().contains("WIN")) {
+			caps.setCapability("app", currentDir + "\\src\\test\\resources\\apps\\Runner.app"); 
+		}
 		
 		URL url=new URL("http://127.0.0.1:4723/wd/hub");
 		driver=new AppiumDriver<MobileElement>(url,caps);
@@ -75,8 +86,16 @@ public class BaseClass {
 	public void initBrowser() throws IOException
 	{
 		String platformName,deviceName,platformVersion,dev;
+		FileInputStream fis = null;
 		Properties p=new Properties();
-		FileInputStream fis=new FileInputStream("/Users/aswinvijayan/Documents/Shweta/hoteladactinapp/hoteladactin-workplace/Mobileapphoteladactin1/src/test/resources/configsimulator.properties");
+		if(Platform.getCurrent().toString().equalsIgnoreCase("MAC")) {
+			 fis=new FileInputStream(currentDir + "//src//test//resources//configsimulator.properties");
+		}
+		else if(Platform.getCurrent().toString().contains("WIN")) {
+			fis=new FileInputStream(currentDir + "\\src\\testresources\\configsimulator.properties");
+		}
+		
+		//FileInputStream fis=new FileInputStream("/Users/aswinvijayan/Documents/Shweta/hoteladactinapp/hoteladactin-workplace/Mobileapphoteladactin1/src/test/resources/configsimulator.properties");
 		
 		//FileReader fis=new FileReader("/config.properties");
 		p.load(fis);
