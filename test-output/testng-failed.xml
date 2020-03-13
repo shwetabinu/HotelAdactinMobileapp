@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.adactin.Mobileapphoteladactin1.pages.LoginPage">
+      <class name="com.adactin.Mobileapphoteladactin1.pages.Login">
         <methods>
           <include name="initialising"/>
           <include name="Logging_in"/>
         </methods>
-      </class> <!-- com.adactin.Mobileapphoteladactin1.pages.LoginPage -->
+      </class> <!-- com.adactin.Mobileapphoteladactin1.pages.Login -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
