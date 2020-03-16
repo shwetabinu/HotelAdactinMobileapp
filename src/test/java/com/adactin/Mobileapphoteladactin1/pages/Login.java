@@ -4,9 +4,11 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -15,17 +17,28 @@ import com.adactin.Mobileapphoteladactin1.util.ExcelUtil;
 import com.adactin.Mobileapphoteladactin1.util.Log;
 
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.ios.IOSDriver;
+import io.appium.java_client.remote.HideKeyboardStrategy;
 
+/**
+ * Login class has methods to login, click on forget password link and sign up as a new user
+ * MobileElements username, password, sign in, sign up and forgot password links are identified
+ * @author aswinvijayan
+ *
+ */
 public class Login extends BaseClass{
 	
-	/*@FindBy(accessibilityid="")
-	MobileElement username;
+	/*By userid=By.name("Username");
+	By passw=By.name("Password");
+	By submit=By.name("Login");
+	@FindBy(name="Username")
+	MobileElement userid;
 	
-	@FindBy(xpath="//XCUIElementTypeTextView[@name=\"password_textformfield Password\"]")
-	WebElement passw;
+	@FindBy(name="Password")
+	MobileElement passw;
 	
-	@FindBy(xpath="//XCUIElementTypeButton[@name=\"Login\"]")
-	WebElement submit;*/
+	@FindBy(name="Login")
+	MobileElement submit;*/
 	
 	public Login() throws Exception
 	{		
@@ -33,11 +46,11 @@ public class Login extends BaseClass{
 		
 	}
 
-	@BeforeTest
-	public void initialising() throws IOException
+	
+	public void initialising(int i) throws IOException
 	{
 		try {
-			initApp();
+			initApp(i);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -45,32 +58,51 @@ public class Login extends BaseClass{
 		}
 	}
 	
-	@Test
-	public void Logging_in() throws Exception
-	{	//driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
 	
-	//MobileElement userid = (MobileElement) driver.findElementByXPath("//XCUIElementTypeApplication[@name=\"Adactin Hotel App\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther");
-		//MobileElement el1 = (MobileElement) driver.findElementByXPath("//XCUIElementTypeTextView[@name=\"username_textformfield Username\"]");
-		//MobileElement el1 = (MobileElement) driver.findElementByName("username_textformfield Username");
-		String username=ExcelUtil.getCellData(1,5);
-		String password=ExcelUtil.getCellData(1,6);
+	public void Logging_in(int i) throws Exception
+	{	
+	
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		String username=ExcelUtil.getCellData(i,5);
+		String password=ExcelUtil.getCellData(i,6);
+		
 		MobileElement userid,passw,submit;
 		userid= (MobileElement) driver.findElement(By.name("Username"));
 		passw= (MobileElement) driver.findElement(By.name("Password"));
 		submit= (MobileElement) driver.findElement(By.name("Login"));
+	/*	driver.findElement(userid).click();
+		driver.findElement(userid).sendKeys(username);
+		driver.findElement(passw).click();
+		driver.findElement(passw).sendKeys(password);
+		driver.findElement(passw).sendKeys(Keys.RETURN);
+		driver.findElement(submit).click();*/
 		userid.click();
 		userid.sendKeys(username);
 		passw.click();
 		passw.sendKeys(password);
+		passw.sendKeys(Keys.RETURN);
 		submit.click();
-	//el1.clear();
-		//MobileElement userid = (MobileElement) driver.findElementByName("username_textformfield Username");
-		//userid.sendKeys("testusersbin");
-		
-		//driver.f
-	//userid.sendKeys("testusersbin");
-		//passw.sendKeys("4K26ZC");
-		//submit.click();
+	
+			
+	}
+	
+	public void clickOnForgotpassword()
+	{
+		MobileElement forgotpassw;
+		forgotpassw=(MobileElement) driver.findElement(By.name("Forgot password"));
+		forgotpassw.click();
+	}
+	
+	public void clickOnSignup()
+	{	MobileElement signup;
+		signup=(MobileElement) driver.findElement(By.name("Not a member yet? Sign Up"));
+		signup.click();
+	}
+	
+	
+	public void teardown()
+	{
+		driver.quit();
 	}
 	
 }

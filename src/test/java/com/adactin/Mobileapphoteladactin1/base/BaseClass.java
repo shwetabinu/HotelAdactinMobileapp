@@ -12,6 +12,7 @@ import org.openqa.selenium.Platform;
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
 import com.adactin.Mobileapphoteladactin1.util.ExcelUtil;
@@ -35,7 +36,7 @@ public class BaseClass {
 	public BaseClass() throws Exception
 	{
 		//Log.info("invoking baseclass constructor");
-		
+		ExcelUtil.setExcelFileSheet("TestCases");
 		
 	}
 
@@ -55,7 +56,8 @@ public class BaseClass {
 		URL url=new URL("http://127.0.0.1:4723/wd/hub");
 		driver=new AppiumDriver<MobileElement>(url,caps);
 		//driver=new AndroidDriver<MobileElement>(url,caps);
-		//driver=new IOSDriver<MobileElement>(url,caps);
+		
+		
 	}
 	
 	public void simulator_setup(String platformName,String deviceName,String platformVersion) throws MalformedURLException
@@ -76,7 +78,9 @@ public class BaseClass {
 		}
 		
 		URL url=new URL("http://127.0.0.1:4723/wd/hub");
-		driver=new AppiumDriver<MobileElement>(url,caps);
+		//driver=new AppiumDriver<MobileElement>(url,caps);
+		driver=new IOSDriver<MobileElement>(url,caps);
+		
 	}
 	
 	public void android_emulator_setup()
@@ -89,7 +93,7 @@ public class BaseClass {
 		
 	}
 	
-	public void initApp() throws Exception
+	public void initApp(int i) throws Exception
 	{
 		String platformName,deviceName,platformVersion,dev;
 		/*FileInputStream fis = null;
@@ -106,7 +110,7 @@ public class BaseClass {
 		deviceName=p.getProperty("deviceName");
 		platformVersion=p.getProperty("platformVersion");
 		dev=p.getProperty("environment");*/
-		ExcelUtil.setExcelFileSheet("TestCases");
+		//ExcelUtil.setExcelFileSheet("TestCases");
 		dev=ExcelUtil.getCellData(1,1);
 		Log.info(dev);
 		platformName=ExcelUtil.getCellData(1,2);
@@ -126,10 +130,10 @@ public class BaseClass {
 		
 	}
 	
-	
-	public void teardown()
+	public void closeApp()
 	{
-		driver.close();
+		driver.quit();
 	}
+	
 
 }

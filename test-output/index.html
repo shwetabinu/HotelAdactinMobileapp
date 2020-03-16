@@ -102,7 +102,7 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.adactin.Mobileapphoteladactin1.pages.Login" class="method navigator-link" hash-for-method="Logging_in">Logging_in</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_book_a_hotel" class="method navigator-link" hash-for-method="User_is_able_to_book_a_hotel">User_is_able_to_book_a_hotel</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -120,22 +120,22 @@
           <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">com.adactin.Mobileapphoteladactin1.pages.Login</span>
+              <span class="class-name">com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_book_a_hotel</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="Logging_in">
-                  </a> <!-- Logging_in -->
-                  <span class="method-name">Logging_in</span>
+                  <a name="User_is_able_to_book_a_hotel">
+                  </a> <!-- User_is_able_to_book_a_hotel -->
+                  <span class="method-name">User_is_able_to_book_a_hotel</span>
                   <div class="stack-trace">org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Aswins-Air.adactin.guest&apos;, ip: &apos;fe80:0:0:0:433:363c:acbb:279b%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.15.3&apos;, java.version: &apos;13.0.1&apos;
-Driver info: io.appium.java_client.AppiumDriver
-Capabilities {app: /Users/aswinvijayan/Documen..., automationName: XCUITest, browserName: , connectHardwareKeyboard: true, databaseEnabled: false, deviceName: iPhone SE, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: false, platform: MAC, platformName: iOS, platformVersion: 13.3, takesScreenshot: true, udid: EB251A8B-119F-4CB6-8A1A-7A7..., webStorageEnabled: false}
-Session ID: 19d27b59-9f30-4d93-9d1e-dcb504bc27ca
-*** Element info: {Using=name, value=Username}
+System info: host: &apos;Aswins-MacBook-Air.local&apos;, ip: &apos;fe80:0:0:0:433:363c:acbb:279b%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.15.3&apos;, java.version: &apos;13.0.1&apos;
+Driver info: io.appium.java_client.ios.IOSDriver
+Capabilities {app: /Users/aswinvijayan/Documen..., automationName: XCUITest, browserName: , connectHardwareKeyboard: true, databaseEnabled: false, deviceName: iPhone SE, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: false, platform: MAC, platformName: iOS, platformVersion: 13.3, takesScreenshot: true, udid: 13685271-950E-4C61-BBFD-EE0..., webStorageEnabled: false}
+Session ID: 2ac3e6ba-1e15-46c7-ade3-ab0a0e46ad0d
+*** Element info: {Using=class name, value=XCUIElementTypeTable}
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -149,17 +149,22 @@ Session ID: 19d27b59-9f30-4d93-9d1e-dcb504bc27ca
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
 	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
 	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+	at io.appium.java_client.ios.IOSDriver.execute(IOSDriver.java:1)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
 	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:61)
 	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByName(RemoteWebDriver.java:404)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElementByName(DefaultGenericMobileDriver.java:117)
-	at io.appium.java_client.AppiumDriver.findElementByName(AppiumDriver.java:1)
-	at org.openqa.selenium.By$ByName.findElement(By.java:284)
+	at io.appium.java_client.ios.IOSDriver.findElement(IOSDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByClassName(RemoteWebDriver.java:412)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElementByClassName(DefaultGenericMobileDriver.java:125)
+	at io.appium.java_client.AppiumDriver.findElementByClassName(AppiumDriver.java:1)
+	at io.appium.java_client.ios.IOSDriver.findElementByClassName(IOSDriver.java:1)
+	at org.openqa.selenium.By$ByClassName.findElement(By.java:389)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
 	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
 	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at com.adactin.Mobileapphoteladactin1.pages.Login.Logging_in(Login.java:58)
+	at io.appium.java_client.ios.IOSDriver.findElement(IOSDriver.java:1)
+	at com.adactin.Mobileapphoteladactin1.pages.Home.searchHotel(Home.java:94)
+	at com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_book_a_hotel.User_is_able_to_book_a_hotel(User_is_able_to_book_a_hotel.java:30)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -197,7 +202,7 @@ Session ID: 19d27b59-9f30-4d93-9d1e-dcb504bc27ca
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/private/var/folders/w_/h19f63x52mq7tv52x7nsk3z80000gn/T/testng-eclipse-641911207/testng-customsuite.xml</span>
+            <span class="header-content">/private/var/folders/w_/h19f63x52mq7tv52x7nsk3z80000gn/T/testng-eclipse--2003157319/testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -206,7 +211,7 @@ Session ID: 19d27b59-9f30-4d93-9d1e-dcb504bc27ca
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.adactin.Mobileapphoteladactin1.pages.Login&quot;/&gt;
+      &lt;class name=&quot;com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_book_a_hotel&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -248,14 +253,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'Logging_in')
-data.setCell(0, 2, 'com.adactin.Mobileapphoteladactin1.pages.Login')
-data.setCell(0, 3, 4270);
+data.setCell(0, 1, 'User_is_able_to_book_a_hotel')
+data.setCell(0, 2, 'com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_book_a_hotel')
+data.setCell(0, 3, 240587);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 4 seconds</span>
+              <span class="suite-total-time">Total running time: 4 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -281,16 +286,12 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.adactin.Mobileapphoteladactin1.pages.Login</div> <!-- chronological-class-name -->
-              <div class="configuration-test before">
-                <span class="method-name">initialising</span>
-                <span class="method-start">0 ms</span>
-              </div> <!-- configuration-test before -->
+              <div class="chronological-class-name">com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_book_a_hotel</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">Logging_in</span>
-                <span class="method-start">219268 ms</span>
+                <span class="method-name">User_is_able_to_book_a_hotel</span>
+                <span class="method-start">0 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
