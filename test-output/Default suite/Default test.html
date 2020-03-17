@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Mar 16 16:24:03 AEDT 2020</td>
+<td>Started on:</td><td>Tue Mar 17 16:59:18 AEDT 2020</td>
 </tr>
-<tr><td>Total time:</td><td>240 seconds (240703 ms)</td>
+<tr><td>Total time:</td><td>261 seconds (261103 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,14 +76,13 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_book_a_hotel.User_is_able_to_book_a_hotel()'><b>User_is_able_to_book_a_hotel</b><br>Test class: com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_book_a_hotel</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
+<td><div><pre>org.openqa.selenium.NoSuchElementException: &apos;value == 29&apos; predicate didn&apos;t match any elements
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Aswins-MacBook-Air.local&apos;, ip: &apos;fe80:0:0:0:433:363c:acbb:279b%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.15.3&apos;, java.version: &apos;13.0.1&apos;
+System info: host: &apos;Aswins-Air&apos;, ip: &apos;fe80:0:0:0:433:363c:acbb:279b%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.15.3&apos;, java.version: &apos;13.0.1&apos;
 Driver info: io.appium.java_client.ios.IOSDriver
-Capabilities {app: /Users/aswinvijayan/Documen..., automationName: XCUITest, browserName: , connectHardwareKeyboard: true, databaseEnabled: false, deviceName: iPhone SE, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: false, platform: MAC, platformName: iOS, platformVersion: 13.3, takesScreenshot: true, udid: 13685271-950E-4C61-BBFD-EE0..., webStorageEnabled: false}
-Session ID: 2ac3e6ba-1e15-46c7-ade3-ab0a0e46ad0d
-*** Element info: {Using=class name, value=XCUIElementTypeTable}
+Capabilities {app: /Users/aswinvijayan/Documen..., automationName: XCUITest, browserName: , connectHardwareKeyboard: true, databaseEnabled: false, deviceName: iPhone SE, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: false, platform: MAC, platformName: iOS, platformVersion: 13.3, simpleIsVisibleCheck: true, takesScreenshot: true, udid: BE0DFE17-7A81-4683-97D0-303..., webStorageEnabled: false}
+Session ID: f9e66b35-2fc9-4207-a842-761280ed0ecc
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -98,20 +97,10 @@ Session ID: 2ac3e6ba-1e15-46c7-ade3-ab0a0e46ad0d
 	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
 	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
 	at io.appium.java_client.ios.IOSDriver.execute(IOSDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:61)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.ios.IOSDriver.findElement(IOSDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByClassName(RemoteWebDriver.java:412)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElementByClassName(DefaultGenericMobileDriver.java:125)
-	at io.appium.java_client.AppiumDriver.findElementByClassName(AppiumDriver.java:1)
-	at io.appium.java_client.ios.IOSDriver.findElementByClassName(IOSDriver.java:1)
-	at org.openqa.selenium.By$ByClassName.findElement(By.java:389)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.ios.IOSDriver.findElement(IOSDriver.java:1)
-	at com.adactin.Mobileapphoteladactin1.pages.Home.searchHotel(Home.java:94)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:489)
+	at com.adactin.Mobileapphoteladactin1.base.BaseClass.scrollingInDate(BaseClass.java:166)
+	at com.adactin.Mobileapphoteladactin1.base.BaseClass.datePicker(BaseClass.java:179)
+	at com.adactin.Mobileapphoteladactin1.pages.Home.searchHotel(Home.java:128)
 	at com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_book_a_hotel.User_is_able_to_book_a_hotel(User_is_able_to_book_a_hotel.java:30)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -141,15 +130,14 @@ Session ID: 2ac3e6ba-1e15-46c7-ade3-ab0a0e46ad0d
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace803768841", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace803768841'><pre>org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
+</pre></div><a href='#' onClick='toggleBox("stack-trace652007616", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace652007616'><pre>org.openqa.selenium.NoSuchElementException: &apos;value == 29&apos; predicate didn&apos;t match any elements
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Aswins-MacBook-Air.local&apos;, ip: &apos;fe80:0:0:0:433:363c:acbb:279b%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.15.3&apos;, java.version: &apos;13.0.1&apos;
+System info: host: &apos;Aswins-Air&apos;, ip: &apos;fe80:0:0:0:433:363c:acbb:279b%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.15.3&apos;, java.version: &apos;13.0.1&apos;
 Driver info: io.appium.java_client.ios.IOSDriver
-Capabilities {app: /Users/aswinvijayan/Documen..., automationName: XCUITest, browserName: , connectHardwareKeyboard: true, databaseEnabled: false, deviceName: iPhone SE, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: false, platform: MAC, platformName: iOS, platformVersion: 13.3, takesScreenshot: true, udid: 13685271-950E-4C61-BBFD-EE0..., webStorageEnabled: false}
-Session ID: 2ac3e6ba-1e15-46c7-ade3-ab0a0e46ad0d
-*** Element info: {Using=class name, value=XCUIElementTypeTable}
+Capabilities {app: /Users/aswinvijayan/Documen..., automationName: XCUITest, browserName: , connectHardwareKeyboard: true, databaseEnabled: false, deviceName: iPhone SE, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: false, platform: MAC, platformName: iOS, platformVersion: 13.3, simpleIsVisibleCheck: true, takesScreenshot: true, udid: BE0DFE17-7A81-4683-97D0-303..., webStorageEnabled: false}
+Session ID: f9e66b35-2fc9-4207-a842-761280ed0ecc
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -164,20 +152,10 @@ Session ID: 2ac3e6ba-1e15-46c7-ade3-ab0a0e46ad0d
 	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
 	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
 	at io.appium.java_client.ios.IOSDriver.execute(IOSDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:61)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.ios.IOSDriver.findElement(IOSDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByClassName(RemoteWebDriver.java:412)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElementByClassName(DefaultGenericMobileDriver.java:125)
-	at io.appium.java_client.AppiumDriver.findElementByClassName(AppiumDriver.java:1)
-	at io.appium.java_client.ios.IOSDriver.findElementByClassName(IOSDriver.java:1)
-	at org.openqa.selenium.By$ByClassName.findElement(By.java:389)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.ios.IOSDriver.findElement(IOSDriver.java:1)
-	at com.adactin.Mobileapphoteladactin1.pages.Home.searchHotel(Home.java:94)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:489)
+	at com.adactin.Mobileapphoteladactin1.base.BaseClass.scrollingInDate(BaseClass.java:166)
+	at com.adactin.Mobileapphoteladactin1.base.BaseClass.datePicker(BaseClass.java:179)
+	at com.adactin.Mobileapphoteladactin1.pages.Home.searchHotel(Home.java:128)
 	at com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_book_a_hotel.User_is_able_to_book_a_hotel(User_is_able_to_book_a_hotel.java:30)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -208,8 +186,8 @@ Session ID: 2ac3e6ba-1e15-46c7-ade3-ab0a0e46ad0d
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>240</td>
-<td>com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_book_a_hotel@41005828</td></tr>
+<td>260</td>
+<td>com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_book_a_hotel@225129c</td></tr>
 </table><p>
 </body>
 </html>
