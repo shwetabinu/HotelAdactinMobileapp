@@ -6,12 +6,15 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Properties;
-import org.openqa.selenium.Platform;
-
+import org.openqa.selenium.Platform;import org.openqa.selenium.WebElement;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebElement;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
@@ -25,7 +28,14 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 
-
+/**
+ * Base class intializes the app for android as well as iOS platforms
+ * It sets the desired capabilities as per the device/simulator
+ * It reads the configuration details from the Excel sheet and sets the properties of the device
+ * It also has method to implement scroll to
+ * 
+ *
+ */
 public class BaseClass {
 	
 	protected static AppiumDriver<MobileElement> driver;
@@ -68,6 +78,7 @@ public class BaseClass {
 		caps.setCapability("platformVersion", platformVersion);
 		caps.setCapability("automationName", "XCUITest");
 		caps.setCapability("connectHardwareKeyboard", "true");
+		caps.setCapability("simpleIsVisibleCheck", "true");
 		//caps.setCapability("app", "//src/test/resources/apps/Runner.app");
 		//caps.setCapability("app", "/Users/aswinvijayan/Documents/Shweta/adactinhotelapp-master/build/ios/iphonesimulator/Runner.app");
 	
@@ -126,6 +137,58 @@ public class BaseClass {
 			android_emulator_setup();
 		else if(dev.equalsIgnoreCase("ios_device"))
 			ios_device_setup();
+		
+		
+	}
+	
+	public void iOSScrollToElement(String xpath) {
+		RemoteWebElement parent = (RemoteWebElement)driver.findElement(By.xpath(xpath));
+		String parentID = parent.getId();
+		HashMap<String, String> scrollObject = new HashMap<String, String>();
+		scrollObject.put("element", parentID);
+		scrollObject.put("direction", "down");
+		
+		driver.executeScript("mobile:scroll", scrollObject);
+	}
+	
+	
+	public void scrollingInDate(String xpath,String date)
+	{
+		RemoteWebElement parent = (RemoteWebElement)driver.findElement(By.xpath(xpath));
+		
+		String parentID = parent.getId();
+		HashMap<String, String> scrollObject = new HashMap<String, String>();
+		scrollObject.put("element", parentID);
+		 
+		// Use the predicate that provides the value of the label attribute
+		 
+		scrollObject.put("predicateString", "value == "+ date);
+		driver.executeScript("mobile:scroll", scrollObject);  // scroll to the target element
+	}
+	public void datePicker(String date,String xpath1,String xpath2,String xpath3)
+	{
+		String[] new_date=date.split("/");
+		
+		List<MobileElement> date_values= driver.findElementsByXPath(xpath1);
+		for(int i=0;i<date_values.size();i++)
+		{
+			Log.info(date_values.get(i).getText());
+		}
+		
+		date_values.get(0).click();
+		scrollingInDate(xpath1,new_date[0]);
+		//date_values.set(0, element)
+		//date_values.get(0).sendKeys(new_date[0]);
+		
+		
+		List<MobileElement> month_values= driver.findElementsByXPath(xpath2);
+		scrollingInDate(xpath2,new_date[1]);
+		//month_values.get(0).sendKeys(new_date[1]);
+		
+		List<MobileElement> year_values=driver.findElementsByXPath(xpath3);
+		scrollingInDate(xpath3,new_date[2]);
+		//year_values.get(0).sendKeys(new_date[2]);
+		
 		
 		
 	}

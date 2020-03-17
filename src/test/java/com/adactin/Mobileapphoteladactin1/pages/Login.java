@@ -23,7 +23,7 @@ import io.appium.java_client.remote.HideKeyboardStrategy;
 /**
  * Login class has methods to login, click on forget password link and sign up as a new user
  * MobileElements username, password, sign in, sign up and forgot password links are identified
- * @author aswinvijayan
+ * 
  *
  */
 public class Login extends BaseClass{
