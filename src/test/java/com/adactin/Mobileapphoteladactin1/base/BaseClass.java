@@ -154,7 +154,7 @@ public class BaseClass {
 	
 	public void scrollingInDate(String xpath,String date)
 	{
-		RemoteWebElement parent = (RemoteWebElement)driver.findElement(By.xpath(xpath));
+		/*RemoteWebElement parent = (RemoteWebElement)driver.findElement(By.xpath(xpath));
 		
 		String parentID = parent.getId();
 		HashMap<String, String> scrollObject = new HashMap<String, String>();
@@ -162,8 +162,11 @@ public class BaseClass {
 		 
 		// Use the predicate that provides the value of the label attribute
 		 
-		scrollObject.put("predicateString", "value == "+ date);
+		scrollObject.put("predicateString", "value == '"+date+"'");
 		driver.executeScript("mobile:scroll", scrollObject);  // scroll to the target element
+		*/
+		
+		
 	}
 	public void datePicker(String date,String xpath1,String xpath2,String xpath3)
 	{
@@ -176,18 +179,44 @@ public class BaseClass {
 		}
 		
 		date_values.get(0).click();
-		scrollingInDate(xpath1,new_date[0]);
+		//iOSScrollToElement(xpath1);
+		driver.findElement(By.name("Done")).click();
+		
+		
+		/*HashMap<String, Object> params_date = new HashMap<String, Object>();
+		params_date.put("order", "next");
+		params_date.put("offset", 0.15);
+		params_date.put("element", ((RemoteWebElement) date_values.get(0)).getId());
+		driver.executeScript("mobile: selectPickerWheelValue", params_date);
+		driver.findElement(By.name("Done")).click();*/
+		
+		//scrollingInDate(xpath1,new_date[0]);
 		//date_values.set(0, element)
 		//date_values.get(0).sendKeys(new_date[0]);
 		
 		
-		List<MobileElement> month_values= driver.findElementsByXPath(xpath2);
-		scrollingInDate(xpath2,new_date[1]);
+		/*List<MobileElement> month_values= driver.findElementsByXPath(xpath2);
+		//scrollingInDate(xpath2,new_date[1]);
 		//month_values.get(0).sendKeys(new_date[1]);
+		month_values.get(0).click();
+		/*HashMap<String, Object> params_month = new HashMap<String, Object>();
+		params_date.put("order", "next");
+		params_date.put("offset", 0.15);
+		params_date.put("element", ((RemoteWebElement) date_values.get(0)).getId());
+		driver.executeScript("mobile: selectPickerWheelValue", params_date);
 		
 		List<MobileElement> year_values=driver.findElementsByXPath(xpath3);
-		scrollingInDate(xpath3,new_date[2]);
+		year
+		HashMap<String, Object> params_year = new HashMap<String, Object>();
+		params_date.put("order", "next");
+		params_date.put("offset", 0.15);
+		params_date.put("element", ((RemoteWebElement) date_values.get(0)).getId());
+		driver.executeScript("mobile: selectPickerWheelValue", params_date);*/
+		
+		
+		//scrollingInDate(xpath3,new_date[2]);
 		//year_values.get(0).sendKeys(new_date[2]);
+		
 		
 		
 		

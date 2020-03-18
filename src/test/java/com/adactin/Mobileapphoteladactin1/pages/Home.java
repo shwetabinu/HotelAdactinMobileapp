@@ -121,21 +121,21 @@ public class Home extends BaseClass {
 		MobileElement selected_noofrooms=(MobileElement) driver.findElement(By.name(expected_nofrooms));
 		selected_noofrooms.click();
 		
-		MobileElement checkindatedropdown=(MobileElement) driver.findElement(By.name("Select Check-in Date"));
+		//MobileElement checkindatedropdown=(MobileElement) driver.findElement(By.name("Select Check-in Date"));
 		//iOSScrollToElement();
-		checkindatedropdown.click();
+		//checkindatedropdown.click();
 		//MobileElement selected_checkindate=(MobileElement) driver.findElement(By.name(expected_checkin));
-		datePicker(expected_checkin,xpath1_of_date_picker1,xpath2_of_date_picker1,xpath3_of_date_picker1);
+		//datePicker(expected_checkin,xpath1_of_date_picker1,xpath2_of_date_picker1,xpath3_of_date_picker1);
 		//iOSScrollToElement();
 		//selected_checkindate.click();
 		
-		MobileElement checkoutdatedropdown=(MobileElement) driver.findElement(By.name("Select Check-out Date"));
+		//MobileElement checkoutdatedropdown=(MobileElement) driver.findElement(By.name("Select Check-out Date"));
 		//iOSScrollToElement();
 		//checkoutdatedropdown.click();
 		//datePicker(expected_checkout,xpath1_of_date_picker2,xpath3_of_date_picker1);
-		MobileElement selected_checkoutdate=(MobileElement) driver.findElement(By.name(expected_checkout));
+		//MobileElement selected_checkoutdate=(MobileElement) driver.findElement(By.name(expected_checkout));
 		//selected_checkoutdate.click();
-		
+		iOSScrollToElement(xpathtoscrollto);
 		MobileElement adultsperroomdropdown=(MobileElement) driver.findElement(By.name("Select Adults per Room"));
 		adultsperroomdropdown.click();
 		MobileElement selected_adultsperroom=(MobileElement) driver.findElement(By.name(expected_adultsperroom));
@@ -145,6 +145,9 @@ public class Home extends BaseClass {
 		childrenperroomdropdown.click();
 		MobileElement selected_childrenperroomm=(MobileElement) driver.findElement(By.name(expected_childrenperroom));
 		selected_childrenperroomm.click();
+		
+		MobileElement search=(MobileElement) driver.findElement(By.name("Search"));
+		search.click();
 		
 }
 }
