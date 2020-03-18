@@ -2,30 +2,32 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-03-17T16:59:18 AEDT" name="Default suite" finished-at="2020-03-17T17:03:39 AEDT" duration-ms="261103">
+  <suite started-at="2020-03-18T18:50:17 AEDT" name="Default suite" finished-at="2020-03-18T18:55:50 AEDT" duration-ms="332821">
     <groups>
     </groups>
-    <test started-at="2020-03-17T16:59:18 AEDT" name="Default test" finished-at="2020-03-17T17:03:39 AEDT" duration-ms="261103">
+    <test started-at="2020-03-18T18:50:17 AEDT" name="Default test" finished-at="2020-03-18T18:55:50 AEDT" duration-ms="332821">
       <class name="com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_book_a_hotel">
-        <test-method signature="User_is_able_to_book_a_hotel()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_book_a_hotel@225129c]" started-at="2020-03-17T16:59:18 AEDT" name="User_is_able_to_book_a_hotel" finished-at="2020-03-17T17:03:39 AEDT" duration-ms="260981" status="FAIL">
+        <test-method signature="User_is_able_to_book_a_hotel()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_book_a_hotel@225129c]" started-at="2020-03-18T18:50:17 AEDT" name="User_is_able_to_book_a_hotel" finished-at="2020-03-18T18:55:50 AEDT" duration-ms="332754" status="FAIL">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA['value == 29' predicate didn't match any elements
+              <![CDATA[An element could not be located on the page using the given search parameters.
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'Aswins-Air', ip: 'fe80:0:0:0:433:363c:acbb:279b%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.3', java.version: '13.0.1'
 Driver info: io.appium.java_client.ios.IOSDriver
-Capabilities {app: /Users/aswinvijayan/Documen..., automationName: XCUITest, browserName: , connectHardwareKeyboard: true, databaseEnabled: false, deviceName: iPhone SE, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: false, platform: MAC, platformName: iOS, platformVersion: 13.3, simpleIsVisibleCheck: true, takesScreenshot: true, udid: BE0DFE17-7A81-4683-97D0-303..., webStorageEnabled: false}
-Session ID: f9e66b35-2fc9-4207-a842-761280ed0ecc]]>
+Capabilities {app: /Users/aswinvijayan/Documen..., automationName: XCUITest, browserName: , connectHardwareKeyboard: true, databaseEnabled: false, deviceName: iPhone SE, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: false, platform: MAC, platformName: iOS, platformVersion: 13.3, simpleIsVisibleCheck: true, takesScreenshot: true, udid: DCBFE1B3-F502-4C89-915C-295..., webStorageEnabled: false}
+Session ID: b5ca7d8f-be79-4152-a60d-887f7f2f53bc
+*** Element info: {Using=name, value=Enter Credit Card Type}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: 'value == 29' predicate didn't match any elements
+              <![CDATA[org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'Aswins-Air', ip: 'fe80:0:0:0:433:363c:acbb:279b%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.3', java.version: '13.0.1'
 Driver info: io.appium.java_client.ios.IOSDriver
-Capabilities {app: /Users/aswinvijayan/Documen..., automationName: XCUITest, browserName: , connectHardwareKeyboard: true, databaseEnabled: false, deviceName: iPhone SE, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: false, platform: MAC, platformName: iOS, platformVersion: 13.3, simpleIsVisibleCheck: true, takesScreenshot: true, udid: BE0DFE17-7A81-4683-97D0-303..., webStorageEnabled: false}
-Session ID: f9e66b35-2fc9-4207-a842-761280ed0ecc
+Capabilities {app: /Users/aswinvijayan/Documen..., automationName: XCUITest, browserName: , connectHardwareKeyboard: true, databaseEnabled: false, deviceName: iPhone SE, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: false, platform: MAC, platformName: iOS, platformVersion: 13.3, simpleIsVisibleCheck: true, takesScreenshot: true, udid: DCBFE1B3-F502-4C89-915C-295..., webStorageEnabled: false}
+Session ID: b5ca7d8f-be79-4152-a60d-887f7f2f53bc
+*** Element info: {Using=name, value=Enter Credit Card Type}
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -40,11 +42,21 @@ at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
 at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
 at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
 at io.appium.java_client.ios.IOSDriver.execute(IOSDriver.java:1)
-at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:489)
-at com.adactin.Mobileapphoteladactin1.base.BaseClass.scrollingInDate(BaseClass.java:166)
-at com.adactin.Mobileapphoteladactin1.base.BaseClass.datePicker(BaseClass.java:179)
-at com.adactin.Mobileapphoteladactin1.pages.Home.searchHotel(Home.java:128)
-at com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_book_a_hotel.User_is_able_to_book_a_hotel(User_is_able_to_book_a_hotel.java:30)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:61)
+at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+at io.appium.java_client.ios.IOSDriver.findElement(IOSDriver.java:1)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByName(RemoteWebDriver.java:404)
+at io.appium.java_client.DefaultGenericMobileDriver.findElementByName(DefaultGenericMobileDriver.java:117)
+at io.appium.java_client.AppiumDriver.findElementByName(AppiumDriver.java:1)
+at io.appium.java_client.ios.IOSDriver.findElementByName(IOSDriver.java:1)
+at org.openqa.selenium.By$ByName.findElement(By.java:284)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+at io.appium.java_client.ios.IOSDriver.findElement(IOSDriver.java:1)
+at com.adactin.Mobileapphoteladactin1.pages.Book_Hotel.enterBookingDetails(Book_Hotel.java:67)
+at com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_book_a_hotel.User_is_able_to_book_a_hotel(User_is_able_to_book_a_hotel.java:48)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

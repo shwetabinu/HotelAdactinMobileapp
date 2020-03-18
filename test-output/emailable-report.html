@@ -9,17 +9,18 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">261,103</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">332,821</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_book_a_hotel</td><td><a href="#m0">User_is_able_to_book_a_hotel</a></td><td rowspan="1">1584424758865</td><td rowspan="1">260981</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_book_a_hotel</td><td><a href="#m0">User_is_able_to_book_a_hotel</a></td><td rowspan="1">1584517817629</td><td rowspan="1">332754</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_book_a_hotel#User_is_able_to_book_a_hotel</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: &apos;value == 29&apos; predicate didn&apos;t match any elements
+<h2>Default test</h2><h3 id="m0">com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_book_a_hotel#User_is_able_to_book_a_hotel</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;Aswins-Air&apos;, ip: &apos;fe80:0:0:0:433:363c:acbb:279b%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.15.3&apos;, java.version: &apos;13.0.1&apos;
 Driver info: io.appium.java_client.ios.IOSDriver
-Capabilities {app: /Users/aswinvijayan/Documen..., automationName: XCUITest, browserName: , connectHardwareKeyboard: true, databaseEnabled: false, deviceName: iPhone SE, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: false, platform: MAC, platformName: iOS, platformVersion: 13.3, simpleIsVisibleCheck: true, takesScreenshot: true, udid: BE0DFE17-7A81-4683-97D0-303..., webStorageEnabled: false}
-Session ID: f9e66b35-2fc9-4207-a842-761280ed0ecc
+Capabilities {app: /Users/aswinvijayan/Documen..., automationName: XCUITest, browserName: , connectHardwareKeyboard: true, databaseEnabled: false, deviceName: iPhone SE, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: false, platform: MAC, platformName: iOS, platformVersion: 13.3, simpleIsVisibleCheck: true, takesScreenshot: true, udid: DCBFE1B3-F502-4C89-915C-295..., webStorageEnabled: false}
+Session ID: b5ca7d8f-be79-4152-a60d-887f7f2f53bc
+*** Element info: {Using=name, value=Enter Credit Card Type}
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -34,11 +35,21 @@ Session ID: f9e66b35-2fc9-4207-a842-761280ed0ecc
 	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
 	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
 	at io.appium.java_client.ios.IOSDriver.execute(IOSDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:489)
-	at com.adactin.Mobileapphoteladactin1.base.BaseClass.scrollingInDate(BaseClass.java:166)
-	at com.adactin.Mobileapphoteladactin1.base.BaseClass.datePicker(BaseClass.java:179)
-	at com.adactin.Mobileapphoteladactin1.pages.Home.searchHotel(Home.java:128)
-	at com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_book_a_hotel.User_is_able_to_book_a_hotel(User_is_able_to_book_a_hotel.java:30)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:61)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.ios.IOSDriver.findElement(IOSDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByName(RemoteWebDriver.java:404)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElementByName(DefaultGenericMobileDriver.java:117)
+	at io.appium.java_client.AppiumDriver.findElementByName(AppiumDriver.java:1)
+	at io.appium.java_client.ios.IOSDriver.findElementByName(IOSDriver.java:1)
+	at org.openqa.selenium.By$ByName.findElement(By.java:284)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.ios.IOSDriver.findElement(IOSDriver.java:1)
+	at com.adactin.Mobileapphoteladactin1.pages.Book_Hotel.enterBookingDetails(Book_Hotel.java:67)
+	at com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_book_a_hotel.User_is_able_to_book_a_hotel(User_is_able_to_book_a_hotel.java:48)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
