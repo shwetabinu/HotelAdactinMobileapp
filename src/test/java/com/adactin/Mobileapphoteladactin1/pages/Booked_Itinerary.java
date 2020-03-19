@@ -20,6 +20,8 @@ public class Booked_Itinerary extends BaseClass{
 	
 	public void viewBookedHotelDetails() throws InterruptedException
 	{
+		MobileElement booked_itinerary_btn = (MobileElement)driver.findElement(By.name("Booked Itinerary"));
+		booked_itinerary_btn.click();
 		MobileElement booked_hotel_details=(MobileElement)driver.findElement(By.xpath("(//XCUIElementTypeOther[@name=\"hotel_list_item\"])[1]"));
 		booked_hotel_details.click();
 		Thread.sleep(1000);

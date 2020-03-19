@@ -15,6 +15,10 @@ public class Booking_Confirmation extends BaseClass{
 	
 	public void confirm_Booking()
 	{
+		String xpath="//XCUIElementTypeApplication[@name=\"Adactin Hotel App\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[3]/XCUIElementTypeOther[2]/XCUIElementTypeOther[1]\n" + 
+				"";
+		iOSScrollToElement(xpath);
+		iOSScrollToElement(xpath);
 		MobileElement done_button=(MobileElement)driver.findElement(By.name("Done"));
 		done_button.click();
 		

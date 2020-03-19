@@ -6,6 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.adactin.Mobileapphoteladactin1.base.BaseClass;
 import com.adactin.Mobileapphoteladactin1.util.ExcelUtil;
+import com.adactin.Mobileapphoteladactin1.util.Log;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.remote.HideKeyboardStrategy;
@@ -25,8 +26,8 @@ public class Book_Hotel extends BaseClass{
 String xpath_scrollable="//XCUIElementTypeApplication[@name=\"Adactin Hotel App\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[3]/XCUIElementTypeOther[2]/XCUIElementTypeOther[1]";
 		
 		String xpath_month="//XCUIElementTypeApplication[@name=\"Adactin Hotel App\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[3]";
-		String xpath_year="//XCUIElementTypeApplication[@name=\"Adactin Hotel App”]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[4]";
-		
+		//String xpath_year="//XCUIElementTypeApplication[@name=\"Adactin Hotel App”]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[4]";
+		String xpath_year="//XCUIElementTypeApplication[@name=\"Adactin Hotel App\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[4]\n" + "";
 		String fname=ExcelUtil.getCellData(i,15);
 		String lname=ExcelUtil.getCellData(i,16);
 		String billaddress=ExcelUtil.getCellData(i,17);
@@ -60,13 +61,16 @@ String xpath_scrollable="//XCUIElementTypeApplication[@name=\"Adactin Hotel App\
 		MobileElement CCNumber=(MobileElement)driver.findElement(By.name("Enter Card Number"));
 		CCNumber.click();
 		CCNumber.sendKeys(ccnumber);
-		CCNumber.sendKeys(Keys.RETURN);
+	//	CCNumber.sendKeys(Keys.RETURN);
 		
 		//iOSScrollToElement(xpath_scrollable);
 		
-		MobileElement CCType=(MobileElement)driver.findElement(By.name("Enter Credit Card Type"));
+		MobileElement CCType=(MobileElement)driver.findElement(By.name("Select Credit Card Type"));
+		//MobileElement CCType=(MobileElement)driver.findElementsByAccessibilityId("Select Credit Card Type");
+		
 		CCType.click();
-		MobileElement ccard_type_option=(MobileElement) driver.findElement(By.name("American Express"));
+		MobileElement ccard_type_option=(MobileElement) driver.findElement(By.name(cctype));
+		Log.info(ccard_type_option.getText());
 		ccard_type_option.click();
 		
 		//CCType.sendKeys(cctype);
@@ -74,6 +78,7 @@ String xpath_scrollable="//XCUIElementTypeApplication[@name=\"Adactin Hotel App\
 		
 		MobileElement CCExpiry=(MobileElement)driver.findElement(By.name("Select Expiry Month & Year"));
 		CCExpiry.click();
+		iOSScrollToElement(xpath_year);
 		iOSScrollToElement(xpath_year);
 		MobileElement done_button=(MobileElement)driver.findElement(By.name("Done"));
 		done_button.click();
