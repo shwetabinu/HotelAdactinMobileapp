@@ -49,7 +49,7 @@ public class User_is_able_to_book_a_hotel extends BaseClass{
 		bc=new Booking_Confirmation();
 		bc.confirm_Booking();
 		bi=new Booked_Itinerary();
-		bi.viewBookedHotelDetails();
+		bi.viewFirstBookedHotelDetails();
 		
 		
 		

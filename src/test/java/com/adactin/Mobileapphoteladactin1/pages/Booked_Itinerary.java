@@ -18,7 +18,7 @@ public class Booked_Itinerary extends BaseClass{
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void viewBookedHotelDetails() throws InterruptedException
+	public void viewFirstBookedHotelDetails() throws InterruptedException
 	{
 		MobileElement booked_itinerary_btn = (MobileElement)driver.findElement(By.name("Booked Itinerary"));
 		booked_itinerary_btn.click();
@@ -28,5 +28,5 @@ public class Booked_Itinerary extends BaseClass{
 	
 	}
 	
-
+	
 }
