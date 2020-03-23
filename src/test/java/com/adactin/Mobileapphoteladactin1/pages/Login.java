@@ -8,6 +8,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -28,6 +29,8 @@ import io.appium.java_client.remote.HideKeyboardStrategy;
  */
 public class Login extends BaseClass{
 	
+	private static final Object TRUE = null;
+	MobileElement userid,passw,submit;
 	/*By userid=By.name("Username");
 	By passw=By.name("Password");
 	By submit=By.name("Login");
@@ -66,7 +69,7 @@ public class Login extends BaseClass{
 		String username=ExcelUtil.getCellData(i,5);
 		String password=ExcelUtil.getCellData(i,6);
 		
-		MobileElement userid,passw,submit;
+		//MobileElement userid,passw,submit;
 		userid= (MobileElement) driver.findElement(By.name("Username"));
 		passw= (MobileElement) driver.findElement(By.name("Password"));
 		submit= (MobileElement) driver.findElement(By.name("Login"));
@@ -99,6 +102,12 @@ public class Login extends BaseClass{
 		signup.click();
 	}
 	
+	public void checkIfLoginButtonPresent()
+	{
+		
+		Assert.assertEquals(submit.isEnabled(),TRUE);
+			
+	}
 	
 	public void teardown()
 	{

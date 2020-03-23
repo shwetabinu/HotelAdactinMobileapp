@@ -12,6 +12,11 @@ import com.adactin.Mobileapphoteladactin1.pages.Select_Hotel;
 import com.adactin.Mobileapphoteladactin1.pages.Selected_Hotel_Detail;
 import com.adactin.Mobileapphoteladactin1.util.ExcelUtil;
 
+/**
+ * Testcase to verify if a user can book a hotel successfully with the details present in the Testdata file
+ * @author aswinvijayan
+ *
+ */
 public class User_is_able_to_book_a_hotel extends BaseClass{
 	
 	public User_is_able_to_book_a_hotel() throws Exception {
@@ -49,7 +54,8 @@ public class User_is_able_to_book_a_hotel extends BaseClass{
 		bc=new Booking_Confirmation();
 		bc.confirm_Booking();
 		bi=new Booked_Itinerary();
-		bi.viewFirstBookedHotelDetails();
+		String bhd_id=bi.readWhichEntry(rno);
+		bi.viewBookedHotelDetails(bhd_id);
 		
 		
 		

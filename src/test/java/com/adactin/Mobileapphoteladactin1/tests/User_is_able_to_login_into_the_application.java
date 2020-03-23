@@ -6,12 +6,14 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
 import com.adactin.Mobileapphoteladactin1.base.BaseClass;
+import com.adactin.Mobileapphoteladactin1.pages.Home;
 import com.adactin.Mobileapphoteladactin1.pages.Login;
 import com.adactin.Mobileapphoteladactin1.util.ExcelUtil;
 
 public class User_is_able_to_login_into_the_application extends BaseClass{
 	
 	static Login lp;
+	static Home hp;
 	public User_is_able_to_login_into_the_application() throws Exception {
 		super();
 		// TODO Auto-generated constructor stub
@@ -21,18 +23,16 @@ public class User_is_able_to_login_into_the_application extends BaseClass{
 	@Test
 	public void User_is_able_to_login_into_the_application() throws Exception
 	{
-		//Login lp = null;
 		int rno;
 		ExcelUtil.setExcelFileSheet("Testcases");
-		rno=ExcelUtil.readexcel("User_is_able_to_login_into_the_application");
+		rno=ExcelUtil.readexcel("User_is_able_to_book_a_hotel");
 		initApp(rno);
 		lp=new Login();
 		lp.Logging_in(rno);
+		hp=new Home();
+		//hp.checkWelcomeMessage(rno);
+		
 	}
 
-	@AfterTest
-	public void closingapp()
-	{
-		closeApp();
-	}
+	
 }

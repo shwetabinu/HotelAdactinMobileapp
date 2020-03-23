@@ -32,11 +32,13 @@ public class Home extends BaseClass {
 		
 	}
 	
-	public void checkWelcomeMessage(String expectedmsg)
+	public void checkWelcomeMessage(int rno) throws Exception
 	{
 		MobileElement welcomemsg;
 		
-		
+		String expectedusername,expectedmsg;
+		expectedusername=ExcelUtil.getCellData(rno,5);
+		expectedmsg="Welcome,"+expectedusername;
 		welcomemsg= (MobileElement)driver.findElement(By.name("welcome_user"));
 		
 		Assert.assertEquals(welcomemsg,expectedmsg);
