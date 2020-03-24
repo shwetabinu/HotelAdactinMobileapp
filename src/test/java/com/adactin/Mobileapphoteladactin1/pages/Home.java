@@ -29,27 +29,27 @@ public class Home extends BaseClass {
 	public Home() throws Exception
 	{		
 		PageFactory.initElements(driver, this);
-		
+
 	}
-	
+
 	public void checkWelcomeMessage(int rno) throws Exception
 	{
 		MobileElement welcomemsg;
-		
+
 		String expectedusername,expectedmsg;
-		expectedusername=ExcelUtil.getCellData(rno,5);
-		expectedmsg="Welcome,"+expectedusername;
+		//expectedusername=ExcelUtil.getCellData(rno,5);
+		expectedmsg="welcome_user";
 		welcomemsg= (MobileElement)driver.findElement(By.name("welcome_user"));
-		
-		Assert.assertEquals(welcomemsg,expectedmsg);
+
+		Assert.assertEquals(welcomemsg.getText(),expectedmsg);
 	}
-	
+
 	public void checkLocationdropdown(int i)
 	{
 		String[] expectedlocation=null;
 		try {
 			expectedlocation=ExcelUtil.getCellData(i,7).split(",");
-			
+
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			Log.error("Unable to read from the excel sheet");
@@ -63,10 +63,10 @@ public class Home extends BaseClass {
 			//assert.assertEquals(ele.getText(), expectedlocation[i]);
 			n++;
 		}
-		
+
 	}
-	
-	public void searchHotel(int i)
+
+	public void searchHotel(int i) throws Exception
 	{
 		String expected_location = null,expected_hotel=null,expected_roomtype=null,expected_nofrooms=null,expected_checkin=null;
 		String expected_checkout=null,expected_adultsperroom=null,expected_childrenperroom=null;
@@ -79,18 +79,18 @@ public class Home extends BaseClass {
 			expected_checkout=ExcelUtil.getCellData(i,12);
 			expected_adultsperroom=ExcelUtil.getCellData(i,13);
 			expected_childrenperroom=ExcelUtil.getCellData(i,14);
-			
+
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			Log.error(e.getCause().toString());
 			e.printStackTrace();
 		}
-		
+
 		/*Select hotel_location=new Select((MobileElement) driver.findElementsByAccessibilityId("Select Location"));
 		hotel_location.selectByValue(expected_location);
 		Select actual_hotel=new Select((MobileElement) driver.findElementsByAccessibilityId("Select Hotel"));
 		actual_hotel.selectByValue(expected_hotel);*/
-		
+
 		String xpathtoscrollto="//XCUIElementTypeApplication[@name=\"Adactin Hotel App\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[3]/XCUIElementTypeOther[1]";
 		String xpath1_of_date_picker1="//XCUIElementTypeApplication[@name=\"Adactin Hotel App\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[3]\n" + 
 				"";
@@ -98,31 +98,32 @@ public class Home extends BaseClass {
 				"";
 		String xpath3_of_date_picker1="//XCUIElementTypeApplication[@name=\"Adactin Hotel App\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[5]\n" + 
 				"";
-		MobileElement locationdropdown=(MobileElement) driver.findElement(By.name("Select Location"));
+	/*	MobileElement locationdropdown=(MobileElement) driver.findElement(By.name("Select Location"));
 		locationdropdown.click();
 		MobileElement selected_location=(MobileElement) driver.findElement(By.name(expected_location));
 		selected_location.click();
-		
+
 		MobileElement hoteldropdown=(MobileElement) driver.findElement(By.name("Select Hotel"));
 		hoteldropdown.click();
 		MobileElement selected_hotel=(MobileElement) driver.findElement(By.name(expected_hotel));
-		selected_hotel.click();
-		
-	
+		selected_hotel.click();*/
+
+		searchHotel_Hotel_location(i);
+
 		// (driver).scrollTo("Room Type");
 		MobileElement roomtypedropdown=(MobileElement) driver.findElement(By.name("Select Room Type"));
 		iOSScrollToElement(xpathtoscrollto);
 		roomtypedropdown.click();
 		MobileElement selected_roomtype=(MobileElement) driver.findElement(By.name(expected_roomtype));
 		selected_roomtype.click();
-		
-		
+
+
 		MobileElement noofroomsdropdown=(MobileElement) driver.findElement(By.name("Select Number of Rooms"));
 		//iOSScrollToElement();
 		noofroomsdropdown.click();
 		MobileElement selected_noofrooms=(MobileElement) driver.findElement(By.name(expected_nofrooms));
 		selected_noofrooms.click();
-		
+
 		//MobileElement checkindatedropdown=(MobileElement) driver.findElement(By.name("Select Check-in Date"));
 		//iOSScrollToElement();
 		//checkindatedropdown.click();
@@ -130,7 +131,7 @@ public class Home extends BaseClass {
 		//datePicker(expected_checkin,xpath1_of_date_picker1,xpath2_of_date_picker1,xpath3_of_date_picker1);
 		//iOSScrollToElement();
 		//selected_checkindate.click();
-		
+
 		//MobileElement checkoutdatedropdown=(MobileElement) driver.findElement(By.name("Select Check-out Date"));
 		//iOSScrollToElement();
 		//checkoutdatedropdown.click();
@@ -142,14 +143,38 @@ public class Home extends BaseClass {
 		adultsperroomdropdown.click();
 		MobileElement selected_adultsperroom=(MobileElement) driver.findElement(By.name(expected_adultsperroom));
 		selected_adultsperroom.click();
-		
+
 		MobileElement childrenperroomdropdown=(MobileElement) driver.findElement(By.name("Select Children per Room"));
 		childrenperroomdropdown.click();
 		MobileElement selected_childrenperroomm=(MobileElement) driver.findElement(By.name(expected_childrenperroom));
 		selected_childrenperroomm.click();
+
+		MobileElement search=(MobileElement) driver.findElement(By.name("Search"));
+		search.click();
+
+	}
+	
+	public void searchHotel_Hotel_location(int i) throws Exception
+	{
+		String xpathtoscrollto="//XCUIElementTypeApplication[@name=\"Adactin Hotel App\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[3]/XCUIElementTypeOther[1]";
+		String expected_location = null,expected_hotel=null;
+		expected_location=ExcelUtil.getCellData(i,7);
+		expected_hotel=ExcelUtil.getCellData(i,8);
 		
+		MobileElement locationdropdown=(MobileElement) driver.findElement(By.name("Select Location"));
+		locationdropdown.click();
+		MobileElement selected_location=(MobileElement) driver.findElement(By.name(expected_location));
+		selected_location.click();
+
+		MobileElement hoteldropdown=(MobileElement) driver.findElement(By.name("Select Hotel"));
+		hoteldropdown.click();
+		MobileElement selected_hotel=(MobileElement) driver.findElement(By.name(expected_hotel));
+		selected_hotel.click();
+		iOSScrollToElement(xpathtoscrollto);
+		iOSScrollToElement(xpathtoscrollto);
 		MobileElement search=(MobileElement) driver.findElement(By.name("Search"));
 		search.click();
 		
-}
+		
+	}
 }

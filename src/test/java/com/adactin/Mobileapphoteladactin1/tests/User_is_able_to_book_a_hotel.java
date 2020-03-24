@@ -1,9 +1,11 @@
 package com.adactin.Mobileapphoteladactin1.tests;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.adactin.Mobileapphoteladactin1.base.BaseClass;
 import com.adactin.Mobileapphoteladactin1.pages.Book_Hotel;
+import com.adactin.Mobileapphoteladactin1.pages.Booked_Hotel_Details;
 import com.adactin.Mobileapphoteladactin1.pages.Booked_Itinerary;
 import com.adactin.Mobileapphoteladactin1.pages.Booking_Confirmation;
 import com.adactin.Mobileapphoteladactin1.pages.Home;
@@ -32,12 +34,14 @@ public class User_is_able_to_book_a_hotel extends BaseClass{
 	static Book_Hotel bh;
 	static Booking_Confirmation bc;
 	static Booked_Itinerary bi;
+	static Booked_Hotel_Details bhd;
 	
 	
 	@Test
 	public void User_is_able_to_book_a_hotel() throws Exception
 	{
 		int rno;
+		String ordid;
 		ExcelUtil.setExcelFileSheet("Testcases");
 		rno=ExcelUtil.readexcel("User_is_able_to_book_a_hotel");
 		initApp(rno);
@@ -46,17 +50,21 @@ public class User_is_able_to_book_a_hotel extends BaseClass{
 		hp=new Home();
 		hp.searchHotel(rno);
 		sp=new Select_Hotel();
-		sp.select_hotel();
+		sp.select_hotel(1);
 		shd=new Selected_Hotel_Detail();
 		shd.click_on_select();
 		bh=new Book_Hotel();
 		bh.enterBookingDetails(rno);
 		bc=new Booking_Confirmation();
+		ordid=bc.getOrderId();
 		bc.confirm_Booking();
 		bi=new Booked_Itinerary();
 		String bhd_id=bi.readWhichEntry(rno);
 		bi.viewBookedHotelDetails(bhd_id);
 		
+		bhd=new Booked_Hotel_Details();
+		int count=bhd.checkBookedHotelDetails(rno, ordid);
+		Assert.assertEquals(count,6);
 		
 		
 	}

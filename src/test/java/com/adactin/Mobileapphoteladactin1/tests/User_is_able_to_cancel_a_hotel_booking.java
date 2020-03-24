@@ -1,5 +1,6 @@
 package com.adactin.Mobileapphoteladactin1.tests;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.adactin.Mobileapphoteladactin1.base.BaseClass;
@@ -25,7 +26,7 @@ public class User_is_able_to_cancel_a_hotel_booking extends BaseClass {
 		
 		int rno;
 		ExcelUtil.setExcelFileSheet("Testcases");
-		rno=ExcelUtil.readexcel("User_is_able_to_book_a_hotel");
+		rno=ExcelUtil.readexcel("User_is_able_to_cancel_a_hotel_booking");
 		initApp(rno);
 		lp=new Login();
 		lp.Logging_in(rno);
@@ -36,7 +37,7 @@ public class User_is_able_to_cancel_a_hotel_booking extends BaseClass {
 		bhd=new Booked_Hotel_Details();
 		bhd.cancelBooked_itinerary();
 		bi1=new Booked_Itinerary();
-		bi1.viewBookedHotelDetails(bhd_id);
+		Assert.assertEquals(bi1.checkIfCanceled(bhd_id), false);
 		
 	}
 	

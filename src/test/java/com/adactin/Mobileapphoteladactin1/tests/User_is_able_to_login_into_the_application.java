@@ -25,12 +25,12 @@ public class User_is_able_to_login_into_the_application extends BaseClass{
 	{
 		int rno;
 		ExcelUtil.setExcelFileSheet("Testcases");
-		rno=ExcelUtil.readexcel("User_is_able_to_book_a_hotel");
+		rno=ExcelUtil.readexcel("User_is_able_to_login_into_the_application");
 		initApp(rno);
 		lp=new Login();
 		lp.Logging_in(rno);
 		hp=new Home();
-		//hp.checkWelcomeMessage(rno);
+		hp.checkWelcomeMessage(rno);
 		
 	}
 

@@ -43,6 +43,13 @@ public class Booked_Itinerary extends BaseClass{
 		
 	}
 	
+	public boolean checkIfCanceled(String i)
+	{
+		MobileElement booked_hotel_details=(MobileElement)driver.findElement(By.xpath("(//XCUIElementTypeOther[@name=\"hotel_list_item\"])["+i+"]"));
+		
+		return booked_hotel_details.isDisplayed();
+		
+	}
 	
 	
 	

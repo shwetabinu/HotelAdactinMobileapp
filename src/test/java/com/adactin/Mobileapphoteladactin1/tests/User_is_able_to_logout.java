@@ -24,7 +24,7 @@ public class User_is_able_to_logout extends BaseClass{
 	{
 		int rno;
 		ExcelUtil.setExcelFileSheet("Testcases");
-		rno=ExcelUtil.readexcel("User_is_able_to_book_a_hotel");
+		rno=ExcelUtil.readexcel("User_is_able_to_logout");
 		initApp(rno);
 		lp=new Login();
 		lp.Logging_in(rno);
@@ -33,7 +33,7 @@ public class User_is_able_to_logout extends BaseClass{
 		//method to click on my account tab
 		acc.Logging_out();
 		lp1=new Login();
-		lp1.checkIfLoginButtonPresent();
+		Assert.assertEquals(lp1.checkIfLoginButtonPresent(), true);;
 		
 	}
 	

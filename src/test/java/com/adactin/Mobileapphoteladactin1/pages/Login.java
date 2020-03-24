@@ -29,8 +29,8 @@ import io.appium.java_client.remote.HideKeyboardStrategy;
  */
 public class Login extends BaseClass{
 	
-	private static final Object TRUE = null;
-	MobileElement userid,passw,submit;
+//	private static final Object TRUE = null;
+	//MobileElement userid,passw,submit;
 	/*By userid=By.name("Username");
 	By passw=By.name("Password");
 	By submit=By.name("Login");
@@ -70,9 +70,9 @@ public class Login extends BaseClass{
 		String password=ExcelUtil.getCellData(i,6);
 		
 		//MobileElement userid,passw,submit;
-		userid= (MobileElement) driver.findElement(By.name("Username"));
-		passw= (MobileElement) driver.findElement(By.name("Password"));
-		submit= (MobileElement) driver.findElement(By.name("Login"));
+		MobileElement userid= (MobileElement) driver.findElement(By.name("Username"));
+		MobileElement passw= (MobileElement) driver.findElement(By.name("Password"));
+		MobileElement submit= (MobileElement) driver.findElement(By.name("Login"));
 	/*	driver.findElement(userid).click();
 		driver.findElement(userid).sendKeys(username);
 		driver.findElement(passw).click();
@@ -102,10 +102,17 @@ public class Login extends BaseClass{
 		signup.click();
 	}
 	
-	public void checkIfLoginButtonPresent()
+	public boolean checkIfLoginButtonPresent()
 	{
-		
-		Assert.assertEquals(submit.isEnabled(),TRUE);
+		MobileElement submit= (MobileElement) driver.findElement(By.name("Login"));
+		Boolean f;
+		//f=true;
+		if(submit.isEnabled()==true)
+			return true;
+		else
+			return false;
+			
+			
 			
 	}
 	
