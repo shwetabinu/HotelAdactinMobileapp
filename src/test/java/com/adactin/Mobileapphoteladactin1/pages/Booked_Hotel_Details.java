@@ -76,5 +76,14 @@ public class Booked_Hotel_Details extends BaseClass {
 		
 		
 	}
+	
+	public String readOrderId(int i) throws Exception
+	{
+		String ordid=null;
+		ordid=ExcelUtil.getCellData(i,23);
+		return ordid;
+	}
+	
+	
 
 }

@@ -25,7 +25,7 @@ public class Selected_Hotel_Detail extends BaseClass{
 		select_click.click();
 	}
 	
-	public int check_If_correct_details_hotel_location(int i,String roomtype) throws Exception
+	public int check_If_correct_details_roomtype(int i,String roomtype) throws Exception
 	{
 		
 		int c=0;
@@ -67,7 +67,48 @@ public class Selected_Hotel_Detail extends BaseClass{
 		return count;
 		
 	}
-	
+	public int check_If_correct_details_hotel(int i,String expected_hotel) throws Exception
+	{
+		
+		int c=0;
+		String xpath="//XCUIElementTypeApplication[@name=\"Adactin Hotel App\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[3]/XCUIElementTypeOther[2]/XCUIElementTypeOther[1]\n" + 
+				"";
+		String expected_location,expected_roomtype;
+		expected_location=ExcelUtil.getCellData(i,7);
+		expected_roomtype=ExcelUtil.getCellData(i,9);
+		MobileElement loc=(MobileElement)driver.findElement(By.xpath("//XCUIElementTypeOther[@name=\"hotel_location\"]\n" + 
+				"/following-sibling::XCUIElementTypeOther"));
+		if(loc.getText().equalsIgnoreCase(expected_location))
+			{Log.info(loc.getText());
+			//count=count+1;
+			++count;
+			Log.info("Checking count"+count);
+			}
+		
+		MobileElement hotel=(MobileElement)driver.findElement(By.xpath("//XCUIElementTypeOther[@name=\"hotel_name\"]\n" + 
+				"/following-sibling::XCUIElementTypeOther"));
+		if(hotel.getText().equalsIgnoreCase(expected_hotel))
+			{Log.info(hotel.getText());
+			//count=count+1;
+			++count;
+		Log.info("Checking count"+count);
+			}
+		iOSScrollToElement(xpath);
+		//iOSScrollToElement(xpath);
+		MobileElement rooms_type=(MobileElement)driver.findElement(By.xpath("//XCUIElementTypeOther[@name=\"hotel_room_type\"]\n" + 
+				"/following-sibling::XCUIElementTypeOther"));
+		if(rooms_type.getText().equalsIgnoreCase(expected_roomtype))
+			{Log.info(rooms_type.getText());
+			//count=count+1;
+			++count;
+		Log.info("Checking count"+count);
+			}
+		
+		//mod_count=count;
+		
+		return count;
+		
+	}
 	public void goback()
 	{
 		MobileElement back_btn=(MobileElement)driver.findElement(By.name("Back"));
@@ -79,6 +120,13 @@ public class Selected_Hotel_Detail extends BaseClass{
 		expected_roomtype=ExcelUtil.getCellData(i,9).split(",");
 		return expected_roomtype;
 		
+	}
+	
+	public String[] getHotelNames(int i) throws Exception
+	{
+		String[] expected_hotelnames;
+		expected_hotelnames=ExcelUtil.getCellData(i,8).split(",");
+		return expected_hotelnames;
 	}
 	
 }

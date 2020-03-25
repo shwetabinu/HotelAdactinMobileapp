@@ -110,11 +110,32 @@ public class Login extends BaseClass{
 		if(submit.isEnabled()==true)
 			return true;
 		else
-			return false;
-			
-			
+			return false;		
 			
 	}
+	
+	public void checkErrorMessage(int i) throws Exception
+	{
+		int flag=0;
+		String Errormessage=ExcelUtil.getCellData(i,27);
+		MobileElement ok_btn=(MobileElement) driver.findElement(By.name("OK"));
+		MobileElement err_message=(MobileElement)driver.findElement(By.name("failure_alert Invalid Login Credentials"));
+		Assert.assertEquals(err_message.getText(), Errormessage);
+		ok_btn.click();
+		
+		
+	}
+/*	public void checkErrorMessage(int i) throws Exception
+	{
+		int flag=0;
+		String Errormessage=ExcelUtil.getCellData(i,27);
+		MobileElement ok_btn=(MobileElement) driver.findElement(By.name("Ok"));
+		MobileElement err_message=(MobileElement)driver.findElement(By.name("Failure"));
+		Assert.assertEquals(err_message.getText(), Errormessage);
+		ok_btn.click();
+		
+		
+	}*/
 	
 	public void teardown()
 	{

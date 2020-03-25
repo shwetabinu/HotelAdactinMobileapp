@@ -150,7 +150,15 @@ public class BaseClass {
 		
 		driver.executeScript("mobile:scroll", scrollObject);
 	}
-	
+	public void iOSScrollUp(String xpath) {
+		RemoteWebElement parent = (RemoteWebElement)driver.findElement(By.xpath(xpath));
+		String parentID = parent.getId();
+		HashMap<String, String> scrollObject = new HashMap<String, String>();
+		scrollObject.put("element", parentID);
+		scrollObject.put("direction", "up");
+		
+		driver.executeScript("mobile:scroll", scrollObject);
+	}
 	
 	public void scrollingInDate(String xpath,String date)
 	{
