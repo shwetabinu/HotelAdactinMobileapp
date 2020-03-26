@@ -1,28 +1,30 @@
 package com.adactin.Mobileapphoteladactin1.tests;
 
-import java.io.IOException;
-
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
 import com.adactin.Mobileapphoteladactin1.base.BaseClass;
 import com.adactin.Mobileapphoteladactin1.pages.Home;
 import com.adactin.Mobileapphoteladactin1.pages.Login;
 import com.adactin.Mobileapphoteladactin1.util.ExcelUtil;
+import com.adactin.Mobileapphoteladactin1.util.Log;
 
+/**
+ * Test case to verify if user can login to the application using valid login credentials
+ * The Welcome message in the Home page is checked to verify successful user login
+ */
 public class User_is_able_to_login_into_the_application extends BaseClass{
 	
 	static Login lp;
 	static Home hp;
 	public User_is_able_to_login_into_the_application() throws Exception {
 		super();
-		// TODO Auto-generated constructor stub
-		//ExcelUtil.setExcelFileSheet("Testcases");
+
 	}
 
-	@Test
+	@Test(groups = { "functionalTest" })
 	public void User_is_able_to_login_into_the_application() throws Exception
 	{
+		Log.startTestCase("User_is_able_to_login_into_the_application");
 		int rno;
 		ExcelUtil.setExcelFileSheet("Testcases");
 		rno=ExcelUtil.readexcel("User_is_able_to_login_into_the_application");
@@ -31,6 +33,7 @@ public class User_is_able_to_login_into_the_application extends BaseClass{
 		lp.Logging_in(rno);
 		hp=new Home();
 		hp.checkWelcomeMessage(rno);
+		Log.endTestCase("User_is_able_to_login_into_the_application");
 		
 	}
 

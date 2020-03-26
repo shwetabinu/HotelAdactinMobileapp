@@ -28,20 +28,7 @@ import io.appium.java_client.remote.HideKeyboardStrategy;
  *
  */
 public class Login extends BaseClass{
-	
-//	private static final Object TRUE = null;
-	//MobileElement userid,passw,submit;
-	/*By userid=By.name("Username");
-	By passw=By.name("Password");
-	By submit=By.name("Login");
-	@FindBy(name="Username")
-	MobileElement userid;
-	
-	@FindBy(name="Password")
-	MobileElement passw;
-	
-	@FindBy(name="Login")
-	MobileElement submit;*/
+
 	
 	public Login() throws Exception
 	{		
@@ -61,24 +48,22 @@ public class Login extends BaseClass{
 		}
 	}
 	
-	
+/**
+ * Method to login to the application
+ * @param i
+ * @throws Exception
+ */
 	public void Logging_in(int i) throws Exception
 	{	
 	
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		String username=ExcelUtil.getCellData(i,5);
 		String password=ExcelUtil.getCellData(i,6);
-		
-		//MobileElement userid,passw,submit;
+
 		MobileElement userid= (MobileElement) driver.findElement(By.name("Username"));
 		MobileElement passw= (MobileElement) driver.findElement(By.name("Password"));
 		MobileElement submit= (MobileElement) driver.findElement(By.name("Login"));
-	/*	driver.findElement(userid).click();
-		driver.findElement(userid).sendKeys(username);
-		driver.findElement(passw).click();
-		driver.findElement(passw).sendKeys(password);
-		driver.findElement(passw).sendKeys(Keys.RETURN);
-		driver.findElement(submit).click();*/
+
 		userid.click();
 		userid.sendKeys(username);
 		passw.click();
@@ -106,7 +91,6 @@ public class Login extends BaseClass{
 	{
 		MobileElement submit= (MobileElement) driver.findElement(By.name("Login"));
 		Boolean f;
-		//f=true;
 		if(submit.isEnabled()==true)
 			return true;
 		else
@@ -137,9 +121,6 @@ public class Login extends BaseClass{
 		
 	}*/
 	
-	public void teardown()
-	{
-		driver.quit();
-	}
+	
 	
 }

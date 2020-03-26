@@ -13,7 +13,11 @@ public class Booked_Hotel_Details extends BaseClass {
 	public Booked_Hotel_Details() throws Exception {
 		PageFactory.initElements(driver, this);
 	}
-
+/**
+ * Method to cancel the Booked itinerary
+ * Navigates to the booked itinerary list, clicks on a list item and clicks the cancel button
+ * Clicks on the success alert button when prompt pops up
+ */
 	public void cancelBooked_itinerary()
 	{
 		MobileElement cancel_btn=(MobileElement)driver.findElement(By.name("Cancel"));
@@ -25,6 +29,14 @@ public class Booked_Hotel_Details extends BaseClass {
 		success_btn.click();
 	}
 
+/**
+ * 
+ * Validates if the Booked Hotel Details are as per the data in the testdata sheet
+ * @param i Row number
+ * @param oid Order ID
+ * @return
+ * @throws Exception
+ */
 	
 	public int checkBookedHotelDetails(int i,String oid) throws Exception {
 		String expected_location,expected_hotel,fname,lname,expected_roomtype,expected_nofrooms;
@@ -58,7 +70,7 @@ public class Booked_Hotel_Details extends BaseClass {
 		if(first_name.getText().equalsIgnoreCase(fname))
 			count++;
 		
-		iOSScrollToElement(bhd_xpath);
+		iOSScrollDown(bhd_xpath);
 		
 		MobileElement last_name=(MobileElement)driver.findElement(By.xpath("//XCUIElementTypeOther[@name=\"last_name\"]\n" + 
 				"/following-sibling::XCUIElementTypeOther"));
@@ -76,7 +88,13 @@ public class Booked_Hotel_Details extends BaseClass {
 		
 		
 	}
-	
+
+/**
+ * Reads the order id from the test data sheet
+ * @param i Row number
+ * @return
+ * @throws Exception
+ */
 	public String readOrderId(int i) throws Exception
 	{
 		String ordid=null;

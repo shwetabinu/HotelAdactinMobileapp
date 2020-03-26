@@ -19,7 +19,11 @@ import java.util.Iterator;
 
 //import static adactin.urbest.testscripts;
 import static com.adactin.Mobileapphoteladactin1.base.BaseClass.testDataExcelFileName;
-
+/**
+ * Performs operations on the Excel file entries
+ *
+ *
+ */
 public class ExcelUtil {
 	//Main Directory of the project
 	public static final String currentDir = System.getProperty("user.dir");
@@ -63,7 +67,11 @@ public class ExcelUtil {
 		return columnNumber;
 	}
 
-	// This method has two parameters: "Test data excel file name" and "Excel sheet name"
+	/**
+	 * This method has two parameters: "Test data excel file name" and "Excel sheet name"
+	 * @param sheetName
+	 * @throws Exception
+	 */
 	// It creates FileInputStream and set excel file and excel sheet to excelWBook and excelWSheet variables.
 	public static void setExcelFileSheet(String sheetName) throws Exception {
 		//MAC or Windows Selection for excel path
@@ -86,7 +94,13 @@ public class ExcelUtil {
 		}
 	}
 
-	//This method reads the test data from the Excel cell.
+	/**
+	 * This method reads the test data from the Excel cell.
+	 * @param RowNum
+	 * @param ColNum
+	 * @return
+	 * @throws Exception
+	 */
 	//We are passing row number and column number as parameters.
 	public static String getCellData(int RowNum, int ColNum) throws Exception {
 		try {
@@ -102,7 +116,12 @@ public class ExcelUtil {
 		}
 	}
 
-	//This method takes row number as a parameter and returns the data of given row number.
+	/**
+	 * This method takes row number as a parameter and returns the data of given row number.
+	 * @param RowNum
+	 * @return
+	 * @throws Exception
+	 */
 	public static XSSFRow getRowData(int RowNum) throws Exception {
 		try {
 			row = excelWSheet.getRow(RowNum);
@@ -111,7 +130,11 @@ public class ExcelUtil {
 			throw (e);
 		}
 	}
-
+/**
+ * Method returns the row number where the @param text is present
+ * @param text
+ * @return
+ */
 	public static int readexcel(String text)
 	{
 		int rn=0;
@@ -137,7 +160,13 @@ public class ExcelUtil {
 		return rn;
 	}
 
-	//This method gets excel file, row and column number and set a value to the that cell.
+	/**
+	 * This method gets excel file, row and column number and set a value to the that cell.
+	 * @param value
+	 * @param RowNum
+	 * @param ColNum
+	 * @throws Exception
+	 */
 	public static void setCellData(String value, int RowNum, int ColNum) throws Exception {
 		try {
 			row = excelWSheet.getRow(RowNum);

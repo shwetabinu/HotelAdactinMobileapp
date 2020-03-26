@@ -1,38 +1,26 @@
 package com.adactin.Mobileapphoteladactin1.base;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Properties;
-import org.openqa.selenium.Platform;import org.openqa.selenium.WebElement;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebElement;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.Test;
-
 import com.adactin.Mobileapphoteladactin1.util.ExcelUtil;
 
 import com.adactin.Mobileapphoteladactin1.util.Log;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
-import io.appium.java_client.remote.MobileCapabilityType;
 
 /**
  * Base class intializes the app for android as well as iOS platforms
  * It sets the desired capabilities as per the device/simulator
  * It reads the configuration details from the Excel sheet and sets the properties of the device
- * It also has method to implement scroll to
+ * It also has method to implement scrolling
  * 
  *
  */
@@ -49,7 +37,13 @@ public class BaseClass {
 		ExcelUtil.setExcelFileSheet("TestCases");
 		
 	}
-
+/**
+ * Sets the capability for a real android device
+ * @param platformName
+ * @param deviceName
+ * @param platformVersion
+ * @throws MalformedURLException
+ */
 	public void android_device_setup(String platformName,String deviceName,String platformVersion) throws MalformedURLException
 	{
 		//DesiredCapabilities caps=new DesiredCapabilities();
@@ -70,6 +64,13 @@ public class BaseClass {
 		
 	}
 	
+/**
+ * Sets the capability for an iOS simulator
+ * @param platformName
+ * @param deviceName
+ * @param platformVersion
+ * @throws MalformedURLException
+ */
 	public void simulator_setup(String platformName,String deviceName,String platformVersion) throws MalformedURLException
 	{
 		DesiredCapabilities caps=new DesiredCapabilities();
@@ -79,8 +80,6 @@ public class BaseClass {
 		caps.setCapability("automationName", "XCUITest");
 		caps.setCapability("connectHardwareKeyboard", "true");
 		caps.setCapability("simpleIsVisibleCheck", "true");
-		//caps.setCapability("app", "//src/test/resources/apps/Runner.app");
-		//caps.setCapability("app", "/Users/aswinvijayan/Documents/Shweta/adactinhotelapp-master/build/ios/iphonesimulator/Runner.app");
 	
 		if (Platform.getCurrent().toString().equalsIgnoreCase("MAC")) {
 			caps.setCapability("app", currentDir + "/src/test/resources/apps/Runner.app"); 
@@ -103,10 +102,19 @@ public class BaseClass {
 	{
 		
 	}
-	
+
+/**
+ * Initializes the app with the capabilities mentioned in the Test Data file
+ * @param i rown number
+ * @throws Exception
+ */
 	public void initApp(int i) throws Exception
 	{
 		String platformName,deviceName,platformVersion,dev;
+		
+		/**
+		 * Code to read the properties from a properties file.
+		 */
 		/*FileInputStream fis = null;
 		Properties p=new Properties();
 		if(Platform.getCurrent().toString().equalsIgnoreCase("MAC")) {
@@ -140,8 +148,11 @@ public class BaseClass {
 		
 		
 	}
-	
-	public void iOSScrollToElement(String xpath) {
+/**
+ * Method to perform Scroll down operation in iOS
+ * @param xpath identifier of the parent element in which scroll action takes place
+ */
+	public void iOSScrollDown(String xpath) {
 		RemoteWebElement parent = (RemoteWebElement)driver.findElement(By.xpath(xpath));
 		String parentID = parent.getId();
 		HashMap<String, String> scrollObject = new HashMap<String, String>();
@@ -150,6 +161,27 @@ public class BaseClass {
 		
 		driver.executeScript("mobile:scroll", scrollObject);
 	}
+
+/**
+* Method to perform Scroll to a particular element in iOS
+*  @param xpath identifier of the parent element in which scroll action takes place
+*/
+	public void iOSScrollToElement(String xpath,String name)
+	{
+		Log.info("I am now in the scrolltoelement method");
+		RemoteWebElement parent = (RemoteWebElement)driver.findElement(By.xpath(xpath));
+		String parentID = parent.getId();
+		HashMap<String, String> scrollObject = new HashMap<String, String>();
+		scrollObject.put("element", parentID);
+		//scrollObject.put("name", "Search");
+		scrollObject.put("predicateString", "label == 'Search'");
+		driver.executeScript("mobile:scroll", scrollObject);
+	}
+	
+/**
+ * Method to perform Scroll up operation in iOS
+ * @param xpath identifier of the parent element in which scroll action takes place
+ */
 	public void iOSScrollUp(String xpath) {
 		RemoteWebElement parent = (RemoteWebElement)driver.findElement(By.xpath(xpath));
 		String parentID = parent.getId();
@@ -160,22 +192,6 @@ public class BaseClass {
 		driver.executeScript("mobile:scroll", scrollObject);
 	}
 	
-	public void scrollingInDate(String xpath,String date)
-	{
-		/*RemoteWebElement parent = (RemoteWebElement)driver.findElement(By.xpath(xpath));
-		
-		String parentID = parent.getId();
-		HashMap<String, String> scrollObject = new HashMap<String, String>();
-		scrollObject.put("element", parentID);
-		 
-		// Use the predicate that provides the value of the label attribute
-		 
-		scrollObject.put("predicateString", "value == '"+date+"'");
-		driver.executeScript("mobile:scroll", scrollObject);  // scroll to the target element
-		*/
-		
-		
-	}
 	public void datePicker(String date,String xpath1,String xpath2,String xpath3)
 	{
 		String[] new_date=date.split("/");
@@ -191,45 +207,11 @@ public class BaseClass {
 		driver.findElement(By.name("Done")).click();
 		
 		
-		/*HashMap<String, Object> params_date = new HashMap<String, Object>();
-		params_date.put("order", "next");
-		params_date.put("offset", 0.15);
-		params_date.put("element", ((RemoteWebElement) date_values.get(0)).getId());
-		driver.executeScript("mobile: selectPickerWheelValue", params_date);
-		driver.findElement(By.name("Done")).click();*/
-		
-		//scrollingInDate(xpath1,new_date[0]);
-		//date_values.set(0, element)
-		//date_values.get(0).sendKeys(new_date[0]);
-		
-		
-		/*List<MobileElement> month_values= driver.findElementsByXPath(xpath2);
-		//scrollingInDate(xpath2,new_date[1]);
-		//month_values.get(0).sendKeys(new_date[1]);
-		month_values.get(0).click();
-		/*HashMap<String, Object> params_month = new HashMap<String, Object>();
-		params_date.put("order", "next");
-		params_date.put("offset", 0.15);
-		params_date.put("element", ((RemoteWebElement) date_values.get(0)).getId());
-		driver.executeScript("mobile: selectPickerWheelValue", params_date);
-		
-		List<MobileElement> year_values=driver.findElementsByXPath(xpath3);
-		year
-		HashMap<String, Object> params_year = new HashMap<String, Object>();
-		params_date.put("order", "next");
-		params_date.put("offset", 0.15);
-		params_date.put("element", ((RemoteWebElement) date_values.get(0)).getId());
-		driver.executeScript("mobile: selectPickerWheelValue", params_date);*/
-		
-		
-		//scrollingInDate(xpath3,new_date[2]);
-		//year_values.get(0).sendKeys(new_date[2]);
-		
-		
-		
 		
 	}
-	
+/**
+ * Method to close all the open sessions	
+ */
 	public void closeApp()
 	{
 		driver.quit();

@@ -15,6 +15,9 @@ public class My_Account extends BaseClass{
 		PageFactory.initElements(driver, this);
 	}
 
+	/**
+	 * Method to logout of the mobile app
+	 */
 	public void Logging_out()
 	{
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

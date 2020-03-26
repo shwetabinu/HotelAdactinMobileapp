@@ -1,6 +1,7 @@
 package com.adactin.Mobileapphoteladactin1.tests;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
 import com.adactin.Mobileapphoteladactin1.base.BaseClass;
@@ -13,10 +14,11 @@ import com.adactin.Mobileapphoteladactin1.pages.Login;
 import com.adactin.Mobileapphoteladactin1.pages.Select_Hotel;
 import com.adactin.Mobileapphoteladactin1.pages.Selected_Hotel_Detail;
 import com.adactin.Mobileapphoteladactin1.util.ExcelUtil;
+import com.adactin.Mobileapphoteladactin1.util.Log;
 
 /**
  * Testcase to verify if a user can book a hotel successfully with the details present in the Testdata file
- * @author aswinvijayan
+ * 
  *
  */
 public class User_is_able_to_book_a_hotel extends BaseClass{
@@ -37,9 +39,10 @@ public class User_is_able_to_book_a_hotel extends BaseClass{
 	static Booked_Hotel_Details bhd;
 	
 	
-	@Test
+	@Test(groups = { "functionalTest" })
 	public void User_is_able_to_book_a_hotel() throws Exception
 	{
+		Log.startTestCase("User_is_able_to_book_a_hotel");
 		int rno;
 		String ordid;
 		ExcelUtil.setExcelFileSheet("Testcases");
@@ -66,8 +69,15 @@ public class User_is_able_to_book_a_hotel extends BaseClass{
 		bhd=new Booked_Hotel_Details();
 		int count=bhd.checkBookedHotelDetails(rno, ordid);
 		Assert.assertEquals(count,6);
+		Log.endTestCase("User_is_able_to_book_a_hotel");
 		
 		
+	}
+	
+	@AfterTest(groups = { "functionalTest" })
+	public void closeSession()
+	{
+		closeApp();
 	}
 
 }

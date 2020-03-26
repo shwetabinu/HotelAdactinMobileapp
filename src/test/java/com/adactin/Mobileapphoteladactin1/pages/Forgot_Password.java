@@ -12,7 +12,11 @@ public class Forgot_Password extends BaseClass {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
+/**
+ * Method to enter the email when forgot password link is clicked
+ * @param rno
+ * @throws Exception
+ */
 	public void enterEmail(int rno) throws Exception
 	{
 		WebElement enter_email=driver.findElement(By.name("emailadd_recovery"));

@@ -18,7 +18,10 @@ public class Select_Hotel extends BaseClass {
 		// TODO Auto-generated constructor stub
 	}
 	
-	
+	/**
+	 * Method to check the number of entries in the Select Hotel page
+	 * @return
+	 */
 	public int checkNumberOfEntries()
 	{
 		int tot_number=0;
@@ -26,6 +29,10 @@ public class Select_Hotel extends BaseClass {
 		return tot_number;
 	}
 	
+	/**
+	 * Method to click on a specific element in the Select Hotel page
+	 * @param i the element to be selected
+	 */
 	public void select_hotel(int i)
 	{
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

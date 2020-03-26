@@ -7,7 +7,14 @@ import com.adactin.Mobileapphoteladactin1.pages.Booked_Hotel_Details;
 import com.adactin.Mobileapphoteladactin1.pages.Booked_Itinerary;
 import com.adactin.Mobileapphoteladactin1.pages.Login;
 import com.adactin.Mobileapphoteladactin1.util.ExcelUtil;
+import com.adactin.Mobileapphoteladactin1.util.Log;
 
+/**
+ * Test case to view the booked itinerary 
+ * It also validates the entry present within the booked itinerary with the Testdata file details
+ * 
+ *
+ */
 public class User_is_able_to_view_itinerary  extends BaseClass{
 
 	public User_is_able_to_view_itinerary() throws Exception {
@@ -18,9 +25,10 @@ public class User_is_able_to_view_itinerary  extends BaseClass{
 	static Booked_Itinerary bi;
 	static Booked_Hotel_Details bhd;
 	
-	@Test
+	@Test(groups = { "functionalTest" })
 	public void User_is_able_to_view_itinerary() throws Exception
 	{
+		Log.startTestCase("User_is_able_to_view_itinerary");
 		int rno;
 		ExcelUtil.setExcelFileSheet("Testcases");
 		rno=ExcelUtil.readexcel("User_is_able_to_view_itinerary");
@@ -34,6 +42,7 @@ public class User_is_able_to_view_itinerary  extends BaseClass{
 		bhd=new Booked_Hotel_Details();
 		int count=bhd.checkBookedHotelDetails(rno, bhd.readOrderId(rno));
 		Assert.assertEquals(count,6);
+		Log.endTestCase("User_is_able_to_view_itinerary");
 	}
 
 }

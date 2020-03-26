@@ -10,6 +10,12 @@ import com.adactin.Mobileapphoteladactin1.pages.Selected_Hotel_Detail;
 import com.adactin.Mobileapphoteladactin1.util.ExcelUtil;
 import com.adactin.Mobileapphoteladactin1.util.Log;
 
+/**
+ * Test case to verify if the user can search for hotel with location and hotel name provided as input
+ * Each of the hotel entry displayed is verified for different room types
+ *
+ *
+ */
 public class User_is_able_to_search_hotel_with_location_and_hotelname extends BaseClass{
 
 	static Login lp;
@@ -22,13 +28,11 @@ public class User_is_able_to_search_hotel_with_location_and_hotelname extends Ba
 		// TODO Auto-generated constructor stub
 	}
 
-	@Test
+	@Test(groups = { "functionalTest" })
 	public void User_is_able_to_search_hotel_with_location_and_hotelname() throws Exception
 	{
 		int rno,count = 0,n;
-
-		//String[] roomtype= {"Standard","Double","Deluxe","Super Deluxe"};
-
+		Log.startTestCase("User_is_able_to_search_hotel_with_location_and_hotelname");
 		String ordid;
 		ExcelUtil.setExcelFileSheet("Testcases");
 		rno=ExcelUtil.readexcel("User_is_able_to_search_hotel_with_location_and_hotelname");
@@ -54,9 +58,10 @@ public class User_is_able_to_search_hotel_with_location_and_hotelname extends Ba
 			}
 
 		}
-		//Log.info("Count is"+count);
+		
 		Log.info("n is"+n);
 		Assert.assertTrue(count==12 && n==4);
+		Log.endTestCase("User_is_able_to_search_hotel_with_location_and_hotelname");
 
 	}
 

@@ -9,6 +9,10 @@ import com.adactin.Mobileapphoteladactin1.pages.My_Account;
 import com.adactin.Mobileapphoteladactin1.util.ExcelUtil;
 import com.adactin.Mobileapphoteladactin1.util.Log;
 
+/**
+ * Test case to verify if user can logout successfully.
+ * The presence and enablement of login button is checked after successful logout
+ */
 public class User_is_able_to_logout extends BaseClass{
 
 	public User_is_able_to_logout() throws Exception {
@@ -19,9 +23,10 @@ public class User_is_able_to_logout extends BaseClass{
 	static Login lp,lp1;
 	static My_Account acc;
 
-	@Test
+	@Test(groups = { "functionalTest" })
 	public void User_is_able_to_logout() throws Exception
 	{
+		Log.startTestCase("User_is_able_to_logout");
 		int rno;
 		ExcelUtil.setExcelFileSheet("Testcases");
 		rno=ExcelUtil.readexcel("User_is_able_to_logout");
@@ -29,11 +34,10 @@ public class User_is_able_to_logout extends BaseClass{
 		lp=new Login();
 		lp.Logging_in(rno);
 		acc=new My_Account();
-		//Log.info(driver.getTitle());
-		//method to click on my account tab
 		acc.Logging_out();
 		lp1=new Login();
-		Assert.assertEquals(lp1.checkIfLoginButtonPresent(), true);;
+		Assert.assertEquals(lp1.checkIfLoginButtonPresent(), true);
+		Log.endTestCase("User_is_able_to_logout");
 		
 	}
 	

@@ -10,6 +10,11 @@ import com.adactin.Mobileapphoteladactin1.pages.Selected_Hotel_Detail;
 import com.adactin.Mobileapphoteladactin1.util.ExcelUtil;
 import com.adactin.Mobileapphoteladactin1.util.Log;
 
+/**
+ * Test case to verify if user can search for hotel with location alone as the input
+ * Here each of the hotel entry in the list is verified for hotel name
+ *
+ */
 public class User_is_able_to_Search_Hotel_with_Location extends BaseClass {
 
 	public User_is_able_to_Search_Hotel_with_Location() throws Exception {
@@ -22,9 +27,10 @@ public class User_is_able_to_Search_Hotel_with_Location extends BaseClass {
 	static Select_Hotel sp,sp1;
 	static Selected_Hotel_Detail shd;
 
-	@Test
+	@Test(groups = { "functionalTest" })
 	public void User_is_able_to_Search_Hotel_with_Location() throws Exception
 	{
+		Log.startTestCase("User_is_able_to_Search_Hotel_with_Location");
 		int rno,count = 0,n;
 		String ordid;
 		ExcelUtil.setExcelFileSheet("Testcases");
@@ -55,6 +61,7 @@ public class User_is_able_to_Search_Hotel_with_Location extends BaseClass {
 		//Log.info("Count is"+count);
 		Log.info("n is"+n);
 		Assert.assertTrue(count==12 && n==4);
+		Log.endTestCase("User_is_able_to_Search_Hotel_with_Location");
 		
 	}
 	

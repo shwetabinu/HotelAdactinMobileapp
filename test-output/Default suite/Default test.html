@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Mar 25 16:13:23 AEDT 2020</td>
+<td>Started on:</td><td>Thu Mar 26 13:21:37 AEDT 2020</td>
 </tr>
-<tr><td>Total time:</td><td>268 seconds (268435 ms)</td>
+<tr><td>Total time:</td><td>275 seconds (275407 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,17 +75,14 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_reset_the_search_criteria.User_is_able_to_reset_the_search_criteria()'><b>User_is_able_to_reset_the_search_criteria</b><br>Test class: com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_reset_the_search_criteria</td>
-<td><div><pre>org.openqa.selenium.UnsupportedCommandException: Unhandled endpoint: /session/B2D18C17-CC9F-4F59-A5C8-D726F837DD72/element/05030000-0000-0000-2912-000000000000/selected -- http://localhost:8100/ with parameters {
-    wildcards =     (
-        &quot;session/B2D18C17-CC9F-4F59-A5C8-D726F837DD72/element/05030000-0000-0000-2912-000000000000/selected&quot;
-    );
-}
+<td title='com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_search_hotel_with_location_and_hotelname.User_is_able_to_search_hotel_with_location_and_hotelname()'><b>User_is_able_to_search_hotel_with_location_and_hotelname</b><br>Test class: com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_search_hotel_with_location_and_hotelname</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: &apos;label == &apos;Search&apos;&apos; predicate didn&apos;t match any elements
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Aswins-Air&apos;, ip: &apos;fe80:0:0:0:433:363c:acbb:279b%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.15.3&apos;, java.version: &apos;13.0.1&apos;
+System info: host: &apos;Aswins-Air&apos;, ip: &apos;fe80:0:0:0:18c7:5e5d:1c65:92af%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.15.3&apos;, java.version: &apos;13.0.1&apos;
 Driver info: io.appium.java_client.ios.IOSDriver
-Capabilities {app: /Users/aswinvijayan/Documen..., automationName: XCUITest, browserName: , connectHardwareKeyboard: true, databaseEnabled: false, deviceName: iPhone SE, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: false, platform: MAC, platformName: iOS, platformVersion: 13.3, simpleIsVisibleCheck: true, takesScreenshot: true, udid: 144C9801-8851-435B-9230-5D8..., webStorageEnabled: false}
-Session ID: c71ae3ee-51bf-4f60-a2db-4f6f854801e4
+Capabilities {app: /Users/aswinvijayan/Documen..., automationName: XCUITest, browserName: , connectHardwareKeyboard: true, databaseEnabled: false, deviceName: iPhone SE, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: false, platform: MAC, platformName: iOS, platformVersion: 13.3, simpleIsVisibleCheck: true, takesScreenshot: true, udid: 6414193E-B24A-4990-A893-D78..., webStorageEnabled: false}
+Session ID: 4da0e889-8d76-4ca3-8930-33a44483f379
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -100,13 +97,10 @@ Session ID: c71ae3ee-51bf-4f60-a2db-4f6f854801e4
 	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
 	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
 	at io.appium.java_client.ios.IOSDriver.execute(IOSDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at io.appium.java_client.DefaultGenericMobileElement.execute(DefaultGenericMobileElement.java:45)
-	at io.appium.java_client.MobileElement.execute(MobileElement.java:1)
-	at io.appium.java_client.ios.IOSElement.execute(IOSElement.java:1)
-	at org.openqa.selenium.remote.RemoteWebElement.isSelected(RemoteWebElement.java:146)
-	at com.adactin.Mobileapphoteladactin1.pages.Home.doReset(Home.java:173)
-	at com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_reset_the_search_criteria.User_is_able_to_reset_the_search_criteria(User_is_able_to_reset_the_search_criteria.java:30)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:489)
+	at com.adactin.Mobileapphoteladactin1.base.BaseClass.iOSScrollToElement(BaseClass.java:163)
+	at com.adactin.Mobileapphoteladactin1.pages.Home.searchHotel_Hotel_location(Home.java:226)
+	at com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_search_hotel_with_location_and_hotelname.User_is_able_to_search_hotel_with_location_and_hotelname(User_is_able_to_search_hotel_with_location_and_hotelname.java:39)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -135,17 +129,14 @@ Session ID: c71ae3ee-51bf-4f60-a2db-4f6f854801e4
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1540219992", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1540219992'><pre>org.openqa.selenium.UnsupportedCommandException: Unhandled endpoint: /session/B2D18C17-CC9F-4F59-A5C8-D726F837DD72/element/05030000-0000-0000-2912-000000000000/selected -- http://localhost:8100/ with parameters {
-    wildcards =     (
-        &quot;session/B2D18C17-CC9F-4F59-A5C8-D726F837DD72/element/05030000-0000-0000-2912-000000000000/selected&quot;
-    );
-}
+</pre></div><a href='#' onClick='toggleBox("stack-trace691096777", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace691096777'><pre>org.openqa.selenium.NoSuchElementException: &apos;label == &apos;Search&apos;&apos; predicate didn&apos;t match any elements
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Aswins-Air&apos;, ip: &apos;fe80:0:0:0:433:363c:acbb:279b%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.15.3&apos;, java.version: &apos;13.0.1&apos;
+System info: host: &apos;Aswins-Air&apos;, ip: &apos;fe80:0:0:0:18c7:5e5d:1c65:92af%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.15.3&apos;, java.version: &apos;13.0.1&apos;
 Driver info: io.appium.java_client.ios.IOSDriver
-Capabilities {app: /Users/aswinvijayan/Documen..., automationName: XCUITest, browserName: , connectHardwareKeyboard: true, databaseEnabled: false, deviceName: iPhone SE, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: false, platform: MAC, platformName: iOS, platformVersion: 13.3, simpleIsVisibleCheck: true, takesScreenshot: true, udid: 144C9801-8851-435B-9230-5D8..., webStorageEnabled: false}
-Session ID: c71ae3ee-51bf-4f60-a2db-4f6f854801e4
+Capabilities {app: /Users/aswinvijayan/Documen..., automationName: XCUITest, browserName: , connectHardwareKeyboard: true, databaseEnabled: false, deviceName: iPhone SE, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: false, platform: MAC, platformName: iOS, platformVersion: 13.3, simpleIsVisibleCheck: true, takesScreenshot: true, udid: 6414193E-B24A-4990-A893-D78..., webStorageEnabled: false}
+Session ID: 4da0e889-8d76-4ca3-8930-33a44483f379
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -160,13 +151,10 @@ Session ID: c71ae3ee-51bf-4f60-a2db-4f6f854801e4
 	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
 	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
 	at io.appium.java_client.ios.IOSDriver.execute(IOSDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at io.appium.java_client.DefaultGenericMobileElement.execute(DefaultGenericMobileElement.java:45)
-	at io.appium.java_client.MobileElement.execute(MobileElement.java:1)
-	at io.appium.java_client.ios.IOSElement.execute(IOSElement.java:1)
-	at org.openqa.selenium.remote.RemoteWebElement.isSelected(RemoteWebElement.java:146)
-	at com.adactin.Mobileapphoteladactin1.pages.Home.doReset(Home.java:173)
-	at com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_reset_the_search_criteria.User_is_able_to_reset_the_search_criteria(User_is_able_to_reset_the_search_criteria.java:30)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:489)
+	at com.adactin.Mobileapphoteladactin1.base.BaseClass.iOSScrollToElement(BaseClass.java:163)
+	at com.adactin.Mobileapphoteladactin1.pages.Home.searchHotel_Hotel_location(Home.java:226)
+	at com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_search_hotel_with_location_and_hotelname.User_is_able_to_search_hotel_with_location_and_hotelname(User_is_able_to_search_hotel_with_location_and_hotelname.java:39)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -196,8 +184,8 @@ Session ID: c71ae3ee-51bf-4f60-a2db-4f6f854801e4
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>268</td>
-<td>com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_reset_the_search_criteria@20435c40</td></tr>
+<td>275</td>
+<td>com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_search_hotel_with_location_and_hotelname@573906eb</td></tr>
 </table><p>
 </body>
 </html>

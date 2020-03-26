@@ -21,7 +21,10 @@ public class Booked_Itinerary extends BaseClass{
 	public Booked_Itinerary() throws Exception {
 		PageFactory.initElements(driver, this);
 	}
-	
+
+	/**
+	 * Method to view the Booked hotel details
+	 */
 	public void viewBookedHotelDetails(String i) throws Exception
 	{
 
@@ -35,7 +38,12 @@ public class Booked_Itinerary extends BaseClass{
 		Thread.sleep(1000);
 	
 	}
-	
+	/**
+	 * Method to read which entry of the booked itinerary
+	 * @param rno
+	 * @return
+	 * @throws Exception
+	 */
 	public String readWhichEntry(int rno) throws Exception
 	{
 		String booked_itinerary_id;
@@ -43,6 +51,11 @@ public class Booked_Itinerary extends BaseClass{
 		
 	}
 	
+	/**
+	 * Method to check if the booked hotel is canceled or not
+	 * @param i
+	 * @return
+	 */
 	public boolean checkIfCanceled(String i)
 	{
 		MobileElement booked_hotel_details=(MobileElement)driver.findElement(By.xpath("(//XCUIElementTypeOther[@name=\"hotel_list_item\"])["+i+"]"));

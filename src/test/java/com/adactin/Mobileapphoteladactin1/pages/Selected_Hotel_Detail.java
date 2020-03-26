@@ -16,15 +16,26 @@ public class Selected_Hotel_Detail extends BaseClass{
 	}
 	int count=0;
 	int mod_count=0;
+	
+	/**
+	 * Method to click on the select button
+	 */
 	public void click_on_select()
 	{
 		String xpath="//XCUIElementTypeApplication[@name=\"Adactin Hotel App\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[3]/XCUIElementTypeOther[2]/XCUIElementTypeOther[1]\n" + 
 				"";
-		iOSScrollToElement(xpath);
+		iOSScrollDown(xpath);
 		MobileElement select_click=(MobileElement)driver.findElement(By.name("Select"));
 		select_click.click();
 	}
 	
+	/**
+	 * Method to check if the correct details are entered for each roomtype
+	 * @param i row number
+	 * @param roomtype
+	 * @return
+	 * @throws Exception
+	 */
 	public int check_If_correct_details_roomtype(int i,String roomtype) throws Exception
 	{
 		
@@ -51,7 +62,7 @@ public class Selected_Hotel_Detail extends BaseClass{
 			++count;
 		Log.info("Checking count"+count);
 			}
-		iOSScrollToElement(xpath);
+		iOSScrollDown(xpath);
 		//iOSScrollToElement(xpath);
 		MobileElement rooms_type=(MobileElement)driver.findElement(By.xpath("//XCUIElementTypeOther[@name=\"hotel_room_type\"]\n" + 
 				"/following-sibling::XCUIElementTypeOther"));
@@ -67,6 +78,14 @@ public class Selected_Hotel_Detail extends BaseClass{
 		return count;
 		
 	}
+	
+	/**
+	 * Method to check if correct details are entered for each hotel type
+	 * @param i Row number
+	 * @param expected_hotel Hotel name
+	 * @return
+	 * @throws Exception
+	 */
 	public int check_If_correct_details_hotel(int i,String expected_hotel) throws Exception
 	{
 		
@@ -93,7 +112,7 @@ public class Selected_Hotel_Detail extends BaseClass{
 			++count;
 		Log.info("Checking count"+count);
 			}
-		iOSScrollToElement(xpath);
+		iOSScrollDown(xpath);
 		//iOSScrollToElement(xpath);
 		MobileElement rooms_type=(MobileElement)driver.findElement(By.xpath("//XCUIElementTypeOther[@name=\"hotel_room_type\"]\n" + 
 				"/following-sibling::XCUIElementTypeOther"));
@@ -109,11 +128,22 @@ public class Selected_Hotel_Detail extends BaseClass{
 		return count;
 		
 	}
+	
+	/**
+	 * Method to go back to the previous page
+	 */
 	public void goback()
 	{
 		MobileElement back_btn=(MobileElement)driver.findElement(By.name("Back"));
 		back_btn.click();
 	}
+	
+	/**
+	 * Method to fetch each room type from the test data file
+	 * @param i
+	 * @return
+	 * @throws Exception
+	 */
 	public String[] getRoomTypes(int i) throws Exception
 	{
 		String[] expected_roomtype;
@@ -122,6 +152,12 @@ public class Selected_Hotel_Detail extends BaseClass{
 		
 	}
 	
+	/**
+	 * Method to fetch each hotel name from the test data file
+	 * @param i
+	 * @return
+	 * @throws Exception
+	 */
 	public String[] getHotelNames(int i) throws Exception
 	{
 		String[] expected_hotelnames;

@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_reset_the_search_criteria">
+      <class name="com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_search_hotel_with_location_and_hotelname">
         <methods>
-          <include name="User_is_able_to_reset_the_search_criteria"/>
+          <include name="User_is_able_to_search_hotel_with_location_and_hotelname"/>
         </methods>
-      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_reset_the_search_criteria -->
+      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_search_hotel_with_location_and_hotelname -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

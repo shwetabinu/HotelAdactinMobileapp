@@ -17,15 +17,18 @@ public class Book_Hotel extends BaseClass{
 		PageFactory.initElements(driver, this);
 	}
 	
+/**
+ * Method to enter the booking details to the Book Hotel page
+ * Clicks on Book now after all the fields are entered
+ * @param i row number
+ * @throws Exception
+ */
 	public void enterBookingDetails(int i) throws Exception
 	{
-		//String xpath_scrollable="//XCUIElementTypeApplication[@name=\"Adactin Hotel App\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[3]/XCUIElementTypeOther[2]/XCUIElementTypeOther[1]"; 
-				//identify the xpath of the entire page
-		
 
-String xpath_scrollable="//XCUIElementTypeApplication[@name=\"Adactin Hotel App\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[3]/XCUIElementTypeOther[2]/XCUIElementTypeOther[1]";
+		String xpath_scrollable="//XCUIElementTypeApplication[@name=\"Adactin Hotel App\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[3]/XCUIElementTypeOther[2]/XCUIElementTypeOther[1]";
 		
-		String xpath_month="//XCUIElementTypeApplication[@name=\"Adactin Hotel App\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[3]";
+		//String xpath_month="//XCUIElementTypeApplication[@name=\"Adactin Hotel App\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[3]";
 		//String xpath_year="//XCUIElementTypeApplication[@name=\"Adactin Hotel App”]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[4]";
 		String xpath_year="//XCUIElementTypeApplication[@name=\"Adactin Hotel App\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[4]\n" + "";
 		String fname=ExcelUtil.getCellData(i,15);
@@ -36,8 +39,8 @@ String xpath_scrollable="//XCUIElementTypeApplication[@name=\"Adactin Hotel App\
 		//String ccexpiry=ExcelUtil.getCellData(i,20);
 		String cvvnumber=ExcelUtil.getCellData(i,21);
 		
-		iOSScrollToElement(xpath_scrollable);
-		iOSScrollToElement(xpath_scrollable);
+		iOSScrollDown(xpath_scrollable);
+		iOSScrollDown(xpath_scrollable);
 		
 		MobileElement firstName=(MobileElement)driver.findElement(By.name("Enter First Name"));
 		firstName.click();
@@ -52,34 +55,28 @@ String xpath_scrollable="//XCUIElementTypeApplication[@name=\"Adactin Hotel App\
 		billingAddress.click();
 		billingAddress.sendKeys(billaddress);
 		
-		//((IOSDriver) driver).hideKeyboard(HideKeyboardStrategy.TAP_OUTSIDE);
-		//Thread.sleep(5000);
-		//driver.hideKeyboard();
-		iOSScrollToElement(xpath_scrollable);
-	    //billingAddress.sendKeys(Keys.ESCAPE);
+		
+		iOSScrollDown(xpath_scrollable);
 		
 		MobileElement CCNumber=(MobileElement)driver.findElement(By.name("Enter Card Number"));
 		CCNumber.click();
 		CCNumber.sendKeys(ccnumber);
-	//	CCNumber.sendKeys(Keys.RETURN);
+
 		
 		//iOSScrollToElement(xpath_scrollable);
 		
 		MobileElement CCType=(MobileElement)driver.findElement(By.name("Select Credit Card Type"));
-		//MobileElement CCType=(MobileElement)driver.findElementsByAccessibilityId("Select Credit Card Type");
 		
 		CCType.click();
 		MobileElement ccard_type_option=(MobileElement) driver.findElement(By.name(cctype));
 		Log.info(ccard_type_option.getText());
 		ccard_type_option.click();
 		
-		//CCType.sendKeys(cctype);
-		//CCType.sendKeys(Keys.RETURN);
 		
 		MobileElement CCExpiry=(MobileElement)driver.findElement(By.name("Select Expiry Month & Year"));
 		CCExpiry.click();
-		iOSScrollToElement(xpath_year);
-		iOSScrollToElement(xpath_year);
+		iOSScrollDown(xpath_year);
+		iOSScrollDown(xpath_year);
 		MobileElement done_button=(MobileElement)driver.findElement(By.name("Done"));
 		done_button.click();
 		
@@ -90,22 +87,7 @@ String xpath_scrollable="//XCUIElementTypeApplication[@name=\"Adactin Hotel App\
 		
 		MobileElement bookNow=(MobileElement)driver.findElement(By.name("Book Now"));
 		bookNow.click();
-		
-		
-		
-		
-		
-		
-		
-		
-		//identify how to scroll down to a particular date in this expiry field value
-		
-		
-		
-		
-		
-		
-		
+
 		
 	}
 

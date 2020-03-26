@@ -12,7 +12,9 @@ public class Booking_Confirmation extends BaseClass{
 	public Booking_Confirmation() throws Exception {
 		PageFactory.initElements(driver, this);
 	}
-	
+/**
+ * Method to confirm the booking by clicking on the Done button
+ */
 	public void confirm_Booking()
 	{
 		//String xpath="//XCUIElementTypeApplication[@name=\"Adactin Hotel App\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[3]/XCUIElementTypeOther[2]/XCUIElementTypeOther[1]\n" + 
@@ -23,13 +25,17 @@ public class Booking_Confirmation extends BaseClass{
 		done_button.click();
 		
 	}
-	
+
+/**
+ * Method to fetch the order id from the order id mobile element
+ * @return
+ */
 	public String getOrderId()
 	{
 		String xpath="//XCUIElementTypeApplication[@name=\"Adactin Hotel App\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[3]/XCUIElementTypeOther[2]/XCUIElementTypeOther[1]\n" + 
 				"";
-		iOSScrollToElement(xpath);
-		iOSScrollToElement(xpath);
+		iOSScrollDown(xpath);
+		iOSScrollDown(xpath);
 		MobileElement ordid=(MobileElement)driver.findElement(By.xpath("//XCUIElementTypeOther[@name=\"order_no\"]/following-sibling::XCUIElementTypeOther"));
 		return ordid.getText();
 	}

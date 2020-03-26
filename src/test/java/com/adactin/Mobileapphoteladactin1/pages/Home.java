@@ -31,7 +31,11 @@ public class Home extends BaseClass {
 		PageFactory.initElements(driver, this);
 
 	}
-
+/**
+ * Method to check the welcome message of a user
+ * @param rno
+ * @throws Exception
+ */
 	public void checkWelcomeMessage(int rno) throws Exception
 	{
 		MobileElement welcomemsg;
@@ -44,6 +48,10 @@ public class Home extends BaseClass {
 		Assert.assertEquals(welcomemsg.getText(),expectedmsg);
 	}
 
+/**
+ * Method to check the location drop down for the entries
+ * @param i
+ */
 	public void checkLocationdropdown(int i)
 	{
 		String[] expectedlocation=null;
@@ -66,6 +74,12 @@ public class Home extends BaseClass {
 
 	}
 
+	/**
+	 * Method to search for hotel with all the input fields entered
+	 * 
+	 * @param i
+	 * @throws Exception
+	 */
 	public void searchHotel(int i) throws Exception
 	{
 		String expected_location = null,expected_hotel=null,expected_roomtype=null,expected_nofrooms=null,expected_checkin=null;
@@ -86,10 +100,6 @@ public class Home extends BaseClass {
 			e.printStackTrace();
 		}
 
-		/*Select hotel_location=new Select((MobileElement) driver.findElementsByAccessibilityId("Select Location"));
-		hotel_location.selectByValue(expected_location);
-		Select actual_hotel=new Select((MobileElement) driver.findElementsByAccessibilityId("Select Hotel"));
-		actual_hotel.selectByValue(expected_hotel);*/
 
 		String xpathtoscrollto="//XCUIElementTypeApplication[@name=\"Adactin Hotel App\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[3]/XCUIElementTypeOther[1]";
 		String xpath1_of_date_picker1="//XCUIElementTypeApplication[@name=\"Adactin Hotel App\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[3]\n" + 
@@ -108,11 +118,8 @@ public class Home extends BaseClass {
 		MobileElement selected_hotel=(MobileElement) driver.findElement(By.name(expected_hotel));
 		selected_hotel.click();
 
-		//searchHotel_Hotel_location(i);
-
-		// (driver).scrollTo("Room Type");
 		MobileElement roomtypedropdown=(MobileElement) driver.findElement(By.name("Select Room Type"));
-		iOSScrollToElement(xpathtoscrollto);
+		iOSScrollDown(xpathtoscrollto);
 		roomtypedropdown.click();
 		MobileElement selected_roomtype=(MobileElement) driver.findElement(By.name(expected_roomtype));
 		selected_roomtype.click();
@@ -124,21 +131,7 @@ public class Home extends BaseClass {
 		MobileElement selected_noofrooms=(MobileElement) driver.findElement(By.name(expected_nofrooms));
 		selected_noofrooms.click();
 
-		//MobileElement checkindatedropdown=(MobileElement) driver.findElement(By.name("Select Check-in Date"));
-		//iOSScrollToElement();
-		//checkindatedropdown.click();
-		//MobileElement selected_checkindate=(MobileElement) driver.findElement(By.name(expected_checkin));
-		//datePicker(expected_checkin,xpath1_of_date_picker1,xpath2_of_date_picker1,xpath3_of_date_picker1);
-		//iOSScrollToElement();
-		//selected_checkindate.click();
-
-		//MobileElement checkoutdatedropdown=(MobileElement) driver.findElement(By.name("Select Check-out Date"));
-		//iOSScrollToElement();
-		//checkoutdatedropdown.click();
-		//datePicker(expected_checkout,xpath1_of_date_picker2,xpath3_of_date_picker1);
-		//MobileElement selected_checkoutdate=(MobileElement) driver.findElement(By.name(expected_checkout));
-		//selected_checkoutdate.click();
-		iOSScrollToElement(xpathtoscrollto);
+		iOSScrollDown(xpathtoscrollto);
 		MobileElement adultsperroomdropdown=(MobileElement) driver.findElement(By.name("Select Adults per Room"));
 		adultsperroomdropdown.click();
 		MobileElement selected_adultsperroom=(MobileElement) driver.findElement(By.name(expected_adultsperroom));
@@ -153,11 +146,18 @@ public class Home extends BaseClass {
 
 	}
 	
+	/**
+	 * Method to click on Search button
+	 */
 	public void clickOnSearch()
 	{
 		MobileElement search=(MobileElement) driver.findElement(By.name("Search"));
 		search.click();
 	}
+	
+	/**
+	 * Method to perform reset of the fields entered
+	 */
 	public void doReset()
 	{
 		int count=0;
@@ -166,24 +166,23 @@ public class Home extends BaseClass {
 		String xpathtoscrollto="//XCUIElementTypeApplication[@name=\"Adactin Hotel App\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[3]/XCUIElementTypeOther[1]";
 		
 		iOSScrollUp(xpathtoscrollto);
-	//	iOSScrollUp(xpathtoscrollto);
-		
-		
+
 		MobileElement locationdropdown=(MobileElement) driver.findElement(By.name("Select Location"));
-		if(locationdropdown.isSelected())
+
+		if(locationdropdown.getText().equalsIgnoreCase("Select Location"))
 			count++;
 
 		MobileElement hoteldropdown=(MobileElement) driver.findElement(By.name("Select Hotel"));
-		if(hoteldropdown.isSelected())
+		if(hoteldropdown.getText().equalsIgnoreCase("Select Hotel"))
 			count++;
 		
 		MobileElement roomtypedropdown=(MobileElement) driver.findElement(By.name("Select Room Type"));
-		if(roomtypedropdown.isSelected())
+		if(roomtypedropdown.getText().equalsIgnoreCase("Select Room Type"))
 			count++;
-		iOSScrollToElement(xpathtoscrollto);
+		iOSScrollDown(xpathtoscrollto);
 	
 		MobileElement childrenperroomdropdown=(MobileElement) driver.findElement(By.name("Select Children per Room"));
-		if(childrenperroomdropdown.isSelected())
+		if(childrenperroomdropdown.getText().equalsIgnoreCase("Select Children per Room"))
 			count++;
 		
 		Assert.assertEquals(count,4);
@@ -192,7 +191,11 @@ public class Home extends BaseClass {
 	}
 	
 	
-	
+	/**
+	 * Method to search for hotel with hotel and location provided
+	 * @param i
+	 * @throws Exception
+	 */
 	public void searchHotel_Hotel_location(int i) throws Exception
 	{
 		String xpathtoscrollto="//XCUIElementTypeApplication[@name=\"Adactin Hotel App\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[3]/XCUIElementTypeOther[1]";
@@ -209,14 +212,21 @@ public class Home extends BaseClass {
 		hoteldropdown.click();
 		MobileElement selected_hotel=(MobileElement) driver.findElement(By.name(expected_hotel));
 		selected_hotel.click();
-		iOSScrollToElement(xpathtoscrollto);
-		iOSScrollToElement(xpathtoscrollto);
+		iOSScrollDown(xpathtoscrollto);
+		iOSScrollDown(xpathtoscrollto);
+	
+			
 		MobileElement search=(MobileElement) driver.findElement(By.name("Search"));
 		search.click();
 		
 		
 	}
 	
+	/**
+	 * Method to search for hotel with only location field enteed
+	 * @param i
+	 * @throws Exception
+	 */
 	public void searchHotel_Location_only(int i) throws Exception
 	{
 		String xpathtoscrollto="//XCUIElementTypeApplication[@name=\"Adactin Hotel App\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[3]/XCUIElementTypeOther[1]";
@@ -227,8 +237,8 @@ public class Home extends BaseClass {
 		locationdropdown.click();
 		MobileElement selected_location=(MobileElement) driver.findElement(By.name(expected_location));
 		selected_location.click();
-		iOSScrollToElement(xpathtoscrollto);
-		iOSScrollToElement(xpathtoscrollto);
+		iOSScrollDown(xpathtoscrollto);
+		iOSScrollDown(xpathtoscrollto);
 		MobileElement search=(MobileElement) driver.findElement(By.name("Search"));
 		search.click();
 		
