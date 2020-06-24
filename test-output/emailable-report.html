@@ -9,18 +9,17 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">15,999</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">18,568</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_book_a_hotel</td><td><a href="#m0">User_is_able_to_book_a_hotel</a></td><td rowspan="1">1592975968649</td><td rowspan="1">15505</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_book_a_hotel</td><td><a href="#m0">User_is_able_to_book_a_hotel</a></td><td rowspan="1">1592981466240</td><td rowspan="1">18007</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_book_a_hotel#User_is_able_to_book_a_hotel</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.InvalidSelectorException: Locator Strategy &apos;name&apos; is not supported for this session
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/invalid_selector_exception.html
+<h2>Default test</h2><h3 id="m0">com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_book_a_hotel#User_is_able_to_book_a_hotel</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.StaleElementReferenceException: Cached elements &apos;By.xpath: //android.view.View[2]/android.view.View[1]/android.view.View&apos; do not exist in DOM anymore
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Aswins-Air&apos;, ip: &apos;fe80:0:0:0:1010:d53a:86c4:d2ce%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.15.3&apos;, java.version: &apos;1.8.0_252&apos;
+System info: host: &apos;Aswins-MacBook-Air.local&apos;, ip: &apos;fe80:0:0:0:8c1:cbfb:7755:9e5%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.15.3&apos;, java.version: &apos;1.8.0_252&apos;
 Driver info: io.appium.java_client.AppiumDriver
 Capabilities {appActivity: com.adactin.education.hotel..., appPackage: com.adactin.education.hotel..., automationName: UiAutomator2, databaseEnabled: false, desired: {appActivity: com.adactin.education.hotel..., appPackage: com.adactin.education.hotel..., automationName: UiAutomator2, deviceName: OnePlus 6, platformName: android, platformVersion: 10}, deviceApiLevel: 29, deviceManufacturer: OnePlus, deviceModel: ONEPLUS A6000, deviceName: d43f5b56, deviceScreenDensity: 420, deviceScreenSize: 1080x2280, deviceUDID: d43f5b56, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, pixelRatio: 2.625, platform: LINUX, platformName: Android, platformVersion: 10, statBarHeight: 80, takesScreenshot: true, viewportRect: {height: 1995, left: 0, top: 80, width: 1080}, warnings: {}, webStorageEnabled: false}
-Session ID: 2c825677-963b-4f72-8bd0-b2161c8633c7
-*** Element info: {Using=name, value=Select Location}
+Session ID: 9b563155-6a40-437e-9066-3b9682849496
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -33,17 +32,12 @@ Session ID: 2c825677-963b-4f72-8bd0-b2161c8633c7
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
 	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
 	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:61)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByName(RemoteWebDriver.java:404)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElementByName(DefaultGenericMobileDriver.java:117)
-	at io.appium.java_client.AppiumDriver.findElementByName(AppiumDriver.java:1)
-	at org.openqa.selenium.By$ByName.findElement(By.java:284)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at com.adactin.Mobileapphoteladactin1.pages.Home.searchHotel(Home.java:111)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at io.appium.java_client.DefaultGenericMobileElement.execute(DefaultGenericMobileElement.java:45)
+	at io.appium.java_client.MobileElement.execute(MobileElement.java:1)
+	at io.appium.java_client.android.AndroidElement.execute(AndroidElement.java:1)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at com.adactin.Mobileapphoteladactin1.pages.Home.searchHotel(Home.java:120)
 	at com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_book_a_hotel.User_is_able_to_book_a_hotel(User_is_able_to_book_a_hotel.java:54)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)

@@ -2,35 +2,33 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="15999" started-at="2020-06-24T15:19:28 AEST" finished-at="2020-06-24T15:19:44 AEST">
+  <suite name="Default suite" duration-ms="18568" started-at="2020-06-24T16:51:06 AEST" finished-at="2020-06-24T16:51:24 AEST">
     <groups>
       <group name="functionalTest">
         <method signature="User_is_able_to_book_a_hotel.User_is_able_to_book_a_hotel()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_book_a_hotel@5ace1ed4]" name="User_is_able_to_book_a_hotel" class="com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_book_a_hotel"/>
       </group> <!-- functionalTest -->
     </groups>
-    <test name="Default test" duration-ms="15999" started-at="2020-06-24T15:19:28 AEST" finished-at="2020-06-24T15:19:44 AEST">
+    <test name="Default test" duration-ms="18568" started-at="2020-06-24T16:51:06 AEST" finished-at="2020-06-24T16:51:24 AEST">
       <class name="com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_book_a_hotel">
-        <test-method status="FAIL" signature="User_is_able_to_book_a_hotel()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_book_a_hotel@5ace1ed4]" name="User_is_able_to_book_a_hotel" duration-ms="15505" started-at="2020-06-24T15:19:28 AEST" finished-at="2020-06-24T15:19:44 AEST">
-          <exception class="org.openqa.selenium.InvalidSelectorException">
+        <test-method status="FAIL" signature="User_is_able_to_book_a_hotel()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_book_a_hotel@5ace1ed4]" name="User_is_able_to_book_a_hotel" duration-ms="18007" started-at="2020-06-24T16:51:06 AEST" finished-at="2020-06-24T16:51:24 AEST">
+          <exception class="org.openqa.selenium.StaleElementReferenceException">
             <message>
-              <![CDATA[Locator Strategy 'name' is not supported for this session
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/invalid_selector_exception.html
+              <![CDATA[Cached elements 'By.xpath: //android.view.View[2]/android.view.View[1]/android.view.View' do not exist in DOM anymore
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Aswins-Air', ip: 'fe80:0:0:0:1010:d53a:86c4:d2ce%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.3', java.version: '1.8.0_252'
+System info: host: 'Aswins-MacBook-Air.local', ip: 'fe80:0:0:0:8c1:cbfb:7755:9e5%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.3', java.version: '1.8.0_252'
 Driver info: io.appium.java_client.AppiumDriver
 Capabilities {appActivity: com.adactin.education.hotel..., appPackage: com.adactin.education.hotel..., automationName: UiAutomator2, databaseEnabled: false, desired: {appActivity: com.adactin.education.hotel..., appPackage: com.adactin.education.hotel..., automationName: UiAutomator2, deviceName: OnePlus 6, platformName: android, platformVersion: 10}, deviceApiLevel: 29, deviceManufacturer: OnePlus, deviceModel: ONEPLUS A6000, deviceName: d43f5b56, deviceScreenDensity: 420, deviceScreenSize: 1080x2280, deviceUDID: d43f5b56, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, pixelRatio: 2.625, platform: LINUX, platformName: Android, platformVersion: 10, statBarHeight: 80, takesScreenshot: true, viewportRect: {height: 1995, left: 0, top: 80, width: 1080}, warnings: {}, webStorageEnabled: false}
-Session ID: 2c825677-963b-4f72-8bd0-b2161c8633c7
-*** Element info: {Using=name, value=Select Location}]]>
+Session ID: 9b563155-6a40-437e-9066-3b9682849496]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.InvalidSelectorException: Locator Strategy 'name' is not supported for this session
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/invalid_selector_exception.html
+              <![CDATA[org.openqa.selenium.StaleElementReferenceException: Cached elements 'By.xpath: //android.view.View[2]/android.view.View[1]/android.view.View' do not exist in DOM anymore
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Aswins-Air', ip: 'fe80:0:0:0:1010:d53a:86c4:d2ce%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.3', java.version: '1.8.0_252'
+System info: host: 'Aswins-MacBook-Air.local', ip: 'fe80:0:0:0:8c1:cbfb:7755:9e5%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.3', java.version: '1.8.0_252'
 Driver info: io.appium.java_client.AppiumDriver
 Capabilities {appActivity: com.adactin.education.hotel..., appPackage: com.adactin.education.hotel..., automationName: UiAutomator2, databaseEnabled: false, desired: {appActivity: com.adactin.education.hotel..., appPackage: com.adactin.education.hotel..., automationName: UiAutomator2, deviceName: OnePlus 6, platformName: android, platformVersion: 10}, deviceApiLevel: 29, deviceManufacturer: OnePlus, deviceModel: ONEPLUS A6000, deviceName: d43f5b56, deviceScreenDensity: 420, deviceScreenSize: 1080x2280, deviceUDID: d43f5b56, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, pixelRatio: 2.625, platform: LINUX, platformName: Android, platformVersion: 10, statBarHeight: 80, takesScreenshot: true, viewportRect: {height: 1995, left: 0, top: 80, width: 1080}, warnings: {}, webStorageEnabled: false}
-Session ID: 2c825677-963b-4f72-8bd0-b2161c8633c7
-*** Element info: {Using=name, value=Select Location}
+Session ID: 9b563155-6a40-437e-9066-3b9682849496
 at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -43,17 +41,12 @@ at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecu
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
 at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
 at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:61)
-at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByName(RemoteWebDriver.java:404)
-at io.appium.java_client.DefaultGenericMobileDriver.findElementByName(DefaultGenericMobileDriver.java:117)
-at io.appium.java_client.AppiumDriver.findElementByName(AppiumDriver.java:1)
-at org.openqa.selenium.By$ByName.findElement(By.java:284)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
-at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-at com.adactin.Mobileapphoteladactin1.pages.Home.searchHotel(Home.java:111)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+at io.appium.java_client.DefaultGenericMobileElement.execute(DefaultGenericMobileElement.java:45)
+at io.appium.java_client.MobileElement.execute(MobileElement.java:1)
+at io.appium.java_client.android.AndroidElement.execute(AndroidElement.java:1)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+at com.adactin.Mobileapphoteladactin1.pages.Home.searchHotel(Home.java:120)
 at com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_book_a_hotel.User_is_able_to_book_a_hotel(User_is_able_to_book_a_hotel.java:54)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -85,11 +78,11 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.InvalidSelectorException -->
+          </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- User_is_able_to_book_a_hotel -->
-        <test-method status="PASS" signature="closeSession()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_book_a_hotel@5ace1ed4]" name="closeSession" is-config="true" duration-ms="393" started-at="2020-06-24T15:19:44 AEST" finished-at="2020-06-24T15:19:44 AEST">
+        <test-method status="PASS" signature="closeSession()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.User_is_able_to_book_a_hotel@5ace1ed4]" name="closeSession" is-config="true" duration-ms="505" started-at="2020-06-24T16:51:24 AEST" finished-at="2020-06-24T16:51:24 AEST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeSession -->
