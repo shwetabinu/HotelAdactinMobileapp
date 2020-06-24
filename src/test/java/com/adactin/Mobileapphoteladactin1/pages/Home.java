@@ -108,24 +108,46 @@ public class Home extends BaseClass {
 				"";
 		String xpath3_of_date_picker1="//XCUIElementTypeApplication[@name=\"Adactin Hotel App\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[5]\n" + 
 				"";
-		MobileElement locationdropdown=(MobileElement) driver.findElement(By.name("Select Location"));
+		MobileElement locationdropdown=(MobileElement) driver.findElement(By.xpath("//android.view.View[4]/android.widget.EditText"));
 		locationdropdown.click();
-		MobileElement selected_location=(MobileElement) driver.findElement(By.name(expected_location));
-		selected_location.click();
-
-		MobileElement hoteldropdown=(MobileElement) driver.findElement(By.name("Select Hotel"));
+		List<MobileElement> selected_location=(List<MobileElement>) driver.findElements(By.xpath("//android.view.View[2]/android.view.View[1]/android.view.View"));
+		for(int j=0;j<selected_location.size();j++)
+			{
+			System.out.println(selected_location.get(j).getText());
+			if(selected_location.get(j).getText().contains(expected_location))
+				{
+				selected_location.get(j).click();
+				selected_location.get(j).click();
+				Thread.sleep(1000);
+				}
+			}
+		/*MobileElement hoteldropdown=(MobileElement) driver.findElement(By.xpath("//android.view.View[6]/android.widget.EditText"));
+		//selected_location.click();
 		hoteldropdown.click();
-		MobileElement selected_hotel=(MobileElement) driver.findElement(By.name(expected_hotel));
-		selected_hotel.click();
+		List<MobileElement> selected_hotel=(List<MobileElement>) driver.findElements(By.xpath("//android.view.View[2]/android.view.View/android.view.View/android.view.View"));
+		for(int j=0;j<selected_location.size();j++)
+		{
+		if(selected_hotel.get(j).toString().equalsIgnoreCase(expected_location))
+			{
+			selected_hotel.get(j).click();
+			break;
+			}
+		}
 
-		MobileElement roomtypedropdown=(MobileElement) driver.findElement(By.name("Select Room Type"));
+		MobileElement roomtypedropdown=(MobileElement) driver.findElement(By.xpath("//android.view.View[8]/android.widget.EditText"));
 		iOSScrollDown(xpathtoscrollto);
 		roomtypedropdown.click();
-		MobileElement selected_roomtype=(MobileElement) driver.findElement(By.name(expected_roomtype));
-		selected_roomtype.click();
+		List<MobileElement> selected_roomtype=(List<MobileElement>) driver.findElements(By.xpath("//android.view.View[2]/android.view.View/android.view.View/android.view.View"));
+		for(int j=0;j<selected_location.size();j++)
+		{
+		if(selected_hotel.get(j).toString().equalsIgnoreCase(expected_location))
+			{
+			selected_hotel.get(j).click();break;
+			}
+		}
 
 
-		MobileElement noofroomsdropdown=(MobileElement) driver.findElement(By.name("Select Number of Rooms"));
+		/*MobileElement noofroomsdropdown=(MobileElement) driver.findElement(By.name("Select Number of Rooms"));
 		//iOSScrollToElement();
 		noofroomsdropdown.click();
 		MobileElement selected_noofrooms=(MobileElement) driver.findElement(By.name(expected_nofrooms));
@@ -141,7 +163,7 @@ public class Home extends BaseClass {
 		childrenperroomdropdown.click();
 		MobileElement selected_childrenperroomm=(MobileElement) driver.findElement(By.name(expected_childrenperroom));
 		selected_childrenperroomm.click();
-		//clickOnSearch();
+		//clickOnSearch();*/
 		
 
 	}

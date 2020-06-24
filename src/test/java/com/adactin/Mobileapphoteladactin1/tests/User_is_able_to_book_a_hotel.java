@@ -52,7 +52,7 @@ public class User_is_able_to_book_a_hotel extends BaseClass{
 		lp.Logging_in(rno);
 		hp=new Home();
 		hp.searchHotel(rno);
-		hp.clickOnSearch();
+		/*hp.clickOnSearch();
 		sp=new Select_Hotel();
 		sp.select_hotel(1);
 		shd=new Selected_Hotel_Detail();
@@ -70,7 +70,7 @@ public class User_is_able_to_book_a_hotel extends BaseClass{
 		int count=bhd.checkBookedHotelDetails(rno, ordid);
 		Assert.assertEquals(count,6);
 		Log.endTestCase("User_is_able_to_book_a_hotel");
-		
+		*/
 		
 	}
 	
