@@ -1,17 +1,23 @@
 package com.adactin.Mobileapphoteladactin1.pages;
 
 import java.io.IOException;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.FindBy;
+
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
 
 import com.adactin.Mobileapphoteladactin1.base.BaseClass;
 import com.adactin.Mobileapphoteladactin1.util.ExcelUtil;
@@ -27,8 +33,14 @@ import io.appium.java_client.remote.HideKeyboardStrategy;
  * 
  *
  */
+
+
 public class Login extends BaseClass{
 
+	
+	
+	
+	
 	
 	public Login() throws Exception
 	{		
@@ -60,15 +72,32 @@ public class Login extends BaseClass{
 		String username=ExcelUtil.getCellData(i,5);
 		String password=ExcelUtil.getCellData(i,6);
 
-		MobileElement userid= (MobileElement) driver.findElement(By.name("Username"));
-		MobileElement passw= (MobileElement) driver.findElement(By.name("Password"));
-		MobileElement submit= (MobileElement) driver.findElement(By.name("Login"));
-
+		//MobileElement userid= (MobileElement) driver.findElement(By.name("Username"));
+		
+		MobileElement userid=(MobileElement) driver.findElement(By.xpath("//android.view.View[2]/android.widget.EditText"));
+		//MobileElement passw= (MobileElement) driver.findElement(By.name("Password"));
+		
+		MobileElement passw=(MobileElement) driver.findElement(By.xpath("//android.view.View[3]/android.widget.EditText"));
+		//MobileElement submit= (MobileElement) driver.findElement(By.name("Login"));
+		MobileElement submit=(MobileElement) driver.findElement(By.xpath("//android.view.View[4]/android.widget.Button"));
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		
+		userid.clear();
 		userid.click();
-		userid.sendKeys(username);
+		//if(userid.isEnabled())
+			//userid.
+		WebDriverWait wait=new WebDriverWait(driver,20);
+		wait.until(ExpectedConditions.elementToBeClickable(userid));
+		Set<String> contextNames = driver.getContextHandles();
+		System.out.println(contextNames);
+		//driver.getKeyboard().
+		driver.getKeyboard().sendKeys(username);	
+		//userid.sendKeys("Sending");
+			//userid.sendKeys(username);
 		passw.click();
-		passw.sendKeys(password);
-		passw.sendKeys(Keys.RETURN);
+		driver.getKeyboard().sendKeys(password);	
+		//passw.sendKeys(password);
+		//passw.sendKeys(Keys.RETURN);
 		submit.click();
 	
 			

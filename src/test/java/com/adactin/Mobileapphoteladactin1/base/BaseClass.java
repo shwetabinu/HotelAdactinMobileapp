@@ -52,9 +52,9 @@ public class BaseClass {
 		caps.setCapability("deviceName",deviceName);
 		caps.setCapability("platformVersion", platformVersion);
 		caps.setCapability("automationName", "UiAutomator2");
-		caps.setCapability("appPackage", "com.adactin.hotelapp");
-		caps.setCapability("appActivity", "com.adactin.hotelapp.MainActivity");
-		
+		caps.setCapability("appPackage", "com.adactin.education.hotelbooking");
+		caps.setCapability("appActivity", "com.adactin.education.hotelbooking.MainActivity");
+		//caps.setCapability(capabilityName, value);
 
 		
 		URL url=new URL("http://127.0.0.1:4723/wd/hub");
@@ -130,11 +130,11 @@ public class BaseClass {
 		platformVersion=p.getProperty("platformVersion");
 		dev=p.getProperty("environment");*/
 		//ExcelUtil.setExcelFileSheet("TestCases");
-		dev=ExcelUtil.getCellData(1,1);
+		dev=ExcelUtil.getCellData(i,1);
 		Log.info(dev);
-		platformName=ExcelUtil.getCellData(1,2);
-		deviceName=ExcelUtil.getCellData(1,3);
-		platformVersion=ExcelUtil.getCellData(1,4);
+		platformName=ExcelUtil.getCellData(i,2);
+		deviceName=ExcelUtil.getCellData(i,3);
+		platformVersion=ExcelUtil.getCellData(i,4);
 		
 		
 		if(dev.equalsIgnoreCase("android_device"))
