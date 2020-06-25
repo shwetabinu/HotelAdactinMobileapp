@@ -42,7 +42,7 @@ public class User_is_able_to_cancel_a_hotel_booking extends BaseClass {
 		bi=new Booked_Itinerary();
 		String bhd_id;
 		bhd_id=bi.readWhichEntry(rno);
-		bi.viewBookedHotelDetails(bhd_id);
+		bi.viewBookedHotelDetails();
 		bhd=new Booked_Hotel_Details();
 		bhd.cancelBooked_itinerary();
 		bi1=new Booked_Itinerary();

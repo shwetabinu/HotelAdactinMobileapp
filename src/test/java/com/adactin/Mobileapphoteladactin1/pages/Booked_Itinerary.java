@@ -25,19 +25,22 @@ public class Booked_Itinerary extends BaseClass{
 	/**
 	 * Method to view the Booked hotel details
 	 */
-	public void viewBookedHotelDetails(String i) throws Exception
+	public void viewBookedHotelDetails() throws Exception
 	{
 
-		MobileElement booked_itinerary_btn = (MobileElement)driver.findElement(By.name("Booked Itinerary"));
+		MobileElement booked_itinerary_btn = (MobileElement)driver.findElement(By.xpath("//android.view.View[2][@text='Booked Itinerary']"));
 		booked_itinerary_btn.click();
 		
 				
-		MobileElement booked_hotel_details=(MobileElement)driver.findElement(By.xpath("(//XCUIElementTypeOther[@name=\"hotel_list_item\"])["+i+"]"));
+		MobileElement booked_hotel_details=(MobileElement)driver.findElement(By.xpath("//android.view.View[1]/android.view.View/android.view.View[contains(@text,'hotel_name')]"));
 		//MobileElement booked_hotel_details=(MobileElement)driver.findElement(By.xpath("(//XCUIElementTypeOther[@name="+name+"]"));
 		booked_hotel_details.click();
 		Thread.sleep(1000);
 	
 	}
+	
+	
+	
 	/**
 	 * Method to read which entry of the booked itinerary
 	 * @param rno

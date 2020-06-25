@@ -22,10 +22,7 @@ public class Selected_Hotel_Detail extends BaseClass{
 	 */
 	public void click_on_select()
 	{
-		String xpath="//XCUIElementTypeApplication[@name=\"Adactin Hotel App\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[3]/XCUIElementTypeOther[2]/XCUIElementTypeOther[1]\n" + 
-				"";
-		iOSScrollDown(xpath);
-		MobileElement select_click=(MobileElement)driver.findElement(By.name("Select"));
+		MobileElement select_click=(MobileElement)driver.findElement(By.xpath("//android.widget.Button[@text='Select']"));
 		select_click.click();
 	}
 	

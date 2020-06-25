@@ -52,7 +52,7 @@ public class User_is_able_to_book_a_hotel extends BaseClass{
 		lp.Logging_in(rno);
 		hp=new Home();
 		hp.searchHotel(rno);
-		/*hp.clickOnSearch();
+		hp.clickOnSearch();
 		sp=new Select_Hotel();
 		sp.select_hotel(1);
 		shd=new Selected_Hotel_Detail();
@@ -63,14 +63,16 @@ public class User_is_able_to_book_a_hotel extends BaseClass{
 		ordid=bc.getOrderId();
 		bc.confirm_Booking();
 		bi=new Booked_Itinerary();
-		String bhd_id=bi.readWhichEntry(rno);
-		bi.viewBookedHotelDetails(bhd_id);
+		//String bhd_id=bi.readWhichEntry(rno);
+		bi.viewBookedHotelDetails();
 		
 		bhd=new Booked_Hotel_Details();
+		boolean result=bhd.validateOrderID(ordid);
+		Assert.assertTrue(result);
 		int count=bhd.checkBookedHotelDetails(rno, ordid);
 		Assert.assertEquals(count,6);
 		Log.endTestCase("User_is_able_to_book_a_hotel");
-		*/
+		
 		
 	}
 	

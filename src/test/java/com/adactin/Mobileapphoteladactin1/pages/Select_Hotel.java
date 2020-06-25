@@ -36,7 +36,7 @@ public class Select_Hotel extends BaseClass {
 	public void select_hotel(int i)
 	{
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		MobileElement hotel=(MobileElement)driver.findElement(By.xpath("(//XCUIElementTypeOther[@name=\"hotel_list_item\"])["+i+"]"));
+		MobileElement hotel=(MobileElement)driver.findElement(By.xpath("//android.view.View[2]/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View"));
 		hotel.click();
 	}
 	

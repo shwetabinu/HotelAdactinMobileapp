@@ -15,7 +15,7 @@ import org.testng.Assert;
 import com.adactin.Mobileapphoteladactin1.base.BaseClass;
 import com.adactin.Mobileapphoteladactin1.util.ExcelUtil;
 import com.adactin.Mobileapphoteladactin1.util.Log;
-
+import com.adactin.Mobileapphoteladactin1.util.ScrollUtil;
 
 import io.appium.java_client.MobileElement;
 
@@ -100,14 +100,6 @@ public class Home extends BaseClass {
 			e.printStackTrace();
 		}
 
-
-		String xpathtoscrollto="//XCUIElementTypeApplication[@name=\"Adactin Hotel App\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[3]/XCUIElementTypeOther[1]";
-		String xpath1_of_date_picker1="//XCUIElementTypeApplication[@name=\"Adactin Hotel App\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[3]\n" + 
-				"";
-		String xpath2_of_date_picker1="//XCUIElementTypeApplication[@name=\"Adactin Hotel App\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[4]\n" + 
-				"";
-		String xpath3_of_date_picker1="//XCUIElementTypeApplication[@name=\"Adactin Hotel App\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[5]\n" + 
-				"";
 		MobileElement locationdropdown=(MobileElement) driver.findElement(By.xpath("//android.view.View[4]/android.widget.EditText"));
 		locationdropdown.click();
 		List<MobileElement> selected_location=(List<MobileElement>) driver.findElements(By.xpath("//android.view.View[2]/android.view.View[1]/android.view.View"));
@@ -117,36 +109,74 @@ public class Home extends BaseClass {
 			if(selected_location.get(j).getText().contains(expected_location))
 				{
 				selected_location.get(j).click();
-				selected_location.get(j).click();
-				Thread.sleep(1000);
+				break;
+				//Thread.sleep(1000);
 				}
 			}
-		/*MobileElement hoteldropdown=(MobileElement) driver.findElement(By.xpath("//android.view.View[6]/android.widget.EditText"));
+		List<MobileElement> selected_location1=(List<MobileElement>)driver.findElements(By.xpath("//android.view.View[2]/android.view.View/android.view.View/android.view.View"));
+		for(int j=0;j<selected_location1.size();j++)
+		{
+		System.out.println(selected_location1.get(j).getText());
+		if(selected_location1.get(j).getText().contains(expected_location))
+			{
+			selected_location1.get(j).click();
+			break;
+			//Thread.sleep(1000);
+			}
+		}
+		MobileElement hoteldropdown=(MobileElement) driver.findElement(By.xpath("//android.view.View[6]/android.widget.EditText"));
 		//selected_location.click();
 		hoteldropdown.click();
 		List<MobileElement> selected_hotel=(List<MobileElement>) driver.findElements(By.xpath("//android.view.View[2]/android.view.View/android.view.View/android.view.View"));
-		for(int j=0;j<selected_location.size();j++)
+		for(int j=0;j<selected_hotel.size();j++)
 		{
-		if(selected_hotel.get(j).toString().equalsIgnoreCase(expected_location))
+		if(selected_hotel.get(j).getText().contains(expected_hotel))
 			{
 			selected_hotel.get(j).click();
 			break;
 			}
 		}
 
+		List<MobileElement> hoteldropdown1=(List<MobileElement>)driver.findElements(By.xpath("//android.view.View[2]/android.view.View/android.view.View/android.view.View"));
+		for(int j=0;j<hoteldropdown1.size();j++)
+		{
+		System.out.println(hoteldropdown1.get(j).getText());
+		if(hoteldropdown1.get(j).getText().contains(expected_hotel))
+			{
+			hoteldropdown1.get(j).click();
+			break;
+			//Thread.sleep(1000);
+			}
+		}
+		
 		MobileElement roomtypedropdown=(MobileElement) driver.findElement(By.xpath("//android.view.View[8]/android.widget.EditText"));
-		iOSScrollDown(xpathtoscrollto);
+		//iOSScrollDown(xpathtoscrollto);
 		roomtypedropdown.click();
 		List<MobileElement> selected_roomtype=(List<MobileElement>) driver.findElements(By.xpath("//android.view.View[2]/android.view.View/android.view.View/android.view.View"));
-		for(int j=0;j<selected_location.size();j++)
+		for(int j=0;j<selected_roomtype.size();j++)
 		{
-		if(selected_hotel.get(j).toString().equalsIgnoreCase(expected_location))
+		if(selected_roomtype.get(j).getText().contains(expected_roomtype))
 			{
-			selected_hotel.get(j).click();break;
+			selected_roomtype.get(j).click();break;
 			}
 		}
 
+		List<MobileElement> roomtypedropdown1=(List<MobileElement>)driver.findElements(By.xpath("//android.view.View[2]/android.view.View/android.view.View/android.view.View"));
+		for(int j=0;j<roomtypedropdown1.size();j++)
+		{
+		System.out.println(roomtypedropdown1.get(j).getText());
+		if(roomtypedropdown1.get(j).getText().contains(expected_roomtype))
+			{
+			roomtypedropdown1.get(j).click();
+			break;
+			//Thread.sleep(1000);
+			}
+		}
 
+		boolean result=ScrollUtil.pageScrollToText("Search");
+		System.out.println("The result of scrolling"+result);
+		Thread.sleep(1000);
+		//clickOnSearch();
 		/*MobileElement noofroomsdropdown=(MobileElement) driver.findElement(By.name("Select Number of Rooms"));
 		//iOSScrollToElement();
 		noofroomsdropdown.click();
@@ -173,7 +203,7 @@ public class Home extends BaseClass {
 	 */
 	public void clickOnSearch()
 	{
-		MobileElement search=(MobileElement) driver.findElement(By.name("Search"));
+		MobileElement search=(MobileElement) driver.findElement(By.xpath("//android.widget.Button[@text='Search']"));
 		search.click();
 	}
 	

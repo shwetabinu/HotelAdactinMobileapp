@@ -7,6 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 import com.adactin.Mobileapphoteladactin1.base.BaseClass;
 import com.adactin.Mobileapphoteladactin1.util.ExcelUtil;
 import com.adactin.Mobileapphoteladactin1.util.Log;
+import com.adactin.Mobileapphoteladactin1.util.ScrollUtil;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.remote.HideKeyboardStrategy;
@@ -39,53 +40,66 @@ public class Book_Hotel extends BaseClass{
 		//String ccexpiry=ExcelUtil.getCellData(i,20);
 		String cvvnumber=ExcelUtil.getCellData(i,21);
 		
-		iOSScrollDown(xpath_scrollable);
-		iOSScrollDown(xpath_scrollable);
+		ScrollUtil.pageScrollToText("Enter First Name");
 		
-		MobileElement firstName=(MobileElement)driver.findElement(By.name("Enter First Name"));
+		MobileElement firstName=(MobileElement)driver.findElement(By.xpath("//android.widget.EditText[@text='Enter First Name']"));
 		firstName.click();
-		firstName.sendKeys(fname);
+		driver.getKeyboard().sendKeys(fname);
 		
-		MobileElement lastName=(MobileElement)driver.findElement(By.name("Enter Last Name"));
+		ScrollUtil.pageScrollToText("Enter Last Name");
+		
+		MobileElement lastName=(MobileElement)driver.findElement(By.xpath("//android.widget.EditText[@text='Enter Last Name']"));
 		lastName.click();
-		lastName.sendKeys(lname);
-		lastName.sendKeys(Keys.RETURN);
+		//lastName.sendKeys(lname);
+		driver.getKeyboard().sendKeys(lname);
+		driver.getKeyboard().sendKeys(Keys.RETURN);
+		//lastName.sendKeys(Keys.RETURN);
 		
-		MobileElement billingAddress=(MobileElement)driver.findElement(By.name("Enter Billing Address"));
-		billingAddress.click();
-		billingAddress.sendKeys(billaddress);
+		ScrollUtil.pageScrollToText("Enter Billing Address");
 		
+		MobileElement billingAddress=(MobileElement)driver.findElement(By.xpath("//android.widget.EditText[@text='Enter Billing Address']"));
+		//billingAddress.sendKeys(billaddress);
+		driver.getKeyboard().sendKeys(billaddress);
 		
-		iOSScrollDown(xpath_scrollable);
+		ScrollUtil.pageScrollToText("Enter Card Number");
 		
-		MobileElement CCNumber=(MobileElement)driver.findElement(By.name("Enter Card Number"));
+		MobileElement CCNumber=(MobileElement)driver.findElement(By.xpath("//android.widget.EditText[@text='Enter Card Number']"));
 		CCNumber.click();
-		CCNumber.sendKeys(ccnumber);
+		driver.getKeyboard().sendKeys(ccnumber);
+	//	CCNumber.sendKeys(ccnumber);
 
 		
 		//iOSScrollToElement(xpath_scrollable);
+		ScrollUtil.pageScrollToText("Select Credit Card Type");
 		
-		MobileElement CCType=(MobileElement)driver.findElement(By.name("Select Credit Card Type"));
-		
+		MobileElement CCType=(MobileElement)driver.findElement(By.xpath("//android.widget.EditText[@text='Select Credit Card Type']"));
 		CCType.click();
-		MobileElement ccard_type_option=(MobileElement) driver.findElement(By.name(cctype));
+		
+		MobileElement ccard_type_option=(MobileElement) driver.findElement(By.xpath("//android.view.View[@text=\""+cctype+"\"]"));
 		Log.info(ccard_type_option.getText());
 		ccard_type_option.click();
+		ccard_type_option.click();
 		
-		
-		MobileElement CCExpiry=(MobileElement)driver.findElement(By.name("Select Expiry Month & Year"));
+		MobileElement CCExpiry=(MobileElement)driver.findElement(By.xpath("//android.widget.EditText[@text='Select Expiry Month & Year']"));
 		CCExpiry.click();
-		iOSScrollDown(xpath_year);
-		iOSScrollDown(xpath_year);
-		MobileElement done_button=(MobileElement)driver.findElement(By.name("Done"));
+		
+		//driver.switchTo().frame(1);
+		//driver.switchTo().frame((MobileElement)driver.findElement(By.xpath("//android.view.View/android.widget.SeekBar[2]")));
+		ScrollUtil.calendarScroll("2021");
+		
+		MobileElement done_button=(MobileElement)driver.findElement(By.xpath("//android.widget.Button[@text='Done']"));
 		done_button.click();
 		
-		MobileElement CVV=(MobileElement)driver.findElement(By.name("Enter CVV Number"));
-		CVV.click();
-		CVV.sendKeys(cvvnumber);
-		CVV.sendKeys(Keys.RETURN);
+		ScrollUtil.calendarScroll("2021");
+		done_button.click();
 		
-		MobileElement bookNow=(MobileElement)driver.findElement(By.name("Book Now"));
+		MobileElement CVV=(MobileElement)driver.findElement(By.xpath("//android.widget.EditText[@text='Enter CVV Number']"));				
+		CVV.click();
+		driver.getKeyboard().sendKeys(cvvnumber);
+		
+		driver.getKeyboard().sendKeys(Keys.RETURN);
+		
+		MobileElement bookNow=(MobileElement)driver.findElement(By.xpath("//android.widget.Button[@text='Book Now']"));
 		bookNow.click();
 
 		

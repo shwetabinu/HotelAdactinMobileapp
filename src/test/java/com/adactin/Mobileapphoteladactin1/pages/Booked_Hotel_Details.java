@@ -5,6 +5,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.adactin.Mobileapphoteladactin1.base.BaseClass;
 import com.adactin.Mobileapphoteladactin1.util.ExcelUtil;
+import com.adactin.Mobileapphoteladactin1.util.ScrollUtil;
 
 import io.appium.java_client.MobileElement;
 
@@ -40,8 +41,7 @@ public class Booked_Hotel_Details extends BaseClass {
 	
 	public int checkBookedHotelDetails(int i,String oid) throws Exception {
 		String expected_location,expected_hotel,fname,lname,expected_roomtype,expected_nofrooms;
-		String bhd_xpath="//XCUIElementTypeApplication[@name=\"Adactin Hotel App\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[3]/XCUIElementTypeOther[2]/XCUIElementTypeOther[1]\n" + 
-				"";
+		
 		int count=0;
 		expected_location=ExcelUtil.getCellData(i,7);
 		expected_hotel=ExcelUtil.getCellData(i,8);
@@ -50,35 +50,42 @@ public class Booked_Hotel_Details extends BaseClass {
 		expected_roomtype=ExcelUtil.getCellData(i,9);
 		
 
-		MobileElement ord_id=(MobileElement)driver.findElement(By.xpath("//XCUIElementTypeOther[@name=\"order_id\"]\n" + 
-				"/following-sibling::XCUIElementTypeOther"));
+		MobileElement ord_id=(MobileElement)driver.findElement(By.xpath("//android.view.View[2]/android.view.View"));
+		System.out.println("The order id in booking confirmation page"+oid);
+		System.out.println("The order id in the hotel details page"+ord_id.getText());
 		if(ord_id.getText().equalsIgnoreCase(oid))
 			count++;
 		
-		MobileElement location=(MobileElement)driver.findElement(By.xpath("//XCUIElementTypeOther[@name=\"hotel_location\"]\n" + 
-				"/following-sibling::XCUIElementTypeOther"));
-		if(location.getText().equalsIgnoreCase(expected_location))
-			count++;
-		
-		MobileElement hot_name=(MobileElement)driver.findElement(By.xpath("//XCUIElementTypeOther[@name=\"hotel_name\"]\n" + 
-				"/following-sibling::XCUIElementTypeOther"));
+		MobileElement hot_name=(MobileElement)driver.findElement(By.xpath("//android.view.View[4]/android.view.View"));
+		System.out.println("The hotel name inputted"+expected_hotel);
+		System.out.println("The hotel name in the hotel details page"+hot_name.getText());
 		if(hot_name.getText().equalsIgnoreCase(expected_hotel))
 			count++;
 		
-		MobileElement first_name=(MobileElement)driver.findElement(By.xpath("//XCUIElementTypeOther[@name=\"first_name\"]\n" + 
-				"/following-sibling::XCUIElementTypeOther"));
+		MobileElement location =(MobileElement)driver.findElement(By.xpath("//android.view.View[6]/android.view.View"));
+		System.out.println("The location name inputted"+expected_location);
+		System.out.println("The location name in the hotel details page"+location.getText());
+		if(location.getText().equalsIgnoreCase(expected_location))
+			count++;
+		
+		MobileElement first_name=(MobileElement)driver.findElement(By.xpath("//android.view.View[10]/android.view.View"));
+		System.out.println("The first name inputted"+fname);
+		System.out.println("The first name in the hotel details page"+first_name.getText());
 		if(first_name.getText().equalsIgnoreCase(fname))
 			count++;
 		
-		iOSScrollDown(bhd_xpath);
+		//iOSScrollDown(bhd_xpath);
 		
-		MobileElement last_name=(MobileElement)driver.findElement(By.xpath("//XCUIElementTypeOther[@name=\"last_name\"]\n" + 
-				"/following-sibling::XCUIElementTypeOther"));
+		MobileElement last_name=(MobileElement)driver.findElement(By.xpath("//android.view.View[12]/android.view.View"));
+		System.out.println("The last name inputted"+lname);
+		System.out.println("The first name in the hotel details page"+last_name.getText());
 		if(last_name.getText().equalsIgnoreCase(lname))
 			count++;
 		
-		MobileElement rooms_type=(MobileElement)driver.findElement(By.xpath("//XCUIElementTypeOther[@name=\"hotel_room_type\"]\n" + 
-				"/following-sibling::XCUIElementTypeOther"));
+		ScrollUtil.pageScrollToText("Cancel");
+		MobileElement rooms_type=(MobileElement)driver.findElement(By.xpath("//android.view.View[20]/android.view.View"));
+		System.out.println("The room type inputted"+expected_roomtype);
+		System.out.println("The room type in the hotel details page"+rooms_type.getText());
 		if(rooms_type.getText().equalsIgnoreCase(expected_roomtype))
 			count++;
 		
@@ -89,6 +96,15 @@ public class Booked_Hotel_Details extends BaseClass {
 		
 	}
 
+	public boolean validateOrderID(String ordid)
+	{
+		MobileElement ord_id=(MobileElement)driver.findElement(By.xpath("//android.view.View[2]/android.view.View"));
+		if(ord_id.getText().equalsIgnoreCase(ordid))
+			return true;
+		else
+			return false;
+	}
+	
 /**
  * Reads the order id from the test data sheet
  * @param i Row number
