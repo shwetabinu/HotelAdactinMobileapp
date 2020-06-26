@@ -17,7 +17,7 @@ import com.adactin.Mobileapphoteladactin1.util.ExcelUtil;
 import com.adactin.Mobileapphoteladactin1.util.Log;
 
 /**
- * Testcase to verify if a user can book a hotel successfully with the details present in the Testdata file
+ * Test case to verify if a user can book a hotel successfully with the details present in the Testdata file
  * 
  *
  */

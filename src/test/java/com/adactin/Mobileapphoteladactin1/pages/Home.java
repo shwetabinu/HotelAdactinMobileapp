@@ -1,16 +1,11 @@
 package com.adactin.Mobileapphoteladactin1.pages;
 
-import static org.testng.Assert.assertEquals;
-
-import java.util.HashMap;
 import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
 import com.adactin.Mobileapphoteladactin1.base.BaseClass;
@@ -23,7 +18,6 @@ import io.appium.java_client.MobileElement;
 /**
  * Home page has methods to initialize the home page.
  * It has methods to search hotel 
- * @author aswinvijayan
  *
  */
 public class Home extends BaseClass {

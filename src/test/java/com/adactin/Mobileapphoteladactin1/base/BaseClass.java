@@ -48,14 +48,23 @@ public class BaseClass {
 	 */
 	public void android_device_setup(String platformName,String deviceName,String platformVersion) throws MalformedURLException
 	{
+		//Setting the platform name
 		caps.setCapability("platformName", platformName);
+		//Setting the device name
 		caps.setCapability("deviceName",deviceName);
+		//Setting the platform version
 		caps.setCapability("platformVersion", platformVersion);
+		//Setting the automation name
 		caps.setCapability("automationName", "UiAutomator2");
+		//Setting the app package
 		caps.setCapability("appPackage", "com.adactin.education.hotelbooking");
-		caps.setCapability("appActivity", "com.adactin.education.hotelbooking.MainActivity");
+		//Setting the main activity
+		caps.setCapability("appActivity", "com.adactin.education.hotelbooking."
+				+ "MainActivity");
 
+		//Setting the URL Address where the device is present
 		URL url=new URL("http://127.0.0.1:4723/wd/hub");
+		//Initializing the driver
 		driver=new AppiumDriver<MobileElement>(url,caps);
 
 	}
@@ -69,21 +78,28 @@ public class BaseClass {
 	 */
 	public void simulator_setup(String platformName,String deviceName,String platformVersion) throws MalformedURLException
 	{
-		DesiredCapabilities caps=new DesiredCapabilities();
+		//Setting the platform name
 		caps.setCapability("platformName",platformName);
+		//Setting the device name
 		caps.setCapability("deviceName",deviceName);
+		//Setting the platform version
 		caps.setCapability("platformVersion", platformVersion);
+		//Setting the automation name
 		caps.setCapability("automationName", "XCUITest");
+		//Setting the flag to connect to hardware keyboard
 		caps.setCapability("connectHardwareKeyboard", "true");
 		caps.setCapability("simpleIsVisibleCheck", "true");
 	
+		//Setting the app capability according to OS type
 		if (Platform.getCurrent().toString().equalsIgnoreCase("MAC")) {
 			caps.setCapability("app", currentDir + "/src/test/resources/apps/Runner.app"); 
 		} else if (Platform.getCurrent().toString().contains("WIN")) {
 			caps.setCapability("app", currentDir + "\\src\\test\\resources\\apps\\Runner.app"); 
 		}
 		
+		//Initializing and setting the URL to the address where device is present
 		URL url=new URL("http://127.0.0.1:4723/wd/hub");
+		//Initializing the driver with the set capabilities
 		driver=new IOSDriver<MobileElement>(url,caps);
 		
 	}
@@ -107,20 +123,27 @@ public class BaseClass {
 	{
 		String platformName,deviceName,platformVersion,dev;
 
+		//Reading the column with the title: Environment 
 		int env_col=ExcelUtil.readExcel('c',"Environment");
+		
+		//Assigning the cell data corresponding to the row and column to dev
 		dev=ExcelUtil.getCellData(rno,env_col);
 		Log.info(dev);
 		
-		int pf_col=ExcelUtil.readExcel('c',"Platform_name");	
+		//Reading the column with the title: Platform_name 
+		int pf_col=ExcelUtil.readExcel('c',"Platform_name");
+		//Reading the cell data corresponding to the row and column
 		platformName=ExcelUtil.getCellData(rno,pf_col);
 		
+		//Reading the column with the title: Device_Name
 		int devicename_col=ExcelUtil.readExcel('c',"Device_name");	
+		//Reading the cell data corresponding to the rown and column
 		deviceName=ExcelUtil.getCellData(rno,devicename_col);
 		
 		int pfversion_col=ExcelUtil.readExcel('c',"Platform_Version");	
 		platformVersion=ExcelUtil.getCellData(rno,pfversion_col);
 
-		
+		//Calling the method corresponding to the device settings
 		if(dev.equalsIgnoreCase("android_device"))
 			android_device_setup(platformName,deviceName,platformVersion);
 		else if(dev.equalsIgnoreCase("simulator"))
@@ -143,6 +166,7 @@ public class BaseClass {
 		String platformName,deviceName,platformVersion,dev;
 		FileInputStream fis = null;
 		Properties p=new Properties();
+		//Reading the property file for simulator configuration
 		if(Platform.getCurrent().toString().equalsIgnoreCase("MAC")) {
 			 fis=new FileInputStream(currentDir + "//src//test//resources//configsimulator.properties");
 		}
@@ -150,7 +174,9 @@ public class BaseClass {
 			fis=new FileInputStream(currentDir + "\\src\\testresources\\configsimulator.properties");
 		}
 		
+		//loading the properties file
 		p.load(fis);
+		//Reading the respective properties in the file and storing them
 		platformName=p.getProperty("platformName");
 		deviceName=p.getProperty("deviceName");
 		platformVersion=p.getProperty("platformVersion");
