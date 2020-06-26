@@ -72,16 +72,16 @@ public class ExcelUtil {
 	 * @param sheetName
 	 * @throws Exception
 	 */
-	// It creates FileInputStream and set excel file and excel sheet to excelWBook and excelWSheet variables.
+	
 	public static void setExcelFileSheet(String sheetName) throws Exception {
-		//MAC or Windows Selection for excel path
+		//Setting the TestData file path
 		if (Platform.getCurrent().toString().equalsIgnoreCase("MAC")) {
 			testDataExcelPath = currentDir + "//src//test//resources//";
 		} else if (Platform.getCurrent().toString().contains("WIN")) {
 			testDataExcelPath = currentDir + "\\src\\test\\resources\\";
 		}
 		try {
-			// Open the Excel file
+			// Open the Excel file and sheet
 			FileInputStream ExcelFile = new FileInputStream(testDataExcelPath + testDataExcelFileName);
 			excelWBook = new XSSFWorkbook(ExcelFile);
 			excelWSheet = excelWBook.getSheet(sheetName);
@@ -101,15 +101,15 @@ public class ExcelUtil {
 	 * @return
 	 * @throws Exception
 	 */
-	//We are passing row number and column number as parameters.
 	public static String getCellData(int RowNum, int ColNum) throws Exception {
 		try {
-			cell = excelWSheet.getRow(RowNum).getCell(ColNum);
-			
+			//Getting cell data in RowNum and ColNum
+			cell = excelWSheet.getRow(RowNum).getCell(ColNum);			
 			DataFormatter formatter = new DataFormatter();
+			//Assigning cell data to a variable
 			String cellData = formatter.formatCellValue(cell);
 			Log.info(cellData);
-			//System.out.println(cellData);
+			//Returning cell data
 			return cellData;
 		} catch (Exception e) {
 			throw (e);
@@ -130,11 +130,13 @@ public class ExcelUtil {
 			throw (e);
 		}
 	}
-/**
- * Method returns the row number where the @param text is present
- * @param text
- * @return
- */
+	
+	/**
+	 * Method returns the row/ column number where the @param text is present
+	 * @param index_type r if row is to be determined, c if column index is to be determined
+	 * @param text
+	 * @return Integer: row/column index
+	 */
 	public static int readExcel(char index_type,String text)
 	{
 		int rn=0;
@@ -151,8 +153,10 @@ public class ExcelUtil {
 				Cell cell = cellIterator.next();
 				DataFormatter formatter = new DataFormatter();
 				String cellData = formatter.formatCellValue(cell);
+				//Checking if the cell data matches the text in the parameter
 				if(cellData.equalsIgnoreCase(text))
 					{
+					//assigning the corresponding row and column index
 					rn= cell.getRowIndex();
 					cn=cell.getColumnIndex();
 					}
@@ -163,6 +167,7 @@ public class ExcelUtil {
 
 		}
 		
+		//returning row/column index depending on index type
 		if(index_type=='r')
 			return rn;
 		else if(index_type=='c')
@@ -181,15 +186,17 @@ public class ExcelUtil {
 	 */
 	public static void setCellData(String value, int RowNum, int ColNum) throws Exception {
 		try {
+			//Retrieves the cell in the given row and column
 			row = excelWSheet.getRow(RowNum);
 			cell = row.getCell(ColNum);
 			if (cell == null) {
+				//Creating new cell if null and setting cell value
 				cell = row.createCell(ColNum);
 				cell.setCellValue(value);
 			} else {
 				cell.setCellValue(value);
 			}
-			// Constant variables Test Data path and Test Data file name
+			// Writing into the file
 			FileOutputStream fileOut = new FileOutputStream(testDataExcelPath + testDataExcelFileName);
 			excelWBook.write(fileOut);
 			fileOut.flush();

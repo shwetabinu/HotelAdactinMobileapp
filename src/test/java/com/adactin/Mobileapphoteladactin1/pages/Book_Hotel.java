@@ -85,12 +85,12 @@ public class Book_Hotel extends BaseClass{
 		
 		//driver.switchTo().frame(1);
 		//driver.switchTo().frame((MobileElement)driver.findElement(By.xpath("//android.view.View/android.widget.SeekBar[2]")));
-		ScrollUtil.calendarScroll("2021");
+		ScrollUtil.calendarScroll();
 		
 		MobileElement done_button=(MobileElement)driver.findElement(By.xpath("//android.widget.Button[@text='Done']"));
 		done_button.click();
 		
-		ScrollUtil.calendarScroll("2021");
+		ScrollUtil.calendarScroll();
 		done_button.click();
 		
 		MobileElement CVV=(MobileElement)driver.findElement(By.xpath("//android.widget.EditText[@text='Enter CVV Number']"));				
