@@ -13,9 +13,9 @@ import com.adactin.Mobileapphoteladactin1.util.Log;
  * Test case to verify if user can logout successfully.
  * The presence and enablement of login button is checked after successful logout
  */
-public class User_is_able_to_logout extends BaseClass{
+public class LogoutVerification extends BaseClass{
 
-	public User_is_able_to_logout() throws Exception {
+	public LogoutVerification() throws Exception {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -29,10 +29,10 @@ public class User_is_able_to_logout extends BaseClass{
 		Log.startTestCase("User_is_able_to_logout");
 		int rno;
 		ExcelUtil.setExcelFileSheet("Testcases");
-		rno=ExcelUtil.readexcel("User_is_able_to_logout");
+		rno=ExcelUtil.readExcel('r',"User_is_able_to_logout");
 		initApp(rno);
 		lp=new Login();
-		lp.Logging_in(rno);
+		lp.login(rno);
 		acc=new My_Account();
 		acc.Logging_out();
 		lp1=new Login();

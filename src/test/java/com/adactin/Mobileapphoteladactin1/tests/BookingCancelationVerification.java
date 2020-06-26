@@ -1,4 +1,5 @@
 package com.adactin.Mobileapphoteladactin1.tests;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -10,39 +11,45 @@ import com.adactin.Mobileapphoteladactin1.util.ExcelUtil;
 import com.adactin.Mobileapphoteladactin1.util.Log;
 
 /**
- * Test case to view the booked itinerary 
- * It also validates the entry present within the booked itinerary with the Testdata file details
+ * Test case to verify if the user can cancel a hotel booking.
+ * The cancel button is clicked from one of the entries in the booked itinerary
+ * After successful cancelation, the booked itinerary is checked again to see if
+ * the canceled entry is present
  * 
  *
  */
-public class User_is_able_to_view_itinerary  extends BaseClass{
+public class BookingCancelationVerification extends BaseClass {
 
-	public User_is_able_to_view_itinerary() throws Exception {
+	public BookingCancelationVerification() throws Exception {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
 	static Login lp;
-	static Booked_Itinerary bi;
+	static Booked_Itinerary bi,bi1;
 	static Booked_Hotel_Details bhd;
 	
 	@Test(groups = { "functionalTest" })
-	public void User_is_able_to_view_itinerary() throws Exception
+	public void User_is_able_to_cancel_a_hotel_booking() throws Exception
 	{
-		Log.startTestCase("User_is_able_to_view_itinerary");
+		Log.startTestCase("User_is_able_to_cancel_a_hotel_booking");
 		int rno;
 		ExcelUtil.setExcelFileSheet("Testcases");
-		rno=ExcelUtil.readexcel("User_is_able_to_view_itinerary");
+		rno=ExcelUtil.readExcel('r',"User_is_able_to_cancel_a_hotel_booking");
 		initApp(rno);
 		lp=new Login();
-		lp.Logging_in(rno);
+		lp.login(rno);
 		bi=new Booked_Itinerary();
 		String bhd_id;
 		bhd_id=bi.readWhichEntry(rno);
 		bi.viewBookedHotelDetails();
 		bhd=new Booked_Hotel_Details();
-		int count=bhd.checkBookedHotelDetails(rno, bhd.readOrderId(rno));
-		Assert.assertEquals(count,6);
-		Log.endTestCase("User_is_able_to_view_itinerary");
+		bhd.cancelBooked_itinerary();
+		bi1=new Booked_Itinerary();
+		Assert.assertEquals(bi1.checkIfCanceled(bhd_id), false);
+		Log.endTestCase("User_is_able_to_cancel_a_hotel_booking");
+		
 	}
+	
 
 }

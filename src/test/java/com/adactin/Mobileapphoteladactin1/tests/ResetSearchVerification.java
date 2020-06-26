@@ -14,9 +14,9 @@ import com.adactin.Mobileapphoteladactin1.util.Log;
  * Following which reset button is clicked, then the fields are checked again to see if they are empty
  *
  */
-public class User_is_able_to_reset_the_search_criteria extends BaseClass {
+public class ResetSearchVerification extends BaseClass {
 
-	public User_is_able_to_reset_the_search_criteria() throws Exception {
+	public ResetSearchVerification() throws Exception {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -29,10 +29,10 @@ public class User_is_able_to_reset_the_search_criteria extends BaseClass {
 		Log.startTestCase("User_is_able_to_reset_the_search_criteria");
 		int rno;
 		ExcelUtil.setExcelFileSheet("Testcases");
-		rno=ExcelUtil.readexcel("User_is_able_to_reset_the_search_criteria");
+		rno=ExcelUtil.readExcel('r',"User_is_able_to_reset_the_search_criteria");
 		initApp(rno);
 		lp=new Login();
-		lp.Logging_in(rno);
+		lp.login(rno);
 		hp=new Home();
 		hp.searchHotel(rno);
 		hp.doReset();

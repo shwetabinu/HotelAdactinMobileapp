@@ -59,7 +59,7 @@ public class Selected_Hotel_Detail extends BaseClass{
 			++count;
 		Log.info("Checking count"+count);
 			}
-		iOSScrollDown(xpath);
+		//iOSScrollDown(xpath);
 		//iOSScrollToElement(xpath);
 		MobileElement rooms_type=(MobileElement)driver.findElement(By.xpath("//XCUIElementTypeOther[@name=\"hotel_room_type\"]\n" + 
 				"/following-sibling::XCUIElementTypeOther"));
@@ -109,7 +109,7 @@ public class Selected_Hotel_Detail extends BaseClass{
 			++count;
 		Log.info("Checking count"+count);
 			}
-		iOSScrollDown(xpath);
+		//iOSScrollDown(xpath);
 		//iOSScrollToElement(xpath);
 		MobileElement rooms_type=(MobileElement)driver.findElement(By.xpath("//XCUIElementTypeOther[@name=\"hotel_room_type\"]\n" + 
 				"/following-sibling::XCUIElementTypeOther"));

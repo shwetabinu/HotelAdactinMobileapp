@@ -135,9 +135,10 @@ public class ExcelUtil {
  * @param text
  * @return
  */
-	public static int readexcel(String text)
+	public static int readExcel(char index_type,String text)
 	{
 		int rn=0;
+		int cn=0;
 		Iterator<Row> rowIterator = excelWSheet.iterator();
 		while (rowIterator.hasNext()) 
 		{
@@ -151,13 +152,24 @@ public class ExcelUtil {
 				DataFormatter formatter = new DataFormatter();
 				String cellData = formatter.formatCellValue(cell);
 				if(cellData.equalsIgnoreCase(text))
+					{
 					rn= cell.getRowIndex();
+					cn=cell.getColumnIndex();
+					}
+				
 				else
 					continue;
 			}
 
 		}
-		return rn;
+		
+		if(index_type=='r')
+			return rn;
+		else if(index_type=='c')
+			return cn;
+		else
+			return 0;
+		
 	}
 
 	/**

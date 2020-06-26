@@ -21,9 +21,9 @@ import com.adactin.Mobileapphoteladactin1.util.Log;
  * 
  *
  */
-public class User_is_able_to_book_a_hotel extends BaseClass{
+public class BookHotelVerificationTest extends BaseClass{
 	
-	public User_is_able_to_book_a_hotel() throws Exception {
+	public BookHotelVerificationTest() throws Exception {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -46,10 +46,10 @@ public class User_is_able_to_book_a_hotel extends BaseClass{
 		int rno;
 		String ordid;
 		ExcelUtil.setExcelFileSheet("Testcases");
-		rno=ExcelUtil.readexcel("User_is_able_to_book_a_hotel");
+		rno=ExcelUtil.readExcel('r',"User_is_able_to_book_a_hotel");
 		initApp(rno);
 		lp=new Login();
-		lp.Logging_in(rno);
+		lp.login(rno);
 		hp=new Home();
 		hp.searchHotel(rno);
 		hp.clickOnSearch();

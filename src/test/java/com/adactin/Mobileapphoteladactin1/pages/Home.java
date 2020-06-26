@@ -8,6 +8,7 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
@@ -31,21 +32,35 @@ public class Home extends BaseClass {
 		PageFactory.initElements(driver, this);
 
 	}
+	
+	
+	@FindBy(xpath="//android.view.View[1][contains(@text,'welcome')]")
+	WebElement welcome_msg;
 /**
  * Method to check the welcome message of a user
  * @param rno
  * @throws Exception
  */
-	public void checkWelcomeMessage(int rno) throws Exception
+	public boolean checkWelcomeMessage(int rno) throws Exception
 	{
-		MobileElement welcomemsg;
-
-		String expectedusername,expectedmsg;
-		//expectedusername=ExcelUtil.getCellData(rno,5);
+		boolean result;
+		try {	
+		//Assigning Expected Message to be verified
+		String expectedmsg;
 		expectedmsg="welcome_user";
-		welcomemsg= (MobileElement)driver.findElement(By.name("welcome_user"));
-
-		Assert.assertEquals(welcomemsg.getText(),expectedmsg);
+		//Verifying the actual message with the expected message
+		//and assigning the result of validation to result
+		if(welcome_msg.getText().equalsIgnoreCase(expectedmsg))
+			result=true;
+		else
+			result=false;
+			
+		}catch(Exception e) {
+			result=false;
+		}
+		//returning the value of result depending on the outcome of execution
+		return result;
+		
 	}
 
 /**
@@ -217,7 +232,7 @@ public class Home extends BaseClass {
 		reset.click();
 		String xpathtoscrollto="//XCUIElementTypeApplication[@name=\"Adactin Hotel App\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[3]/XCUIElementTypeOther[1]";
 		
-		iOSScrollUp(xpathtoscrollto);
+		//iOSScrollUp(xpathtoscrollto);
 
 		MobileElement locationdropdown=(MobileElement) driver.findElement(By.name("Select Location"));
 
@@ -231,7 +246,7 @@ public class Home extends BaseClass {
 		MobileElement roomtypedropdown=(MobileElement) driver.findElement(By.name("Select Room Type"));
 		if(roomtypedropdown.getText().equalsIgnoreCase("Select Room Type"))
 			count++;
-		iOSScrollDown(xpathtoscrollto);
+		//iOSScrollDown(xpathtoscrollto);
 	
 		MobileElement childrenperroomdropdown=(MobileElement) driver.findElement(By.name("Select Children per Room"));
 		if(childrenperroomdropdown.getText().equalsIgnoreCase("Select Children per Room"))
@@ -264,8 +279,8 @@ public class Home extends BaseClass {
 		hoteldropdown.click();
 		MobileElement selected_hotel=(MobileElement) driver.findElement(By.name(expected_hotel));
 		selected_hotel.click();
-		iOSScrollDown(xpathtoscrollto);
-		iOSScrollDown(xpathtoscrollto);
+		//iOSScrollDown(xpathtoscrollto);
+		//iOSScrollDown(xpathtoscrollto);
 	
 			
 		MobileElement search=(MobileElement) driver.findElement(By.name("Search"));
@@ -289,8 +304,8 @@ public class Home extends BaseClass {
 		locationdropdown.click();
 		MobileElement selected_location=(MobileElement) driver.findElement(By.name(expected_location));
 		selected_location.click();
-		iOSScrollDown(xpathtoscrollto);
-		iOSScrollDown(xpathtoscrollto);
+		//iOSScrollDown(xpathtoscrollto);
+		//iOSScrollDown(xpathtoscrollto);
 		MobileElement search=(MobileElement) driver.findElement(By.name("Search"));
 		search.click();
 		

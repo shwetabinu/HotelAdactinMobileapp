@@ -11,45 +11,45 @@ import com.adactin.Mobileapphoteladactin1.util.ExcelUtil;
 import com.adactin.Mobileapphoteladactin1.util.Log;
 
 /**
- * Test case to verify if the user can search for hotel with location and hotel name provided as input
- * Each of the hotel entry displayed is verified for different room types
- *
+ * Test case to verify if user can search for hotel with location alone as the input
+ * Here each of the hotel entry in the list is verified for hotel name
  *
  */
-public class User_is_able_to_search_hotel_with_location_and_hotelname extends BaseClass{
+public class SearchHotel_Location extends BaseClass {
 
+	public SearchHotel_Location() throws Exception {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
 	static Login lp;
 	static Home hp;
 	static Select_Hotel sp,sp1;
 	static Selected_Hotel_Detail shd;
 
-	public User_is_able_to_search_hotel_with_location_and_hotelname() throws Exception {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
 	@Test(groups = { "functionalTest" })
-	public void User_is_able_to_search_hotel_with_location_and_hotelname() throws Exception
+	public void User_is_able_to_Search_Hotel_with_Location() throws Exception
 	{
+		Log.startTestCase("User_is_able_to_Search_Hotel_with_Location");
 		int rno,count = 0,n;
-		Log.startTestCase("User_is_able_to_search_hotel_with_location_and_hotelname");
 		String ordid;
 		ExcelUtil.setExcelFileSheet("Testcases");
-		rno=ExcelUtil.readexcel("User_is_able_to_search_hotel_with_location_and_hotelname");
+		rno=ExcelUtil.readExcel('r',"User_is_able_to_Search_Hotel_with_Location");
 		initApp(rno);
 		lp=new Login();
-		lp.Logging_in(rno);
+		lp.login(rno);
 		hp=new Home();
-		hp.searchHotel_Hotel_location(rno);
+		hp.searchHotel_Location_only(rno);
+		hp.clickOnSearch();
 		sp=new Select_Hotel();
 		n=sp.checkNumberOfEntries();
 		sp.select_hotel(1);
 		shd=new Selected_Hotel_Detail();
-		String[] roomtype= shd.getRoomTypes(rno);
-		for(int i=0;i<roomtype.length;i++)
+		String[] hoteltype= shd.getHotelNames(rno);
+		for(int i=0;i<hoteltype.length;i++)
 		{
-			Log.info(roomtype[i]);
-			count=shd.check_If_correct_details_roomtype(rno, roomtype[i]);
+			Log.info(hoteltype[i]);
+			count=shd.check_If_correct_details_hotel(rno, hoteltype[i]);
 			Log.info("Count for each is"+count);
 			shd.goback();
 			if(i<3)
@@ -58,11 +58,11 @@ public class User_is_able_to_search_hotel_with_location_and_hotelname extends Ba
 			}
 
 		}
-		
+		//Log.info("Count is"+count);
 		Log.info("n is"+n);
 		Assert.assertTrue(count==12 && n==4);
-		Log.endTestCase("User_is_able_to_search_hotel_with_location_and_hotelname");
-
+		Log.endTestCase("User_is_able_to_Search_Hotel_with_Location");
+		
 	}
-
+	
 }
