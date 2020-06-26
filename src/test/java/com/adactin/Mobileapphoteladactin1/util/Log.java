@@ -1,13 +1,7 @@
 package com.adactin.Mobileapphoteladactin1.util;
 
-import java.io.File;
 
-//import org.apache.log4j.BasicConfigurator;
-//import org.apache.log4j.PropertyConfigurator;
-////import org.apache.log4j.xml.DOMConfigurator;
-//import org.testng.log4testng.Logger;
 import org.apache.log4j.Logger;
-import org.apache.log4j.xml.DOMConfigurator;
 
 public class Log {
 		 
@@ -53,32 +47,50 @@ public class Log {
 		 
 		 }
 		 
-		
-		 
+		/**
+		 * Prints log message for type:info
+		 * @param message
+		 */	 
 		 public static void info(String message) {
 		 
 		 Log.info(message);
 		 
 		 }
 		 
+		/**
+		 * Prints log message for type:warn
+		 * @param message
+		 */
 		 public static void warn(String message) {
 		 
 		    Log.warn(message);
 		 
 		 }
 		 
+		 /**
+		 * Prints log message for type:error
+		 * @param message
+		 */
 		 public static void error(String message) {
 		 
 		    Log.error(message);
 		 
 		 }
 		 
+		 /**
+		  * Prints log message for type:fatal
+		  * @param message
+		  */
 		 public static void fatal(String message) {
 		 
 		    Log.fatal(message);
 		 
 		 }
 		 
+		 /**
+		  * Prints log message for type:debug
+		  * @param message
+		  */
 		 public static void debug(String message) {
 		 
 		    Log.debug(message);
