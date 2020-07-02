@@ -2,46 +2,46 @@
 <testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Hotel Adactin Mobile App Regression Test Suite" duration-ms="47397" started-at="2020-06-26T15:21:19 AEST" finished-at="2020-06-26T15:22:07 AEST">
+  <suite name="Hotel Adactin Mobile App Regression Test Suite" duration-ms="74729" started-at="2020-06-30T10:44:37 AEST" finished-at="2020-06-30T10:45:51 AEST">
     <groups>
       <group name="sfunctionalTest">
-        <method signature="InvalidLoginVerificationTest.MAHA_TC01_TC_InvalidLoginVerification()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.InvalidLoginVerificationTest@6babf3bf]" name="MAHA_TC01_TC_InvalidLoginVerification" class="com.adactin.Mobileapphoteladactin1.tests.InvalidLoginVerificationTest"/>
+        <method signature="InvalidLoginVerificationTest.MAHA_TC01_TC_InvalidLoginVerification()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.InvalidLoginVerificationTest@194bcebf]" name="MAHA_TC01_TC_InvalidLoginVerification" class="com.adactin.Mobileapphoteladactin1.tests.InvalidLoginVerificationTest"/>
       </group> <!-- sfunctionalTest -->
       <group name="functionalTest">
-        <method signature="ValidLoginVerificationTest.MAHA_TC03_TC_ValidLoginVerificationTest()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.ValidLoginVerificationTest@759d26fb]" name="MAHA_TC03_TC_ValidLoginVerificationTest" class="com.adactin.Mobileapphoteladactin1.tests.ValidLoginVerificationTest"/>
+        <method signature="ValidLoginVerificationTest.MAHA_TC03_TC_ValidLoginVerificationTest()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.ValidLoginVerificationTest@2c1b194a]" name="MAHA_TC03_TC_ValidLoginVerificationTest" class="com.adactin.Mobileapphoteladactin1.tests.ValidLoginVerificationTest"/>
       </group> <!-- functionalTest -->
     </groups>
-    <test name="Login Verification with no user id and password" duration-ms="15544" started-at="2020-06-26T15:21:19 AEST" finished-at="2020-06-26T15:21:35 AEST">
+    <test name="Login Verification with no user id and password" duration-ms="18388" started-at="2020-06-30T10:44:37 AEST" finished-at="2020-06-30T10:44:55 AEST">
       <class name="com.adactin.Mobileapphoteladactin1.tests.BlankLoginVerificationTest">
-        <test-method status="PASS" signature="MAHA_TC02_TC_BlankLoginVerificationTest()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.BlankLoginVerificationTest@5ace1ed4]" name="MAHA_TC02_TC_BlankLoginVerificationTest" duration-ms="14959" started-at="2020-06-26T15:21:19 AEST" finished-at="2020-06-26T15:21:34 AEST">
+        <test-method status="PASS" signature="MAHA_TC02_TC_BlankLoginVerificationTest()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.BlankLoginVerificationTest@1af2d44a]" name="MAHA_TC02_TC_BlankLoginVerificationTest" duration-ms="17853" started-at="2020-06-30T10:44:37 AEST" finished-at="2020-06-30T10:44:55 AEST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- MAHA_TC02_TC_BlankLoginVerificationTest -->
-        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.BlankLoginVerificationTest@5ace1ed4]" name="closeApp" is-config="true" duration-ms="511" started-at="2020-06-26T15:21:34 AEST" finished-at="2020-06-26T15:21:35 AEST">
+        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.BlankLoginVerificationTest@1af2d44a]" name="closeApp" is-config="true" duration-ms="454" started-at="2020-06-30T10:44:55 AEST" finished-at="2020-06-30T10:44:55 AEST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApp -->
       </class> <!-- com.adactin.Mobileapphoteladactin1.tests.BlankLoginVerificationTest -->
     </test> <!-- Login Verification with no user id and password -->
-    <test name="Login Verification with invalid user id and password" duration-ms="15993" started-at="2020-06-26T15:21:35 AEST" finished-at="2020-06-26T15:21:51 AEST">
+    <test name="Login Verification with invalid user id and password" duration-ms="16470" started-at="2020-06-30T10:45:10 AEST" finished-at="2020-06-30T10:45:27 AEST">
       <class name="com.adactin.Mobileapphoteladactin1.tests.InvalidLoginVerificationTest">
-        <test-method status="PASS" signature="MAHA_TC01_TC_InvalidLoginVerification()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.InvalidLoginVerificationTest@6babf3bf]" name="MAHA_TC01_TC_InvalidLoginVerification" duration-ms="15434" started-at="2020-06-26T15:21:35 AEST" finished-at="2020-06-26T15:21:50 AEST">
+        <test-method status="PASS" signature="MAHA_TC01_TC_InvalidLoginVerification()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.InvalidLoginVerificationTest@194bcebf]" name="MAHA_TC01_TC_InvalidLoginVerification" duration-ms="16038" started-at="2020-06-30T10:45:10 AEST" finished-at="2020-06-30T10:45:26 AEST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- MAHA_TC01_TC_InvalidLoginVerification -->
-        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.InvalidLoginVerificationTest@6babf3bf]" name="closeApp" is-config="true" duration-ms="550" started-at="2020-06-26T15:21:50 AEST" finished-at="2020-06-26T15:21:51 AEST">
+        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.InvalidLoginVerificationTest@194bcebf]" name="closeApp" is-config="true" duration-ms="427" started-at="2020-06-30T10:45:26 AEST" finished-at="2020-06-30T10:45:27 AEST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApp -->
       </class> <!-- com.adactin.Mobileapphoteladactin1.tests.InvalidLoginVerificationTest -->
     </test> <!-- Login Verification with invalid user id and password -->
-    <test name="Login verification with valid user id and password" duration-ms="15773" started-at="2020-06-26T15:21:51 AEST" finished-at="2020-06-26T15:22:07 AEST">
+    <test name="Login verification with valid user id and password" duration-ms="14818" started-at="2020-06-30T10:45:37 AEST" finished-at="2020-06-30T10:45:51 AEST">
       <class name="com.adactin.Mobileapphoteladactin1.tests.ValidLoginVerificationTest">
-        <test-method status="PASS" signature="MAHA_TC03_TC_ValidLoginVerificationTest()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.ValidLoginVerificationTest@759d26fb]" name="MAHA_TC03_TC_ValidLoginVerificationTest" duration-ms="15305" started-at="2020-06-26T15:21:51 AEST" finished-at="2020-06-26T15:22:06 AEST">
+        <test-method status="PASS" signature="MAHA_TC03_TC_ValidLoginVerificationTest()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.ValidLoginVerificationTest@2c1b194a]" name="MAHA_TC03_TC_ValidLoginVerificationTest" duration-ms="14410" started-at="2020-06-30T10:45:37 AEST" finished-at="2020-06-30T10:45:51 AEST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- MAHA_TC03_TC_ValidLoginVerificationTest -->
-        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.ValidLoginVerificationTest@759d26fb]" name="closeApp" is-config="true" duration-ms="460" started-at="2020-06-26T15:22:06 AEST" finished-at="2020-06-26T15:22:07 AEST">
+        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.ValidLoginVerificationTest@2c1b194a]" name="closeApp" is-config="true" duration-ms="406" started-at="2020-06-30T10:45:51 AEST" finished-at="2020-06-30T10:45:51 AEST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApp -->

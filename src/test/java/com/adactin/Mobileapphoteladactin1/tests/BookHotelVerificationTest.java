@@ -51,7 +51,7 @@ public class BookHotelVerificationTest extends BaseClass{
 		lp=new Login();
 		lp.login(rno);
 		hp=new Home();
-		hp.searchHotel(rno);
+		hp.searchHotel1(rno);
 		hp.clickOnSearch();
 		sp=new Select_Hotel();
 		sp.select_hotel(1);

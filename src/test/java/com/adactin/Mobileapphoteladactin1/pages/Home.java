@@ -26,10 +26,90 @@ public class Home extends BaseClass {
 		PageFactory.initElements(driver, this);
 
 	}
+	String text;
 	
 	
 	@FindBy(xpath="//android.view.View[1][contains(@text,'welcome')]")
 	WebElement welcome_msg;
+	
+	@FindBy(xpath="//android.view.View[@text='search_hotel']")
+	WebElement search_hotel_title;
+	
+	@FindBy(xpath="//android.widget.EditText[@text='Select Location']")
+	WebElement selectlocation;
+	
+	@FindBy(xpath="//android.view.View[2]/android.view.View/android.view.View/android.view.View")
+	List<WebElement> location_optns;
+	
+	@FindBy(xpath="//android.widget.Button[@text='Cancel']")
+	WebElement cancel_btn;
+	
+	@FindBy(xpath="//android.widget.EditText[@text='Select Hotel']")
+	WebElement select_hotel;
+	
+	@FindBy(xpath="//android.view.View[2]/android.view.View/android.view.View/android.view.View")
+	List<WebElement> hotel_optns;
+	
+	
+	@FindBy(xpath="//android.widget.EditText[@text='Select Room Type']")
+	WebElement select_roomtype;
+	
+	@FindBy(xpath="//android.view.View[2]/android.view.View/android.view.View/android.view.View")
+	List<WebElement> roomtype_optns;
+	
+	@FindBy(xpath="//android.widget.EditText[contains(@text,'Number of Rooms')]")
+	WebElement no_of_rooms;
+	
+	@FindBy(xpath="//android.view.View[2]/android.view.View/android.view.View/android.view.View")
+	List<WebElement> roomno_optns;
+	
+	//after scroll
+	
+	@FindBy(xpath="//android.widget.EditText[contains(@text,'Check-in Date')]")
+	WebElement checkin_date;
+	
+	@FindBy(xpath="//android.widget.SeekBar")
+	List<WebElement> checkin_datepicker;
+	
+	
+	
+	@FindBy(xpath="//android.widget.EditText[contains(@text,'Check-out Date')]")
+	WebElement checkout_date;
+	
+	@FindBy(xpath="//android.widget.SeekBar")
+	List<WebElement> checkout_datepicker;
+	
+	@FindBy(xpath="//android.widget.Button[@text='Cancel']")
+	WebElement canceldate;
+	
+	@FindBy(xpath="//android.widget.Button[@text='Done']")
+	WebElement donedate;
+	
+	
+	@FindBy(xpath="//android.widget.EditText[contains(@text,'Adults per Room')]")
+	WebElement adults_per_room;
+	
+	@FindBy(xpath="//android.view.View[2]/android.view.View/android.view.View/android.view.View")
+	List<WebElement> adultsroom_optns;
+	
+	@FindBy(xpath="//android.widget.EditText[contains(@text,'Children per Room')]")
+	WebElement children_per_room;
+	
+	@FindBy(xpath="//android.view.View[2]/android.view.View/android.view.View/android.view.View")
+	List<WebElement> childrensroom_optns;
+	
+	@FindBy(xpath="//android.widget.Button[@text='Search']")
+	WebElement search_btn;
+	
+	@FindBy(xpath="//android.widget.Button[@text='Reset']")
+	WebElement reset_btn;
+	
+	@FindBy(xpath="//android.view.View[@text='Home']")
+	WebElement home_btn;
+	
+	@FindBy(xpath="//android.view.View[@text='Booked Itinerary']")
+	WebElement booked_itinerary;
+	
 /**
  * Method to check the welcome message of a user
  * @param rno
@@ -81,6 +161,115 @@ public class Home extends BaseClass {
 			n++;
 		}
 
+	}
+	
+	public void searchHotel1(int i)
+	{
+		String expected_location = null,expected_hotel=null,expected_roomtype=null,expected_nofrooms=null,expected_checkin=null;
+		String expected_checkout=null,expected_adultsperroom=null,expected_childrenperroom=null;
+		try {
+			expected_location=ExcelUtil.getCellData(i,7);
+			expected_hotel=ExcelUtil.getCellData(i,8);
+			expected_roomtype=ExcelUtil.getCellData(i,9);
+			expected_nofrooms=ExcelUtil.getCellData(i,10);
+			expected_checkin=ExcelUtil.getCellData(i,11);
+			expected_checkout=ExcelUtil.getCellData(i,12);
+			expected_adultsperroom=ExcelUtil.getCellData(i,13);
+			expected_childrenperroom=ExcelUtil.getCellData(i,14);
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			Log.error(e.getCause().toString());
+			e.printStackTrace();
+		}
+
+		
+		selectlocation.click();
+		
+		for(int j=0;j<location_optns.size();j++)
+			{
+			System.out.println(location_optns.get(j).getText());
+			if(location_optns.get(j).getText().contains(expected_location))
+				{
+				for(int k =0;k<2;k++)
+					location_optns.get(j).click();
+				break;
+				//Thread.sleep(1000);
+				}
+			}
+		
+		
+		//selected_location.click();
+		select_hotel.click();
+		
+		for(int j=0;j<hotel_optns.size();j++)
+		{
+		if(hotel_optns.get(j).getText().contains(expected_hotel))
+			{
+			for(int k =0;k<2;k++)
+				hotel_optns.get(j).click();
+			break;
+			}
+		}
+
+	/*	List<MobileElement> hoteldropdown1=(List<MobileElement>)driver.findElements(By.xpath("//android.view.View[2]/android.view.View/android.view.View/android.view.View"));
+		for(int j=0;j<hoteldropdown1.size();j++)
+		{
+		System.out.println(hoteldropdown1.get(j).getText());
+		if(hoteldropdown1.get(j).getText().contains(expected_hotel))
+			{
+			hoteldropdown1.get(j).click();
+			break;
+			//Thread.sleep(1000);
+			}
+		}
+		
+		MobileElement roomtypedropdown=(MobileElement) driver.findElement(By.xpath("//android.view.View[8]/android.widget.EditText"));
+		//iOSScrollDown(xpathtoscrollto);
+		roomtypedropdown.click();
+		List<MobileElement> selected_roomtype=(List<MobileElement>) driver.findElements(By.xpath("//android.view.View[2]/android.view.View/android.view.View/android.view.View"));
+		for(int j=0;j<selected_roomtype.size();j++)
+		{
+		if(selected_roomtype.get(j).getText().contains(expected_roomtype))
+			{
+			selected_roomtype.get(j).click();break;
+			}
+		}
+
+		List<MobileElement> roomtypedropdown1=(List<MobileElement>)driver.findElements(By.xpath("//android.view.View[2]/android.view.View/android.view.View/android.view.View"));
+		for(int j=0;j<roomtypedropdown1.size();j++)
+		{
+		System.out.println(roomtypedropdown1.get(j).getText());
+		if(roomtypedropdown1.get(j).getText().contains(expected_roomtype))
+			{
+			roomtypedropdown1.get(j).click();
+			break;
+			//Thread.sleep(1000);
+			}
+		}
+
+		boolean result=ScrollUtil.pageScrollToText("Search");
+		System.out.println("The result of scrolling"+result);
+		Thread.sleep(1000);
+		//clickOnSearch();
+		/*MobileElement noofroomsdropdown=(MobileElement) driver.findElement(By.name("Select Number of Rooms"));
+		//iOSScrollToElement();
+		noofroomsdropdown.click();
+		MobileElement selected_noofrooms=(MobileElement) driver.findElement(By.name(expected_nofrooms));
+		selected_noofrooms.click();
+
+		iOSScrollDown(xpathtoscrollto);
+		MobileElement adultsperroomdropdown=(MobileElement) driver.findElement(By.name("Select Adults per Room"));
+		adultsperroomdropdown.click();
+		MobileElement selected_adultsperroom=(MobileElement) driver.findElement(By.name(expected_adultsperroom));
+		selected_adultsperroom.click();
+
+		MobileElement childrenperroomdropdown=(MobileElement) driver.findElement(By.name("Select Children per Room"));
+		childrenperroomdropdown.click();
+		MobileElement selected_childrenperroomm=(MobileElement) driver.findElement(By.name(expected_childrenperroom));
+		selected_childrenperroomm.click();
+		//clickOnSearch();*/
+		
 	}
 
 	/**
@@ -212,8 +401,11 @@ public class Home extends BaseClass {
 	 */
 	public void clickOnSearch()
 	{
-		MobileElement search=(MobileElement) driver.findElement(By.xpath("//android.widget.Button[@text='Search']"));
-		search.click();
+		//MobileElement search=(MobileElement) driver.findElement(By.xpath("//android.widget.Button[@text='Search']"));
+		//search.click();
+		ScrollUtil.pageScrollToText("Search");
+		search_btn.click();
+		
 	}
 	
 	/**
