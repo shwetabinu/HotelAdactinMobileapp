@@ -1,51 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Hotel Adactin Mobile App Regression Test Suite" duration-ms="74729" started-at="2020-06-30T10:44:37 AEST" finished-at="2020-06-30T10:45:51 AEST">
+  <suite name="Default suite" duration-ms="39832" started-at="2020-07-09T16:55:29 AEST" finished-at="2020-07-09T16:56:08 AEST">
     <groups>
-      <group name="sfunctionalTest">
-        <method signature="InvalidLoginVerificationTest.MAHA_TC01_TC_InvalidLoginVerification()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.InvalidLoginVerificationTest@194bcebf]" name="MAHA_TC01_TC_InvalidLoginVerification" class="com.adactin.Mobileapphoteladactin1.tests.InvalidLoginVerificationTest"/>
-      </group> <!-- sfunctionalTest -->
-      <group name="functionalTest">
-        <method signature="ValidLoginVerificationTest.MAHA_TC03_TC_ValidLoginVerificationTest()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.ValidLoginVerificationTest@2c1b194a]" name="MAHA_TC03_TC_ValidLoginVerificationTest" class="com.adactin.Mobileapphoteladactin1.tests.ValidLoginVerificationTest"/>
-      </group> <!-- functionalTest -->
     </groups>
-    <test name="Login Verification with no user id and password" duration-ms="18388" started-at="2020-06-30T10:44:37 AEST" finished-at="2020-06-30T10:44:55 AEST">
-      <class name="com.adactin.Mobileapphoteladactin1.tests.BlankLoginVerificationTest">
-        <test-method status="PASS" signature="MAHA_TC02_TC_BlankLoginVerificationTest()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.BlankLoginVerificationTest@1af2d44a]" name="MAHA_TC02_TC_BlankLoginVerificationTest" duration-ms="17853" started-at="2020-06-30T10:44:37 AEST" finished-at="2020-06-30T10:44:55 AEST">
+    <test name="Default test" duration-ms="39832" started-at="2020-07-09T16:55:29 AEST" finished-at="2020-07-09T16:56:08 AEST">
+      <class name="com.adactin.Mobileapphoteladactin1.tests.SearchHotel_AllFields">
+        <test-method status="PASS" signature="MAHA_TC03_TC_SearchHotel_AllFieldsTest()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.SearchHotel_AllFields@1af2d44a]" name="MAHA_TC03_TC_SearchHotel_AllFieldsTest" duration-ms="39280" started-at="2020-07-09T16:55:29 AEST" finished-at="2020-07-09T16:56:08 AEST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- MAHA_TC02_TC_BlankLoginVerificationTest -->
-        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.BlankLoginVerificationTest@1af2d44a]" name="closeApp" is-config="true" duration-ms="454" started-at="2020-06-30T10:44:55 AEST" finished-at="2020-06-30T10:44:55 AEST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeApp -->
-      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.BlankLoginVerificationTest -->
-    </test> <!-- Login Verification with no user id and password -->
-    <test name="Login Verification with invalid user id and password" duration-ms="16470" started-at="2020-06-30T10:45:10 AEST" finished-at="2020-06-30T10:45:27 AEST">
-      <class name="com.adactin.Mobileapphoteladactin1.tests.InvalidLoginVerificationTest">
-        <test-method status="PASS" signature="MAHA_TC01_TC_InvalidLoginVerification()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.InvalidLoginVerificationTest@194bcebf]" name="MAHA_TC01_TC_InvalidLoginVerification" duration-ms="16038" started-at="2020-06-30T10:45:10 AEST" finished-at="2020-06-30T10:45:26 AEST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- MAHA_TC01_TC_InvalidLoginVerification -->
-        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.InvalidLoginVerificationTest@194bcebf]" name="closeApp" is-config="true" duration-ms="427" started-at="2020-06-30T10:45:26 AEST" finished-at="2020-06-30T10:45:27 AEST">
+        </test-method> <!-- MAHA_TC03_TC_SearchHotel_AllFieldsTest -->
+        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.SearchHotel_AllFields@1af2d44a]" name="closeApp" is-config="true" duration-ms="491" started-at="2020-07-09T16:56:08 AEST" finished-at="2020-07-09T16:56:08 AEST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApp -->
-      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.InvalidLoginVerificationTest -->
-    </test> <!-- Login Verification with invalid user id and password -->
-    <test name="Login verification with valid user id and password" duration-ms="14818" started-at="2020-06-30T10:45:37 AEST" finished-at="2020-06-30T10:45:51 AEST">
-      <class name="com.adactin.Mobileapphoteladactin1.tests.ValidLoginVerificationTest">
-        <test-method status="PASS" signature="MAHA_TC03_TC_ValidLoginVerificationTest()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.ValidLoginVerificationTest@2c1b194a]" name="MAHA_TC03_TC_ValidLoginVerificationTest" duration-ms="14410" started-at="2020-06-30T10:45:37 AEST" finished-at="2020-06-30T10:45:51 AEST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- MAHA_TC03_TC_ValidLoginVerificationTest -->
-        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.ValidLoginVerificationTest@2c1b194a]" name="closeApp" is-config="true" duration-ms="406" started-at="2020-06-30T10:45:51 AEST" finished-at="2020-06-30T10:45:51 AEST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeApp -->
-      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.ValidLoginVerificationTest -->
-    </test> <!-- Login verification with valid user id and password -->
-  </suite> <!-- Hotel Adactin Mobile App Regression Test Suite -->
+      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.SearchHotel_AllFields -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

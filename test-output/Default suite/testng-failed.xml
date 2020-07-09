@@ -3,11 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.adactin.Mobileapphoteladactin1.tests.BlankLoginVerificationTest">
+      <class name="com.adactin.Mobileapphoteladactin1.tests.SearchHotel_AllFields">
         <methods>
-          <include name="MAHA_TC02_TC_BlankLoginVerificationTest"/>
+          <include name="closeApp"/>
+          <include name="MAHA_TC03_TC_SearchHotel_AllFieldsTest"/>
         </methods>
-      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.BlankLoginVerificationTest -->
+      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.SearchHotel_AllFields -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
