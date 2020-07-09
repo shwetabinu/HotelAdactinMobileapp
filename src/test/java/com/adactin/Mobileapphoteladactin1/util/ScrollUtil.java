@@ -66,7 +66,7 @@ public class ScrollUtil extends BaseClass {
 									+ text + "\"));"));
 
 			System.out.println("The text in the element" + el.getText());
-			driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+			//driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 
 		} catch (NoSuchElementException e) {
 			result = false;

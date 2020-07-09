@@ -16,484 +16,383 @@ import com.adactin.Mobileapphoteladactin1.util.ScrollUtil;
 import io.appium.java_client.MobileElement;
 
 /**
- * Home page has methods to initialize the home page.
- * It has methods to search hotel 
+ * Home page has methods to initialize the home page. It has methods to search
+ * hotel
  *
  */
 public class Home extends BaseClass {
-	public Home() throws Exception
-	{		
+	public Home() throws Exception {
 		PageFactory.initElements(driver, this);
 
 	}
+
 	String text;
-	
-	
-	@FindBy(xpath="//android.view.View[1][contains(@text,'welcome')]")
+
+	@FindBy(xpath = "//android.view.View[1][contains(@text,'welcome')]")
 	WebElement welcome_msg;
-	
-	@FindBy(xpath="//android.view.View[@text='search_hotel']")
+
+	@FindBy(xpath = "//android.view.View[@text='search_hotel']")
 	WebElement search_hotel_title;
-	
-	@FindBy(xpath="//android.widget.EditText[@text='Select Location']")
+
+	@FindBy(xpath = "//android.widget.EditText[@text='Select Location']")
 	WebElement selectlocation;
-	
-	@FindBy(xpath="//android.view.View[2]/android.view.View/android.view.View/android.view.View")
+
+	@FindBy(xpath = "//android.view.View[2]/android.view.View/android.view.View/android.view.View")
 	List<WebElement> location_optns;
-	
-	@FindBy(xpath="//android.widget.Button[@text='Cancel']")
+
+	@FindBy(xpath = "//android.widget.Button[@text='Cancel']")
 	WebElement cancel_btn;
-	
-	@FindBy(xpath="//android.widget.EditText[@text='Select Hotel']")
+
+	@FindBy(xpath = "//android.widget.EditText[@text='Select Hotel']")
 	WebElement select_hotel;
-	
-	@FindBy(xpath="//android.view.View[2]/android.view.View/android.view.View/android.view.View")
+
+	@FindBy(xpath = "//android.view.View[2]/android.view.View/android.view.View/android.view.View")
 	List<WebElement> hotel_optns;
-	
-	
-	@FindBy(xpath="//android.widget.EditText[@text='Select Room Type']")
+
+	@FindBy(xpath = "//android.widget.EditText[@text='Select Room Type']")
 	WebElement select_roomtype;
-	
-	@FindBy(xpath="//android.view.View[2]/android.view.View/android.view.View/android.view.View")
+
+	@FindBy(xpath = "//android.view.View[2]/android.view.View/android.view.View/android.view.View")
 	List<WebElement> roomtype_optns;
-	
-	@FindBy(xpath="//android.widget.EditText[contains(@text,'Number of Rooms')]")
+
+	@FindBy(xpath = "//android.widget.EditText[contains(@text,'Number of Rooms')]")
 	WebElement no_of_rooms;
-	
-	@FindBy(xpath="//android.view.View[2]/android.view.View/android.view.View/android.view.View")
+
+	@FindBy(xpath = "//android.view.View[2]/android.view.View/android.view.View/android.view.View")
 	List<WebElement> roomno_optns;
-	
-	//after scroll
-	
-	@FindBy(xpath="//android.widget.EditText[contains(@text,'Check-in Date')]")
+
+	// after scroll
+
+	@FindBy(xpath = "//android.widget.EditText[contains(@text,'Check-in Date')]")
 	WebElement checkin_date;
-	
-	@FindBy(xpath="//android.widget.SeekBar")
+
+	@FindBy(xpath = "//android.widget.SeekBar")
 	List<WebElement> checkin_datepicker;
-	
-	
-	
-	@FindBy(xpath="//android.widget.EditText[contains(@text,'Check-out Date')]")
+
+	@FindBy(xpath = "//android.widget.EditText[contains(@text,'Check-out Date')]")
 	WebElement checkout_date;
-	
-	@FindBy(xpath="//android.widget.SeekBar")
+
+	@FindBy(xpath = "//android.widget.SeekBar")
 	List<WebElement> checkout_datepicker;
-	
-	@FindBy(xpath="//android.widget.Button[@text='Cancel']")
+
+	@FindBy(xpath = "//android.widget.Button[@text='Cancel']")
 	WebElement canceldate;
-	
-	@FindBy(xpath="//android.widget.Button[@text='Done']")
+
+	@FindBy(xpath = "//android.widget.Button[@text='Done']")
 	WebElement donedate;
-	
-	
-	@FindBy(xpath="//android.widget.EditText[contains(@text,'Adults per Room')]")
+
+	@FindBy(xpath = "//android.widget.EditText[contains(@text,'Adults per Room')]")
 	WebElement adults_per_room;
-	
-	@FindBy(xpath="//android.view.View[2]/android.view.View/android.view.View/android.view.View")
+
+	@FindBy(xpath = "//android.view.View[2]/android.view.View/android.view.View/android.view.View")
 	List<WebElement> adultsroom_optns;
-	
-	@FindBy(xpath="//android.widget.EditText[contains(@text,'Children per Room')]")
+
+	@FindBy(xpath = "//android.widget.EditText[contains(@text,'Children per Room')]")
 	WebElement children_per_room;
-	
-	@FindBy(xpath="//android.view.View[2]/android.view.View/android.view.View/android.view.View")
+
+	@FindBy(xpath = "//android.view.View[2]/android.view.View/android.view.View/android.view.View")
 	List<WebElement> childrensroom_optns;
-	
-	@FindBy(xpath="//android.widget.Button[@text='Search']")
+
+	@FindBy(xpath = "//android.widget.Button[@text='Search']")
 	WebElement search_btn;
-	
-	@FindBy(xpath="//android.widget.Button[@text='Reset']")
+
+	@FindBy(xpath = "//android.widget.Button[@text='Reset']")
 	WebElement reset_btn;
-	
-	@FindBy(xpath="//android.view.View[@text='Home']")
+
+	@FindBy(xpath = "//android.view.View[@text='Home']")
 	WebElement home_btn;
-	
-	@FindBy(xpath="//android.view.View[@text='Booked Itinerary']")
+
+	@FindBy(xpath = "//android.view.View[@text='Booked Itinerary']")
 	WebElement booked_itinerary;
-	
-/**
- * Method to check the welcome message of a user
- * @param rno
- * @throws Exception
- */
-	public boolean checkWelcomeMessage(int rno) throws Exception
-	{
+
+	/**
+	 * Method to check the welcome message of a user
+	 * 
+	 * @param rno
+	 * @throws Exception
+	 */
+	public boolean checkWelcomeMessage(int rno) throws Exception {
 		boolean result;
-		try {	
-		//Assigning Expected Message to be verified
-		String expectedmsg;
-		expectedmsg="welcome_user";
-		//Verifying the actual message with the expected message
-		//and assigning the result of validation to result
-		if(welcome_msg.getText().equalsIgnoreCase(expectedmsg))
-			result=true;
-		else
-			result=false;
-			
-		}catch(Exception e) {
-			result=false;
+		try {
+			// Assigning Expected Message to be verified
+			String expectedmsg;
+			expectedmsg = "welcome_user";
+
+			// Verifying the actual message with the expected message
+			// and assigning the result of validation to result
+			if (welcome_msg.getText().equalsIgnoreCase(expectedmsg))
+				result = true;
+			else
+				result = false;
+
+		} catch (Exception e) {
+			result = false;
 		}
-		//returning the value of result depending on the outcome of execution
+		// returning the value of result depending on the outcome of execution
 		return result;
-		
+
 	}
 
-/**
- * Method to check the location drop down for the entries
- * @param i
- */
-	public void checkLocationdropdown(int i)
-	{
-		String[] expectedlocation=null;
+	/**
+	 * Method to check the location drop down for the entries
+	 * 
+	 * @param i
+	 */
+	public void checkLocationdropdown(int i) {
+		String[] expectedlocation = null;
 		try {
-			expectedlocation=ExcelUtil.getCellData(i,7).split(",");
+			expectedlocation = ExcelUtil.getCellData(i, 7).split(",");
 
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			Log.error("Unable to read from the excel sheet");
 			e.printStackTrace();
 		}
-		List<MobileElement> location=driver.findElementsByAccessibilityId("Select Location");
-		int n=0;
-		for(MobileElement ele:location)
-		{
+		List<MobileElement> location = driver.findElementsByAccessibilityId("Select Location");
+		int n = 0;
+		for (MobileElement ele : location) {
 			Assert.assertEquals(ele.getText(), expectedlocation[n]);
-			//assert.assertEquals(ele.getText(), expectedlocation[i]);
+			// assert.assertEquals(ele.getText(), expectedlocation[i]);
 			n++;
 		}
 
 	}
-	
-	public void searchHotel1(int i)
-	{
-		String expected_location = null,expected_hotel=null,expected_roomtype=null,expected_nofrooms=null,expected_checkin=null;
-		String expected_checkout=null,expected_adultsperroom=null,expected_childrenperroom=null;
+
+	public boolean searchHotel(int i) throws InterruptedException {
+		boolean result = true;
 		try {
-			expected_location=ExcelUtil.getCellData(i,7);
-			expected_hotel=ExcelUtil.getCellData(i,8);
-			expected_roomtype=ExcelUtil.getCellData(i,9);
-			expected_nofrooms=ExcelUtil.getCellData(i,10);
-			expected_checkin=ExcelUtil.getCellData(i,11);
-			expected_checkout=ExcelUtil.getCellData(i,12);
-			expected_adultsperroom=ExcelUtil.getCellData(i,13);
-			expected_childrenperroom=ExcelUtil.getCellData(i,14);
+			String expected_location = new String();
+			String expected_hotel = new String();
+			String expected_roomtype = new String();
+			String expected_nofrooms = new String();
+			String expected_adultsperroom = new String();
+			String expected_childrenperroom = new String();
 
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			Log.error(e.getCause().toString());
-			e.printStackTrace();
-		}
+			try {
+				// expected_location=ExcelUtil.getCellData(i,7);
+				int expected_location_index = ExcelUtil.readExcel('c', "Location");
+				expected_location = ExcelUtil.getCellData(i, expected_location_index);
 
-		
-		selectlocation.click();
-		
-		for(int j=0;j<location_optns.size();j++)
-			{
-			System.out.println(location_optns.get(j).getText());
-			if(location_optns.get(j).getText().contains(expected_location))
-				{
-				for(int k =0;k<2;k++)
-					location_optns.get(j).click();
-				break;
-				//Thread.sleep(1000);
+				int expected_hotel_index = ExcelUtil.readExcel('c', "Hotels");
+				expected_hotel = ExcelUtil.getCellData(i, expected_hotel_index);
+
+				int expected_roomtype_index = ExcelUtil.readExcel('c', "Room Type");
+				expected_roomtype = ExcelUtil.getCellData(i, expected_roomtype_index);
+
+				int expected_roomno_index = ExcelUtil.readExcel('c', "Number of Rooms");
+				expected_nofrooms = ExcelUtil.getCellData(i, expected_roomno_index);
+
+				int expected_adultno_index = ExcelUtil.readExcel('c', "Adults per Room");
+				expected_adultsperroom = ExcelUtil.getCellData(i, expected_adultno_index);
+
+				int expected_childno_index = ExcelUtil.readExcel('c', "Children per Room");
+				expected_childrenperroom = ExcelUtil.getCellData(i, expected_childno_index);
+
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				Log.error(e.getCause().toString());
+				e.printStackTrace();
+			}
+
+			selectlocation.click();
+
+			for (int j = 0; j < location_optns.size(); j++) {
+				System.out.println(location_optns.get(j).getText());
+				if (location_optns.get(j).getText().contains(expected_location)) {
+					for (int k = 0; k < 2; k++)
+						location_optns.get(j).click();
+					break;
+					// Thread.sleep(1000);
 				}
 			}
-		
-		
-		//selected_location.click();
-		select_hotel.click();
-		
-		for(int j=0;j<hotel_optns.size();j++)
-		{
-		if(hotel_optns.get(j).getText().contains(expected_hotel))
-			{
-			for(int k =0;k<2;k++)
-				hotel_optns.get(j).click();
-			break;
+
+			if (!expected_hotel.isEmpty()) {
+				select_hotel.click();
+
+				for (int j = 0; j < hotel_optns.size(); j++) {
+					if (hotel_optns.get(j).getText().contains(expected_hotel)) {
+						for (int k = 0; k < 2; k++)
+							hotel_optns.get(j).click();
+						break;
+					}
+				}
 			}
-		}
 
-	/*	List<MobileElement> hoteldropdown1=(List<MobileElement>)driver.findElements(By.xpath("//android.view.View[2]/android.view.View/android.view.View/android.view.View"));
-		for(int j=0;j<hoteldropdown1.size();j++)
-		{
-		System.out.println(hoteldropdown1.get(j).getText());
-		if(hoteldropdown1.get(j).getText().contains(expected_hotel))
-			{
-			hoteldropdown1.get(j).click();
-			break;
-			//Thread.sleep(1000);
+			if (!expected_roomtype.isEmpty()) {
+				select_roomtype.click();
+				for (int j = 0; j < roomtype_optns.size(); j++) {
+					System.out.println(roomtype_optns.get(j).getText());
+					if (roomtype_optns.get(j).getText().contains(expected_roomtype)) {
+						for (int k = 0; k < 2; k++)
+							roomtype_optns.get(j).click();
+						break;
+
+					}
+				}
 			}
-		}
-		
-		MobileElement roomtypedropdown=(MobileElement) driver.findElement(By.xpath("//android.view.View[8]/android.widget.EditText"));
-		//iOSScrollDown(xpathtoscrollto);
-		roomtypedropdown.click();
-		List<MobileElement> selected_roomtype=(List<MobileElement>) driver.findElements(By.xpath("//android.view.View[2]/android.view.View/android.view.View/android.view.View"));
-		for(int j=0;j<selected_roomtype.size();j++)
-		{
-		if(selected_roomtype.get(j).getText().contains(expected_roomtype))
-			{
-			selected_roomtype.get(j).click();break;
+
+			if (!expected_nofrooms.isEmpty()) {
+				no_of_rooms.click();
+				for (int j = 0; j < roomno_optns.size(); j++) {
+					if (roomno_optns.get(j).getText().contains(expected_nofrooms)) {
+						for (int k = 0; k < 2; k++)
+							roomno_optns.get(j).click();
+						break;
+					}
+				}
 			}
-		}
 
-		List<MobileElement> roomtypedropdown1=(List<MobileElement>)driver.findElements(By.xpath("//android.view.View[2]/android.view.View/android.view.View/android.view.View"));
-		for(int j=0;j<roomtypedropdown1.size();j++)
-		{
-		System.out.println(roomtypedropdown1.get(j).getText());
-		if(roomtypedropdown1.get(j).getText().contains(expected_roomtype))
-			{
-			roomtypedropdown1.get(j).click();
-			break;
-			//Thread.sleep(1000);
+			if (!expected_adultsperroom.isEmpty()) {
+				ScrollUtil.pageScrollToText("Adults per Room");
+				adults_per_room.click();
+				for (int j = 0; j < adultsroom_optns.size(); j++) {
+					if (adultsroom_optns.get(j).getText().contains(expected_adultsperroom)) {
+						for (int k = 0; k < 2; k++)
+							adultsroom_optns.get(j).click();
+						break;
+					}
+				}
 			}
+
+			if (!expected_childrenperroom.isEmpty()) {
+				ScrollUtil.pageScrollToText("Children per Room");
+				children_per_room.click();
+				for (int j = 0; j < childrensroom_optns.size(); j++) {
+					if (childrensroom_optns.get(j).getText().contains(expected_childrenperroom)) {
+						for (int k = 0; k < 2; k++)
+							childrensroom_optns.get(j).click();
+						break;
+					}
+				}
+			}
+
+			// ScrollUtil.pageScrollToText("Search");
+
+		} catch (Exception e) {
+			Log.info("Exception occured while searching hotel");
+			result = false;
 		}
-
-		boolean result=ScrollUtil.pageScrollToText("Search");
-		System.out.println("The result of scrolling"+result);
-		Thread.sleep(1000);
-		//clickOnSearch();
-		/*MobileElement noofroomsdropdown=(MobileElement) driver.findElement(By.name("Select Number of Rooms"));
-		//iOSScrollToElement();
-		noofroomsdropdown.click();
-		MobileElement selected_noofrooms=(MobileElement) driver.findElement(By.name(expected_nofrooms));
-		selected_noofrooms.click();
-
-		iOSScrollDown(xpathtoscrollto);
-		MobileElement adultsperroomdropdown=(MobileElement) driver.findElement(By.name("Select Adults per Room"));
-		adultsperroomdropdown.click();
-		MobileElement selected_adultsperroom=(MobileElement) driver.findElement(By.name(expected_adultsperroom));
-		selected_adultsperroom.click();
-
-		MobileElement childrenperroomdropdown=(MobileElement) driver.findElement(By.name("Select Children per Room"));
-		childrenperroomdropdown.click();
-		MobileElement selected_childrenperroomm=(MobileElement) driver.findElement(By.name(expected_childrenperroom));
-		selected_childrenperroomm.click();
-		//clickOnSearch();*/
-		
+		return result;
 	}
 
 	/**
-	 * Method to search for hotel with all the input fields entered
+	 * Method to click on Search button
+	 */
+	public boolean clickOnSearch() {
+
+		boolean result=true;
+		try{
+			boolean search_result=ScrollUtil.pageScrollToText("Search");
+			if(search_result==false)
+				result=false;
+			search_btn.click();
+		}catch(Exception e)
+		{
+			result=false;
+		}
+		return result;
+		
+
+	}
+
+	/**
+	 * Method to perform reset of the fields entered
+	 */
+	public boolean doReset() {
+		boolean result;
+		try {
+			int count = 0;
+			result = true;
+			reset_btn.click();
+
+			if (selectlocation.getText().equalsIgnoreCase("Select Location"))
+				count++;
+
+			if (select_hotel.getText().equalsIgnoreCase("Select Hotel"))
+				count++;
+
+			if (select_roomtype.getText().equalsIgnoreCase("Select Room Type"))
+				count++;
+
+			if (children_per_room.getText().equalsIgnoreCase("Select Children per Room"))
+				count++;
+
+			if (count == 4)
+				result = true;
+			else
+				result = false;
+		} catch (Exception e) {
+			Log.info("Exception occurred while performing reset");
+			result = false;
+		}
+
+		return result;
+	}
+
+	/**
+	 * Method to search for hotel with hotel and location provided
 	 * 
 	 * @param i
 	 * @throws Exception
 	 */
-	public void searchHotel(int i) throws Exception
-	{
-		String expected_location = null,expected_hotel=null,expected_roomtype=null,expected_nofrooms=null,expected_checkin=null;
-		String expected_checkout=null,expected_adultsperroom=null,expected_childrenperroom=null;
-		try {
-			expected_location=ExcelUtil.getCellData(i,7);
-			expected_hotel=ExcelUtil.getCellData(i,8);
-			expected_roomtype=ExcelUtil.getCellData(i,9);
-			expected_nofrooms=ExcelUtil.getCellData(i,10);
-			expected_checkin=ExcelUtil.getCellData(i,11);
-			expected_checkout=ExcelUtil.getCellData(i,12);
-			expected_adultsperroom=ExcelUtil.getCellData(i,13);
-			expected_childrenperroom=ExcelUtil.getCellData(i,14);
+	public void searchHotel_Hotel_location(int i) throws Exception {
 
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			Log.error(e.getCause().toString());
-			e.printStackTrace();
-		}
+		String expected_location = new String();
+		String expected_hotel = new String();
 
-		MobileElement locationdropdown=(MobileElement) driver.findElement(By.xpath("//android.view.View[4]/android.widget.EditText"));
-		locationdropdown.click();
-		List<MobileElement> selected_location=(List<MobileElement>) driver.findElements(By.xpath("//android.view.View[2]/android.view.View[1]/android.view.View"));
-		for(int j=0;j<selected_location.size();j++)
-			{
-			System.out.println(selected_location.get(j).getText());
-			if(selected_location.get(j).getText().contains(expected_location))
-				{
-				selected_location.get(j).click();
+		int expected_location_index = ExcelUtil.readExcel('c', "Location");
+		expected_location = ExcelUtil.getCellData(i, expected_location_index);
+
+		int expected_hotel_index = ExcelUtil.readExcel('c', "Hotels");
+		expected_hotel = ExcelUtil.getCellData(i, expected_hotel_index);
+
+		selectlocation.click();
+
+		for (int j = 0; j < location_optns.size(); j++) {
+			System.out.println(location_optns.get(j).getText());
+			if (location_optns.get(j).getText().contains(expected_location)) {
+				for (int k = 0; k < 2; k++)
+					location_optns.get(j).click();
 				break;
-				//Thread.sleep(1000);
-				}
-			}
-		List<MobileElement> selected_location1=(List<MobileElement>)driver.findElements(By.xpath("//android.view.View[2]/android.view.View/android.view.View/android.view.View"));
-		for(int j=0;j<selected_location1.size();j++)
-		{
-		System.out.println(selected_location1.get(j).getText());
-		if(selected_location1.get(j).getText().contains(expected_location))
-			{
-			selected_location1.get(j).click();
-			break;
-			//Thread.sleep(1000);
-			}
-		}
-		MobileElement hoteldropdown=(MobileElement) driver.findElement(By.xpath("//android.view.View[6]/android.widget.EditText"));
-		//selected_location.click();
-		hoteldropdown.click();
-		List<MobileElement> selected_hotel=(List<MobileElement>) driver.findElements(By.xpath("//android.view.View[2]/android.view.View/android.view.View/android.view.View"));
-		for(int j=0;j<selected_hotel.size();j++)
-		{
-		if(selected_hotel.get(j).getText().contains(expected_hotel))
-			{
-			selected_hotel.get(j).click();
-			break;
+				// Thread.sleep(1000);
 			}
 		}
 
-		List<MobileElement> hoteldropdown1=(List<MobileElement>)driver.findElements(By.xpath("//android.view.View[2]/android.view.View/android.view.View/android.view.View"));
-		for(int j=0;j<hoteldropdown1.size();j++)
-		{
-		System.out.println(hoteldropdown1.get(j).getText());
-		if(hoteldropdown1.get(j).getText().contains(expected_hotel))
-			{
-			hoteldropdown1.get(j).click();
-			break;
-			//Thread.sleep(1000);
+		select_hotel.click();
+
+		for (int j = 0; j < hotel_optns.size(); j++) {
+			if (hotel_optns.get(j).getText().contains(expected_hotel)) {
+				for (int k = 0; k < 2; k++)
+					hotel_optns.get(j).click();
+				break;
 			}
 		}
-		
-		MobileElement roomtypedropdown=(MobileElement) driver.findElement(By.xpath("//android.view.View[8]/android.widget.EditText"));
-		//iOSScrollDown(xpathtoscrollto);
-		roomtypedropdown.click();
-		List<MobileElement> selected_roomtype=(List<MobileElement>) driver.findElements(By.xpath("//android.view.View[2]/android.view.View/android.view.View/android.view.View"));
-		for(int j=0;j<selected_roomtype.size();j++)
-		{
-		if(selected_roomtype.get(j).getText().contains(expected_roomtype))
-			{
-			selected_roomtype.get(j).click();break;
-			}
-		}
-
-		List<MobileElement> roomtypedropdown1=(List<MobileElement>)driver.findElements(By.xpath("//android.view.View[2]/android.view.View/android.view.View/android.view.View"));
-		for(int j=0;j<roomtypedropdown1.size();j++)
-		{
-		System.out.println(roomtypedropdown1.get(j).getText());
-		if(roomtypedropdown1.get(j).getText().contains(expected_roomtype))
-			{
-			roomtypedropdown1.get(j).click();
-			break;
-			//Thread.sleep(1000);
-			}
-		}
-
-		boolean result=ScrollUtil.pageScrollToText("Search");
-		System.out.println("The result of scrolling"+result);
-		Thread.sleep(1000);
-		//clickOnSearch();
-		/*MobileElement noofroomsdropdown=(MobileElement) driver.findElement(By.name("Select Number of Rooms"));
-		//iOSScrollToElement();
-		noofroomsdropdown.click();
-		MobileElement selected_noofrooms=(MobileElement) driver.findElement(By.name(expected_nofrooms));
-		selected_noofrooms.click();
-
-		iOSScrollDown(xpathtoscrollto);
-		MobileElement adultsperroomdropdown=(MobileElement) driver.findElement(By.name("Select Adults per Room"));
-		adultsperroomdropdown.click();
-		MobileElement selected_adultsperroom=(MobileElement) driver.findElement(By.name(expected_adultsperroom));
-		selected_adultsperroom.click();
-
-		MobileElement childrenperroomdropdown=(MobileElement) driver.findElement(By.name("Select Children per Room"));
-		childrenperroomdropdown.click();
-		MobileElement selected_childrenperroomm=(MobileElement) driver.findElement(By.name(expected_childrenperroom));
-		selected_childrenperroomm.click();
-		//clickOnSearch();*/
-		
 
 	}
-	
-	/**
-	 * Method to click on Search button
-	 */
-	public void clickOnSearch()
-	{
-		//MobileElement search=(MobileElement) driver.findElement(By.xpath("//android.widget.Button[@text='Search']"));
-		//search.click();
-		ScrollUtil.pageScrollToText("Search");
-		search_btn.click();
-		
-	}
-	
-	/**
-	 * Method to perform reset of the fields entered
-	 */
-	public void doReset()
-	{
-		int count=0;
-		MobileElement reset=(MobileElement) driver.findElement(By.name("Reset"));
-		reset.click();
-		String xpathtoscrollto="//XCUIElementTypeApplication[@name=\"Adactin Hotel App\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[3]/XCUIElementTypeOther[1]";
-		
-		//iOSScrollUp(xpathtoscrollto);
 
-		MobileElement locationdropdown=(MobileElement) driver.findElement(By.name("Select Location"));
-
-		if(locationdropdown.getText().equalsIgnoreCase("Select Location"))
-			count++;
-
-		MobileElement hoteldropdown=(MobileElement) driver.findElement(By.name("Select Hotel"));
-		if(hoteldropdown.getText().equalsIgnoreCase("Select Hotel"))
-			count++;
-		
-		MobileElement roomtypedropdown=(MobileElement) driver.findElement(By.name("Select Room Type"));
-		if(roomtypedropdown.getText().equalsIgnoreCase("Select Room Type"))
-			count++;
-		//iOSScrollDown(xpathtoscrollto);
-	
-		MobileElement childrenperroomdropdown=(MobileElement) driver.findElement(By.name("Select Children per Room"));
-		if(childrenperroomdropdown.getText().equalsIgnoreCase("Select Children per Room"))
-			count++;
-		
-		Assert.assertEquals(count,4);
-		
-		
-	}
-	
-	
 	/**
-	 * Method to search for hotel with hotel and location provided
+	 * Method to search for hotel with only location field entered
+	 * 
 	 * @param i
 	 * @throws Exception
 	 */
-	public void searchHotel_Hotel_location(int i) throws Exception
-	{
-		String xpathtoscrollto="//XCUIElementTypeApplication[@name=\"Adactin Hotel App\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[3]/XCUIElementTypeOther[1]";
-		String expected_location = null,expected_hotel=null;
-		expected_location=ExcelUtil.getCellData(i,7);
-		expected_hotel=ExcelUtil.getCellData(i,8);
-		
-		MobileElement locationdropdown=(MobileElement) driver.findElement(By.name("Select Location"));
-		locationdropdown.click();
-		MobileElement selected_location=(MobileElement) driver.findElement(By.name(expected_location));
-		selected_location.click();
+	public void searchHotel_Location_only(int i) throws Exception {
+		String expected_location = new String();
 
-		MobileElement hoteldropdown=(MobileElement) driver.findElement(By.name("Select Hotel"));
-		hoteldropdown.click();
-		MobileElement selected_hotel=(MobileElement) driver.findElement(By.name(expected_hotel));
-		selected_hotel.click();
-		//iOSScrollDown(xpathtoscrollto);
-		//iOSScrollDown(xpathtoscrollto);
-	
-			
-		MobileElement search=(MobileElement) driver.findElement(By.name("Search"));
-		search.click();
-		
-		
-	}
-	
-	/**
-	 * Method to search for hotel with only location field enteed
-	 * @param i
-	 * @throws Exception
-	 */
-	public void searchHotel_Location_only(int i) throws Exception
-	{
-		String xpathtoscrollto="//XCUIElementTypeApplication[@name=\"Adactin Hotel App\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[3]/XCUIElementTypeOther[1]";
-		String expected_location = null,expected_hotel=null;
-		expected_location=ExcelUtil.getCellData(i,7);
-		
-		MobileElement locationdropdown=(MobileElement) driver.findElement(By.name("Select Location"));
-		locationdropdown.click();
-		MobileElement selected_location=(MobileElement) driver.findElement(By.name(expected_location));
-		selected_location.click();
-		//iOSScrollDown(xpathtoscrollto);
-		//iOSScrollDown(xpathtoscrollto);
-		MobileElement search=(MobileElement) driver.findElement(By.name("Search"));
-		search.click();
-		
+		int expected_location_index = ExcelUtil.readExcel('c', "Location");
+		expected_location = ExcelUtil.getCellData(i, expected_location_index);
+
+		selectlocation.click();
+
+		for (int j = 0; j < location_optns.size(); j++) {
+			System.out.println(location_optns.get(j).getText());
+			if (location_optns.get(j).getText().contains(expected_location)) {
+				for (int k = 0; k < 2; k++)
+					location_optns.get(j).click();
+				break;
+
+			}
+		}
+
 	}
 }
