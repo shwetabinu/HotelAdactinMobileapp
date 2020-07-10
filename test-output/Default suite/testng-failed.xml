@@ -3,12 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.adactin.Mobileapphoteladactin1.tests.SearchHotel_AllFields">
+      <class name="com.adactin.Mobileapphoteladactin1.tests.SearchHotel_Location">
         <methods>
           <include name="closeApp"/>
-          <include name="MAHA_TC03_TC_SearchHotel_AllFieldsTest"/>
+          <include name="MAHA_TC04_TC_SearchHotel_LocationTest"/>
         </methods>
-      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.SearchHotel_AllFields -->
+      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.SearchHotel_Location -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
