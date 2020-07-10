@@ -40,7 +40,7 @@ public class SearchHotel_LocationHotelName extends BaseClass{
 		lp=new Login();
 		lp.login(rno);
 		hp=new Home();
-		hp.searchHotel_Hotel_location(rno);
+		hp.searchHotel(rno);
 		sp=new Select_Hotel();
 		n=sp.checkNumberOfEntries();
 		sp.select_hotel(1);

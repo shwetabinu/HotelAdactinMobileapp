@@ -22,13 +22,13 @@ public class SearchHotel_Location extends BaseClass {
 		// TODO Auto-generated constructor stub
 	}
 	
-	static Login lp;
-	static Home hp;
-	static Select_Hotel sp,sp1;
-	static Selected_Hotel_Detail shd;
+	Login lp;
+	Home hp;
+	Select_Hotel sp,sp1;
+	Selected_Hotel_Detail shd;
 
 	@Test(groups = { "functionalTest" })
-	public void User_is_able_to_Search_Hotel_with_Location() throws Exception
+	public void MAHA_TC04_TC_SearchHotel_LocationTest() throws Exception
 	{
 		Log.startTestCase("User_is_able_to_Search_Hotel_with_Location");
 		int rno,count = 0,n;
@@ -39,28 +39,11 @@ public class SearchHotel_Location extends BaseClass {
 		lp=new Login();
 		lp.login(rno);
 		hp=new Home();
-		hp.searchHotel_Location_only(rno);
+		hp.searchHotel(rno);
 		hp.clickOnSearch();
 		sp=new Select_Hotel();
-		n=sp.checkNumberOfEntries();
-		sp.select_hotel(1);
-		shd=new Selected_Hotel_Detail();
-		String[] hoteltype= shd.getHotelNames(rno);
-		for(int i=0;i<hoteltype.length;i++)
-		{
-			Log.info(hoteltype[i]);
-			count=shd.check_If_correct_details_hotel(rno, hoteltype[i]);
-			Log.info("Count for each is"+count);
-			shd.goback();
-			if(i<3)
-			{sp1=new Select_Hotel();
-			sp1.select_hotel(i+2);
-			}
-
-		}
-		//Log.info("Count is"+count);
-		Log.info("n is"+n);
-		Assert.assertTrue(count==12 && n==4);
+		boolean hotel_result=sp.readHotelName(rno);
+		Assert.assertTrue(hotel_result);
 		Log.endTestCase("User_is_able_to_Search_Hotel_with_Location");
 		
 	}

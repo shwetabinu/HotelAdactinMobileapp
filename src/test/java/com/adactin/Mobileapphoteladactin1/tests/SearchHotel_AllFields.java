@@ -32,17 +32,21 @@ public class SearchHotel_AllFields extends BaseClass {
 		//Initializing the application
 		initApp(rno);
 		
-		//Logging into the application
+		//Creating an object of login page
 		lp=new Login();
 		Log.info("Logging in...");
 		
+		//Logging into the application and verifying
 		boolean login=lp.login(rno);
 		Assert.assertTrue(login);
 		
 		hp=new Home();
+		
+		//Searching for the hotel with the input
 		boolean search=hp.searchHotel(rno);
 		Assert.assertTrue(search);
 		
+		//Clicking on search button
 		boolean searchclick=hp.clickOnSearch();
 		Assert.assertTrue(searchclick);
 		
