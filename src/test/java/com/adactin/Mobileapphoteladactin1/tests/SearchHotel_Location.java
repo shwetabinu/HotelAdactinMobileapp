@@ -24,27 +24,45 @@ public class SearchHotel_Location extends BaseClass {
 	
 	Login lp;
 	Home hp;
-	Select_Hotel sp,sp1;
-	Selected_Hotel_Detail shd;
+	Select_Hotel sp;
 
 	@Test(groups = { "functionalTest" })
 	public void MAHA_TC04_TC_SearchHotel_LocationTest() throws Exception
 	{
 		Log.startTestCase("User_is_able_to_Search_Hotel_with_Location");
-		int rno,count = 0,n;
-		String ordid;
+		int rno;
+		
+		//Reading test data from the TestData file
 		ExcelUtil.setExcelFileSheet("Testcases");
 		rno=ExcelUtil.readExcel('r',"User_is_able_to_Search_Hotel_with_Location");
+		Log.info("Initializing the app..");
+		
+		//Initializing the application
 		initApp(rno);
+		
+		//Creating an object of login page
 		lp=new Login();
-		lp.login(rno);
+		Log.info("Logging in...");
+		
+		//Logging into the application and verifying
+		boolean login=lp.login(rno);
+		Assert.assertTrue(login);
+		
 		hp=new Home();
-		hp.searchHotel(rno);
-		hp.clickOnSearch();
+		
+		//Searching for the hotel with the input
+		boolean search=hp.searchHotel(rno);
+		Assert.assertTrue(search);
+		
+		//Clicking on search button
+		boolean searchclick=hp.clickOnSearch();
+		Assert.assertTrue(searchclick);
+		
 		sp=new Select_Hotel();
 		boolean hotel_result=sp.readHotelName(rno);
 		Assert.assertTrue(hotel_result);
-		Log.endTestCase("User_is_able_to_Search_Hotel_with_Location");
+		
+		Log.endTestCase("User_is_able_to_Search_Hotel_with_Location");	
 		
 	}
 	

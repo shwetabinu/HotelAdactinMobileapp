@@ -95,14 +95,6 @@ public class Home extends BaseClass {
 	@FindBy(xpath = "//android.widget.Button[@text='Reset']")
 	WebElement reset_btn;
 
-	@FindBy(xpath = "//android.view.View[@text='Home']")
-	WebElement home_btn;
-
-	@FindBy(xpath = "//android.view.View[@text='Booked Itinerary']")
-	WebElement booked_itinerary;
-
-	@FindBy(xpath="//android.view.View[@text='Account']")
-	WebElement account_btn;
 	
 	
 	/**
@@ -133,72 +125,10 @@ public class Home extends BaseClass {
 
 	}
 	
-	/**
-	 * Method to view the booked itinerary from the search hotel page
-	 * @param rno Row where the test case is present in Test Data file
-	 * @return
-	 */
-	public boolean viewBookedItinerary(int rno)
-	{
-		boolean result=true;
-		try {
-			//Clicking on booked itinerary button
-			booked_itinerary.click();
-		}catch(Exception e)
-		{
-			//Printing error message for exception
-			Log.info("Error occurred while viewing booked itinerary");
-			result=false;
-			e.printStackTrace();
-		}
-		
-		return result;
-	}
+	
 
 	
-	/**
-	 * Method to view the account page
-	 * @param rno Row where the test case is present in Test Data file
-	 * @return
-	 */
-	public boolean viewAccount(int rno)
-	{
-		boolean result=true;
-		try {
-			//Clicking on Account button
-			account_btn.click();
-		}catch(Exception e)
-		{
-			//Printing error message for exception
-			Log.info("Error occurred while viewing account page");
-			result=false;
-			e.printStackTrace();
-		}
-		
-		return result;
-	}
 	
-	/**
-	 * Method to view Home / Search hotel page
-	 * @param rno Row where the test case is present in Test Data file
-	 * @return
-	 */
-	public boolean viewHome(int rno)
-	{
-		boolean result=true;
-		try {
-			//Clicking on Home button
-			home_btn.click();
-		}catch(Exception e)
-		{
-			//Printing error message for exception
-			Log.info("Error occurred while viewing home page");
-			result=false;
-			e.printStackTrace();
-		}
-		
-		return result;
-	}
 	/**
 	 * Method to search for a hotel with all input fields
 	 * 
@@ -363,28 +293,63 @@ public class Home extends BaseClass {
 			reset_btn.click();
 
 			// Checks if the location drop down is cleared by checking for the default text
+			ScrollUtil.pageScrollToText("Select Location");
+			
 			if (selectlocation.getText().equalsIgnoreCase("Select Location"))
+				{
+				Log.info("Count is incremented"+count);
 				count++;
+				}
 
 			// Checks if the hotel drop down is cleared by checking for the default text
 			if (select_hotel.getText().equalsIgnoreCase("Select Hotel"))
+			{
+				Log.info("Count is incremented"+count);
 				count++;
+				}
 
 			// Checks if the room type drop down is cleared by checking for the default text
 			if (select_roomtype.getText().equalsIgnoreCase("Select Room Type"))
+			{
+				Log.info("Count is incremented"+count);
 				count++;
+				}
+
+			Log.info("Number of rooms displayed is"+no_of_rooms.getText());
+			if (no_of_rooms.getText().equalsIgnoreCase("1 - One, Select Number of Rooms"))
+			{
+				//Log.info(no_of_rooms.getText());
+				Log.info("Count is incremented"+count);
+				count++;
+				}
+			
+			ScrollUtil.pageScrollToText("Adults per Room");
+
+			Log.info("Adults per room displayed is "+ adults_per_room.getText());
+			if (adults_per_room.getText().equalsIgnoreCase("1 - One, Select Adults per Room"))
+			{
+				Log.info("Count is incremented"+count);
+				count++;
+				}
 
 			// Checks if the children per room drop down is cleared by checking for the
 			// default text
+			ScrollUtil.pageScrollToText("Select Children per Room");
 			if (children_per_room.getText().equalsIgnoreCase("Select Children per Room"))
+			{
+				Log.info("Count is incremented"+count);
 				count++;
+				}
 
-			if (count == 4)
+			Log.info("Count is"+count);
+			if (count == 6)
 				result = true;
 			else
 				result = false;
 		} catch (Exception e) {
 			Log.info("Exception occurred while performing reset");
+			e.getCause();
+			e.printStackTrace();
 			result = false;
 		}
 

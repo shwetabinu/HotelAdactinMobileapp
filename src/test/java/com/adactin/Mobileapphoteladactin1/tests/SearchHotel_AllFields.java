@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import com.adactin.Mobileapphoteladactin1.base.BaseClass;
 import com.adactin.Mobileapphoteladactin1.pages.Home;
 import com.adactin.Mobileapphoteladactin1.pages.Login;
+import com.adactin.Mobileapphoteladactin1.pages.Select_Hotel;
 import com.adactin.Mobileapphoteladactin1.util.ExcelUtil;
 import com.adactin.Mobileapphoteladactin1.util.Log;
 
@@ -50,6 +51,9 @@ public class SearchHotel_AllFields extends BaseClass {
 		boolean searchclick=hp.clickOnSearch();
 		Assert.assertTrue(searchclick);
 		
+		Select_Hotel sh=new Select_Hotel();
+		boolean hotel_result=sh.readHotelName(rno);
+		Assert.assertTrue(hotel_result);
 		
 		Log.endTestCase("User_is_able_to_Search_Hotel");	
 		

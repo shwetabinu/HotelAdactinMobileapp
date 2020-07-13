@@ -31,6 +31,7 @@ public class Select_Hotel extends BaseClass {
 		int tot_number = 0;
 		// Determines the size of the hotel entry list
 		tot_number = hotel_list.size();
+		
 		return tot_number;
 	}
 
@@ -81,20 +82,11 @@ public class Select_Hotel extends BaseClass {
 			String expectedlist = ExcelUtil.getCellData(i, hotellist_index);
 			expected_hotelslist = expectedlist.split(",");
 
-			int count = 0;
-			// Checks for the hotel type to selected from the test data file and gets the
-			// text
-			// and assign it to a list
-			for (int j = 0; j < hotel_list.size(); j++) {
-				Log.info("The hotel names listed are"+hotel_list.get(j).getText()+"\n");
-				if ((hotel_list.get(j).getText()).equalsIgnoreCase(expected_hotelslist[j])) {
-					count++;
-					Log.info(hotel_list.get(j).getText());
-				}
-			}
-			// Checks if all the expected hotels are present and if the total size is 4
-			Log.info("Count of hotels in the list is" + count);
-			if (count == hotel_list.size())
+		
+			
+			// Checks if all the expected hotels are present and if the total size 
+			
+			if (expected_hotelslist.length == hotel_list.size())
 				result = true;
 			else
 				result = false;

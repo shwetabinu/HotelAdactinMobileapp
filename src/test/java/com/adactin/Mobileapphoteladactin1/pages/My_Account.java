@@ -3,9 +3,12 @@ package com.adactin.Mobileapphoteladactin1.pages;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.adactin.Mobileapphoteladactin1.base.BaseClass;
+import com.adactin.Mobileapphoteladactin1.util.Log;
 
 import io.appium.java_client.MobileElement;
 
@@ -15,17 +18,25 @@ public class My_Account extends BaseClass{
 		PageFactory.initElements(driver, this);
 	}
 
+	@FindBy(xpath="//android.widget.Button[@text='Logout']")
+	WebElement logout_btn;
+	
+	//android.view.View[@text='user_textfield']
 	
 	/**
 	 * Method to logout of the mobile app
 	 */
-	public void Logging_out()
+	public boolean Logging_out()
 	{
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		MobileElement myaccount_btn=(MobileElement)driver.findElement(By.name("Account"));
-		myaccount_btn.click();
-		MobileElement Logout_btn=(MobileElement)driver.findElement(By.name("Logout"));
-		Logout_btn.click();
+		boolean result=true;
+		try{
+			logout_btn.click();
+		}catch(Exception e) {
+			e.printStackTrace();
+			Log.error("Exception occurred while trying to logout");
+			result=false;
+		}
+		return result;
 	}
 	
 	

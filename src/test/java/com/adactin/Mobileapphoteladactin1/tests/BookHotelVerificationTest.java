@@ -9,6 +9,7 @@ import com.adactin.Mobileapphoteladactin1.pages.Book_Hotel;
 import com.adactin.Mobileapphoteladactin1.pages.Booked_Hotel_Details;
 import com.adactin.Mobileapphoteladactin1.pages.Booked_Itinerary;
 import com.adactin.Mobileapphoteladactin1.pages.Booking_Confirmation;
+import com.adactin.Mobileapphoteladactin1.pages.Dashboard;
 import com.adactin.Mobileapphoteladactin1.pages.Home;
 import com.adactin.Mobileapphoteladactin1.pages.Login;
 import com.adactin.Mobileapphoteladactin1.pages.Select_Hotel;
@@ -35,6 +36,7 @@ public class BookHotelVerificationTest extends BaseClass{
 	static Selected_Hotel_Detail shd;
 	static Book_Hotel bh;
 	static Booking_Confirmation bc;
+	static Dashboard db;
 	static Booked_Itinerary bi;
 	static Booked_Hotel_Details bhd;
 	
@@ -64,7 +66,7 @@ public class BookHotelVerificationTest extends BaseClass{
 		bc.confirm_Booking();
 		bi=new Booked_Itinerary();
 		//String bhd_id=bi.readWhichEntry(rno);
-		bi.viewBookedHotelDetails();
+		bi.viewBookedHotel(rno);
 		
 		bhd=new Booked_Hotel_Details();
 		boolean result=bhd.validateOrderID(ordid);

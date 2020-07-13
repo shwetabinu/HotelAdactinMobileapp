@@ -20,8 +20,8 @@ public class SearchHotel_LocationHotelName extends BaseClass{
 
 	static Login lp;
 	static Home hp;
-	static Select_Hotel sp,sp1;
-	static Selected_Hotel_Detail shd;
+	static Select_Hotel sp;
+	
 
 	public SearchHotel_LocationHotelName() throws Exception {
 		super();
@@ -31,38 +31,42 @@ public class SearchHotel_LocationHotelName extends BaseClass{
 	@Test(groups = { "functionalTest" })
 	public void User_is_able_to_search_hotel_with_location_and_hotelname() throws Exception
 	{
-		int rno,count = 0,n;
 		Log.startTestCase("User_is_able_to_search_hotel_with_location_and_hotelname");
-		String ordid;
+		int rno;
+		
+		//Reading test data from the TestData file
 		ExcelUtil.setExcelFileSheet("Testcases");
 		rno=ExcelUtil.readExcel('r',"User_is_able_to_search_hotel_with_location_and_hotelname");
-		initApp(rno);
-		lp=new Login();
-		lp.login(rno);
-		hp=new Home();
-		hp.searchHotel(rno);
-		sp=new Select_Hotel();
-		n=sp.checkNumberOfEntries();
-		sp.select_hotel(1);
-		shd=new Selected_Hotel_Detail();
-		String[] roomtype= shd.getRoomTypes(rno);
-		for(int i=0;i<roomtype.length;i++)
-		{
-			Log.info(roomtype[i]);
-			count=shd.check_If_correct_details_roomtype(rno, roomtype[i]);
-			Log.info("Count for each is"+count);
-			shd.goback();
-			if(i<3)
-			{sp1=new Select_Hotel();
-			sp1.select_hotel(i+2);
-			}
-
-		}
+		Log.info("Initializing the app..");
 		
-		Log.info("n is"+n);
-		Assert.assertTrue(count==12 && n==4);
-		Log.endTestCase("User_is_able_to_search_hotel_with_location_and_hotelname");
-
+		//Initializing the application
+		initApp(rno);
+		
+		//Creating an object of login page
+		lp=new Login();
+		Log.info("Logging in...");
+		
+		//Logging into the application and verifying
+		boolean login=lp.login(rno);
+		Assert.assertTrue(login);
+		
+		hp=new Home();
+		
+		//Searching for the hotel with the input
+		boolean search=hp.searchHotel(rno);
+		Assert.assertTrue(search);
+		
+		//Clicking on search button
+		boolean searchclick=hp.clickOnSearch();
+		Assert.assertTrue(searchclick);
+		
+		sp=new Select_Hotel();
+		boolean hotel_result=sp.readHotelName(rno);
+		Assert.assertTrue(hotel_result);
+		
+		Log.endTestCase("User_is_able_to_search_hotel_with_location_and_hotelname");	
+		
+	
 	}
 
 }

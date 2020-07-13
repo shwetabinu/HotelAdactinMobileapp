@@ -1,5 +1,6 @@
 package com.adactin.Mobileapphoteladactin1.tests;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.adactin.Mobileapphoteladactin1.base.BaseClass;
@@ -31,11 +32,18 @@ public class ResetSearchVerification extends BaseClass {
 		ExcelUtil.setExcelFileSheet("Testcases");
 		rno=ExcelUtil.readExcel('r',"User_is_able_to_reset_the_search_criteria");
 		initApp(rno);
+		
 		lp=new Login();
-		lp.login(rno);
+		boolean login_result=lp.login(rno);
+		Assert.assertTrue(login_result);
+		
 		hp=new Home();
-		hp.searchHotel(rno);
-		hp.doReset();
+		boolean searchhotel=hp.searchHotel(rno);
+		Assert.assertTrue(searchhotel);
+		
+		boolean reset=hp.doReset();
+		Assert.assertTrue(reset);
+		
 		Log.endTestCase("User_is_able_to_reset_the_search_criteria");
 		
 

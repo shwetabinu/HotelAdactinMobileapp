@@ -14,6 +14,32 @@ public class Booked_Hotel_Details extends BaseClass {
 	public Booked_Hotel_Details() throws Exception {
 		PageFactory.initElements(driver, this);
 	}
+	
+	//order id
+	//android.view.View[2]/android.view.View
+	
+	
+	//hotel name
+	//android.view.View[4]/android.view.View
+	
+	//location
+	//android.view.View[6]/android.view.View
+	
+	//android.view.View[8]/android.view.View
+	
+	//android.view.View[10]/android.view.View
+	
+	//android.view.View[12]/android.view.View
+	
+	//android.view.View[14]/android.view.View
+	
+	//android.view.View[16]/android.view.View
+	
+	//android.view.View[18]/android.view.View
+	
+	//android.view.View[20]/android.view.View
+	
+	//android.view.View[22]/android.view.View
 /**
  * Method to cancel the Booked itinerary
  * Navigates to the booked itinerary list, clicks on a list item and clicks the cancel button
