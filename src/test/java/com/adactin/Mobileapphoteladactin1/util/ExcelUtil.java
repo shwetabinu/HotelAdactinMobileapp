@@ -49,6 +49,10 @@ public class ExcelUtil {
 
 	//Column Number
 	public static int columnNumber;
+	
+	//public static String username,password,location,hotellist,expected_hotel,expected_location,
+	//hotel,room_nu,arr_date,dep_dat,dayno,room_ty,apr,cpr,fname,lname,addr,ccn,cctype,ccexpiry,cvv,booked_id,
+	//ord_id;
 
 	//Setter and Getters of row and columns
 	public static void setRowNumber(int pRowNumber) {
@@ -176,6 +180,30 @@ public class ExcelUtil {
 			return 0;
 		
 	}
+	
+	/*public void readExpectedData(int rno)
+	{
+		
+		try {
+			int hotelindex=ExcelUtil.readExcel('c', "Hotels");	
+			expected_hotel=ExcelUtil.getCellData(rno, hotelindex);
+			int location_index=ExcelUtil.readExcel('c', "Location");
+			expected_location=ExcelUtil.getCellData(rno, location_index);
+			int room_no=ExcelUtil.readExcel('c', "Number of Rooms");
+			room_nu=ExcelUtil.getCellData(rno, room_no);
+			int arrdate_index=ExcelUtil.readExcel('c', "Check-in Date");
+			arr_date=ExcelUtil.getCellData(rno, arrdate_index);
+			int dep_index=ExcelUtil.readExcel('c', "Check-out Date");
+			dep_dat=ExcelUtil.getCellData(rno, dep_index);
+			int dayno=ExcelUtil.readExcel('c', "Check-out Date");
+			
+			
+		}catch(Exception e)
+		{
+			Log.error("Error occurred while reading expected data from the test data file");
+		}
+		
+	}*/
 
 	/**
 	 * This method gets excel file, row and column number and set a value to the that cell.

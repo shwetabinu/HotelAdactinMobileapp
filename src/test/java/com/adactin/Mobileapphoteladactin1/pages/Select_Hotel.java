@@ -1,6 +1,5 @@
 package com.adactin.Mobileapphoteladactin1.pages;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.WebElement;
@@ -40,25 +39,23 @@ public class Select_Hotel extends BaseClass {
 	 * 
 	 * @param i The row where hotel to be selected is present in the test data file
 	 */
-	public boolean select_hotel(int i) {
+	public boolean select_hotel(int rno,int hotel) {
 		boolean result = true;
 		try {
 			// Reads the hotel to be selected from the test data file
 			int hotel_index = ExcelUtil.readExcel('c', "Hotels");
-			String expected_hotel = ExcelUtil.getCellData(i, hotel_index);
-
-			// Checks for the hotel type to selected from the test data file and selects it
-			for (int j = 0; j < hotel_list.size(); j++) {
-				if (hotel_list.get(i).getText().equalsIgnoreCase(expected_hotel)) {
-					hotel_list.get(i).click();
-					break;
-				}
-			}
+			String expected_hotel = ExcelUtil.getCellData(rno, hotel_index);
+			hotel_list.get(hotel).click();
+			
+				
+			
+			
 		} catch (Exception e) {
 			// Prints error message in case of exception
 			e.printStackTrace();
 			Log.error("Error occurred while selecting hotel");
 			result = false;
+			
 		}
 		return result;
 	}
