@@ -2,23 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="19869" started-at="2020-07-13T12:26:33 AEST" finished-at="2020-07-13T12:26:52 AEST">
+  <suite name="Default suite" duration-ms="45510" started-at="2020-07-14T13:31:26 AEST" finished-at="2020-07-14T13:32:11 AEST">
     <groups>
-      <group name="functionalTest">
-        <method signature="LogoutVerification.User_is_able_to_logout()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.LogoutVerification@1af2d44a]" name="User_is_able_to_logout" class="com.adactin.Mobileapphoteladactin1.tests.LogoutVerification"/>
-      </group> <!-- functionalTest -->
     </groups>
-    <test name="Default test" duration-ms="19869" started-at="2020-07-13T12:26:33 AEST" finished-at="2020-07-13T12:26:52 AEST">
-      <class name="com.adactin.Mobileapphoteladactin1.tests.LogoutVerification">
-        <test-method status="PASS" signature="User_is_able_to_logout()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.LogoutVerification@1af2d44a]" name="User_is_able_to_logout" duration-ms="19283" started-at="2020-07-13T12:26:33 AEST" finished-at="2020-07-13T12:26:52 AEST">
+    <test name="Default test" duration-ms="45510" started-at="2020-07-14T13:31:26 AEST" finished-at="2020-07-14T13:32:11 AEST">
+      <class name="com.adactin.Mobileapphoteladactin1.tests.SelectHotelVerification">
+        <test-method status="PASS" signature="User_is_able_to_select_hotel()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.SelectHotelVerification@1af2d44a]" name="User_is_able_to_select_hotel" duration-ms="44964" started-at="2020-07-14T13:31:26 AEST" finished-at="2020-07-14T13:32:11 AEST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- User_is_able_to_logout -->
-        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.LogoutVerification@1af2d44a]" name="closeApp" is-config="true" duration-ms="505" started-at="2020-07-13T12:26:52 AEST" finished-at="2020-07-13T12:26:52 AEST">
+        </test-method> <!-- User_is_able_to_select_hotel -->
+        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.SelectHotelVerification@1af2d44a]" name="closeApp" is-config="true" duration-ms="485" started-at="2020-07-14T13:32:11 AEST" finished-at="2020-07-14T13:32:11 AEST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApp -->
-      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.LogoutVerification -->
+      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.SelectHotelVerification -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
