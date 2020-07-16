@@ -71,8 +71,8 @@ public class BookHotelVerificationTest extends BaseClass{
 		bhd=new Booked_Hotel_Details();
 		boolean result=bhd.validateOrderID(ordid);
 		Assert.assertTrue(result);
-		int count=bhd.checkBookedHotelDetails(rno, ordid);
-		Assert.assertEquals(count,6);
+		boolean count=bhd.checkBookedHotelDetails(rno, ordid);
+		Assert.assertTrue(count);
 		Log.endTestCase("User_is_able_to_book_a_hotel");
 		
 		

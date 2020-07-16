@@ -1,4 +1,5 @@
 package com.adactin.Mobileapphoteladactin1.tests;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -10,15 +11,9 @@ import com.adactin.Mobileapphoteladactin1.pages.Login;
 import com.adactin.Mobileapphoteladactin1.util.ExcelUtil;
 import com.adactin.Mobileapphoteladactin1.util.Log;
 
-/**
- * Test case to view the booked itinerary 
- * It also validates the entry present within the booked itinerary with the Testdata file details
- * 
- *
- */
-public class ViewItineraryVerification  extends BaseClass{
-
-	public ViewItineraryVerification() throws Exception {
+public class ViewBookedHotelDetails extends BaseClass {
+	
+	public ViewBookedHotelDetails() throws Exception {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -30,10 +25,10 @@ public class ViewItineraryVerification  extends BaseClass{
 	@Test(groups = { "functionalTest" })
 	public void User_is_able_to_view_itinerary() throws Exception
 	{
-		Log.startTestCase("User_is_able_to_view_itinerary");
+		Log.startTestCase("User_is_able_to_view_booked_hotel_details");
 		int rno;
 		ExcelUtil.setExcelFileSheet("Testcases");
-		rno=ExcelUtil.readExcel('r',"User_is_able_to_view_itinerary");
+		rno=ExcelUtil.readExcel('r',"User_is_able_to_view_booked_hotel_details");
 		initApp(rno);
 		
 		lp=new Login();
@@ -48,7 +43,16 @@ public class ViewItineraryVerification  extends BaseClass{
 		boolean booked_hotel=bi.viewBookedHotel(rno);
 		Assert.assertTrue(booked_hotel);
 		
-		Log.endTestCase("User_is_able_to_view_itinerary");
+		bhd=new Booked_Hotel_Details();
+		bhd.readExpectedData(rno);
+		
+		boolean bhd_details=bhd.checkBookedHotelDetails(rno,"");
+		Assert.assertTrue(bhd_details);
+		
+		Log.endTestCase("User_is_able_to_view_booked_hotel_details");
 	}
 
 }
+
+
+

@@ -30,7 +30,7 @@ public class Dashboard extends BaseClass{
 	 * @param rno Row where the test case is present in Test Data file
 	 * @return
 	 */
-	public boolean viewBookedItinerary(int rno)
+	public boolean viewBookedItinerary()
 	{
 		boolean result=true;
 		try {

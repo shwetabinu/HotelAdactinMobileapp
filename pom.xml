@@ -1,16 +1,18 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.adactin</groupId>
-  <artifactId>Mobileapphoteladactin1</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <dependencies>
-  <dependency>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.adactin</groupId>
+	<artifactId>Mobileapphoteladactin1</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<dependencies>
+		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
 			<version>3.141.59</version>
 		</dependency>
 
-		
+
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
@@ -18,7 +20,8 @@
 			<scope>test</scope>
 		</dependency>
 
-<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml</artifactId>
@@ -41,6 +44,6 @@
 			<artifactId>java-client</artifactId>
 			<version>7.3.0</version>
 		</dependency>
-  
-  </dependencies>
+
+	</dependencies>
 </project>

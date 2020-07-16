@@ -3,12 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.adactin.Mobileapphoteladactin1.tests.SelectHotelVerification">
+      <class name="com.adactin.Mobileapphoteladactin1.tests.BookingCancelationVerification">
         <methods>
-          <include name="User_is_able_to_select_hotel"/>
+          <include name="User_is_able_to_cancel_a_hotel_booking"/>
           <include name="closeApp"/>
         </methods>
-      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.SelectHotelVerification -->
+      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.BookingCancelationVerification -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

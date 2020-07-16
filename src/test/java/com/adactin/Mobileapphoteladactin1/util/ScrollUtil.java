@@ -13,6 +13,10 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
+import io.appium.java_client.FindsByAndroidUIAutomator;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidMobileCommandHelper;
+
 
 public class ScrollUtil extends BaseClass {
 
@@ -76,18 +80,41 @@ public class ScrollUtil extends BaseClass {
 
 	}
 
+	public static boolean pageScrollEnd()
+	{
+		boolean result = true;
+		try {
+			// Scrolling till a particular text
+		
+			//StepDefs.driver.findElement(MobileBy.AndroidUIAutomator(“new UiScrollable(new UiSelector().scrollable(true))”+".scrollToEnd(55);"));
+			driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).flingForward());");
+			//UIScrollable obj=new UiScrollable(new UiSelector().scrollable(true).instance(0));
+			//System.out.println("The text in the element" + el.getText());
+			//driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+
+		} catch (NoSuchElementException e) {
+			result = false;
+		}
+
+		return result;
+	}
 	/**
 	 * Method to scroll till the last element with the help of touch action
 	 * 
 	 */
 	public static void calendarScroll() {
-		MobileElement seek_bar = driver.findElement(By.xpath("//android.view.View/android.widget.SeekBar[2]"));
+		//MobileElement seek_bar = driver.findElement(By.xpath("//android.view.View/android.widget.SeekBar[2]"));
+		MobileElement seek_bar = driver.findElement(By.xpath("//android.widget.ScrollView"));
+		
 		// get start co-ordinate of seek bar
 		int startx = seek_bar.getLocation().getX();
+		
 		int starty = seek_bar.getLocation().getY();
 		// Get width and height of seekbar
 		int endx = seek_bar.getSize().getWidth();
 		int endy = seek_bar.getSize().getHeight();
+		endx=0;
+		endy=2074;
 
 		try {
 			// Defining touch action for scrolling
@@ -95,6 +122,7 @@ public class ScrollUtil extends BaseClass {
 			// Setting the start and end point to scroll
 			PointOption pointStart = PointOption.point(startx, starty);
 			PointOption pointEnd = PointOption.point(endx, endy);
+			//PointOption pointEnd = PointOption.point(startx, endy);
 			// Setting the wait duration
 			WaitOptions waitOption = WaitOptions.waitOptions(Duration.ofMillis(1000));
 			// Scrolling action after wait

@@ -2,20 +2,23 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="45510" started-at="2020-07-14T13:31:26 AEST" finished-at="2020-07-14T13:32:11 AEST">
+  <suite name="Default suite" duration-ms="23218" started-at="2020-07-16T16:29:54 AEST" finished-at="2020-07-16T16:30:17 AEST">
     <groups>
+      <group name="functionalTest">
+        <method signature="BookingCancelationVerification.User_is_able_to_cancel_a_hotel_booking()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.BookingCancelationVerification@29d89d5d]" name="User_is_able_to_cancel_a_hotel_booking" class="com.adactin.Mobileapphoteladactin1.tests.BookingCancelationVerification"/>
+      </group> <!-- functionalTest -->
     </groups>
-    <test name="Default test" duration-ms="45510" started-at="2020-07-14T13:31:26 AEST" finished-at="2020-07-14T13:32:11 AEST">
-      <class name="com.adactin.Mobileapphoteladactin1.tests.SelectHotelVerification">
-        <test-method status="PASS" signature="User_is_able_to_select_hotel()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.SelectHotelVerification@1af2d44a]" name="User_is_able_to_select_hotel" duration-ms="44964" started-at="2020-07-14T13:31:26 AEST" finished-at="2020-07-14T13:32:11 AEST">
+    <test name="Default test" duration-ms="23218" started-at="2020-07-16T16:29:54 AEST" finished-at="2020-07-16T16:30:17 AEST">
+      <class name="com.adactin.Mobileapphoteladactin1.tests.BookingCancelationVerification">
+        <test-method status="PASS" signature="User_is_able_to_cancel_a_hotel_booking()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.BookingCancelationVerification@29d89d5d]" name="User_is_able_to_cancel_a_hotel_booking" duration-ms="22618" started-at="2020-07-16T16:29:54 AEST" finished-at="2020-07-16T16:30:17 AEST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- User_is_able_to_select_hotel -->
-        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.SelectHotelVerification@1af2d44a]" name="closeApp" is-config="true" duration-ms="485" started-at="2020-07-14T13:32:11 AEST" finished-at="2020-07-14T13:32:11 AEST">
+        </test-method> <!-- User_is_able_to_cancel_a_hotel_booking -->
+        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.BookingCancelationVerification@29d89d5d]" name="closeApp" is-config="true" duration-ms="517" started-at="2020-07-16T16:30:17 AEST" finished-at="2020-07-16T16:30:17 AEST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApp -->
-      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.SelectHotelVerification -->
+      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.BookingCancelationVerification -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

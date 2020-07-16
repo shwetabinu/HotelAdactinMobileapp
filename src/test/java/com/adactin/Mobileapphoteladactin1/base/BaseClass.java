@@ -12,9 +12,11 @@ import org.testng.annotations.AfterTest;
 
 import com.adactin.Mobileapphoteladactin1.util.ExcelUtil;
 import com.adactin.Mobileapphoteladactin1.util.Log;
+//import com.adactin.Mobileapphoteladactin1.util.WebElement;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
 
 /**
@@ -27,7 +29,8 @@ import io.appium.java_client.ios.IOSDriver;
  */
 public class BaseClass {
 	
-	protected static AppiumDriver<MobileElement> driver;
+	//protected static AppiumDriver<MobileElement> driver;
+	protected static AndroidDriver<MobileElement> driver;
 	DesiredCapabilities caps=new DesiredCapabilities();
 	public static final String currentDir = System.getProperty("user.dir");
 	public static final String testDataExcelFileName="testdata.xlsx";
@@ -65,7 +68,8 @@ public class BaseClass {
 		//Setting the URL Address where the device is present
 		URL url=new URL("http://127.0.0.1:4723/wd/hub");
 		//Initializing the driver
-		driver=new AppiumDriver<MobileElement>(url,caps);
+		//driver=new AppiumDriver<MobileElement>(url,caps);
+		driver=new AndroidDriver(url, caps);
 
 	}
 	
@@ -100,7 +104,7 @@ public class BaseClass {
 		//Initializing and setting the URL to the address where device is present
 		URL url=new URL("http://127.0.0.1:4723/wd/hub");
 		//Initializing the driver with the set capabilities
-		driver=new IOSDriver<MobileElement>(url,caps);
+		//driver=new IOSDriver<MobileElement>(url,caps);
 		
 	}
 	
