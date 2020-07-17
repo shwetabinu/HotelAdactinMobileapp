@@ -24,6 +24,7 @@ public class Booked_Itinerary extends BaseClass {
 		PageFactory.initElements(driver, this);
 	}
 
+	//Hotel list items
 	@FindBy(xpath = "//android.view.View[contains(@text,'hotel_name')]")
 	List<WebElement> hotel_listitems;
 	

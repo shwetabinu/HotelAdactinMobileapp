@@ -184,13 +184,16 @@ public class Booked_Hotel_Details extends BaseClass {
 	 * @return
 	 * @throws Exception
 	 */
-	public boolean checkBookedHotelDetails(int i, String oid) throws Exception {
+	public boolean checkBookedHotelDetails(int i) throws Exception {
 
 		boolean result = true;
+		String oid;
 		try {
 			int count = 0;
-			if (oid.isEmpty())
+			if (Booking_Confirmation.order_id.isEmpty())
 				oid = expected_orderid;
+			else
+				oid=Booking_Confirmation.order_id;
 
 			//Comparing the expected and actual order id and incrementing the count if they match
 			Log.info("The order id in booking confirmation page"+ oid);

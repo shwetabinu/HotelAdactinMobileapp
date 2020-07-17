@@ -9,7 +9,6 @@ import org.openqa.selenium.support.PageFactory;
 import com.adactin.Mobileapphoteladactin1.base.BaseClass;
 import com.adactin.Mobileapphoteladactin1.util.ExcelUtil;
 import com.adactin.Mobileapphoteladactin1.util.Log;
-import com.adactin.Mobileapphoteladactin1.util.ScrollUtil;
 
 public class Selected_Hotel_Detail extends BaseClass {
 
@@ -63,8 +62,9 @@ public class Selected_Hotel_Detail extends BaseClass {
 	WebElement go_back;
 
 	int count = 0;
-	String expected_hotel, expected_location, room_nu, arr_date, dep_dat, dayno, room_ty, ppn;
-	String acttotal_price;
+	public static String expected_hotel, expected_location, room_nu, arr_date, dep_dat, dayno, room_ty;
+	public static String ppn;
+	public static String acttotal_price;
 	int tot_pri;
 	int dayNo;
 

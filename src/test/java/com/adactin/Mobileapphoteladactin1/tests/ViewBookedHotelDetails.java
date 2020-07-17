@@ -46,7 +46,7 @@ public class ViewBookedHotelDetails extends BaseClass {
 		bhd=new Booked_Hotel_Details();
 		bhd.readExpectedData(rno);
 		
-		boolean bhd_details=bhd.checkBookedHotelDetails(rno,"");
+		boolean bhd_details=bhd.checkBookedHotelDetails(rno);
 		Assert.assertTrue(bhd_details);
 		
 		Log.endTestCase("User_is_able_to_view_booked_hotel_details");

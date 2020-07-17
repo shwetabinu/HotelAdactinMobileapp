@@ -47,32 +47,60 @@ public class BookHotelVerificationTest extends BaseClass{
 		Log.startTestCase("User_is_able_to_book_a_hotel");
 		int rno;
 		String ordid;
+		//Reading the test case row number where the data is to be read
 		ExcelUtil.setExcelFileSheet("Testcases");
 		rno=ExcelUtil.readExcel('r',"User_is_able_to_book_a_hotel");
+		
+		//Initializing the app
 		initApp(rno);
 		lp=new Login();
-		lp.login(rno);
+		//Validating logging in
+		boolean loginresult=lp.login(rno);
+		Assert.assertTrue(loginresult);
+		
 		hp=new Home();
-		hp.searchHotel(rno);
-		hp.clickOnSearch();
+		//Searching for the hotel with the test data and validating the same
+		boolean searchresult=hp.searchHotel(rno);
+		Assert.assertTrue(searchresult);
+		
+		//Validating the search for the hotel
+		boolean search=hp.clickOnSearch();
+		Assert.assertTrue(search);
+		
+		//Validating select hotel function
 		sp=new Select_Hotel();
-		sp.select_hotel(1,0);
+		boolean selecthotel=sp.select_hotel(rno,0);
+		Assert.assertTrue(selecthotel);
+		
+		//Validating selected hotel details
 		shd=new Selected_Hotel_Detail();
-		shd.click_on_select();
+		boolean selected_hotel=shd.click_on_select();
+		Assert.assertTrue(selected_hotel);
+		
+		//Booking hotel and validating the same
 		bh=new Book_Hotel();
-		bh.enterBookingDetails(rno);
+		bh.readExpectedData(rno);
+		boolean booking=bh.enterBookingDetails(rno);
+		Assert.assertTrue(booking);
+		
+		//Validating the booking confirmation page
 		bc=new Booking_Confirmation();
-		ordid=bc.getOrderId();
-		bc.confirm_Booking();
+		boolean bookresult=bc.validateBookingConfirmationDetails();
+		Assert.assertTrue(bookresult);
+		
+		//Confirming the booking
+		boolean book_confirm=bc.confirm_Booking();
+		Assert.assertTrue(book_confirm);
+		
 		bi=new Booked_Itinerary();
 		//String bhd_id=bi.readWhichEntry(rno);
-		bi.viewBookedHotel(rno);
+		boolean viewhotel=bi.viewBookedHotel(rno);
+		Assert.assertTrue(viewhotel);
 		
 		bhd=new Booked_Hotel_Details();
-		boolean result=bhd.validateOrderID(ordid);
-		Assert.assertTrue(result);
-		boolean count=bhd.checkBookedHotelDetails(rno, ordid);
-		Assert.assertTrue(count);
+		boolean checkbooking=bhd.checkBookedHotelDetails(rno);
+		Assert.assertTrue(checkbooking);
+		
 		Log.endTestCase("User_is_able_to_book_a_hotel");
 		
 		

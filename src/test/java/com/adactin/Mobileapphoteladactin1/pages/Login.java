@@ -24,37 +24,48 @@ public class Login extends BaseClass {
 		PageFactory.initElements(driver, this);
 
 	}
-
+	
+	//User name text box
 	@FindBy(xpath = "//android.view.View[2]/android.widget.EditText")
 	public WebElement userid;
 
+	//Password text box
 	@FindBy(xpath = "//android.view.View[3]/android.widget.EditText")
 	public WebElement passw;
 
+	//Submit button
 	@FindBy(xpath = "//android.view.View[4]/android.widget.Button")
 	public WebElement submit;
 
+	//Sign up link
 	@FindBy(xpath = "//android.view.View[@text='Sign Up']")
 	public WebElement signup;
 
+	//Forgot password link
 	@FindBy(xpath = "//android.view.View[@text='Forgot password']")
 	public WebElement forgotpw;
 
+	//Click here link
 	@FindBy(xpath = "//android.view.View[contains(@text,'click here')]")
 	public WebElement clickhere;
 
+	//User name error
 	@FindBy(xpath = "//android.view.View[contains(@text,'valid username')]")
 	public WebElement error_username;
 
+	//Password error
 	@FindBy(xpath = "//android.view.View[contains(@text,'valid password')]")
 	public WebElement error_password;
 
+	//Invalid login error
 	@FindBy(xpath = "//android.view.View[contains(@text,'Invalid Login')]")
 	public WebElement errormessage_invalidlogin;
 
+	//Alert ok button
 	@FindBy(xpath = "//android.view.View[contains(@text,'OK')]")
 	public WebElement error_alert_ok;
 
+	//Alert title
 	@FindBy(xpath = "//android.view.View[contains(@text,'Failure')]")
 	private WebElement error_alert_title;
 

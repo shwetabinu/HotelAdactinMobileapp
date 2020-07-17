@@ -18,10 +18,13 @@ public class My_Account extends BaseClass{
 		PageFactory.initElements(driver, this);
 	}
 
+	//Logout button
 	@FindBy(xpath="//android.widget.Button[@text='Logout']")
 	WebElement logout_btn;
 	
-	//android.view.View[@text='user_textfield']
+	//Disabled username field
+	@FindBy(xpath="//android.view.View[@text='user_textfield']")
+	WebElement username_disable;
 	
 	/**
 	 * Method to logout of the mobile app

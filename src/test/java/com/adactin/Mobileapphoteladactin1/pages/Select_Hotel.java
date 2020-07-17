@@ -18,8 +18,13 @@ public class Select_Hotel extends BaseClass {
 		// TODO Auto-generated constructor stub
 	}
 
+	//Hotel list
 	@FindBy(xpath = "//android.view.View[2]/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View")
 	List<WebElement> hotel_list;
+	
+	String expected_hotel;
+	String expectedlist;
+	String[] expected_hotelslist = new String[100];
 
 	/**
 	 * Method to check the number of entries in the Select Hotel page
@@ -44,12 +49,9 @@ public class Select_Hotel extends BaseClass {
 		try {
 			// Reads the hotel to be selected from the test data file
 			int hotel_index = ExcelUtil.readExcel('c', "Hotels");
-			String expected_hotel = ExcelUtil.getCellData(rno, hotel_index);
+			expected_hotel = ExcelUtil.getCellData(rno, hotel_index);
 			hotel_list.get(hotel).click();
-			
 				
-			
-			
 		} catch (Exception e) {
 			// Prints error message in case of exception
 			e.printStackTrace();
@@ -70,19 +72,12 @@ public class Select_Hotel extends BaseClass {
 	 */
 	public boolean readHotelName(int i) {
 		boolean result = true;
-
 		try {
-
-			// Creating list of expected hotels and assigning values to it
-			String[] expected_hotelslist = new String[100];
+			// Creating list of expected hotels and assigning values to it			
 			int hotellist_index = ExcelUtil.readExcel('c', "Hotel List");
-			String expectedlist = ExcelUtil.getCellData(i, hotellist_index);
+			expectedlist = ExcelUtil.getCellData(i, hotellist_index);
 			expected_hotelslist = expectedlist.split(",");
-
-		
-			
-			// Checks if all the expected hotels are present and if the total size 
-			
+			// Checks if all the expected hotels are present and if the total size 		
 			if (expected_hotelslist.length == hotel_list.size())
 				result = true;
 			else

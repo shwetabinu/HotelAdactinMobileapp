@@ -16,12 +16,15 @@ public class Dashboard extends BaseClass{
 		// TODO Auto-generated constructor stub
 	}
 
+	//Home button
 	@FindBy(xpath = "//android.view.View[@text='Home']")
 	WebElement home_btn;
 
+	//Booked itinerary button
 	@FindBy(xpath = "//android.view.View[@text='Booked Itinerary']")
 	WebElement booked_itinerary;
 
+	//Account button
 	@FindBy(xpath="//android.view.View[@text='Account']")
 	WebElement account_btn;
 	

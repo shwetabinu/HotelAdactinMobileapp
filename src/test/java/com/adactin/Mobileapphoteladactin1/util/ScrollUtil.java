@@ -103,8 +103,8 @@ public class ScrollUtil extends BaseClass {
 	 * 
 	 */
 	public static void calendarScroll() {
-		//MobileElement seek_bar = driver.findElement(By.xpath("//android.view.View/android.widget.SeekBar[2]"));
-		MobileElement seek_bar = driver.findElement(By.xpath("//android.widget.ScrollView"));
+		MobileElement seek_bar = driver.findElement(By.xpath("//android.view.View/android.widget.SeekBar[2]"));
+		//MobileElement seek_bar = driver.findElement(By.xpath("//android.widget.ScrollView"));
 		
 		// get start co-ordinate of seek bar
 		int startx = seek_bar.getLocation().getX();
@@ -113,8 +113,8 @@ public class ScrollUtil extends BaseClass {
 		// Get width and height of seekbar
 		int endx = seek_bar.getSize().getWidth();
 		int endy = seek_bar.getSize().getHeight();
-		endx=0;
-		endy=2074;
+		//endx=0;
+		//endy=2074;
 
 		try {
 			// Defining touch action for scrolling

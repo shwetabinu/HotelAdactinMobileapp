@@ -24,78 +24,109 @@ public class Home extends BaseClass {
 
 	String text;
 
+	//Welcome message
 	@FindBy(xpath = "//android.view.View[1][contains(@text,'welcome')]")
 	WebElement welcome_msg;
 
+	//Search Hotel title
 	@FindBy(xpath = "//android.view.View[@text='search_hotel']")
 	WebElement search_hotel_title;
 
+	//Select Location text box
 	@FindBy(xpath = "//android.widget.EditText[@text='Select Location']")
 	WebElement selectlocation;
 
+	//Location drop down options
 	@FindBy(xpath = "//android.view.View[2]/android.view.View/android.view.View/android.view.View")
 	List<WebElement> location_optns;
 
+	//Cancel button
 	@FindBy(xpath = "//android.widget.Button[@text='Cancel']")
 	WebElement cancel_btn;
 
+	//Select hotel text box
 	@FindBy(xpath = "//android.widget.EditText[@text='Select Hotel']")
 	WebElement select_hotel;
 
+	//Hotel drop down options
 	@FindBy(xpath = "//android.view.View[2]/android.view.View/android.view.View/android.view.View")
 	List<WebElement> hotel_optns;
 
+	//Select room type text box
 	@FindBy(xpath = "//android.widget.EditText[@text='Select Room Type']")
 	WebElement select_roomtype;
 
+	//Room type drop down options
 	@FindBy(xpath = "//android.view.View[2]/android.view.View/android.view.View/android.view.View")
 	List<WebElement> roomtype_optns;
 
+	//No: of rooms text box
 	@FindBy(xpath = "//android.widget.EditText[contains(@text,'Number of Rooms')]")
 	WebElement no_of_rooms;
 
+	//Room number drop down options
 	@FindBy(xpath = "//android.view.View[2]/android.view.View/android.view.View/android.view.View")
 	List<WebElement> roomno_optns;
 
 	// after scroll
 
+	//Check in date 
 	@FindBy(xpath = "//android.widget.EditText[contains(@text,'Check-in Date')]")
 	WebElement checkin_date;
 
+	//check in date picker items
 	@FindBy(xpath = "//android.widget.SeekBar")
 	List<WebElement> checkin_datepicker;
 
+	//check out date
 	@FindBy(xpath = "//android.widget.EditText[contains(@text,'Check-out Date')]")
 	WebElement checkout_date;
 
+	//Check out date picker
 	@FindBy(xpath = "//android.widget.SeekBar")
 	List<WebElement> checkout_datepicker;
 
+	//Cancel date option
 	@FindBy(xpath = "//android.widget.Button[@text='Cancel']")
 	WebElement canceldate;
 
+	//Done button in date picker
 	@FindBy(xpath = "//android.widget.Button[@text='Done']")
 	WebElement donedate;
 
+	//Adults per room drop down
 	@FindBy(xpath = "//android.widget.EditText[contains(@text,'Adults per Room')]")
 	WebElement adults_per_room;
 
+	//Adults per room drop down options
 	@FindBy(xpath = "//android.view.View[2]/android.view.View/android.view.View/android.view.View")
 	List<WebElement> adultsroom_optns;
 
+	//Children per room drop down
 	@FindBy(xpath = "//android.widget.EditText[contains(@text,'Children per Room')]")
 	WebElement children_per_room;
 
+	//Children per room drop down options
 	@FindBy(xpath = "//android.view.View[2]/android.view.View/android.view.View/android.view.View")
 	List<WebElement> childrensroom_optns;
 
+	//Search button
 	@FindBy(xpath = "//android.widget.Button[@text='Search']")
 	WebElement search_btn;
 
+	//Reset Button
 	@FindBy(xpath = "//android.widget.Button[@text='Reset']")
 	WebElement reset_btn;
 
+	//alert box
+	@FindBy(xpath="//android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View")
+	WebElement alert;
 	
+	//Alert ok button
+	@FindBy(xpath="//android.view.View[@text='OK']")
+	WebElement alert_okbtn;
+	
+	public static String expected_location,expected_hotel,expected_roomtype,expected_nofrooms,expected_adultsperroom,expected_childrenperroom;
 	
 	/**
 	 * Method to check the welcome message of a user
@@ -139,12 +170,12 @@ public class Home extends BaseClass {
 	public boolean searchHotel(int i) throws InterruptedException {
 		boolean result = true;
 		try {
-			String expected_location = new String();
-			String expected_hotel = new String();
-			String expected_roomtype = new String();
-			String expected_nofrooms = new String();
-			String expected_adultsperroom = new String();
-			String expected_childrenperroom = new String();
+			expected_location = new String();
+			expected_hotel = new String();
+			expected_roomtype = new String();
+			expected_nofrooms = new String();
+			expected_adultsperroom = new String();
+			expected_childrenperroom = new String();
 
 			try {
 				// Reading the Expected location from the Test Data file
