@@ -64,6 +64,7 @@ public class BaseClass {
 		//Setting the main activity
 		caps.setCapability("appActivity", "com.adactin.education.hotelbooking."
 				+ "MainActivity");
+		
 
 		//Setting the URL Address where the device is present
 		URL url=new URL("http://127.0.0.1:4723/wd/hub");

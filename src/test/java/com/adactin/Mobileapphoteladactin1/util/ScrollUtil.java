@@ -2,7 +2,6 @@ package com.adactin.Mobileapphoteladactin1.util;
 
 import java.time.Duration;
 import java.util.NoSuchElementException;
-import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 
@@ -13,9 +12,6 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
-import io.appium.java_client.FindsByAndroidUIAutomator;
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.AndroidMobileCommandHelper;
 
 
 public class ScrollUtil extends BaseClass {
@@ -41,7 +37,7 @@ public class ScrollUtil extends BaseClass {
 			MobileElement element = driver
 
 					.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().resourceid(\""
-							+ scrollableList + "\")).scrollIntoView(" + "new UiSelector().text(\"" + text + "\"))"));
+							+ scrollableList + "\")).scrollIntoView(" + "new UiSelector().textStartsWith(\"" + text + "\"))"));
 
 			// Clicking on the element
 			element.click();
@@ -66,7 +62,7 @@ public class ScrollUtil extends BaseClass {
 			MobileElement el = driver
 
 					.findElement(MobileBy.AndroidUIAutomator(
-							"new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().textMatches(\""
+							"new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().textStartsWith(\""
 									+ text + "\"));"));
 
 			System.out.println("The text in the element" + el.getText());

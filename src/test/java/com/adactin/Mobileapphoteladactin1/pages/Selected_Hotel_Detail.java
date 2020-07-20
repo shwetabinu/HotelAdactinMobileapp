@@ -65,8 +65,8 @@ public class Selected_Hotel_Detail extends BaseClass {
 	public static String expected_hotel, expected_location, room_nu, arr_date, dep_dat, dayno, room_ty;
 	public static String ppn;
 	public static String acttotal_price;
-	int tot_pri;
-	int dayNo;
+	public static int tot_pri;
+	public static int dayNo;
 
 	/**
 	 * Method to click on the select button
@@ -108,6 +108,7 @@ public class Selected_Hotel_Detail extends BaseClass {
 		// Calculating the total days by subtracting the date
 		if (a_month == d_month && a_year == d_year)
 			dayNo = d_day - a_day;
+		Log.info("The day number is"+dayNo);
 
 		}catch(Exception e)
 		{

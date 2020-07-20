@@ -22,7 +22,7 @@ public class My_Account extends BaseClass{
 	@FindBy(xpath="//android.widget.Button[@text='Logout']")
 	WebElement logout_btn;
 	
-	//Disabled username field
+	//Disabled user name field
 	@FindBy(xpath="//android.view.View[@text='user_textfield']")
 	WebElement username_disable;
 	

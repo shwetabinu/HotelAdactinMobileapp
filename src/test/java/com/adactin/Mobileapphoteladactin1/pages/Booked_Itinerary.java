@@ -81,4 +81,19 @@ public class Booked_Itinerary extends BaseClass {
 			return false;
 	}
 
+	public boolean checkBooked()
+	{
+		//Explicitly waiting for all the hotel list items to be visible
+				WebDriverWait wait=new WebDriverWait(driver,20);
+				wait.until(ExpectedConditions.visibilityOfAllElements(hotel_listitems));
+				//Determining the size of the hotel list
+				new_hotellist_size=hotel_listitems.size();
+				Log.info("The modified hotel list is"+new_hotellist_size);
+				Log.info("The previous size is"+hotel_list_size);
+				//Comparing the previous and new size of the list
+				if(new_hotellist_size==hotel_list_size+1)
+					return true;
+				else
+					return false;
+	}
 }

@@ -224,7 +224,7 @@ public class Booked_Hotel_Details extends BaseClass {
 				count++;
 
 			//Comparing the expected and actual last name and incrementing the count if they match
-			Log.info("The last name inputted" + lname);
+			Log.info("The last name inputted" + expected_lname);
 			Log.info("The first name in the hotel details page" + lname.getText());
 			if (lname.getText().equalsIgnoreCase(expected_lname))
 				count++;
@@ -248,19 +248,40 @@ public class Booked_Hotel_Details extends BaseClass {
 				count++;
 
 			//Comparing the expected and actual price per night and incrementing the count if they match
-			Log.info("The price per night inputted" + expected_ppn);
-			Log.info("The price per night in the hotel details page" + pricenight.getText());
-			if (pricenight.getText().equalsIgnoreCase(expected_ppn))
-				count++;
+			if(expected_ppn.isEmpty())
+				{
+				Log.info("The price per night inputted"+Selected_Hotel_Detail.ppn);
+				Log.info("The price per night in the hotel details page" + pricenight.getText());
+				if (pricenight.getText().equalsIgnoreCase(Selected_Hotel_Detail.ppn))
+					count++;
+				}
+			
+			else	
+				{Log.info("The price per night inputted" + expected_ppn);
+				Log.info("The price per night in the hotel details page" + pricenight.getText());
+				if (pricenight.getText().equalsIgnoreCase(expected_ppn))
+					count++;
+				}
 
 			//Scrolling to the total price element
-			ScrollUtil.pageScrollToText("Total Price");
-			Log.info("The total price inputted" + expected_tp);
-			Log.info("The total price in the hotel details page" + tot_price.getText());
+			
+			ScrollUtil.pageScrollToText("Total");
+			if(expected_tp.isEmpty())
+			{
+				Log.info("The total price inputted" + Selected_Hotel_Detail.acttotal_price);
+				if (tot_price.getText().equalsIgnoreCase(Selected_Hotel_Detail.acttotal_price))
+					count++;
+			}
+			else
+				{
+				Log.info("The total price inputted" + expected_tp);
+				Log.info("The total price in the hotel details page" + tot_price.getText());
+				 if (tot_price.getText().equalsIgnoreCase(expected_tp))
+						count++;
+				}
 			
 			//Comparing the expected and actual total price and incrementing the count if they match
-			if (tot_price.getText().equalsIgnoreCase(expected_tp))
-				count++;
+			
 
 			if (count == 12)
 				result = true;

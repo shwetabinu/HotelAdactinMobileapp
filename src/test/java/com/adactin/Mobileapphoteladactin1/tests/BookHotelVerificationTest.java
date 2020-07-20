@@ -59,6 +59,7 @@ public class BookHotelVerificationTest extends BaseClass{
 		Assert.assertTrue(loginresult);
 		
 		hp=new Home();
+		
 		//Searching for the hotel with the test data and validating the same
 		boolean searchresult=hp.searchHotel(rno);
 		Assert.assertTrue(searchresult);
@@ -74,6 +75,10 @@ public class BookHotelVerificationTest extends BaseClass{
 		
 		//Validating selected hotel details
 		shd=new Selected_Hotel_Detail();
+		
+		shd.readExpectedData(rno);
+		shd.dayNoCalculate(rno);	
+		shd.priceCalculation(rno);
 		boolean selected_hotel=shd.click_on_select();
 		Assert.assertTrue(selected_hotel);
 		
@@ -87,19 +92,26 @@ public class BookHotelVerificationTest extends BaseClass{
 		bc=new Booking_Confirmation();
 		boolean bookresult=bc.validateBookingConfirmationDetails();
 		Assert.assertTrue(bookresult);
+		bc.getOrderId();
 		
 		//Confirming the booking
 		boolean book_confirm=bc.confirm_Booking();
 		Assert.assertTrue(book_confirm);
 		
+		db=new Dashboard();
+		boolean gotobooked=db.viewBookedItinerary();
+		Assert.assertTrue(gotobooked);
+		
 		bi=new Booked_Itinerary();
-		//String bhd_id=bi.readWhichEntry(rno);
 		boolean viewhotel=bi.viewBookedHotel(rno);
 		Assert.assertTrue(viewhotel);
 		
-		bhd=new Booked_Hotel_Details();
+		
+		
+	/*	bhd=new Booked_Hotel_Details();
+		bhd.readExpectedData(rno);
 		boolean checkbooking=bhd.checkBookedHotelDetails(rno);
-		Assert.assertTrue(checkbooking);
+		Assert.assertTrue(checkbooking);*/
 		
 		Log.endTestCase("User_is_able_to_book_a_hotel");
 		
