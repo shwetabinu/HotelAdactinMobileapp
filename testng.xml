@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Hotel Adactin Mobile App Regression Test Suite">
-
+<!-- 
 	<test name="Login Verification with no user id and password">
 		<classes>
 			<class name="com.adactin.Mobileapphoteladactin1.tests.BlankLoginVerificationTest" />		
@@ -19,5 +19,84 @@
 			<class name="com.adactin.Mobileapphoteladactin1.tests.ValidLoginVerificationTest"/>
 		</classes>
 	</test>
+	
+	<test name = "Book Now verification with no input">
+		<classes>
+			<class name="com.adactin.Mobileapphoteladactin1.tests.BookHotel_BlankFields"/>
+		</classes>
+	</test>
+	
+	<test name = "Book hotel verification">
+		<classes>
+			<class name="com.adactin.Mobileapphoteladactin1.tests.BookHotelVerificationTest"/>
+		</classes>
+	</test>
+	
+	<test name = "Booking cancelation verification">
+		<classes>
+			<class name="com.adactin.Mobileapphoteladactin1.tests.BookingCancelationVerification"/>
+		</classes>
+	</test>
+	
+	<test name = "Forgot Password verification">
+		<classes>
+			<class name="com.adactin.Mobileapphoteladactin1.tests.ForgotPasswordVerification"/>
+		</classes>
+	</test>
+	
+	<test name = "Logout verification">
+		<classes>
+			<class name="com.adactin.Mobileapphoteladactin1.tests.LogoutVerification"/>
+		</classes>
+	</test>
+	
+	<test name = "Reset Search Verification">
+		<classes>
+			<class name="com.adactin.Mobileapphoteladactin1.tests.ResetSearchVerification"/>
+		</classes>
+	</test>
+	
+	<test name = "Search Hotel with all inputs">
+		<classes>
+			<class name="com.adactin.Mobileapphoteladactin1.tests.SearchHotel_AllFields"/>
+		</classes>
+	</test>
+	
+	<test name = "Search hotel with no valid inputs">
+		<classes>
+			<class name="com.adactin.Mobileapphoteladactin1.tests.SearchHotel_BlankFields"/>
+		</classes>
+	</test>
+	-->
+	<test name = "Search hotel with only location">
+		<classes>
+			<class name="com.adactin.Mobileapphoteladactin1.tests.SearchHotel_Location"/>
+		</classes>
+	</test>
+	
+	<test name = "Search hotel with location and hotel name">
+		<classes>
+			<class name="com.adactin.Mobileapphoteladactin1.tests.SearchHotel_LocationHotelName"/>
+		</classes>
+	</test>
+	
+	<test name = "Select Hotel Verification">
+		<classes>
+			<class name="com.adactin.Mobileapphoteladactin1.tests.SelectHotelVerification"/>
+		</classes>
+	</test>
+	
+	<test name = "View Booked Hotel Details verification">
+		<classes>
+			<class name="com.adactin.Mobileapphoteladactin1.tests.ViewBookedHotelDetails"/>
+		</classes>
+	</test>
+	
+	<test name = "View Booked itinerary">
+		<classes>
+			<class name="com.adactin.Mobileapphoteladactin1.tests.ViewItineraryVerification"/>
+		</classes>
+	</test>
+	
 </suite> 
 

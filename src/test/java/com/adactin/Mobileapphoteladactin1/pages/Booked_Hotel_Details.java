@@ -190,7 +190,7 @@ public class Booked_Hotel_Details extends BaseClass {
 		String oid;
 		try {
 			int count = 0;
-			if (Booking_Confirmation.order_id.isEmpty())
+			if (Booking_Confirmation.order_id == null)
 				oid = expected_orderid;
 			else
 				oid=Booking_Confirmation.order_id;
@@ -295,7 +295,20 @@ public class Booked_Hotel_Details extends BaseClass {
 		return result;
 
 	}
-
+	
+	public boolean goBack()
+	{
+		boolean result=true;
+		try {
+			back_btn.click();
+		}catch(Exception e)
+		{
+			result=false;
+			e.printStackTrace();
+			Log.error("Error occurred while going back");
+		}
+		return result;
+	}
 	/**
 	 * Method to validate the order id
 	 * @param ordid Order ID

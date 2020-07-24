@@ -37,7 +37,7 @@ public class BookHotelVerificationTest extends BaseClass{
 	static Book_Hotel bh;
 	static Booking_Confirmation bc;
 	static Dashboard db;
-	static Booked_Itinerary bi;
+	static Booked_Itinerary bi,bi1;
 	static Booked_Hotel_Details bhd;
 	
 	
@@ -57,6 +57,16 @@ public class BookHotelVerificationTest extends BaseClass{
 		//Validating logging in
 		boolean loginresult=lp.login(rno);
 		Assert.assertTrue(loginresult);
+		
+
+		db=new Dashboard();
+		boolean viewbooked=db.viewBookedItinerary();
+		Assert.assertTrue(viewbooked);
+		
+		bi=new Booked_Itinerary();
+		bi.calcHotelSize(rno);
+		
+		db.viewHome(rno);
 		
 		hp=new Home();
 		
@@ -108,17 +118,16 @@ public class BookHotelVerificationTest extends BaseClass{
 		Assert.assertTrue(gotobooked);
 		
 		bi=new Booked_Itinerary();
-		boolean viewhotel=bi.viewBookedHotel(rno);
-		Assert.assertTrue(viewhotel);
+		bi.calcHotelSize(rno);
+	//	Assert.assertTrue(viewhotel);
 		
+		bhd=new Booked_Hotel_Details();
+		bhd.goBack();
+			
+		//bi1=new Booked_Itinerary();
 		boolean booked_result=bi.checkBooked();
 		Assert.assertTrue(booked_result);
-		
-	/*	bhd=new Booked_Hotel_Details();
-		bhd.readExpectedData(rno);
-		boolean checkbooking=bhd.checkBookedHotelDetails(rno);
-		Assert.assertTrue(checkbooking);*/
-		
+	
 		Log.endTestCase("User_is_able_to_book_a_hotel");
 		
 		

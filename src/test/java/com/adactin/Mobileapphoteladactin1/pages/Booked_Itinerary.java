@@ -31,7 +31,10 @@ public class Booked_Itinerary extends BaseClass {
 	public int hotel_list_size,hotel_size;
 	int new_hotellist_size;
 
-	
+	public void calcHotelSize(int rno) throws Exception
+	{
+		hotel_list_size=hotel_listitems.size();
+	}
 	
 	/**
 	 * Method to read which entry of the booked itinerary
@@ -43,7 +46,7 @@ public class Booked_Itinerary extends BaseClass {
 	public boolean viewBookedHotel(int rno) throws Exception {
 		boolean result = true;
 		try {
-			hotel_list_size=hotel_listitems.size();
+			//hotel_list_size=hotel_listitems.size();
 			int index = ExcelUtil.readExcel('c', "Booked Itinerary id");
 			String entry_no = ExcelUtil.getCellData(rno, index);
 			int entryno = Integer.parseInt(entry_no);

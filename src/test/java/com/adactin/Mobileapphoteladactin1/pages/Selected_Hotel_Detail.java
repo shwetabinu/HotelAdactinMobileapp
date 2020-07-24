@@ -251,7 +251,7 @@ public class Selected_Hotel_Detail extends BaseClass {
 			}
 
 			//Validating the room number in the Selected hotel details page
-			if (room_no.getText().equalsIgnoreCase(room_nu)) {
+			if (room_nu.contains(room_no.getText())) {
 				Log.info(room_no.getText());
 				++count;
 				Log.info("Checking count" + count);
