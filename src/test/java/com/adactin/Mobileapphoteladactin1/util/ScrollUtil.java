@@ -62,7 +62,7 @@ public class ScrollUtil extends BaseClass {
 			MobileElement el = driver
 
 					.findElement(MobileBy.AndroidUIAutomator(
-							"new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().textStartsWith(\""
+							"new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().textMatches(\""
 									+ text + "\"));"));
 
 			System.out.println("The text in the element" + el.getText());

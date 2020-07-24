@@ -10,6 +10,7 @@ import com.adactin.Mobileapphoteladactin1.pages.Booked_Hotel_Details;
 import com.adactin.Mobileapphoteladactin1.pages.Booked_Itinerary;
 import com.adactin.Mobileapphoteladactin1.pages.Booking_Confirmation;
 import com.adactin.Mobileapphoteladactin1.pages.Dashboard;
+import com.adactin.Mobileapphoteladactin1.pages.ForgotPassword_Page2;
 import com.adactin.Mobileapphoteladactin1.pages.Forgot_Password;
 import com.adactin.Mobileapphoteladactin1.pages.Home;
 import com.adactin.Mobileapphoteladactin1.pages.Login;
@@ -27,6 +28,7 @@ public class ForgotPasswordVerification extends BaseClass {
 
 	static Forgot_Password fp;
 	static Login lp;
+	static ForgotPassword_Page2 fp2;
 	
 	@Test(groups = { "functionalTest" })
 	public void User_is_able_to_send_email() throws Exception
@@ -41,12 +43,26 @@ public class ForgotPasswordVerification extends BaseClass {
 		//Initializing the app
 		initApp(rno);
 		lp=new Login();
-		lp.clickOnForgotpassword();
-		fp=new Forgot_Password();
-		//fp.switchToWebView();
-		fp.emailPassword(rno);
 		
-		Log.endTestCase("User_is_able_to_book_a_hotel");
+		//Clicking on email password link
+		boolean login=lp.clickOnForgotpassword();
+		Assert.assertTrue(login);
+		
+		fp=new Forgot_Password();
+		//Enterting email to which link is to be sent
+		boolean emailenter=fp.enterEmail(rno);
+		Assert.assertTrue(emailenter);
+		
+		//Clicking on email password link
+		boolean email=fp.emailPassword();
+		Assert.assertTrue(email);
+		
+		fp2=new ForgotPassword_Page2();
+		//Verifying the text confirming that the password link is sent
+		boolean verifytext=fp2.verifyText(rno);
+		Assert.assertTrue(verifytext);
+		
+		Log.endTestCase("User_is_able_to_send_email");
 		
 		
 	}

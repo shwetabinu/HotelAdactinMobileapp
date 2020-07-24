@@ -9,6 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import com.adactin.Mobileapphoteladactin1.base.BaseClass;
 import com.adactin.Mobileapphoteladactin1.util.ExcelUtil;
 import com.adactin.Mobileapphoteladactin1.util.Log;
+import com.adactin.Mobileapphoteladactin1.util.ScrollUtil;
 
 public class Selected_Hotel_Detail extends BaseClass {
 
@@ -74,6 +75,7 @@ public class Selected_Hotel_Detail extends BaseClass {
 	public boolean click_on_select() {
 		boolean result = true;
 		try {
+			ScrollUtil.pageScrollToText("Select");
 			select_btn.click();
 		} catch (Exception e) {
 			Log.error("Error occured while selecting the hotel");

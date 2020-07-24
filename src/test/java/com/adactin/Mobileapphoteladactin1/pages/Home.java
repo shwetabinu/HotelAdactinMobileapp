@@ -120,11 +120,18 @@ public class Home extends BaseClass {
 
 	//alert box
 	@FindBy(xpath="//android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View")
-	WebElement alert;
+	List<WebElement>alert;
 	
 	//Alert ok button
 	@FindBy(xpath="//android.view.View[@text='OK']")
 	WebElement alert_okbtn;
+	
+	@FindBy(xpath="//android.view.View[4]/android.widget.EditText/android.view.View")
+	WebElement inlineerr;
+	
+	int error_index,inline_errorindex;
+	String error,inline_error;
+	
 	
 	public static String expected_location,expected_hotel,expected_roomtype,expected_nofrooms,expected_adultsperroom,expected_childrenperroom;
 	
@@ -156,9 +163,61 @@ public class Home extends BaseClass {
 
 	}
 	
-	
+	/**
+	 * Method to verify alert popup when user tries to search with no input
+	 */
+	public boolean verifyAlertPopupMessage(int rno)
+	{
+		boolean result=true;
+		try {
+			//Reading the expected alert message from the test data file
+			error_index=ExcelUtil.readExcel('c', "Alert message for invalid search");			
+			error=ExcelUtil.getCellData(rno, error_index);
+			//Comparing the expected and the actual alert message
+			if((alert.get(0).getText().equalsIgnoreCase("Missing Data")) && (alert.get(1).getText().equalsIgnoreCase(error)))
+				{
+				result=true;
+				//Clicking on alert ok button
+				alert_okbtn.click();
+				}
+			else
+				result=false;
+		}catch(Exception e)
+		{
+			result=false;
+			e.printStackTrace();
+			Log.error("Error occurred while verifying alert");
+			
+		}
+		return result;
+	}
 
-	
+	/**
+	 * Method to verify in-line error when user first tries to search with no inpu
+	 */
+	public boolean verifyInlineError(int rno)
+	{
+		boolean result=true;
+		try {
+			//Reading the expected in-line error message for invalid search
+			inline_errorindex=ExcelUtil.readExcel('c', "Error message for invalid search");
+			inline_error=ExcelUtil.getCellData(rno, inline_errorindex);
+			//Scrolling till the error message is found
+			ScrollUtil.pageScrollToText(inline_error);
+			//Comparing the actual and expected error message
+			if(inlineerr.getText().equalsIgnoreCase(inline_error))
+				result=true;
+			else
+				result=false;
+			
+		}catch(Exception r)
+		{
+			result=false;
+			r.printStackTrace();
+			Log.error("Error occurred while verifying the inline error");
+		}
+		return result;
+	}
 	
 	/**
 	 * Method to search for a hotel with all input fields

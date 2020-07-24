@@ -17,14 +17,9 @@ import com.adactin.Mobileapphoteladactin1.pages.Selected_Hotel_Detail;
 import com.adactin.Mobileapphoteladactin1.util.ExcelUtil;
 import com.adactin.Mobileapphoteladactin1.util.Log;
 
-/**
- * Test case to verify if a user can book a hotel successfully with the details present in the Testdata file
- * 
- *
- */
-public class BookHotelVerificationTest extends BaseClass{
+public class BookHotel_BlankFields extends BaseClass{
 	
-	public BookHotelVerificationTest() throws Exception {
+	public BookHotel_BlankFields() throws Exception {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -42,14 +37,14 @@ public class BookHotelVerificationTest extends BaseClass{
 	
 	
 	@Test(groups = { "functionalTest" })
-	public void User_is_able_to_book_a_hotel() throws Exception
+	public void User_is_able_to_view_error_Book_No_Input() throws Exception
 	{
-		Log.startTestCase("User_is_able_to_book_a_hotel");
+		Log.startTestCase("User_is_able_to_view_error_Book_No_Input");
 		int rno;
-		String ordid;
+		
 		//Reading the test case row number where the data is to be read
 		ExcelUtil.setExcelFileSheet("Testcases");
-		rno=ExcelUtil.readExcel('r',"User_is_able_to_book_a_hotel");
+		rno=ExcelUtil.readExcel('r',"User_is_able_to_view_error_Book_No_Input");
 		
 		//Initializing the app
 		initApp(rno);
@@ -75,51 +70,23 @@ public class BookHotelVerificationTest extends BaseClass{
 		
 		//Validating selected hotel details
 		shd=new Selected_Hotel_Detail();
-		
-		shd.readExpectedData(rno);
-		shd.dayNoCalculate(rno);	
-		shd.priceCalculation(rno);
 		boolean selected_hotel=shd.click_on_select();
 		Assert.assertTrue(selected_hotel);
 		
-		//Booking hotel and validating the same
 		bh=new Book_Hotel();
-		bh.readExpectedData(rno);
-		boolean booking=bh.enterBookingDetails(rno);
-		Assert.assertTrue(booking);
-		
 		//Clicking on book now button
 		boolean booknow=bh.clickBookNow();
 		Assert.assertTrue(booknow);
-				
 		
-		//Validating the booking confirmation page
-		bc=new Booking_Confirmation();
-		boolean bookresult=bc.validateBookingConfirmationDetails();
-		Assert.assertTrue(bookresult);
-		bc.getOrderId();
+		//Validating alert popup message
+		boolean verifyalert=bh.verifyAlertPopupMessage(rno);
+		Assert.assertTrue(verifyalert);
 		
-		//Confirming the booking
-		boolean book_confirm=bc.confirm_Booking();
-		Assert.assertTrue(book_confirm);
+		//Validating in-line error message
+		boolean inlineerror=bh.verifyInlineError(rno);
+		Assert.assertTrue(inlineerror);
 		
-		db=new Dashboard();
-		boolean gotobooked=db.viewBookedItinerary();
-		Assert.assertTrue(gotobooked);
-		
-		bi=new Booked_Itinerary();
-		boolean viewhotel=bi.viewBookedHotel(rno);
-		Assert.assertTrue(viewhotel);
-		
-		boolean booked_result=bi.checkBooked();
-		Assert.assertTrue(booked_result);
-		
-	/*	bhd=new Booked_Hotel_Details();
-		bhd.readExpectedData(rno);
-		boolean checkbooking=bhd.checkBookedHotelDetails(rno);
-		Assert.assertTrue(checkbooking);*/
-		
-		Log.endTestCase("User_is_able_to_book_a_hotel");
+		Log.endTestCase("User_is_able_to_view_error_Book_No_Input");
 		
 		
 	}

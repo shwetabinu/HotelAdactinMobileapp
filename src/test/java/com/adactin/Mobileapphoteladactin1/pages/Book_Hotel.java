@@ -1,6 +1,7 @@
 package com.adactin.Mobileapphoteladactin1.pages;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -60,7 +61,7 @@ public class Book_Hotel extends BaseClass {
 
 	// Book now button
 	@FindBy(xpath = "//android.widget.Button[@text='Book Now']")
-	private WebElement booknow_btn;
+	WebElement booknow_btn;
 
 	// back button
 	@FindBy(xpath = "//android.widget.Button[@text='Back']")
@@ -81,6 +82,8 @@ public class Book_Hotel extends BaseClass {
 	public static String expected_fname, expected_lname, expected_billaddress, expected_ccnumber, expected_cctype, expected_cvvnumber;
 	String expected_alertmessage;
 	int count;
+	int error_index;
+	String error;
 	/**
 	 * Method to read the expected data from the TestData file
 	 * 
@@ -115,7 +118,7 @@ public class Book_Hotel extends BaseClass {
 				count++;
 
 
-			// Reading creditcard type
+			// Reading credit card type
 			int cctype_index = ExcelUtil.readExcel('c', "CC Type");
 			expected_cctype = ExcelUtil.getCellData(rno, cctype_index);
 			if(expected_cctype.isEmpty())
@@ -188,6 +191,7 @@ public class Book_Hotel extends BaseClass {
 			}
 
 		// Selects the CC Expiry date
+		ScrollUtil.pageScrollToText("Select Expiry Month & Year");
 		ccexpiry.click();
 		for (int k = 0; k < 2; k++) {
 			ScrollUtil.calendarScroll();
@@ -200,7 +204,7 @@ public class Book_Hotel extends BaseClass {
 		driver.getKeyboard().sendKeys(Keys.RETURN);
 
 		// Clicking on book now button
-		booknow_btn.click();
+		
 		}catch(Exception e)
 		{
 			e.printStackTrace();
@@ -210,12 +214,103 @@ public class Book_Hotel extends BaseClass {
 	}
 	
 	/**
+	 * Method to verify alert popup when user tries to search with no input
+	 */
+	public boolean verifyAlertPopupMessage(int rno)
+	{
+		boolean result=true;
+		try {
+			//Reading the alert pop-up message to be compared
+			error_index=ExcelUtil.readExcel('c', "Alert message for booking details");			
+			error=ExcelUtil.getCellData(rno, error_index);
+			//Comparing the expected alert message with the actual alert text
+			if((alert.get(0).getText().equalsIgnoreCase("Missing Data")) && (alert.get(1).getText().contains(error)))
+				{
+				result=true;
+				//Clicking on ok button in the alert
+				alert_okbtn.click();
+				}
+			else
+				result=false;
+		}catch(Exception e)
+		{
+			result=false;
+			e.printStackTrace();
+			Log.error("Error occurred while verifying alert");
+			
+		}
+		return result;
+	}
+	/**
+	 * Method to click on book now button
+	 * @return
+	 */
+	public boolean clickBookNow()
+	{
+		
+		boolean result=true;
+		try {
+			driver.manage().timeouts().implicitlyWait(250, TimeUnit.SECONDS);
+			//Scrolling down till the book now button
+			ScrollUtil.pageScrollToText("Book Now");
+			//Clicking on the book now button
+			booknow_btn.click();
+		}catch(Exception e)
+		{
+			result=false;
+			e.printStackTrace();
+			Log.error("Error occurred while clicking on book now");
+		}
+		return result;
+	}
+	
+	/**
+	 * Method to verify the in-line error messages when booking a hotel with no inputs
+	 */
+	public boolean verifyInlineError(int rno)
+	{
+		boolean result=true;
+		try {
+			//Counts the total set of in-line error messages
+			int count=0;
+			//Counting the first set of error messages in the top
+			ScrollUtil.pageScrollToText("Enter First Name");
+			if(errormessage.size()==4)
+				{Log.info("Error messages count is"+errormessage.size());
+				count++;
+				}
+			//Scrolling till the end and counting the total number of inline errors
+			ScrollUtil.pageScrollToText("Book Now");
+			if(errormessage.size()==5)
+				{
+				Log.info("Error messages size is"+errormessage.size());
+				count++;
+				}
+			//Verifying the total count
+			Log.info("Count is"+count);
+			if(count==2)
+				result=true;
+			else
+			result=false;
+			
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+			result=false;
+			Log.error("Error occurred while verifying inline error");
+		}
+		return result;
+	}
+	
+	
+	/**
 	 * Method to go back to the previous page
 	 */
 	public boolean goBack()
 	{
 		boolean result=true;
 		try {
+			//Clicking on go back button
 			back_btn.click();
 		}catch(Exception e)
 		{
@@ -238,6 +333,7 @@ public class Book_Hotel extends BaseClass {
 					result=true;
 			else
 				result=false;
+			
 			
 		}catch(Exception e)
 		{
