@@ -14,7 +14,10 @@ public class Booked_Hotel_Details extends BaseClass {
 	public Booked_Hotel_Details() throws Exception {
 		PageFactory.initElements(driver, this);
 	}
-
+	
+	//Page xpath
+	String scrollpage="//android.view.View[2]/android.widget.ScrollView";
+	
 	// order id web element
 	@FindBy(xpath = "//android.view.View[2]/android.widget.ScrollView/android.view.View[2]/android.view.View")
 	WebElement ord_id;
@@ -62,7 +65,7 @@ public class Booked_Hotel_Details extends BaseClass {
 	WebElement pricenight;
 
 	// total price web element
-	@FindBy(xpath = "((//android.view.View[contains(@text,'Total Price')])[1]//following::android.view.View)[2]")
+	@FindBy(xpath = "//android.view.View[2]/android.widget.ScrollView/android.view.View[19]/android.view.View")
 	WebElement tot_price;
 
 	// cancel button web element
@@ -213,9 +216,15 @@ public class Booked_Hotel_Details extends BaseClass {
 			if (location.getText().equalsIgnoreCase(expected_location))
 				count++;
 
+			Log.info("Expected room number"+expected_roomno);
+			Log.info("Actual room number"+no_rooms.getText());
 			//Comparing the expected and actual number of rooms and incrementing the count if they match
-			if (no_rooms.getText().equalsIgnoreCase(expected_roomno))
+			if (expected_roomno.contains(no_rooms.getText()))
+				{
+				Log.info("Expected room number"+expected_roomno);
+				Log.info("Actual room number"+no_rooms.getText());
 				count++;
+				}
 
 			//Comparing the expected and actual first name and incrementing the count if they match
 			Log.info("The first name inputted" + expected_fname);
@@ -231,15 +240,25 @@ public class Booked_Hotel_Details extends BaseClass {
 
 			//Comparing the expected and actual arrival date and incrementing the count if they match
 			if (arr_date.getText().equalsIgnoreCase(expected_arrdate))
-				count++;
+				{
+				Log.info("Expected arrival date"+expected_arrdate);
+				Log.info("Actual arrival date"+arr_date.getText());count++;
+				}
 			
 			//Comparing the expected and actual departure date and incrementing the count if they match
 			if (dep_date.getText().equalsIgnoreCase(expected_depdate))
+				{
+				Log.info("Expected dep date"+expected_depdate);
+				Log.info("Actual dep date"+dep_date.getText());
 				count++;
+				}
 
 			//Comparing the expected and actual number of days and incrementing the count if they match
 			if (no_days.getText().equalsIgnoreCase(expected_dayno))
-				count++;
+				{
+				Log.info("Expected day number"+expected_dayno);
+				Log.info("Actual day number"+no_days.getText());count++;
+				}
 			
 			//Comparing the expected and actual room type and incrementing the count if they match
 			Log.info("The room type inputted" + expected_roomtype);
@@ -264,8 +283,9 @@ public class Booked_Hotel_Details extends BaseClass {
 				}
 
 			//Scrolling to the total price element
-			
-			ScrollUtil.pageScrollToText("Total");
+			//driver.lockDevice();
+			//ScrollUtil.pageScrollEnd();
+			ScrollUtil.pageScroll("Total Price (incl. GST)",scrollpage);
 			if(expected_tp.isEmpty())
 			{
 				Log.info("The total price inputted" + Selected_Hotel_Detail.acttotal_price);
@@ -282,7 +302,7 @@ public class Booked_Hotel_Details extends BaseClass {
 			
 			//Comparing the expected and actual total price and incrementing the count if they match
 			
-
+			Log.info("The total count is"+count);
 			if (count == 12)
 				result = true;
 			else

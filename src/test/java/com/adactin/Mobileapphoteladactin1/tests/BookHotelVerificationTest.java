@@ -46,7 +46,6 @@ public class BookHotelVerificationTest extends BaseClass{
 	{
 		Log.startTestCase("User_is_able_to_book_a_hotel");
 		int rno;
-		String ordid;
 		//Reading the test case row number where the data is to be read
 		ExcelUtil.setExcelFileSheet("Testcases");
 		rno=ExcelUtil.readExcel('r',"User_is_able_to_book_a_hotel");
@@ -58,16 +57,17 @@ public class BookHotelVerificationTest extends BaseClass{
 		boolean loginresult=lp.login(rno);
 		Assert.assertTrue(loginresult);
 		
-
+		//Navigating to the dash-board and to the booked itinerary
 		db=new Dashboard();
 		boolean viewbooked=db.viewBookedItinerary();
 		Assert.assertTrue(viewbooked);
 		
 		bi=new Booked_Itinerary();
+		//Calculating the total list of hotels
 		bi.calcHotelSize(rno);
 		
-		db.viewHome(rno);
-		
+		//Navigating back to home
+		db.viewHome(rno);	
 		hp=new Home();
 		
 		//Searching for the hotel with the test data and validating the same
@@ -86,9 +86,16 @@ public class BookHotelVerificationTest extends BaseClass{
 		//Validating selected hotel details
 		shd=new Selected_Hotel_Detail();
 		
+		//Reading the expected data
 		shd.readExpectedData(rno);
+		
+		//Calculating total number of days
 		shd.dayNoCalculate(rno);	
+		
+		//Calculating total price
 		shd.priceCalculation(rno);
+		
+		//Selecting the hotel
 		boolean selected_hotel=shd.click_on_select();
 		Assert.assertTrue(selected_hotel);
 		
@@ -113,18 +120,12 @@ public class BookHotelVerificationTest extends BaseClass{
 		boolean book_confirm=bc.confirm_Booking();
 		Assert.assertTrue(book_confirm);
 		
+		//Navigating to the Booked itinerary
 		db=new Dashboard();
 		boolean gotobooked=db.viewBookedItinerary();
 		Assert.assertTrue(gotobooked);
-		
-		bi=new Booked_Itinerary();
-		bi.calcHotelSize(rno);
-	//	Assert.assertTrue(viewhotel);
-		
-		bhd=new Booked_Hotel_Details();
-		bhd.goBack();
-			
-		//bi1=new Booked_Itinerary();
+	
+		//Checking the number of booked hotels and verifying if the total entries have increased
 		boolean booked_result=bi.checkBooked();
 		Assert.assertTrue(booked_result);
 	

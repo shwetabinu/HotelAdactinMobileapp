@@ -4,6 +4,8 @@ import java.time.Duration;
 import java.util.NoSuchElementException;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
 
 import com.adactin.Mobileapphoteladactin1.base.BaseClass;
 
@@ -76,6 +78,43 @@ public class ScrollUtil extends BaseClass {
 
 	}
 
+	public static boolean pageScroll(String text,String element) {
+		boolean result = true;
+		try {
+			MobileElement ele=driver.findElement(By.xpath(element));
+			
+			// Scrolling till a particular text
+			TouchAction action = new TouchAction(driver);
+			
+			int startx = ele.getLocation().getX();			
+			int starty = ele.getLocation().getY();
+			// Get width and height of seekbar
+			int endx = ele.getSize().getWidth();
+			endx=endx-1;
+			int endy = ele.getSize().getHeight();
+			endy=endy;
+			//endx=0;x
+			//endy=2074;
+			//[0,227][1080,2075]
+			// Defining touch action for scrolling
+			TouchAction touchAction = new TouchAction(driver);
+			// Setting the start and end point to scroll
+			PointOption pointStart = PointOption.point(startx,starty);
+			PointOption pointEnd = PointOption.point(endx,endy);
+			//PointOption pointEnd = PointOption.point(startx, endy);
+			// Setting the wait duration
+			WaitOptions waitOption = WaitOptions.waitOptions(Duration.ofMillis(1000));
+			// Scrolling action after wait
+			
+			
+			action.press(pointEnd).waitAction(waitOption).moveTo(pointStart).release().perform();
+		} catch (NoSuchElementException e) {
+			result = false;
+		}
+
+		return result;
+
+	}
 	public static boolean pageScrollEnd()
 	{
 		boolean result = true;

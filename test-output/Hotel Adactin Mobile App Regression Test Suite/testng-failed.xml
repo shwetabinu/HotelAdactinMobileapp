@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Hotel Adactin Mobile App Regression Test Suite]">
+  <test thread-count="5" name="Book hotel verification(failed)">
+    <classes>
+      <class name="com.adactin.Mobileapphoteladactin1.tests.BookHotelVerificationTest">
+        <methods>
+          <include name="closeApp"/>
+          <include name="User_is_able_to_book_a_hotel"/>
+          <include name="closeSession"/>
+        </methods>
+      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.BookHotelVerificationTest -->
+    </classes>
+  </test> <!-- Book hotel verification(failed) -->
+  <test thread-count="5" name="Booking cancelation verification(failed)">
+    <classes>
+      <class name="com.adactin.Mobileapphoteladactin1.tests.BookingCancelationVerification">
+        <methods>
+          <include name="User_is_able_to_cancel_a_hotel_booking"/>
+          <include name="closeApp"/>
+        </methods>
+      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.BookingCancelationVerification -->
+    </classes>
+  </test> <!-- Booking cancelation verification(failed) -->
+  <test thread-count="5" name="Forgot Password verification(failed)">
+    <classes>
+      <class name="com.adactin.Mobileapphoteladactin1.tests.ForgotPasswordVerification">
+        <methods>
+          <include name="closeSession"/>
+          <include name="closeApp"/>
+          <include name="User_is_able_to_send_email"/>
+        </methods>
+      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.ForgotPasswordVerification -->
+    </classes>
+  </test> <!-- Forgot Password verification(failed) -->
   <test thread-count="5" name="Select Hotel Verification(failed)">
     <classes>
       <class name="com.adactin.Mobileapphoteladactin1.tests.SelectHotelVerification">
@@ -21,14 +53,4 @@
       </class> <!-- com.adactin.Mobileapphoteladactin1.tests.ViewBookedHotelDetails -->
     </classes>
   </test> <!-- View Booked Hotel Details verification(failed) -->
-  <test thread-count="5" name="View Booked itinerary(failed)">
-    <classes>
-      <class name="com.adactin.Mobileapphoteladactin1.tests.ViewItineraryVerification">
-        <methods>
-          <include name="closeApp"/>
-          <include name="User_is_able_to_view_itinerary"/>
-        </methods>
-      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.ViewItineraryVerification -->
-    </classes>
-  </test> <!-- View Booked itinerary(failed) -->
 </suite> <!-- Failed suite [Hotel Adactin Mobile App Regression Test Suite] -->

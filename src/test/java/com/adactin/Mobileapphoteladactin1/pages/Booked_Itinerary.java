@@ -31,9 +31,15 @@ public class Booked_Itinerary extends BaseClass {
 	public int hotel_list_size,hotel_size;
 	int new_hotellist_size;
 
+	/**
+	 * Method to calculate the total number of hotels in the list
+	 * @param rno
+	 * @throws Exception
+	 */
 	public void calcHotelSize(int rno) throws Exception
-	{
+	{	
 		hotel_list_size=hotel_listitems.size();
+		Log.info("The hotels in the list is"+hotel_list_size);
 	}
 	
 	/**
@@ -46,13 +52,16 @@ public class Booked_Itinerary extends BaseClass {
 	public boolean viewBookedHotel(int rno) throws Exception {
 		boolean result = true;
 		try {
-			//hotel_list_size=hotel_listitems.size();
+			//Reading the index of the booked hotel
 			int index = ExcelUtil.readExcel('c', "Booked Itinerary id");
 			String entry_no = ExcelUtil.getCellData(rno, index);
 			int entryno = Integer.parseInt(entry_no);
-			hotel_listitems.get(entryno).click();
 			
-			Log.info("The number of hotels in this list is"+hotel_list_size);
+			//Selecting the booked hotel
+			hotel_listitems.get(entryno).click();			
+			//Log.info("The number of hotels in this list is"+hotel_list_size);
+			
+			//If no entries are present, returning false
 			if(hotel_listitems.size()==0)
 				result=false;
 			
@@ -86,6 +95,7 @@ public class Booked_Itinerary extends BaseClass {
 
 	public boolean checkBooked()
 	{
+		Log.info("Entering method to check if booked");
 		//Explicitly waiting for all the hotel list items to be visible
 				WebDriverWait wait=new WebDriverWait(driver,20);
 				wait.until(ExpectedConditions.visibilityOfAllElements(hotel_listitems));

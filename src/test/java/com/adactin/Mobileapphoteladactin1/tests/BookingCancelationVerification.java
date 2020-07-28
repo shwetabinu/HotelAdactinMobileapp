@@ -56,6 +56,7 @@ public class BookingCancelationVerification extends BaseClass {
 		
 		//Viewing the hotel booking to be canceled and validating the same
 		bi=new Booked_Itinerary();	
+		bi.calcHotelSize(rno); // Calculating the total number of hotels in the list
 		boolean booked_result=bi.viewBookedHotel(rno);
 		Assert.assertTrue(booked_result);
 		

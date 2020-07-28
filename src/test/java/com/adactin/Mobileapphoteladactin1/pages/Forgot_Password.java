@@ -54,11 +54,20 @@ public class Forgot_Password extends BaseClass {
 		email_index=ExcelUtil.readExcel('c', "Email Address");
 		emailaddr=ExcelUtil.getCellData(rno, email_index);
 		
+		//Explicitly waiting for the email id text-box to be loaded and clickable
+		WebDriverWait wai1t=new WebDriverWait(driver,20);
+		wai1t.until(ExpectedConditions.elementToBeClickable(enter_email));
+		
 		//Clicking on the email link and entering the email id
-		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
-		enter_email.click();	
-		driver.getKeyboard().sendKeys("abc"+emailaddr + Keys.RETURN);
-	
+		enter_email.clear();
+		enter_email.click();
+		
+		//Explicitly waiting so that the required data is inputted correctly
+		WebDriverWait wait=new WebDriverWait(driver,20);
+		wait.until(ExpectedConditions.elementToBeClickable(enter_email));
+		
+		driver.getKeyboard().sendKeys(emailaddr);// + Keys.RETURN);
+		
 		return result;
 
 	}

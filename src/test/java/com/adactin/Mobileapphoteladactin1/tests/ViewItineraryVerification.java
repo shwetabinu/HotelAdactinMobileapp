@@ -47,7 +47,7 @@ public class ViewItineraryVerification  extends BaseClass{
 		bi=new Booked_Itinerary();
 		boolean booked_hotel=bi.viewBookedHotel(rno);
 		Assert.assertTrue(booked_hotel);
-		
+	
 		Log.endTestCase("User_is_able_to_view_itinerary");
 	}
 

@@ -148,10 +148,13 @@ public class Booking_Confirmation extends BaseClass {
 	 */
 	public boolean validateBookingConfirmationDetails()
 	{
+		//Explicitly waiting until the hotel list items are visible
 		WebDriverWait wait=new WebDriverWait(driver,20);
 		wait.until(ExpectedConditions.visibilityOf(hotelname));
 		boolean result=true;
-		try{int count=0;
+		try{
+		int count=0;
+		//Validating price per night
 		Log.info(pricepn.getText());
 		Log.info("The expected price per night is"+Selected_Hotel_Detail.ppn);
 		if(pricepn.getText().equalsIgnoreCase(Selected_Hotel_Detail.ppn))
@@ -159,19 +162,21 @@ public class Booking_Confirmation extends BaseClass {
 			Log.info(pricepn.getText());
 			count++;
 			}
+		//Validating hotel name
 		Log.info(hotelname.getText());
 		Log.info("The expected hotel name is"+Selected_Hotel_Detail.expected_hotel);
 		if(hotelname.getText().equalsIgnoreCase(Selected_Hotel_Detail.expected_hotel))
 			{Log.info(hotelname.getText());
 			count++;
 			}
+		//Validating location
 		Log.info(location.getText());
 		Log.info("The expected location is"+Selected_Hotel_Detail.expected_location);
 		if(location.getText().equalsIgnoreCase(Selected_Hotel_Detail.expected_location))
 			{Log.info(location.getText());
 			count++;
 			}
-		
+		//Validating room type
 		Log.info(roomtype.getText());
 		Log.info("The expected room type is"+Selected_Hotel_Detail.room_ty);
 		if(roomtype.getText().equalsIgnoreCase(Selected_Hotel_Detail.room_ty))
@@ -179,6 +184,7 @@ public class Booking_Confirmation extends BaseClass {
 			Log.info(roomtype.getText());
 			count++;
 			}
+		//Validating arrival date
 		Log.info(arrdate.getText());
 		Log.info("The expected arrival date is"+Selected_Hotel_Detail.arr_date);
 		if(arrdate.getText().equalsIgnoreCase(Selected_Hotel_Detail.arr_date))
@@ -186,7 +192,7 @@ public class Booking_Confirmation extends BaseClass {
 			Log.info(arrdate.getText());
 			count++;
 			}
-		
+		//Validating departure date
 		Log.info(depdate.getText());
 		Log.info("The expected departure date is"+Selected_Hotel_Detail.dep_dat);
 		if(depdate.getText().equalsIgnoreCase(Selected_Hotel_Detail.dep_dat))
@@ -194,6 +200,7 @@ public class Booking_Confirmation extends BaseClass {
 			Log.info(depdate.getText());
 			count++;
 			}
+		//Validating total room number
 		Log.info("The actual total rooms is"+totrooms.getText());
 		Log.info("The expected room number is"+Selected_Hotel_Detail.room_nu);
 		if(Selected_Hotel_Detail.room_nu.charAt(0)==(totrooms.getText().charAt(0)))
@@ -201,6 +208,7 @@ public class Booking_Confirmation extends BaseClass {
 			Log.info(totrooms.getText());
 			count++;
 			}
+		//Validating adults per room
 		Log.info("The actual adults per room is"+apr.getText().charAt(0));
 		Log.info("The expected adults per room is"+Home.expected_adultsperroom);
 		if(Home.expected_adultsperroom.charAt(0)==(apr.getText().charAt(0)))
@@ -208,6 +216,7 @@ public class Booking_Confirmation extends BaseClass {
 			Log.info(apr.getText());
 			count++;
 			}
+		//Validating children per room
 		Log.info(cpr.getText());
 		Log.info("The expected children per room is"+Home.expected_childrenperroom);
 		if(Home.expected_childrenperroom.contains(cpr.getText()))
@@ -215,6 +224,7 @@ public class Booking_Confirmation extends BaseClass {
 			Log.info(cpr.getText());
 			count++;
 			}
+		//Validating total price
 		Log.info("The actual total price is "+ totp.getText());
 		Log.info("The expected total price is "+Selected_Hotel_Detail.acttotal_price);
 		if(totp.getText().equalsIgnoreCase(Selected_Hotel_Detail.acttotal_price))
@@ -222,16 +232,19 @@ public class Booking_Confirmation extends BaseClass {
 			Log.info(totp.getText());
 			count++;
 			}
-		
+		//Scrolling till First name
 		ScrollUtil.pageScrollToText("First Name");
+		//Validating first name
 		if(fname.getText().equalsIgnoreCase(Book_Hotel.expected_fname))
 		{	Log.info(fname.getText());
 			count++;
 		}
+		//Validating last name
 		if(lname.getText().equalsIgnoreCase(Book_Hotel.expected_lname))
 		{Log.info(lname.getText());
 			count++;
 		}
+		//Validating bill address
 		if(baddr.getText().equalsIgnoreCase(Book_Hotel.expected_billaddress))
 			{
 			count++;
@@ -239,6 +252,7 @@ public class Booking_Confirmation extends BaseClass {
 			}
 		Log.info("The total count is"+count);
 		
+		//Validating the total count
 		if(count==13)
 			result=true;
 		else

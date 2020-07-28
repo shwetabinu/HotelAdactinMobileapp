@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Hotel Adactin Mobile App Regression Test Suite">
-<!-- 
 	<test name="Login Verification with no user id and password">
 		<classes>
 			<class name="com.adactin.Mobileapphoteladactin1.tests.BlankLoginVerificationTest" />		
@@ -67,7 +66,7 @@
 			<class name="com.adactin.Mobileapphoteladactin1.tests.SearchHotel_BlankFields"/>
 		</classes>
 	</test>
-	-->
+	
 	<test name = "Search hotel with only location">
 		<classes>
 			<class name="com.adactin.Mobileapphoteladactin1.tests.SearchHotel_Location"/>
