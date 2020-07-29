@@ -1,5 +1,6 @@
 package com.adactin.Mobileapphoteladactin1.pages;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebElement;
@@ -10,6 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.adactin.Mobileapphoteladactin1.base.BaseClass;
 import com.adactin.Mobileapphoteladactin1.util.ExcelUtil;
+import com.adactin.Mobileapphoteladactin1.util.ScreenshotCapture;
 
 /**
  * Login class identifies all the elements in the Login Page. 
@@ -20,8 +22,10 @@ import com.adactin.Mobileapphoteladactin1.util.ExcelUtil;
  */
 public class Login extends BaseClass {
 
+	ScreenshotCapture screen;
 	public Login() throws Exception {
 		PageFactory.initElements(driver, this);
+		screen=new ScreenshotCapture();
 
 	}
 	
@@ -90,6 +94,7 @@ public class Login extends BaseClass {
 		//providing implicit wait for page to load
 		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 
+		
 		//Clearing the user name textbox and clicking on it
 		userid.clear();
 		userid.click();
@@ -105,6 +110,7 @@ public class Login extends BaseClass {
 		passw.click();
 		driver.getKeyboard().sendKeys(password);
 	
+		screen.takeScreenshot("Login Page");
 		//Clicking on Login button
 		submit.click();		
 		}
@@ -122,11 +128,14 @@ public class Login extends BaseClass {
 
 	/**
 	 * Method to click on the Forgot password link present in the Login page
+	 * @throws IOException 
 	 */
-	public boolean clickOnForgotpassword() {
+	public boolean clickOnForgotpassword() throws IOException {
 		boolean result=true;
 		try {
+		//screen.takeScreenshot("Clicking on Forgot password link");
 		forgotpw.click();
+		
 		}catch(Exception e) {
 			result=false;
 			e.printStackTrace();
@@ -143,6 +152,7 @@ public class Login extends BaseClass {
 		boolean result=true;
 		try
 		{
+			//screen.takeScreenshot("Sign up link");
 			signup.click();
 		}catch(Exception e)
 		{
@@ -202,6 +212,7 @@ public class Login extends BaseClass {
 		else
 			result=false;
 		
+		screen.takeScreenshot("Blank fields error");
 		}catch(Exception e)
 		{
 			result=false;
@@ -229,7 +240,10 @@ public class Login extends BaseClass {
 			//Writing the contents of the alert message (title, content and ok text
 			//into an array)
 			String error_content[] = invalid_error.split(",");
-	
+			
+			WebDriverWait wait=new WebDriverWait(driver,20);
+			wait.until(ExpectedConditions.visibilityOf(error_alert_title));
+			screen.takeScreenshot("Invalid login error");
 			//Validating the contents of the alert error pop up
 			if(error_alert_title.getText().equalsIgnoreCase(error_content[0]) &&
 					errormessage_invalidlogin.getText().equalsIgnoreCase(error_content[1]) &&

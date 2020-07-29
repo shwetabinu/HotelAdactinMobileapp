@@ -39,6 +39,7 @@ public class Dashboard extends BaseClass{
 		try {
 			//Clicking on booked itinerary button
 			booked_itinerary.click();
+			
 		}catch(Exception e)
 		{
 			//Printing error message for exception

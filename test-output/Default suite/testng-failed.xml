@@ -3,12 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.adactin.Mobileapphoteladactin1.tests.ViewBookedHotelDetails">
+      <class name="com.adactin.Mobileapphoteladactin1.tests.ValidLoginVerificationTest">
         <methods>
-          <include name="User_is_able_to_view_itinerary"/>
+          <include name="propertyfileReader"/>
           <include name="closeApp"/>
+          <include name="MAHA_TC03_TC_ValidLoginVerificationTest"/>
         </methods>
-      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.ViewBookedHotelDetails -->
+      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.ValidLoginVerificationTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

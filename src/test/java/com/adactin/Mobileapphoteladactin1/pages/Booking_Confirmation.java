@@ -1,5 +1,7 @@
 package com.adactin.Mobileapphoteladactin1.pages;
 
+import java.io.IOException;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -9,12 +11,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.adactin.Mobileapphoteladactin1.base.BaseClass;
 import com.adactin.Mobileapphoteladactin1.util.ExcelUtil;
 import com.adactin.Mobileapphoteladactin1.util.Log;
+import com.adactin.Mobileapphoteladactin1.util.ScreenshotCapture;
 import com.adactin.Mobileapphoteladactin1.util.ScrollUtil;
 
 public class Booking_Confirmation extends BaseClass {
 
+	ScreenshotCapture screen;
 	public Booking_Confirmation() throws Exception {
 		PageFactory.initElements(driver, this);
+		screen=new ScreenshotCapture();
 	}
 
 	//Hotel Name
@@ -145,12 +150,14 @@ public class Booking_Confirmation extends BaseClass {
 	
 	/**
 	 * Method to validate booking details
+	 * @throws IOException 
 	 */
-	public boolean validateBookingConfirmationDetails()
+	public boolean validateBookingConfirmationDetails() throws IOException
 	{
 		//Explicitly waiting until the hotel list items are visible
 		WebDriverWait wait=new WebDriverWait(driver,20);
 		wait.until(ExpectedConditions.visibilityOf(hotelname));
+		screen.takeScreenshot("Booking confirmatin page");
 		boolean result=true;
 		try{
 		int count=0;
@@ -232,8 +239,10 @@ public class Booking_Confirmation extends BaseClass {
 			Log.info(totp.getText());
 			count++;
 			}
+	
 		//Scrolling till First name
 		ScrollUtil.pageScrollToText("First Name");
+		screen.takeScreenshot("Booking confirmation page_2");
 		//Validating first name
 		if(fname.getText().equalsIgnoreCase(Book_Hotel.expected_fname))
 		{	Log.info(fname.getText());
@@ -272,6 +281,7 @@ public class Booking_Confirmation extends BaseClass {
 		try {
 			//Scrolls down till the Done button and clicks on it
 			ScrollUtil.pageScrollToText("Done");
+			screen.takeScreenshot("Booking Confirmation");
 			done_btn.click();
 		} catch (Exception e) {
 			e.printStackTrace();

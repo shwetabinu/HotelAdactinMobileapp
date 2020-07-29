@@ -7,6 +7,9 @@ import com.adactin.Mobileapphoteladactin1.base.BaseClass;
 import com.adactin.Mobileapphoteladactin1.pages.Login;
 import com.adactin.Mobileapphoteladactin1.util.ExcelUtil;
 import com.adactin.Mobileapphoteladactin1.util.Log;
+import com.aventstack.extentreports.Status;
+
+import reportgeneration.ExtentTestManager;
 
 /**
  * Test case to check if a user can login to the application with invalid user id and password
@@ -49,11 +52,21 @@ public class InvalidLoginVerificationTest extends BaseClass{
 		Log.info("Logging in...");
 		
 		boolean login=lp.login(rno);
+		if(login==true)
+			ExtentTestManager.getTest().log(Status.PASS,"The login button click was successful");
+		else
+			ExtentTestManager.getTest().log(Status.FAIL,"The login button click was unsuccessful");	
+		
 		Assert.assertTrue(login);
 		
 		//Validating if invalid login credentials error message is displayed
 		Log.info("Checking for invalid login credentials alert popup...");
 		boolean invaliderror=lp.checkInvalidLoginError(rno);
+		if(invaliderror==true)
+			ExtentTestManager.getTest().log(Status.PASS,"The invalid error validation was successful");
+		else
+			ExtentTestManager.getTest().log(Status.FAIL,"The invalid error validation was unsuccessful");	
+		
 		Assert.assertTrue(invaliderror);
 		
 		Log.endTestCase("User_is_shown_an_error_message_when_he_enters_incorrect_"

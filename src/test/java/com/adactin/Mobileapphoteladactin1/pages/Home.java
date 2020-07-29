@@ -5,10 +5,13 @@ import java.util.List;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.adactin.Mobileapphoteladactin1.base.BaseClass;
 import com.adactin.Mobileapphoteladactin1.util.ExcelUtil;
 import com.adactin.Mobileapphoteladactin1.util.Log;
+import com.adactin.Mobileapphoteladactin1.util.ScreenshotCapture;
 import com.adactin.Mobileapphoteladactin1.util.ScrollUtil;
 
 /**
@@ -17,8 +20,11 @@ import com.adactin.Mobileapphoteladactin1.util.ScrollUtil;
  *
  */
 public class Home extends BaseClass {
+	
+	ScreenshotCapture screen;
 	public Home() throws Exception {
 		PageFactory.initElements(driver, this);
+		screen=new ScreenshotCapture();
 
 	}
 
@@ -147,6 +153,11 @@ public class Home extends BaseClass {
 			// Assigning Expected Message to be verified
 			String expectedmsg;
 			expectedmsg = "welcome_user";
+			
+			WebDriverWait wait=new WebDriverWait(driver,20);
+			wait.until(ExpectedConditions.visibilityOf(welcome_msg));
+			
+			screen.takeScreenshot("Checking Welcome Message");
 
 			// Verifying the actual message with the expected message
 			// and assigning the result of validation to result
@@ -344,6 +355,7 @@ public class Home extends BaseClass {
 				}
 			}
 
+			screen.takeScreenshot("Searching hotel");
 		} catch (Exception e) {
 			Log.info("Exception occured while searching hotel");
 			result = false;
@@ -384,7 +396,7 @@ public class Home extends BaseClass {
 
 			// Checks if the location drop down is cleared by checking for the default text
 			ScrollUtil.pageScrollToText("Select Location");
-			
+			screen.takeScreenshot("After Search Reset");
 			if (selectlocation.getText().equalsIgnoreCase("Select Location"))
 				{
 				Log.info("Count is incremented"+count);
@@ -414,7 +426,7 @@ public class Home extends BaseClass {
 				}
 			
 			ScrollUtil.pageScrollToText("Adults per Room");
-
+			screen.takeScreenshot("After Search Reset_2");
 			Log.info("Adults per room displayed is "+ adults_per_room.getText());
 			if (adults_per_room.getText().equalsIgnoreCase("1 - One, Select Adults per Room"))
 			{

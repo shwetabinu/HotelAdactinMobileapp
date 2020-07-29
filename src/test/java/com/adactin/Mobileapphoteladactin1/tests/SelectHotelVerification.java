@@ -10,6 +10,9 @@ import com.adactin.Mobileapphoteladactin1.pages.Select_Hotel;
 import com.adactin.Mobileapphoteladactin1.pages.Selected_Hotel_Detail;
 import com.adactin.Mobileapphoteladactin1.util.ExcelUtil;
 import com.adactin.Mobileapphoteladactin1.util.Log;
+import com.aventstack.extentreports.Status;
+
+import reportgeneration.ExtentTestManager;
 
 public class SelectHotelVerification extends BaseClass{
 
@@ -48,24 +51,41 @@ public class SelectHotelVerification extends BaseClass{
 		
 		//Logging into the application and verifying
 		boolean login=lp.login(rno);
+		if(login==true)
+			ExtentTestManager.getTest().log(Status.PASS,"The login was successful");
+		else
+			ExtentTestManager.getTest().log(Status.FAIL,"The login was unsuccessful");	
 		Assert.assertTrue(login);
 		
 		hp=new Home();
 		
 		//Searching for the hotel with the input
 		boolean search=hp.searchHotel(rno);
+		if(search==true)
+			ExtentTestManager.getTest().log(Status.PASS,"The Search hotel fields entry was successful");
+		else
+			ExtentTestManager.getTest().log(Status.FAIL,"The Search hotel fields entry was unsuccessful");	
+		
 		Assert.assertTrue(search);
 		
 		//Clicking on search button
 		boolean searchclick=hp.clickOnSearch();
+		if(searchclick==true)
+			ExtentTestManager.getTest().log(Status.PASS,"The Search button click was successful");
+		else
+			ExtentTestManager.getTest().log(Status.FAIL,"The Search button click was unsuccessful");	
+		
 		Assert.assertTrue(searchclick);
 		
 		sp=new Select_Hotel();
-		//boolean hotel_result=sp.readHotelName(rno);
-		//Assert.assertTrue(hotel_result);
 		
 		//Selecting the first hotel displayed
 		boolean select=sp.select_hotel(rno,0);
+		if(select==true)
+			ExtentTestManager.getTest().log(Status.PASS,"The select hotel list was successfully validated");
+		else
+			ExtentTestManager.getTest().log(Status.FAIL,"The select hotel list validation was unsuccessful");
+		
 		Assert.assertTrue(select);
 		
 		//Reading the expected data to be verified in the selected hotel details page
@@ -74,18 +94,38 @@ public class SelectHotelVerification extends BaseClass{
 		
 		//Calculating the total number of days for which hotel was booked
 		boolean daycalculate=shd.dayNoCalculate(rno);
+		if(daycalculate==true)
+			ExtentTestManager.getTest().log(Status.PASS,"The no: of days calculation was successfully validated");
+		else
+			ExtentTestManager.getTest().log(Status.FAIL,"The  no: of days calculation was unsuccessful");
+		
 		Assert.assertTrue(daycalculate);
 		
 		//Calculating the total price for the hotel room booked
 		boolean pricecalculate=shd.priceCalculation(rno);
+		if(pricecalculate==true)
+			ExtentTestManager.getTest().log(Status.PASS,"The price calculation was successfully validated");
+		else
+			ExtentTestManager.getTest().log(Status.FAIL,"The  price calculation was unsuccessful");
+		
 		Assert.assertTrue(pricecalculate);
 		
 		//Validating the details in the hotel details page
 		boolean valid_result=shd.validateDetails();
+		if(valid_result==true)
+			ExtentTestManager.getTest().log(Status.PASS,"The selected hotel details validation was successful");
+		else
+			ExtentTestManager.getTest().log(Status.FAIL,"The selected hotel details validation was unsuccessful");
+		
 		Assert.assertTrue(valid_result);
 		
 		//Selecting the hotel
 		boolean select_result=shd.click_on_select();
+		if(select_result==true)
+			ExtentTestManager.getTest().log(Status.PASS,"The selection button click was successful");
+		else
+			ExtentTestManager.getTest().log(Status.FAIL,"The selection button click was unsuccessful");
+		
 		Assert.assertTrue(select_result);
 			
 		Log.endTestCase("User_is_able_to_search_hotel_with_location_and_hotelname");	

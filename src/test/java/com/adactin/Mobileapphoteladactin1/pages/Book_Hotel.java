@@ -11,12 +11,15 @@ import org.openqa.selenium.support.PageFactory;
 import com.adactin.Mobileapphoteladactin1.base.BaseClass;
 import com.adactin.Mobileapphoteladactin1.util.ExcelUtil;
 import com.adactin.Mobileapphoteladactin1.util.Log;
+import com.adactin.Mobileapphoteladactin1.util.ScreenshotCapture;
 import com.adactin.Mobileapphoteladactin1.util.ScrollUtil;
 
 public class Book_Hotel extends BaseClass {
 
+	ScreenshotCapture screen;
 	public Book_Hotel() throws Exception {
 		PageFactory.initElements(driver, this);
+		screen=new ScreenshotCapture();
 	}
 
 	// Enter first name text box
@@ -78,6 +81,8 @@ public class Book_Hotel extends BaseClass {
 	//error messages
 	@FindBy(xpath="//android.view.View[contains(@text,'Please')]")
 	List<WebElement>errormessage;
+	
+	
 	
 	public static String expected_fname, expected_lname, expected_billaddress, expected_ccnumber, expected_cctype, expected_cvvnumber;
 	String expected_alertmessage;
@@ -159,6 +164,7 @@ public class Book_Hotel extends BaseClass {
 		// Scroll to the First name text box and enters the expected first name from
 		// test data file
 		ScrollUtil.pageScrollToText("Enter First Name");
+		screen.takeScreenshot("Book Hotel page");
 		firstName.click();
 		driver.getKeyboard().sendKeys(expected_fname);
 
@@ -182,6 +188,7 @@ public class Book_Hotel extends BaseClass {
 		// Selects the CCTYpe drop down and selects the option specified in the test
 		// data file
 		ScrollUtil.pageScrollToText("Select Credit Card Type");
+		screen.takeScreenshot("Book Hotel page_2");
 		cctype.click();
 
 		for (int j = 0; j < cctypeoption.size(); j++)
@@ -203,7 +210,7 @@ public class Book_Hotel extends BaseClass {
 		driver.getKeyboard().sendKeys(expected_cvvnumber);
 		driver.getKeyboard().sendKeys(Keys.RETURN);
 
-		// Clicking on book now button
+		//screen.takeScreenshot("Enter booking details");
 		
 		}catch(Exception e)
 		{
@@ -228,10 +235,12 @@ public class Book_Hotel extends BaseClass {
 				{
 				result=true;
 				//Clicking on ok button in the alert
+				screen.takeScreenshot("Verifying alert popup message");
 				alert_okbtn.click();
 				}
 			else
 				result=false;
+		
 		}catch(Exception e)
 		{
 			result=false;
@@ -253,6 +262,7 @@ public class Book_Hotel extends BaseClass {
 			driver.manage().timeouts().implicitlyWait(250, TimeUnit.SECONDS);
 			//Scrolling down till the book now button
 			ScrollUtil.pageScrollToText("Book Now");
+			screen.takeScreenshot("Book now button");
 			//Clicking on the book now button
 			booknow_btn.click();
 		}catch(Exception e)
@@ -269,24 +279,33 @@ public class Book_Hotel extends BaseClass {
 	 */
 	public boolean verifyInlineError(int rno)
 	{
+		
 		boolean result=true;
 		try {
+			int size=0;
 			//Counts the total set of in-line error messages
 			int count=0;
 			//Counting the first set of error messages in the top
-			ScrollUtil.pageScrollToText("Enter First Name");
-			if(errormessage.size()==4)
+			ScrollUtil.pageScrollToText("Please enter your first name");
+			screen.takeScreenshot("Inline errors");
+			Log.info("The error messages size when scrolled to the top till first name is"+ errormessage.size());
+			if(errormessage.size()==3||errormessage.size()==4)
 				{Log.info("Error messages count is"+errormessage.size());
+				size=errormessage.size();
 				count++;
 				}
 			//Scrolling till the end and counting the total number of inline errors
 			ScrollUtil.pageScrollToText("Book Now");
+			screen.takeScreenshot("Inline errors_2");
+			Log.info("The error messages size when scrolled till book now is"+ errormessage.size());
 			if(errormessage.size()==5)
 				{
 				Log.info("Error messages size is"+errormessage.size());
+				size=size+errormessage.size();
 				count++;
 				}
 			//Verifying the total count
+			Log.info("Total number of error messages"+size);
 			Log.info("Count is"+count);
 			if(count==2)
 				result=true;

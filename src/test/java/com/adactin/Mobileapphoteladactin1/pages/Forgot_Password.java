@@ -14,11 +14,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.adactin.Mobileapphoteladactin1.base.BaseClass;
 import com.adactin.Mobileapphoteladactin1.util.ExcelUtil;
 import com.adactin.Mobileapphoteladactin1.util.Log;
+import com.adactin.Mobileapphoteladactin1.util.ScreenshotCapture;
 
 public class Forgot_Password extends BaseClass {
 
+	ScreenshotCapture screen;
 	public Forgot_Password() throws Exception {
 		PageFactory.initElements(driver, this);
+		screen=new ScreenshotCapture();
 		// TODO Auto-generated constructor stub
 	}
 
@@ -68,6 +71,7 @@ public class Forgot_Password extends BaseClass {
 		
 		driver.getKeyboard().sendKeys(emailaddr);// + Keys.RETURN);
 		
+		screen.takeScreenshot("Forgot Password page");
 		return result;
 
 	}

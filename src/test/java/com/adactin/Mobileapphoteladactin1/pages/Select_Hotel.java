@@ -5,16 +5,22 @@ import java.util.List;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.adactin.Mobileapphoteladactin1.base.BaseClass;
 import com.adactin.Mobileapphoteladactin1.util.ExcelUtil;
 import com.adactin.Mobileapphoteladactin1.util.Log;
+import com.adactin.Mobileapphoteladactin1.util.ScreenshotCapture;
 
 public class Select_Hotel extends BaseClass {
 
+	ScreenshotCapture screen;
 	public Select_Hotel() throws Exception {
 
+	
 		PageFactory.initElements(driver, this);
+		screen=new ScreenshotCapture();
 		// TODO Auto-generated constructor stub
 	}
 
@@ -50,6 +56,9 @@ public class Select_Hotel extends BaseClass {
 			// Reads the hotel to be selected from the test data file
 			int hotel_index = ExcelUtil.readExcel('c', "Hotels");
 			expected_hotel = ExcelUtil.getCellData(rno, hotel_index);
+			WebDriverWait wait=new WebDriverWait(driver,20);
+			wait.until(ExpectedConditions.visibilityOfAllElements(hotel_list));
+			screen.takeScreenshot("Select Hotel page");
 			hotel_list.get(hotel).click();
 				
 		} catch (Exception e) {

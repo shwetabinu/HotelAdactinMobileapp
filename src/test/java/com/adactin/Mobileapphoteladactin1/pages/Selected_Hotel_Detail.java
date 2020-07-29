@@ -9,13 +9,17 @@ import org.openqa.selenium.support.PageFactory;
 import com.adactin.Mobileapphoteladactin1.base.BaseClass;
 import com.adactin.Mobileapphoteladactin1.util.ExcelUtil;
 import com.adactin.Mobileapphoteladactin1.util.Log;
+import com.adactin.Mobileapphoteladactin1.util.ScreenshotCapture;
 import com.adactin.Mobileapphoteladactin1.util.ScrollUtil;
+import com.aventstack.extentreports.model.ScreenCapture;
 
 public class Selected_Hotel_Detail extends BaseClass {
 
+	ScreenshotCapture screen;
 	public Selected_Hotel_Detail() throws Exception {
 		// super();
 		PageFactory.initElements(driver, this);
+		screen=new ScreenshotCapture();
 	}
 
 	// hotel name
@@ -76,6 +80,7 @@ public class Selected_Hotel_Detail extends BaseClass {
 		boolean result = true;
 		try {
 			ScrollUtil.pageScrollToText("Select");
+			screen.takeScreenshot("SelectedHotel Details page");
 			select_btn.click();
 		} catch (Exception e) {
 			Log.error("Error occured while selecting the hotel");
@@ -299,6 +304,7 @@ public class Selected_Hotel_Detail extends BaseClass {
 				Log.info("Checking count" + count);
 			}
 
+			screen.takeScreenshot("Selected Hotel Details page");
 			if (count == 9)
 				result = true;
 			else

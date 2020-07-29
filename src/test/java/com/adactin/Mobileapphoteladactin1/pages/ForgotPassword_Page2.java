@@ -5,14 +5,20 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.adactin.Mobileapphoteladactin1.base.BaseClass;
 import com.adactin.Mobileapphoteladactin1.util.ExcelUtil;
 import com.adactin.Mobileapphoteladactin1.util.Log;
+import com.adactin.Mobileapphoteladactin1.util.ScreenshotCapture;
 
 public class ForgotPassword_Page2 extends BaseClass{
+	
+	ScreenshotCapture screen;
 	public ForgotPassword_Page2() throws Exception {
 		PageFactory.initElements(driver, this);
+		screen=new ScreenshotCapture();
 		
 	}
 
@@ -41,6 +47,9 @@ public class ForgotPassword_Page2 extends BaseClass{
 		resetpwtext_index=ExcelUtil.readExcel('c', "Email Verification Text");
 		resetpwtext=ExcelUtil.getCellData(rno, resetpwtext_index);
 		
+		WebDriverWait wait=new WebDriverWait(driver,20);
+		wait.until(ExpectedConditions.visibilityOf(resetpwlink));
+		screen.takeScreenshot("Email sent verification page");
 		//Comparing the text with the expected text
 		if(resetpwtext.equalsIgnoreCase(resetpwlink.getText()))
 			result=true;

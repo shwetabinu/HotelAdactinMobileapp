@@ -8,6 +8,9 @@ import com.adactin.Mobileapphoteladactin1.pages.Home;
 import com.adactin.Mobileapphoteladactin1.pages.Login;
 import com.adactin.Mobileapphoteladactin1.util.ExcelUtil;
 import com.adactin.Mobileapphoteladactin1.util.Log;
+import com.aventstack.extentreports.Status;
+
+import reportgeneration.ExtentTestManager;
 
 /**
  * Test case to verify if user can login to the application using valid login credentials
@@ -45,6 +48,10 @@ public class ValidLoginVerificationTest extends BaseClass{
 		
 		//Verifying if the login is successful
 		boolean login=lp.login(rno);
+		if(login==true)
+			ExtentTestManager.getTest().log(Status.PASS,"The login was successful");
+		else
+			ExtentTestManager.getTest().log(Status.FAIL,"The login was unsuccessful");	
 		Assert.assertTrue(login);
 		
 		//Launching the Home page
@@ -52,6 +59,10 @@ public class ValidLoginVerificationTest extends BaseClass{
 		
 		//Checking the welcome message to validate login
 		boolean welcomemsg= hp.checkWelcomeMessage(rno);
+		if(welcomemsg==true)
+			ExtentTestManager.getTest().log(Status.PASS,"The welcome message validation was successful");
+		else
+			ExtentTestManager.getTest().log(Status.FAIL,"The welcome message validation was unsuccessful");
 		Assert.assertTrue(welcomemsg);
 		
 		Log.endTestCase("User_is_able_to_login_into_the_application");

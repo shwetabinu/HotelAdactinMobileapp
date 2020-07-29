@@ -3,16 +3,22 @@ package com.adactin.Mobileapphoteladactin1.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.adactin.Mobileapphoteladactin1.base.BaseClass;
 import com.adactin.Mobileapphoteladactin1.util.ExcelUtil;
 import com.adactin.Mobileapphoteladactin1.util.Log;
+import com.adactin.Mobileapphoteladactin1.util.ScreenshotCapture;
 import com.adactin.Mobileapphoteladactin1.util.ScrollUtil;
 
 public class Booked_Hotel_Details extends BaseClass {
 
+	ScreenshotCapture screen;
 	public Booked_Hotel_Details() throws Exception {
 		PageFactory.initElements(driver, this);
+		screen=new ScreenshotCapture();
+		
 	}
 	
 	//Page xpath
@@ -99,6 +105,10 @@ public class Booked_Hotel_Details extends BaseClass {
 		try {
 			// Clicking on cancel button at the bottom of the page
 			cancel_btn.click();
+			
+			WebDriverWait wait=new WebDriverWait(driver,20);
+			wait.until(ExpectedConditions.visibilityOf(alert_ok));
+			screen.takeScreenshot("Cancel Alert popup");
 			// Clicking on 'Ok' in the alert popup displayed
 			alert_ok.click();
 			// Clicking on Ok again in the success popup
@@ -281,7 +291,9 @@ public class Booked_Hotel_Details extends BaseClass {
 				if (pricenight.getText().equalsIgnoreCase(expected_ppn))
 					count++;
 				}
-
+			
+			
+			screen.takeScreenshot("Booked hotel details_1");
 			//Scrolling to the total price element
 			//driver.lockDevice();
 			//ScrollUtil.pageScrollEnd();
@@ -300,6 +312,7 @@ public class Booked_Hotel_Details extends BaseClass {
 						count++;
 				}
 			
+			screen.takeScreenshot("Booked hotel details_2");
 			//Comparing the expected and actual total price and incrementing the count if they match
 			
 			Log.info("The total count is"+count);

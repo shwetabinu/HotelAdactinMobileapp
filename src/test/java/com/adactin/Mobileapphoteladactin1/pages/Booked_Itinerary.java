@@ -1,6 +1,8 @@
 package com.adactin.Mobileapphoteladactin1.pages;
 
+import java.io.IOException;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,6 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.adactin.Mobileapphoteladactin1.base.BaseClass;
 import com.adactin.Mobileapphoteladactin1.util.ExcelUtil;
 import com.adactin.Mobileapphoteladactin1.util.Log;
+import com.adactin.Mobileapphoteladactin1.util.ScreenshotCapture;
 
 /**
  * This Booked Itinerary class displays all the bookings done by the user It has
@@ -20,8 +23,10 @@ import com.adactin.Mobileapphoteladactin1.util.Log;
  */
 public class Booked_Itinerary extends BaseClass {
 
+	ScreenshotCapture screen;
 	public Booked_Itinerary() throws Exception {
 		PageFactory.initElements(driver, this);
+		screen=new ScreenshotCapture();
 	}
 
 	//Hotel list items
@@ -39,6 +44,7 @@ public class Booked_Itinerary extends BaseClass {
 	public void calcHotelSize(int rno) throws Exception
 	{	
 		hotel_list_size=hotel_listitems.size();
+		screen.takeScreenshot("Booked itinerary in the beginning");
 		Log.info("The hotels in the list is"+hotel_list_size);
 	}
 	
@@ -52,13 +58,22 @@ public class Booked_Itinerary extends BaseClass {
 	public boolean viewBookedHotel(int rno) throws Exception {
 		boolean result = true;
 		try {
+			
+			
 			//Reading the index of the booked hotel
 			int index = ExcelUtil.readExcel('c', "Booked Itinerary id");
 			String entry_no = ExcelUtil.getCellData(rno, index);
 			int entryno = Integer.parseInt(entry_no);
 			
+			//Explicitly waiting for all elements to be loaded
+			WebDriverWait wait=new WebDriverWait(driver,20);
+			wait.until(ExpectedConditions.visibilityOfAllElements(hotel_listitems));
+			
+			//Taking screenshot
+			screen.takeScreenshot("Booked Itinerary details");
 			//Selecting the booked hotel
-			hotel_listitems.get(entryno).click();			
+			hotel_listitems.get(entryno).click();	
+			
 			//Log.info("The number of hotels in this list is"+hotel_list_size);
 			
 			//If no entries are present, returning false
@@ -76,12 +91,15 @@ public class Booked_Itinerary extends BaseClass {
 	
 	/**
 	 * Method to check if the hotel is cancelled by verifying the number of hotel list items
+	 * @throws IOException 
 	 */
-	public boolean checkCanceled()
+	public boolean checkCanceled() throws IOException
 	{
 		//Explicitly waiting for all the hotel list items to be visible
 		WebDriverWait wait=new WebDriverWait(driver,20);
 		wait.until(ExpectedConditions.visibilityOfAllElements(hotel_listitems));
+		screen.takeScreenshot("Checking cancelation");
+		
 		//Determining the size of the hotel list
 		new_hotellist_size=hotel_listitems.size();
 		Log.info("The modified hotel list is"+new_hotellist_size);
@@ -93,12 +111,14 @@ public class Booked_Itinerary extends BaseClass {
 			return false;
 	}
 
-	public boolean checkBooked()
+	public boolean checkBooked() throws IOException
 	{
 		Log.info("Entering method to check if booked");
 		//Explicitly waiting for all the hotel list items to be visible
 				WebDriverWait wait=new WebDriverWait(driver,20);
 				wait.until(ExpectedConditions.visibilityOfAllElements(hotel_listitems));
+				
+				screen.takeScreenshot("Checking booked");
 				//Determining the size of the hotel list
 				new_hotellist_size=hotel_listitems.size();
 				Log.info("The modified hotel list is"+new_hotellist_size);
