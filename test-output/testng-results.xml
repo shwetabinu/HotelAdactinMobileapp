@@ -2,7 +2,7 @@
 <testng-results skipped="0" failed="0" ignored="0" total="16" passed="16">
   <reporter-output>
   </reporter-output>
-  <suite name="Hotel Adactin Mobile App Regression Test Suite" duration-ms="1170972" started-at="2020-07-29T14:32:49 AEST" finished-at="2020-07-29T14:52:20 AEST">
+  <suite name="Hotel Adactin Mobile App Regression Test Suite" duration-ms="1161718" started-at="2020-07-29T16:42:54 AEST" finished-at="2020-07-29T17:02:16 AEST">
     <groups>
       <group name="sfunctionalTest">
         <method signature="InvalidLoginVerificationTest.MAHA_TC01_TC_InvalidLoginVerification()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.InvalidLoginVerificationTest@fba92d3]" name="MAHA_TC01_TC_InvalidLoginVerification" class="com.adactin.Mobileapphoteladactin1.tests.InvalidLoginVerificationTest"/>
@@ -17,13 +17,97 @@
         <method signature="ResetSearchVerification.User_is_able_to_reset_the_search_criteria()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.ResetSearchVerification@2ea41516]" name="User_is_able_to_reset_the_search_criteria" class="com.adactin.Mobileapphoteladactin1.tests.ResetSearchVerification"/>
         <method signature="SearchHotel_Location.MAHA_TC04_TC_SearchHotel_LocationTest()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.SearchHotel_Location@659499f1]" name="MAHA_TC04_TC_SearchHotel_LocationTest" class="com.adactin.Mobileapphoteladactin1.tests.SearchHotel_Location"/>
         <method signature="SearchHotel_LocationHotelName.User_is_able_to_search_hotel_with_location_and_hotelname()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.SearchHotel_LocationHotelName@1151e434]" name="User_is_able_to_search_hotel_with_location_and_hotelname" class="com.adactin.Mobileapphoteladactin1.tests.SearchHotel_LocationHotelName"/>
-        <method signature="ViewBookedHotelDetails.User_is_able_to_view_itinerary()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.ViewBookedHotelDetails@73e9cf30]" name="User_is_able_to_view_itinerary" class="com.adactin.Mobileapphoteladactin1.tests.ViewBookedHotelDetails"/>
+        <method signature="ViewBookedHotelDetails.User_is_able_to_view_itinerary()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.ViewBookedHotelDetails@783a467b]" name="User_is_able_to_view_itinerary" class="com.adactin.Mobileapphoteladactin1.tests.ViewBookedHotelDetails"/>
         <method signature="ViewItineraryVerification.User_is_able_to_view_itinerary(org.testng.ITestContext)[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.ViewItineraryVerification@229c6181]" name="User_is_able_to_view_itinerary" class="com.adactin.Mobileapphoteladactin1.tests.ViewItineraryVerification"/>
       </group> <!-- functionalTest -->
     </groups>
-    <test name="Login Verification with no user id and password" duration-ms="15770" started-at="2020-07-29T14:32:49 AEST" finished-at="2020-07-29T14:33:05 AEST">
+    <test name="Login Verification with no user id and password" duration-ms="17529" started-at="2020-07-29T16:42:54 AEST" finished-at="2020-07-29T16:43:12 AEST">
       <class name="com.adactin.Mobileapphoteladactin1.tests.BlankLoginVerificationTest">
-        <test-method status="PASS" signature="propertyfileReader(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.BlankLoginVerificationTest@446293d]" name="propertyfileReader" is-config="true" duration-ms="48" started-at="2020-07-29T14:32:49 AEST" finished-at="2020-07-29T14:32:49 AEST">
+        <test-method status="PASS" signature="propertyfileReader(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.BlankLoginVerificationTest@446293d]" name="propertyfileReader" is-config="true" duration-ms="44" started-at="2020-07-29T16:42:55 AEST" finished-at="2020-07-29T16:42:55 AEST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[EnvConfig.properties]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@2e4d2232]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- propertyfileReader -->
+        <test-method status="PASS" signature="MAHA_TC02_TC_BlankLoginVerificationTest()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.BlankLoginVerificationTest@446293d]" name="MAHA_TC02_TC_BlankLoginVerificationTest" duration-ms="16895" started-at="2020-07-29T16:42:55 AEST" finished-at="2020-07-29T16:43:11 AEST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- MAHA_TC02_TC_BlankLoginVerificationTest -->
+        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.BlankLoginVerificationTest@446293d]" name="closeApp" is-config="true" duration-ms="453" started-at="2020-07-29T16:43:12 AEST" finished-at="2020-07-29T16:43:12 AEST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApp -->
+      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.BlankLoginVerificationTest -->
+    </test> <!-- Login Verification with no user id and password -->
+    <test name="Login Verification with invalid user id and password" duration-ms="14137" started-at="2020-07-29T16:44:33 AEST" finished-at="2020-07-29T16:44:47 AEST">
+      <class name="com.adactin.Mobileapphoteladactin1.tests.InvalidLoginVerificationTest">
+        <test-method status="PASS" signature="propertyfileReader(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.InvalidLoginVerificationTest@fba92d3]" name="propertyfileReader" is-config="true" duration-ms="9" started-at="2020-07-29T16:44:33 AEST" finished-at="2020-07-29T16:44:33 AEST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[EnvConfig.properties]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@24f5e9e8]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- propertyfileReader -->
+        <test-method status="PASS" signature="MAHA_TC01_TC_InvalidLoginVerification()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.InvalidLoginVerificationTest@fba92d3]" name="MAHA_TC01_TC_InvalidLoginVerification" duration-ms="13675" started-at="2020-07-29T16:44:33 AEST" finished-at="2020-07-29T16:44:47 AEST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- MAHA_TC01_TC_InvalidLoginVerification -->
+        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.InvalidLoginVerificationTest@fba92d3]" name="closeApp" is-config="true" duration-ms="419" started-at="2020-07-29T16:44:47 AEST" finished-at="2020-07-29T16:44:47 AEST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApp -->
+      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.InvalidLoginVerificationTest -->
+    </test> <!-- Login Verification with invalid user id and password -->
+    <test name="Login verification with valid user id and password" duration-ms="13075" started-at="2020-07-29T16:46:02 AEST" finished-at="2020-07-29T16:46:15 AEST">
+      <class name="com.adactin.Mobileapphoteladactin1.tests.ValidLoginVerificationTest">
+        <test-method status="PASS" signature="propertyfileReader(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.ValidLoginVerificationTest@16610890]" name="propertyfileReader" is-config="true" duration-ms="1" started-at="2020-07-29T16:46:02 AEST" finished-at="2020-07-29T16:46:02 AEST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[EnvConfig.properties]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@50e6ee24]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- propertyfileReader -->
+        <test-method status="PASS" signature="MAHA_TC03_TC_ValidLoginVerificationTest()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.ValidLoginVerificationTest@16610890]" name="MAHA_TC03_TC_ValidLoginVerificationTest" duration-ms="12673" started-at="2020-07-29T16:46:02 AEST" finished-at="2020-07-29T16:46:15 AEST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- MAHA_TC03_TC_ValidLoginVerificationTest -->
+        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.ValidLoginVerificationTest@16610890]" name="closeApp" is-config="true" duration-ms="386" started-at="2020-07-29T16:46:15 AEST" finished-at="2020-07-29T16:46:15 AEST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApp -->
+      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.ValidLoginVerificationTest -->
+    </test> <!-- Login verification with valid user id and password -->
+    <test name="Book Now verification with no input" duration-ms="39519" started-at="2020-07-29T16:47:26 AEST" finished-at="2020-07-29T16:48:05 AEST">
+      <class name="com.adactin.Mobileapphoteladactin1.tests.BookHotel_BlankFields">
+        <test-method status="PASS" signature="propertyfileReader(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.BookHotel_BlankFields@20ccf40b]" name="propertyfileReader" is-config="true" duration-ms="1" started-at="2020-07-29T16:47:26 AEST" finished-at="2020-07-29T16:47:26 AEST">
           <params>
             <param index="0">
               <value>
@@ -39,19 +123,23 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- propertyfileReader -->
-        <test-method status="PASS" signature="MAHA_TC02_TC_BlankLoginVerificationTest()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.BlankLoginVerificationTest@446293d]" name="MAHA_TC02_TC_BlankLoginVerificationTest" duration-ms="15111" started-at="2020-07-29T14:32:49 AEST" finished-at="2020-07-29T14:33:04 AEST">
+        <test-method status="PASS" signature="User_is_able_to_view_error_Book_No_Input()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.BookHotel_BlankFields@20ccf40b]" name="User_is_able_to_view_error_Book_No_Input" duration-ms="39114" started-at="2020-07-29T16:47:26 AEST" finished-at="2020-07-29T16:48:05 AEST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- MAHA_TC02_TC_BlankLoginVerificationTest -->
-        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.BlankLoginVerificationTest@446293d]" name="closeApp" is-config="true" duration-ms="435" started-at="2020-07-29T14:33:04 AEST" finished-at="2020-07-29T14:33:05 AEST">
+        </test-method> <!-- User_is_able_to_view_error_Book_No_Input -->
+        <test-method status="PASS" signature="closeSession()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.BookHotel_BlankFields@20ccf40b]" name="closeSession" is-config="true" duration-ms="386" started-at="2020-07-29T16:48:05 AEST" finished-at="2020-07-29T16:48:05 AEST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeSession -->
+        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.BookHotel_BlankFields@20ccf40b]" name="closeApp" is-config="true" duration-ms="1" started-at="2020-07-29T16:48:05 AEST" depends-on-methods="com.adactin.Mobileapphoteladactin1.tests.BookHotel_BlankFields.closeSession" finished-at="2020-07-29T16:48:05 AEST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApp -->
-      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.BlankLoginVerificationTest -->
-    </test> <!-- Login Verification with no user id and password -->
-    <test name="Login Verification with invalid user id and password" duration-ms="14651" started-at="2020-07-29T14:34:27 AEST" finished-at="2020-07-29T14:34:41 AEST">
-      <class name="com.adactin.Mobileapphoteladactin1.tests.InvalidLoginVerificationTest">
-        <test-method status="PASS" signature="propertyfileReader(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.InvalidLoginVerificationTest@fba92d3]" name="propertyfileReader" is-config="true" duration-ms="5" started-at="2020-07-29T14:34:27 AEST" finished-at="2020-07-29T14:34:27 AEST">
+      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.BookHotel_BlankFields -->
+    </test> <!-- Book Now verification with no input -->
+    <test name="Book hotel verification" duration-ms="129719" started-at="2020-07-29T16:49:10 AEST" finished-at="2020-07-29T16:51:20 AEST">
+      <class name="com.adactin.Mobileapphoteladactin1.tests.BookHotelVerificationTest">
+        <test-method status="PASS" signature="propertyfileReader(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.BookHotelVerificationTest@2f217633]" name="propertyfileReader" is-config="true" duration-ms="1" started-at="2020-07-29T16:49:10 AEST" finished-at="2020-07-29T16:49:10 AEST">
           <params>
             <param index="0">
               <value>
@@ -67,19 +155,23 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- propertyfileReader -->
-        <test-method status="PASS" signature="MAHA_TC01_TC_InvalidLoginVerification()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.InvalidLoginVerificationTest@fba92d3]" name="MAHA_TC01_TC_InvalidLoginVerification" duration-ms="14144" started-at="2020-07-29T14:34:27 AEST" finished-at="2020-07-29T14:34:41 AEST">
+        <test-method status="PASS" signature="User_is_able_to_book_a_hotel()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.BookHotelVerificationTest@2f217633]" name="User_is_able_to_book_a_hotel" duration-ms="129299" started-at="2020-07-29T16:49:10 AEST" finished-at="2020-07-29T16:51:20 AEST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- MAHA_TC01_TC_InvalidLoginVerification -->
-        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.InvalidLoginVerificationTest@fba92d3]" name="closeApp" is-config="true" duration-ms="468" started-at="2020-07-29T14:34:41 AEST" finished-at="2020-07-29T14:34:41 AEST">
+        </test-method> <!-- User_is_able_to_book_a_hotel -->
+        <test-method status="PASS" signature="closeSession()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.BookHotelVerificationTest@2f217633]" name="closeSession" is-config="true" duration-ms="407" started-at="2020-07-29T16:51:20 AEST" finished-at="2020-07-29T16:51:20 AEST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeSession -->
+        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.BookHotelVerificationTest@2f217633]" name="closeApp" is-config="true" duration-ms="1" started-at="2020-07-29T16:51:20 AEST" depends-on-methods="com.adactin.Mobileapphoteladactin1.tests.BookHotelVerificationTest.closeSession" finished-at="2020-07-29T16:51:20 AEST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApp -->
-      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.InvalidLoginVerificationTest -->
-    </test> <!-- Login Verification with invalid user id and password -->
-    <test name="Login verification with valid user id and password" duration-ms="14754" started-at="2020-07-29T14:35:57 AEST" finished-at="2020-07-29T14:36:12 AEST">
-      <class name="com.adactin.Mobileapphoteladactin1.tests.ValidLoginVerificationTest">
-        <test-method status="PASS" signature="propertyfileReader(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.ValidLoginVerificationTest@16610890]" name="propertyfileReader" is-config="true" duration-ms="7" started-at="2020-07-29T14:35:57 AEST" finished-at="2020-07-29T14:35:57 AEST">
+      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.BookHotelVerificationTest -->
+    </test> <!-- Book hotel verification -->
+    <test name="Booking cancelation verification" duration-ms="20646" started-at="2020-07-29T16:52:20 AEST" finished-at="2020-07-29T16:52:41 AEST">
+      <class name="com.adactin.Mobileapphoteladactin1.tests.BookingCancelationVerification">
+        <test-method status="PASS" signature="propertyfileReader(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.BookingCancelationVerification@f5acb9d]" name="propertyfileReader" is-config="true" duration-ms="1" started-at="2020-07-29T16:52:20 AEST" finished-at="2020-07-29T16:52:20 AEST">
           <params>
             <param index="0">
               <value>
@@ -95,19 +187,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- propertyfileReader -->
-        <test-method status="PASS" signature="MAHA_TC03_TC_ValidLoginVerificationTest()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.ValidLoginVerificationTest@16610890]" name="MAHA_TC03_TC_ValidLoginVerificationTest" duration-ms="14277" started-at="2020-07-29T14:35:57 AEST" finished-at="2020-07-29T14:36:11 AEST">
+        <test-method status="PASS" signature="User_is_able_to_cancel_a_hotel_booking()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.BookingCancelationVerification@f5acb9d]" name="User_is_able_to_cancel_a_hotel_booking" duration-ms="20252" started-at="2020-07-29T16:52:20 AEST" finished-at="2020-07-29T16:52:41 AEST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- MAHA_TC03_TC_ValidLoginVerificationTest -->
-        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.ValidLoginVerificationTest@16610890]" name="closeApp" is-config="true" duration-ms="443" started-at="2020-07-29T14:36:11 AEST" finished-at="2020-07-29T14:36:12 AEST">
+        </test-method> <!-- User_is_able_to_cancel_a_hotel_booking -->
+        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.BookingCancelationVerification@f5acb9d]" name="closeApp" is-config="true" duration-ms="383" started-at="2020-07-29T16:52:41 AEST" finished-at="2020-07-29T16:52:41 AEST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApp -->
-      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.ValidLoginVerificationTest -->
-    </test> <!-- Login verification with valid user id and password -->
-    <test name="Book Now verification with no input" duration-ms="41248" started-at="2020-07-29T14:37:22 AEST" finished-at="2020-07-29T14:38:03 AEST">
-      <class name="com.adactin.Mobileapphoteladactin1.tests.BookHotel_BlankFields">
-        <test-method status="PASS" signature="propertyfileReader(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.BookHotel_BlankFields@20ccf40b]" name="propertyfileReader" is-config="true" duration-ms="1" started-at="2020-07-29T14:37:22 AEST" finished-at="2020-07-29T14:37:22 AEST">
+      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.BookingCancelationVerification -->
+    </test> <!-- Booking cancelation verification -->
+    <test name="Forgot Password verification" duration-ms="18393" started-at="2020-07-29T16:53:36 AEST" finished-at="2020-07-29T16:53:55 AEST">
+      <class name="com.adactin.Mobileapphoteladactin1.tests.ForgotPasswordVerification">
+        <test-method status="PASS" signature="propertyfileReader(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.ForgotPasswordVerification@52af26ee]" name="propertyfileReader" is-config="true" duration-ms="1" started-at="2020-07-29T16:53:36 AEST" finished-at="2020-07-29T16:53:36 AEST">
           <params>
             <param index="0">
               <value>
@@ -123,23 +215,23 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- propertyfileReader -->
-        <test-method status="PASS" signature="User_is_able_to_view_error_Book_No_Input()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.BookHotel_BlankFields@20ccf40b]" name="User_is_able_to_view_error_Book_No_Input" duration-ms="40790" started-at="2020-07-29T14:37:22 AEST" finished-at="2020-07-29T14:38:03 AEST">
+        <test-method status="PASS" signature="User_is_able_to_send_email()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.ForgotPasswordVerification@52af26ee]" name="User_is_able_to_send_email" duration-ms="17928" started-at="2020-07-29T16:53:36 AEST" finished-at="2020-07-29T16:53:54 AEST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- User_is_able_to_view_error_Book_No_Input -->
-        <test-method status="PASS" signature="closeSession()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.BookHotel_BlankFields@20ccf40b]" name="closeSession" is-config="true" duration-ms="437" started-at="2020-07-29T14:38:03 AEST" finished-at="2020-07-29T14:38:03 AEST">
+        </test-method> <!-- User_is_able_to_send_email -->
+        <test-method status="PASS" signature="closeSession()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.ForgotPasswordVerification@52af26ee]" name="closeSession" is-config="true" duration-ms="456" started-at="2020-07-29T16:53:54 AEST" finished-at="2020-07-29T16:53:55 AEST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeSession -->
-        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.BookHotel_BlankFields@20ccf40b]" name="closeApp" is-config="true" duration-ms="1" started-at="2020-07-29T14:38:03 AEST" depends-on-methods="com.adactin.Mobileapphoteladactin1.tests.BookHotel_BlankFields.closeSession" finished-at="2020-07-29T14:38:03 AEST">
+        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.ForgotPasswordVerification@52af26ee]" name="closeApp" is-config="true" duration-ms="1" started-at="2020-07-29T16:53:55 AEST" depends-on-methods="com.adactin.Mobileapphoteladactin1.tests.ForgotPasswordVerification.closeSession" finished-at="2020-07-29T16:53:55 AEST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApp -->
-      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.BookHotel_BlankFields -->
-    </test> <!-- Book Now verification with no input -->
-    <test name="Book hotel verification" duration-ms="129176" started-at="2020-07-29T14:39:08 AEST" finished-at="2020-07-29T14:41:18 AEST">
-      <class name="com.adactin.Mobileapphoteladactin1.tests.BookHotelVerificationTest">
-        <test-method status="PASS" signature="propertyfileReader(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.BookHotelVerificationTest@2f217633]" name="propertyfileReader" is-config="true" duration-ms="5" started-at="2020-07-29T14:39:08 AEST" finished-at="2020-07-29T14:39:08 AEST">
+      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.ForgotPasswordVerification -->
+    </test> <!-- Forgot Password verification -->
+    <test name="Logout verification" duration-ms="16206" started-at="2020-07-29T16:54:53 AEST" finished-at="2020-07-29T16:55:09 AEST">
+      <class name="com.adactin.Mobileapphoteladactin1.tests.LogoutVerification">
+        <test-method status="PASS" signature="propertyfileReader(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.LogoutVerification@1de76cc7]" name="propertyfileReader" is-config="true" duration-ms="3" started-at="2020-07-29T16:54:53 AEST" finished-at="2020-07-29T16:54:53 AEST">
           <params>
             <param index="0">
               <value>
@@ -155,23 +247,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- propertyfileReader -->
-        <test-method status="PASS" signature="User_is_able_to_book_a_hotel()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.BookHotelVerificationTest@2f217633]" name="User_is_able_to_book_a_hotel" duration-ms="128704" started-at="2020-07-29T14:39:08 AEST" finished-at="2020-07-29T14:41:17 AEST">
+        <test-method status="PASS" signature="User_is_able_to_logout()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.LogoutVerification@1de76cc7]" name="User_is_able_to_logout" duration-ms="15723" started-at="2020-07-29T16:54:53 AEST" finished-at="2020-07-29T16:55:08 AEST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- User_is_able_to_book_a_hotel -->
-        <test-method status="PASS" signature="closeSession()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.BookHotelVerificationTest@2f217633]" name="closeSession" is-config="true" duration-ms="451" started-at="2020-07-29T14:41:17 AEST" finished-at="2020-07-29T14:41:18 AEST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeSession -->
-        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.BookHotelVerificationTest@2f217633]" name="closeApp" is-config="true" duration-ms="0" started-at="2020-07-29T14:41:18 AEST" depends-on-methods="com.adactin.Mobileapphoteladactin1.tests.BookHotelVerificationTest.closeSession" finished-at="2020-07-29T14:41:18 AEST">
+        </test-method> <!-- User_is_able_to_logout -->
+        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.LogoutVerification@1de76cc7]" name="closeApp" is-config="true" duration-ms="467" started-at="2020-07-29T16:55:08 AEST" finished-at="2020-07-29T16:55:09 AEST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApp -->
-      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.BookHotelVerificationTest -->
-    </test> <!-- Book hotel verification -->
-    <test name="Booking cancelation verification" duration-ms="20929" started-at="2020-07-29T14:42:18 AEST" finished-at="2020-07-29T14:42:39 AEST">
-      <class name="com.adactin.Mobileapphoteladactin1.tests.BookingCancelationVerification">
-        <test-method status="PASS" signature="propertyfileReader(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.BookingCancelationVerification@f5acb9d]" name="propertyfileReader" is-config="true" duration-ms="7" started-at="2020-07-29T14:42:18 AEST" finished-at="2020-07-29T14:42:18 AEST">
+      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.LogoutVerification -->
+    </test> <!-- Logout verification -->
+    <test name="Reset Search Verification" duration-ms="36588" started-at="2020-07-29T16:55:54 AEST" finished-at="2020-07-29T16:56:31 AEST">
+      <class name="com.adactin.Mobileapphoteladactin1.tests.ResetSearchVerification">
+        <test-method status="PASS" signature="propertyfileReader(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.ResetSearchVerification@2ea41516]" name="propertyfileReader" is-config="true" duration-ms="1" started-at="2020-07-29T16:55:54 AEST" finished-at="2020-07-29T16:55:54 AEST">
           <params>
             <param index="0">
               <value>
@@ -187,19 +275,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- propertyfileReader -->
-        <test-method status="PASS" signature="User_is_able_to_cancel_a_hotel_booking()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.BookingCancelationVerification@f5acb9d]" name="User_is_able_to_cancel_a_hotel_booking" duration-ms="20407" started-at="2020-07-29T14:42:18 AEST" finished-at="2020-07-29T14:42:38 AEST">
+        <test-method status="PASS" signature="User_is_able_to_reset_the_search_criteria()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.ResetSearchVerification@2ea41516]" name="User_is_able_to_reset_the_search_criteria" duration-ms="36113" started-at="2020-07-29T16:55:54 AEST" finished-at="2020-07-29T16:56:30 AEST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- User_is_able_to_cancel_a_hotel_booking -->
-        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.BookingCancelationVerification@f5acb9d]" name="closeApp" is-config="true" duration-ms="488" started-at="2020-07-29T14:42:38 AEST" finished-at="2020-07-29T14:42:39 AEST">
+        </test-method> <!-- User_is_able_to_reset_the_search_criteria -->
+        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.ResetSearchVerification@2ea41516]" name="closeApp" is-config="true" duration-ms="466" started-at="2020-07-29T16:56:30 AEST" finished-at="2020-07-29T16:56:31 AEST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApp -->
-      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.BookingCancelationVerification -->
-    </test> <!-- Booking cancelation verification -->
-    <test name="Forgot Password verification" duration-ms="21247" started-at="2020-07-29T14:43:34 AEST" finished-at="2020-07-29T14:43:55 AEST">
-      <class name="com.adactin.Mobileapphoteladactin1.tests.ForgotPasswordVerification">
-        <test-method status="PASS" signature="propertyfileReader(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.ForgotPasswordVerification@52af26ee]" name="propertyfileReader" is-config="true" duration-ms="10" started-at="2020-07-29T14:43:34 AEST" finished-at="2020-07-29T14:43:34 AEST">
+      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.ResetSearchVerification -->
+    </test> <!-- Reset Search Verification -->
+    <test name="Search Hotel with all inputs" duration-ms="31329" started-at="2020-07-29T16:57:11 AEST" finished-at="2020-07-29T16:57:42 AEST">
+      <class name="com.adactin.Mobileapphoteladactin1.tests.SearchHotel_AllFields">
+        <test-method status="PASS" signature="propertyfileReader(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.SearchHotel_AllFields@1de5f259]" name="propertyfileReader" is-config="true" duration-ms="1" started-at="2020-07-29T16:57:11 AEST" finished-at="2020-07-29T16:57:11 AEST">
           <params>
             <param index="0">
               <value>
@@ -215,23 +303,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- propertyfileReader -->
-        <test-method status="PASS" signature="User_is_able_to_send_email()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.ForgotPasswordVerification@52af26ee]" name="User_is_able_to_send_email" duration-ms="20708" started-at="2020-07-29T14:43:34 AEST" finished-at="2020-07-29T14:43:55 AEST">
+        <test-method status="PASS" signature="MAHA_TC03_TC_SearchHotel_AllFieldsTest()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.SearchHotel_AllFields@1de5f259]" name="MAHA_TC03_TC_SearchHotel_AllFieldsTest" duration-ms="30889" started-at="2020-07-29T16:57:11 AEST" finished-at="2020-07-29T16:57:42 AEST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- User_is_able_to_send_email -->
-        <test-method status="PASS" signature="closeSession()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.ForgotPasswordVerification@52af26ee]" name="closeSession" is-config="true" duration-ms="517" started-at="2020-07-29T14:43:55 AEST" finished-at="2020-07-29T14:43:55 AEST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeSession -->
-        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.ForgotPasswordVerification@52af26ee]" name="closeApp" is-config="true" duration-ms="1" started-at="2020-07-29T14:43:55 AEST" depends-on-methods="com.adactin.Mobileapphoteladactin1.tests.ForgotPasswordVerification.closeSession" finished-at="2020-07-29T14:43:55 AEST">
+        </test-method> <!-- MAHA_TC03_TC_SearchHotel_AllFieldsTest -->
+        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.SearchHotel_AllFields@1de5f259]" name="closeApp" is-config="true" duration-ms="421" started-at="2020-07-29T16:57:42 AEST" finished-at="2020-07-29T16:57:42 AEST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApp -->
-      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.ForgotPasswordVerification -->
-    </test> <!-- Forgot Password verification -->
-    <test name="Logout verification" duration-ms="18674" started-at="2020-07-29T14:44:46 AEST" finished-at="2020-07-29T14:45:05 AEST">
-      <class name="com.adactin.Mobileapphoteladactin1.tests.LogoutVerification">
-        <test-method status="PASS" signature="propertyfileReader(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.LogoutVerification@1de76cc7]" name="propertyfileReader" is-config="true" duration-ms="19" started-at="2020-07-29T14:44:46 AEST" finished-at="2020-07-29T14:44:46 AEST">
+      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.SearchHotel_AllFields -->
+    </test> <!-- Search Hotel with all inputs -->
+    <test name="Search hotel with no valid inputs" duration-ms="19159" started-at="2020-07-29T16:58:17 AEST" finished-at="2020-07-29T16:58:36 AEST">
+      <class name="com.adactin.Mobileapphoteladactin1.tests.SearchHotel_BlankFields">
+        <test-method status="PASS" signature="propertyfileReader(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.SearchHotel_BlankFields@437da279]" name="propertyfileReader" is-config="true" duration-ms="1" started-at="2020-07-29T16:58:17 AEST" finished-at="2020-07-29T16:58:17 AEST">
           <params>
             <param index="0">
               <value>
@@ -247,19 +331,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- propertyfileReader -->
-        <test-method status="PASS" signature="User_is_able_to_logout()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.LogoutVerification@1de76cc7]" name="User_is_able_to_logout" duration-ms="18175" started-at="2020-07-29T14:44:46 AEST" finished-at="2020-07-29T14:45:04 AEST">
+        <test-method status="PASS" signature="MAHA_TC03_TC_SearchHotel_BlankFieldsTest()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.SearchHotel_BlankFields@437da279]" name="MAHA_TC03_TC_SearchHotel_BlankFieldsTest" duration-ms="18756" started-at="2020-07-29T16:58:17 AEST" finished-at="2020-07-29T16:58:36 AEST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- User_is_able_to_logout -->
-        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.LogoutVerification@1de76cc7]" name="closeApp" is-config="true" duration-ms="427" started-at="2020-07-29T14:45:04 AEST" finished-at="2020-07-29T14:45:05 AEST">
+        </test-method> <!-- MAHA_TC03_TC_SearchHotel_BlankFieldsTest -->
+        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.SearchHotel_BlankFields@437da279]" name="closeApp" is-config="true" duration-ms="384" started-at="2020-07-29T16:58:36 AEST" finished-at="2020-07-29T16:58:36 AEST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApp -->
-      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.LogoutVerification -->
-    </test> <!-- Logout verification -->
-    <test name="Reset Search Verification" duration-ms="39674" started-at="2020-07-29T14:45:50 AEST" finished-at="2020-07-29T14:46:30 AEST">
-      <class name="com.adactin.Mobileapphoteladactin1.tests.ResetSearchVerification">
-        <test-method status="PASS" signature="propertyfileReader(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.ResetSearchVerification@2ea41516]" name="propertyfileReader" is-config="true" duration-ms="3" started-at="2020-07-29T14:45:50 AEST" finished-at="2020-07-29T14:45:50 AEST">
+      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.SearchHotel_BlankFields -->
+    </test> <!-- Search hotel with no valid inputs -->
+    <test name="Search hotel with only location" duration-ms="18756" started-at="2020-07-29T16:59:07 AEST" finished-at="2020-07-29T16:59:25 AEST">
+      <class name="com.adactin.Mobileapphoteladactin1.tests.SearchHotel_Location">
+        <test-method status="PASS" signature="propertyfileReader(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.SearchHotel_Location@659499f1]" name="propertyfileReader" is-config="true" duration-ms="0" started-at="2020-07-29T16:59:07 AEST" finished-at="2020-07-29T16:59:07 AEST">
           <params>
             <param index="0">
               <value>
@@ -275,19 +359,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- propertyfileReader -->
-        <test-method status="PASS" signature="User_is_able_to_reset_the_search_criteria()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.ResetSearchVerification@2ea41516]" name="User_is_able_to_reset_the_search_criteria" duration-ms="39175" started-at="2020-07-29T14:45:50 AEST" finished-at="2020-07-29T14:46:29 AEST">
+        <test-method status="PASS" signature="MAHA_TC04_TC_SearchHotel_LocationTest()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.SearchHotel_Location@659499f1]" name="MAHA_TC04_TC_SearchHotel_LocationTest" duration-ms="18304" started-at="2020-07-29T16:59:07 AEST" finished-at="2020-07-29T16:59:25 AEST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- User_is_able_to_reset_the_search_criteria -->
-        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.ResetSearchVerification@2ea41516]" name="closeApp" is-config="true" duration-ms="488" started-at="2020-07-29T14:46:29 AEST" finished-at="2020-07-29T14:46:30 AEST">
+        </test-method> <!-- MAHA_TC04_TC_SearchHotel_LocationTest -->
+        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.SearchHotel_Location@659499f1]" name="closeApp" is-config="true" duration-ms="446" started-at="2020-07-29T16:59:25 AEST" finished-at="2020-07-29T16:59:25 AEST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApp -->
-      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.ResetSearchVerification -->
-    </test> <!-- Reset Search Verification -->
-    <test name="Search Hotel with all inputs" duration-ms="32230" started-at="2020-07-29T14:47:10 AEST" finished-at="2020-07-29T14:47:42 AEST">
-      <class name="com.adactin.Mobileapphoteladactin1.tests.SearchHotel_AllFields">
-        <test-method status="PASS" signature="propertyfileReader(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.SearchHotel_AllFields@1de5f259]" name="propertyfileReader" is-config="true" duration-ms="1" started-at="2020-07-29T14:47:10 AEST" finished-at="2020-07-29T14:47:10 AEST">
+      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.SearchHotel_Location -->
+    </test> <!-- Search hotel with only location -->
+    <test name="Search hotel with location and hotel name" duration-ms="23735" started-at="2020-07-29T16:59:51 AEST" finished-at="2020-07-29T17:00:14 AEST">
+      <class name="com.adactin.Mobileapphoteladactin1.tests.SearchHotel_LocationHotelName">
+        <test-method status="PASS" signature="propertyfileReader(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.SearchHotel_LocationHotelName@1151e434]" name="propertyfileReader" is-config="true" duration-ms="4" started-at="2020-07-29T16:59:51 AEST" finished-at="2020-07-29T16:59:51 AEST">
           <params>
             <param index="0">
               <value>
@@ -303,19 +387,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- propertyfileReader -->
-        <test-method status="PASS" signature="MAHA_TC03_TC_SearchHotel_AllFieldsTest()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.SearchHotel_AllFields@1de5f259]" name="MAHA_TC03_TC_SearchHotel_AllFieldsTest" duration-ms="31774" started-at="2020-07-29T14:47:10 AEST" finished-at="2020-07-29T14:47:42 AEST">
+        <test-method status="PASS" signature="User_is_able_to_search_hotel_with_location_and_hotelname()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.SearchHotel_LocationHotelName@1151e434]" name="User_is_able_to_search_hotel_with_location_and_hotelname" duration-ms="23297" started-at="2020-07-29T16:59:51 AEST" finished-at="2020-07-29T17:00:14 AEST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- MAHA_TC03_TC_SearchHotel_AllFieldsTest -->
-        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.SearchHotel_AllFields@1de5f259]" name="closeApp" is-config="true" duration-ms="444" started-at="2020-07-29T14:47:42 AEST" finished-at="2020-07-29T14:47:42 AEST">
+        </test-method> <!-- User_is_able_to_search_hotel_with_location_and_hotelname -->
+        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.SearchHotel_LocationHotelName@1151e434]" name="closeApp" is-config="true" duration-ms="430" started-at="2020-07-29T17:00:14 AEST" finished-at="2020-07-29T17:00:14 AEST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApp -->
-      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.SearchHotel_AllFields -->
-    </test> <!-- Search Hotel with all inputs -->
-    <test name="Search hotel with no valid inputs" duration-ms="19295" started-at="2020-07-29T14:48:18 AEST" finished-at="2020-07-29T14:48:37 AEST">
-      <class name="com.adactin.Mobileapphoteladactin1.tests.SearchHotel_BlankFields">
-        <test-method status="PASS" signature="propertyfileReader(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.SearchHotel_BlankFields@437da279]" name="propertyfileReader" is-config="true" duration-ms="3" started-at="2020-07-29T14:48:18 AEST" finished-at="2020-07-29T14:48:18 AEST">
+      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.SearchHotel_LocationHotelName -->
+    </test> <!-- Search hotel with location and hotel name -->
+    <test name="Select Hotel Verification" duration-ms="37375" started-at="2020-07-29T17:00:34 AEST" finished-at="2020-07-29T17:01:12 AEST">
+      <class name="com.adactin.Mobileapphoteladactin1.tests.SelectHotelVerification">
+        <test-method status="PASS" signature="propertyfileReader(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.SelectHotelVerification@6bd61f98]" name="propertyfileReader" is-config="true" duration-ms="1" started-at="2020-07-29T17:00:34 AEST" finished-at="2020-07-29T17:00:34 AEST">
           <params>
             <param index="0">
               <value>
@@ -331,19 +415,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- propertyfileReader -->
-        <test-method status="PASS" signature="MAHA_TC03_TC_SearchHotel_BlankFieldsTest()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.SearchHotel_BlankFields@437da279]" name="MAHA_TC03_TC_SearchHotel_BlankFieldsTest" duration-ms="18849" started-at="2020-07-29T14:48:18 AEST" finished-at="2020-07-29T14:48:37 AEST">
+        <test-method status="PASS" signature="User_is_able_to_select_hotel()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.SelectHotelVerification@6bd61f98]" name="User_is_able_to_select_hotel" duration-ms="36978" started-at="2020-07-29T17:00:34 AEST" finished-at="2020-07-29T17:01:11 AEST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- MAHA_TC03_TC_SearchHotel_BlankFieldsTest -->
-        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.SearchHotel_BlankFields@437da279]" name="closeApp" is-config="true" duration-ms="438" started-at="2020-07-29T14:48:37 AEST" finished-at="2020-07-29T14:48:37 AEST">
+        </test-method> <!-- User_is_able_to_select_hotel -->
+        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.SelectHotelVerification@6bd61f98]" name="closeApp" is-config="true" duration-ms="393" started-at="2020-07-29T17:01:11 AEST" finished-at="2020-07-29T17:01:12 AEST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApp -->
-      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.SearchHotel_BlankFields -->
-    </test> <!-- Search hotel with no valid inputs -->
-    <test name="Search hotel with only location" duration-ms="22857" started-at="2020-07-29T14:49:08 AEST" finished-at="2020-07-29T14:49:30 AEST">
-      <class name="com.adactin.Mobileapphoteladactin1.tests.SearchHotel_Location">
-        <test-method status="PASS" signature="propertyfileReader(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.SearchHotel_Location@659499f1]" name="propertyfileReader" is-config="true" duration-ms="3" started-at="2020-07-29T14:49:08 AEST" finished-at="2020-07-29T14:49:08 AEST">
+      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.SelectHotelVerification -->
+    </test> <!-- Select Hotel Verification -->
+    <test name="View Booked Hotel Details verification" duration-ms="22514" started-at="2020-07-29T17:01:27 AEST" finished-at="2020-07-29T17:01:49 AEST">
+      <class name="com.adactin.Mobileapphoteladactin1.tests.ViewBookedHotelDetails">
+        <test-method status="PASS" signature="propertyfileReader(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.ViewBookedHotelDetails@783a467b]" name="propertyfileReader" is-config="true" duration-ms="1" started-at="2020-07-29T17:01:27 AEST" finished-at="2020-07-29T17:01:27 AEST">
           <params>
             <param index="0">
               <value>
@@ -359,103 +443,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- propertyfileReader -->
-        <test-method status="PASS" signature="MAHA_TC04_TC_SearchHotel_LocationTest()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.SearchHotel_Location@659499f1]" name="MAHA_TC04_TC_SearchHotel_LocationTest" duration-ms="22418" started-at="2020-07-29T14:49:08 AEST" finished-at="2020-07-29T14:49:30 AEST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- MAHA_TC04_TC_SearchHotel_LocationTest -->
-        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.SearchHotel_Location@659499f1]" name="closeApp" is-config="true" duration-ms="428" started-at="2020-07-29T14:49:30 AEST" finished-at="2020-07-29T14:49:30 AEST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeApp -->
-      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.SearchHotel_Location -->
-    </test> <!-- Search hotel with only location -->
-    <test name="Search hotel with location and hotel name" duration-ms="22249" started-at="2020-07-29T14:49:56 AEST" finished-at="2020-07-29T14:50:18 AEST">
-      <class name="com.adactin.Mobileapphoteladactin1.tests.SearchHotel_LocationHotelName">
-        <test-method status="PASS" signature="propertyfileReader(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.SearchHotel_LocationHotelName@1151e434]" name="propertyfileReader" is-config="true" duration-ms="3" started-at="2020-07-29T14:49:56 AEST" finished-at="2020-07-29T14:49:56 AEST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[EnvConfig.properties]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[org.testng.TestRunner@37665305]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- propertyfileReader -->
-        <test-method status="PASS" signature="User_is_able_to_search_hotel_with_location_and_hotelname()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.SearchHotel_LocationHotelName@1151e434]" name="User_is_able_to_search_hotel_with_location_and_hotelname" duration-ms="21779" started-at="2020-07-29T14:49:56 AEST" finished-at="2020-07-29T14:50:18 AEST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- User_is_able_to_search_hotel_with_location_and_hotelname -->
-        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.SearchHotel_LocationHotelName@1151e434]" name="closeApp" is-config="true" duration-ms="427" started-at="2020-07-29T14:50:18 AEST" finished-at="2020-07-29T14:50:18 AEST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeApp -->
-      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.SearchHotel_LocationHotelName -->
-    </test> <!-- Search hotel with location and hotel name -->
-    <test name="Select Hotel Verification" duration-ms="36624" started-at="2020-07-29T14:50:39 AEST" finished-at="2020-07-29T14:51:15 AEST">
-      <class name="com.adactin.Mobileapphoteladactin1.tests.SelectHotelVerification">
-        <test-method status="PASS" signature="propertyfileReader(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.SelectHotelVerification@6bd61f98]" name="propertyfileReader" is-config="true" duration-ms="3" started-at="2020-07-29T14:50:39 AEST" finished-at="2020-07-29T14:50:39 AEST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[EnvConfig.properties]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[org.testng.TestRunner@c683cf5]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- propertyfileReader -->
-        <test-method status="PASS" signature="User_is_able_to_select_hotel()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.SelectHotelVerification@6bd61f98]" name="User_is_able_to_select_hotel" duration-ms="36198" started-at="2020-07-29T14:50:39 AEST" finished-at="2020-07-29T14:51:15 AEST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- User_is_able_to_select_hotel -->
-        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.SelectHotelVerification@6bd61f98]" name="closeApp" is-config="true" duration-ms="417" started-at="2020-07-29T14:51:15 AEST" finished-at="2020-07-29T14:51:15 AEST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeApp -->
-      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.SelectHotelVerification -->
-    </test> <!-- Select Hotel Verification -->
-    <test name="View Booked Hotel Details verification" duration-ms="23580" started-at="2020-07-29T14:51:31 AEST" finished-at="2020-07-29T14:51:54 AEST">
-      <class name="com.adactin.Mobileapphoteladactin1.tests.ViewBookedHotelDetails">
-        <test-method status="PASS" signature="propertyfileReader(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.ViewBookedHotelDetails@73e9cf30]" name="propertyfileReader" is-config="true" duration-ms="0" started-at="2020-07-29T14:51:31 AEST" finished-at="2020-07-29T14:51:31 AEST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[EnvConfig.properties]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[org.testng.TestRunner@2c224096]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- propertyfileReader -->
-        <test-method status="PASS" signature="User_is_able_to_view_itinerary()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.ViewBookedHotelDetails@73e9cf30]" name="User_is_able_to_view_itinerary" duration-ms="23120" started-at="2020-07-29T14:51:31 AEST" finished-at="2020-07-29T14:51:54 AEST">
+        <test-method status="PASS" signature="User_is_able_to_view_itinerary()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.ViewBookedHotelDetails@783a467b]" name="User_is_able_to_view_itinerary" duration-ms="22101" started-at="2020-07-29T17:01:27 AEST" finished-at="2020-07-29T17:01:49 AEST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- User_is_able_to_view_itinerary -->
-        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.ViewBookedHotelDetails@73e9cf30]" name="closeApp" is-config="true" duration-ms="447" started-at="2020-07-29T14:51:54 AEST" finished-at="2020-07-29T14:51:54 AEST">
+        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.ViewBookedHotelDetails@783a467b]" name="closeApp" is-config="true" duration-ms="407" started-at="2020-07-29T17:01:49 AEST" finished-at="2020-07-29T17:01:49 AEST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApp -->
       </class> <!-- com.adactin.Mobileapphoteladactin1.tests.ViewBookedHotelDetails -->
     </test> <!-- View Booked Hotel Details verification -->
-    <test name="View Booked itinerary" duration-ms="15302" started-at="2020-07-29T14:52:05 AEST" finished-at="2020-07-29T14:52:20 AEST">
+    <test name="View Booked itinerary" duration-ms="16541" started-at="2020-07-29T17:02:00 AEST" finished-at="2020-07-29T17:02:16 AEST">
       <class name="com.adactin.Mobileapphoteladactin1.tests.ViewItineraryVerification">
-        <test-method status="PASS" signature="propertyfileReader(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.ViewItineraryVerification@229c6181]" name="propertyfileReader" is-config="true" duration-ms="1" started-at="2020-07-29T14:52:05 AEST" finished-at="2020-07-29T14:52:05 AEST">
+        <test-method status="PASS" signature="propertyfileReader(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.ViewItineraryVerification@229c6181]" name="propertyfileReader" is-config="true" duration-ms="2" started-at="2020-07-29T17:02:00 AEST" finished-at="2020-07-29T17:02:00 AEST">
           <params>
             <param index="0">
               <value>
@@ -464,25 +464,25 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@66456506]]>
+                <![CDATA[org.testng.TestRunner@6843fdc4]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- propertyfileReader -->
-        <test-method status="PASS" signature="User_is_able_to_view_itinerary(org.testng.ITestContext)[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.ViewItineraryVerification@229c6181]" name="User_is_able_to_view_itinerary" duration-ms="14919" started-at="2020-07-29T14:52:05 AEST" finished-at="2020-07-29T14:52:20 AEST">
+        <test-method status="PASS" signature="User_is_able_to_view_itinerary(org.testng.ITestContext)[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.ViewItineraryVerification@229c6181]" name="User_is_able_to_view_itinerary" duration-ms="16055" started-at="2020-07-29T17:02:00 AEST" finished-at="2020-07-29T17:02:16 AEST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@66456506]]>
+                <![CDATA[org.testng.TestRunner@6843fdc4]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- User_is_able_to_view_itinerary -->
-        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.ViewItineraryVerification@229c6181]" name="closeApp" is-config="true" duration-ms="379" started-at="2020-07-29T14:52:20 AEST" finished-at="2020-07-29T14:52:20 AEST">
+        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin1.tests.ViewItineraryVerification@229c6181]" name="closeApp" is-config="true" duration-ms="481" started-at="2020-07-29T17:02:16 AEST" finished-at="2020-07-29T17:02:16 AEST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApp -->
