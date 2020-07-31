@@ -3,6 +3,7 @@ package com.adactin.Mobileapphoteladactin.pages;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -248,6 +249,8 @@ public class Book_Hotel extends BaseClass {
 				screen.takeScreenshot("Verifying alert popup message");
 				//Clicking on ok button in the alert
 				alert_okbtn.click();
+				//alert_okbtn.ge
+				
 				}
 			else
 				result=false;
