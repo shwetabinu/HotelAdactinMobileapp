@@ -2,18 +2,18 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Hotel Adactin Mobile App Regression Test Suite]">
   <listeners>
-    <listener class-name="reportgeneration.TestListener"/>
+    <listener class-name="com.adactin.Mobileapphoteladactin.reportgeneration.TestListener"/>
   </listeners>
-  <test thread-count="5" name="View Booked itinerary(failed)">
+  <test thread-count="5" name="Room number Dropdown Verification(failed)">
     <parameter name="config" value="EnvConfig.properties"/>
     <classes>
-      <class name="com.adactin.Mobileapphoteladactin1.tests.ViewItineraryVerification">
+      <class name="com.adactin.Mobileapphoteladactin.tests.RoomNoDropdownVerification">
         <methods>
+          <include name="User_is_able_to_view_the_list_of_options_in_the_Number_of_Rooms_drop_down_menu"/>
           <include name="closeApp"/>
           <include name="propertyfileReader"/>
-          <include name="User_is_able_to_view_itinerary"/>
         </methods>
-      </class> <!-- com.adactin.Mobileapphoteladactin1.tests.ViewItineraryVerification -->
+      </class> <!-- com.adactin.Mobileapphoteladactin.tests.RoomNoDropdownVerification -->
     </classes>
-  </test> <!-- View Booked itinerary(failed) -->
+  </test> <!-- Room number Dropdown Verification(failed) -->
 </suite> <!-- Failed suite [Hotel Adactin Mobile App Regression Test Suite] -->
