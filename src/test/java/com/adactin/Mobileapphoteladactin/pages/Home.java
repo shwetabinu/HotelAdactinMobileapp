@@ -368,6 +368,7 @@ public class Home extends BaseClass {
 		return result;
 	}
 
+	
 	/**
 	 * Method to click on Search button
 	 * @return boolean result of the method
@@ -389,11 +390,194 @@ public class Home extends BaseClass {
 	}
 
 	/**
+	 * Test case to validate the locations present in the location drop down
+	 * @param rno Row number where the test case data is present
+	 * @return boolean result of execution
+	 * @throws Exception Exception while reading test data file
+	 */
+	public boolean viewLocationDropdown(int rno) throws Exception
+	{
+		int expected_location_index = ExcelUtil.readExcel('c', "Location");
+		expected_location = ExcelUtil.getCellData(rno, expected_location_index);
+		int count=0;
+		boolean result=true;
+		try {
+			//Selecting the location
+			selectlocation.click();
+			//Extracting the expected locations in the dropdown
+			String location[]=expected_location.split(",");
+			int k=0;
+			//Comparing the expected and actual locations
+			for (int j = 0; j < location_optns.size(); j++) {
+				System.out.println(location_optns.get(j).getText());
+				if (location_optns.get(j).getText().equalsIgnoreCase(location[k])) {
+					{
+						count++;
+						k++;
+					}
+				}
+				Log.info("The total number of locations is"+count);
+				//Verifying the count of matched locations
+				if(count==8)
+					result=true;
+				else
+					result=false;
+			}
+			
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+			Log.error("Error occurred while viewing location drop down");
+		}
+		return result;
+	}
+	
+	/**
+	 * Test case to validate the locations present in the hotel drop down
+	 * @param rno Row number where the test case data is present
+	 * @return boolean result of execution
+	 * @throws Exception Exception while reading test data file
+	 */
+	public boolean viewHotelDropdown(int rno) throws Exception
+	{
+		//Reading the expected hotel dropdown options
+		int expected_hotel_index = ExcelUtil.readExcel('c', "Hotels");
+		expected_hotel = ExcelUtil.getCellData(rno, expected_hotel_index);
+		int count=0;
+		boolean result=true;
+		try {
+			//Selecting the hotel
+			select_hotel.click();
+			//Reading the expected hotels
+			String hotel[]=expected_hotel.split(",");
+			int k=0;
+			//Comparing the actual and expected hotels
+			for (int j = 0; j < hotel_optns.size(); j++) {
+				System.out.println(hotel_optns.get(j).getText());
+				if (hotel_optns.get(j).getText().equalsIgnoreCase(hotel[k])) {
+					{
+						count++;
+						k++;
+					}
+				}
+				//Validating the count of hotels in the dropdown
+				Log.info("The total number of hotels is"+count);
+				if(count==4)
+					result=true;
+				else
+					result=false;
+			}
+			
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+			Log.error("Error occurred while viewing hotel drop down");
+		}
+		return result;
+	}
+	
+	/**
+	 * Test case to validate the roomtype options present in the roomtype dropdown
+	 * @param rno Row number where the test case data is present
+	 * @return boolean result of execution
+	 * @throws Exception Exception while reading test data file
+	 */
+	public boolean viewRoomtypeDropdown(int rno) throws Exception
+	{
+		//Reading the expected room type dropdown options
+		int expected_roomtype_index = ExcelUtil.readExcel('c', "Room Type");
+		expected_roomtype = ExcelUtil.getCellData(rno, expected_roomtype_index);
+		int count=0;
+		boolean result=true;
+		try {
+			//Selecting the roomtype
+			select_roomtype.click();
+			//Reading the expected room types
+			String rtype[]=expected_roomtype.split(",");
+			int k=0;
+			//Comparing the actual and expected room types
+			for (int j = 0; j < roomtype_optns.size(); j++) {
+				System.out.println(roomtype_optns.get(j).getText());
+				if (roomtype_optns.get(j).getText().equalsIgnoreCase(rtype[k])) {
+					{
+						count++;
+						k++;
+					}
+				}
+				//Validating the count of room types in the dropdown
+				Log.info("The total number of hotels is"+count);
+				if(count==4)
+					result=true;
+				else
+					result=false;
+			}
+			
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+			Log.error("Error occurred while viewing room type drop down");
+		}
+		return result;
+	}
+	
+	
+	/**
+	 * Test case to validate the room number options present in the room number drop down
+	 * @param rno Row number where the test case data is present
+	 * @return boolean result of execution
+	 * @throws Exception Exception while reading test data file
+	 */
+	public boolean viewRoomnoDropdown(int rno) throws Exception
+	{
+		// Reading the Expected Room Number from the Test Data file
+		int expected_roomno_index = ExcelUtil.readExcel('c', "Number of Rooms");
+		expected_nofrooms = ExcelUtil.getCellData(rno, expected_roomno_index);
+
+		int count=0;
+		boolean result=true;
+		try {
+			//Selecting the room number
+			no_of_rooms.click();
+			//Reading the expected room number options
+			String rrno[]=expected_nofrooms.split(",");
+			int k=0;
+			//Comparing the actual and expected room number
+			for (int j = 0; j < roomno_optns.size(); j++) {
+				
+				if (roomno_optns.get(j).getText().equalsIgnoreCase(rrno[k])) {
+					{
+						count++;
+						k++;
+					}
+				}
+			}
+			boolean scroll=ScrollUtil.pageScrollToText("10 - Ten");
+			if(scroll==true)
+				count++;
+				
+				//Validating the count of room number in the dropdown
+				Log.info("The total number of hotels is"+count);
+				if(count==10)
+					result=true;
+				else
+					result=false;
+			
+			
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+			Log.error("Error occurred while viewing room type drop down");
+		}
+		return result;
+	}
+	
+	/**
 	 * Method to perform reset of the fields entered
 	 * @return boolean result of the method
 	 */
 	public boolean doReset() {
 		boolean result;
+		
 		try {
 			int count = 0;
 			result = true;
