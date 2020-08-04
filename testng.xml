@@ -143,12 +143,31 @@
 		<classes>
 			<class name="com.adactin.Mobileapphoteladactin.tests.RoomtypeDropdownVerification"/>
 		</classes>
-	</test>-->
+	</test>
 	
 	<test name= "Room number Dropdown Verification">
 	<parameter name="config" value="EnvConfig.properties"/>
 		<classes>
 			<class name="com.adactin.Mobileapphoteladactin.tests.RoomNoDropdownVerification"/>
+		</classes>
+	</test>
+	<test name= "Check-in date Verification">
+	<parameter name="config" value="EnvConfig.properties"/>
+		<classes>
+			<class name="com.adactin.Mobileapphoteladactin.tests.CheckinDateValidation"/>
+		</classes>
+	</test>
+	<test name= "Check-in cancel Verification">
+	<parameter name="config" value="EnvConfig.properties"/>
+		<classes>
+			<class name="com.adactin.Mobileapphoteladactin.tests.CheckinDateCancelVerification"/>
+		</classes>
+	</test>-->
+	
+	<test name= "Check-out date Verification">
+	<parameter name="config" value="EnvConfig.properties"/>
+		<classes>
+			<class name="com.adactin.Mobileapphoteladactin.tests.CheckoutDateValidation"/>
 		</classes>
 	</test>
 	
