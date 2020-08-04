@@ -2,15 +2,15 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Hotel Adactin Mobile App Regression Test Suite" duration-ms="23765" started-at="2020-08-03T16:07:19 AEST" finished-at="2020-08-03T16:07:43 AEST">
+  <suite name="Hotel Adactin Mobile App Regression Test Suite" duration-ms="24645" started-at="2020-08-04T12:08:45 AEST" finished-at="2020-08-04T12:09:09 AEST">
     <groups>
       <group name="functionalTest">
-        <method signature="RoomNoDropdownVerification.User_is_able_to_view_the_list_of_options_in_the_Number_of_Rooms_drop_down_menu()[pri:0, instance:com.adactin.Mobileapphoteladactin.tests.RoomNoDropdownVerification@446293d]" name="User_is_able_to_view_the_list_of_options_in_the_Number_of_Rooms_drop_down_menu" class="com.adactin.Mobileapphoteladactin.tests.RoomNoDropdownVerification"/>
+        <method signature="CheckoutDateValidation.User_should_be_able_to_enter_date_in_the_Check_out_date_field()[pri:0, instance:com.adactin.Mobileapphoteladactin.tests.CheckoutDateValidation@446293d]" name="User_should_be_able_to_enter_date_in_the_Check_out_date_field" class="com.adactin.Mobileapphoteladactin.tests.CheckoutDateValidation"/>
       </group> <!-- functionalTest -->
     </groups>
-    <test name="Room number Dropdown Verification" duration-ms="23765" started-at="2020-08-03T16:07:19 AEST" finished-at="2020-08-03T16:07:43 AEST">
-      <class name="com.adactin.Mobileapphoteladactin.tests.RoomNoDropdownVerification">
-        <test-method status="PASS" signature="propertyfileReader(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.adactin.Mobileapphoteladactin.tests.RoomNoDropdownVerification@446293d]" name="propertyfileReader" is-config="true" duration-ms="21" started-at="2020-08-03T16:07:19 AEST" finished-at="2020-08-03T16:07:19 AEST">
+    <test name="Check-out date Verification" duration-ms="24645" started-at="2020-08-04T12:08:45 AEST" finished-at="2020-08-04T12:09:09 AEST">
+      <class name="com.adactin.Mobileapphoteladactin.tests.CheckoutDateValidation">
+        <test-method status="PASS" signature="propertyfileReader(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.adactin.Mobileapphoteladactin.tests.CheckoutDateValidation@446293d]" name="propertyfileReader" is-config="true" duration-ms="33" started-at="2020-08-04T12:08:45 AEST" finished-at="2020-08-04T12:08:45 AEST">
           <params>
             <param index="0">
               <value>
@@ -19,22 +19,22 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@127d7908]]>
+                <![CDATA[org.testng.TestRunner@20921b9b]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- propertyfileReader -->
-        <test-method status="PASS" signature="User_is_able_to_view_the_list_of_options_in_the_Number_of_Rooms_drop_down_menu()[pri:0, instance:com.adactin.Mobileapphoteladactin.tests.RoomNoDropdownVerification@446293d]" name="User_is_able_to_view_the_list_of_options_in_the_Number_of_Rooms_drop_down_menu" duration-ms="23244" started-at="2020-08-03T16:07:20 AEST" finished-at="2020-08-03T16:07:43 AEST">
+        <test-method status="PASS" signature="User_should_be_able_to_enter_date_in_the_Check_out_date_field()[pri:0, instance:com.adactin.Mobileapphoteladactin.tests.CheckoutDateValidation@446293d]" name="User_should_be_able_to_enter_date_in_the_Check_out_date_field" duration-ms="24005" started-at="2020-08-04T12:08:45 AEST" finished-at="2020-08-04T12:09:09 AEST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- User_is_able_to_view_the_list_of_options_in_the_Number_of_Rooms_drop_down_menu -->
-        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin.tests.RoomNoDropdownVerification@446293d]" name="closeApp" is-config="true" duration-ms="443" started-at="2020-08-03T16:07:43 AEST" finished-at="2020-08-03T16:07:43 AEST">
+        </test-method> <!-- User_should_be_able_to_enter_date_in_the_Check_out_date_field -->
+        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin.tests.CheckoutDateValidation@446293d]" name="closeApp" is-config="true" duration-ms="473" started-at="2020-08-04T12:09:09 AEST" finished-at="2020-08-04T12:09:09 AEST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApp -->
-      </class> <!-- com.adactin.Mobileapphoteladactin.tests.RoomNoDropdownVerification -->
-    </test> <!-- Room number Dropdown Verification -->
+      </class> <!-- com.adactin.Mobileapphoteladactin.tests.CheckoutDateValidation -->
+    </test> <!-- Check-out date Verification -->
   </suite> <!-- Hotel Adactin Mobile App Regression Test Suite -->
 </testng-results>
