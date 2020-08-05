@@ -75,7 +75,11 @@ public class CheckinDateCancelVerification extends BaseClass{
 			ExtentTestManager.getTest().log(Status.FAIL,"The cancel button click was unsuccessful");	
 		
 		Assert.assertTrue(checkindate);
-		
+		if((login && checkindate && cancelclick
+				)==true)
+			ExcelUtil.setCellData("PASSED", rno, 0);
+		else
+			ExcelUtil.setCellData("FAILED", rno, 0);
 		
 		Log.endTestCase("User_is_able_to_click_cancel_link_in_the_check_in_date");	
 		

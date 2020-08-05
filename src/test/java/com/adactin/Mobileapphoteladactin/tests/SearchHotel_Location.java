@@ -91,6 +91,12 @@ public class SearchHotel_Location extends BaseClass {
 		
 		Assert.assertTrue(hotel_result);
 		
+		if((login && search && searchclick && hotel_result
+				)==true)
+			ExcelUtil.setCellData("PASSED", rno, 0);
+		else
+			ExcelUtil.setCellData("FAILED", rno, 0);
+		
 		Log.endTestCase("User_is_able_to_Search_Hotel_with_Location");	
 		
 	}

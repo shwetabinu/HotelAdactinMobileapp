@@ -71,6 +71,11 @@ public class ResetSearchVerification extends BaseClass {
 		//Validating the reset
 		Assert.assertTrue(reset);
 		
+		if((login_result && searchhotel && reset
+				)==true)
+			ExcelUtil.setCellData("PASSED", rno, 0);
+		else
+			ExcelUtil.setCellData("FAILED", rno, 0);
 		Log.endTestCase("User_is_able_to_reset_the_search_criteria");
 		
 

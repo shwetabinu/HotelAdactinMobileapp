@@ -70,6 +70,11 @@ public class InvalidLoginVerificationTest extends BaseClass{
 			ExtentTestManager.getTest().log(Status.FAIL,"The invalid error validation was unsuccessful");			
 		Assert.assertTrue(invaliderror);
 		
+		if((login && invaliderror 
+				)==true)
+			ExcelUtil.setCellData("PASSED", rno, 0);
+		else
+			ExcelUtil.setCellData("FAILED", rno, 0);
 		Log.endTestCase("User_is_shown_an_error_message_when_he_enters_incorrect_"
 				+ "username_or_password");		
 	}

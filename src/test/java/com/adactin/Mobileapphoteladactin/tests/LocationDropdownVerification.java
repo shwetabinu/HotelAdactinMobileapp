@@ -72,7 +72,11 @@ public class LocationDropdownVerification extends BaseClass{
 					ExtentTestManager.getTest().log(Status.FAIL,"All the location drop down options are not present in the Search Hotel page");	
 				
 				Assert.assertTrue(locitems);
-				
+				if((login && locitems 
+						)==true)
+					ExcelUtil.setCellData("PASSED", rno, 0);
+				else
+					ExcelUtil.setCellData("FAILED", rno, 0);
 				
 				Log.endTestCase("User_is_able_to_view_the_drop_down_list_in_locations");	
 				

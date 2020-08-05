@@ -73,6 +73,11 @@ public class RoomNoDropdownVerification extends BaseClass{
 		
 		Assert.assertTrue(locitems);
 		
+		if((login && locitems
+				)==true)
+			ExcelUtil.setCellData("PASSED", rno, 0);
+		else
+			ExcelUtil.setCellData("FAILED", rno, 0);
 		
 		Log.endTestCase("User_is_able_to_view_the_list_of_options_in_the_Number_of_Rooms_drop_down_menu");	
 		

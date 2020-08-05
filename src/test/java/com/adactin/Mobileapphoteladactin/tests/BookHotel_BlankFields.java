@@ -141,7 +141,11 @@ public class BookHotel_BlankFields extends BaseClass{
 			ExtentTestManager.getTest().log(Status.FAIL,"The inline error message validation  was unsuccessful");		
 		//Validating the inline error
 		Assert.assertTrue(inlineerror);
-		
+		if((loginresult && searchresult && search && selecthotel
+				&& selected_hotel && booknow && verifyalert && inlineerror)==true)
+			ExcelUtil.setCellData("PASSED", rno, 0);
+		else
+			ExcelUtil.setCellData("FAILED", rno, 0);
 		Log.endTestCase("User_is_able_to_view_error_Book_No_Input");
 		
 		

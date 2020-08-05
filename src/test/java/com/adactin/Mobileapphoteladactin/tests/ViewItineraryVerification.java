@@ -80,6 +80,11 @@ public class ViewItineraryVerification  extends BaseClass{
 		//Verifying if the boooked hotel is displayed
 		Assert.assertTrue(booked_hotel);
 	
+		if((login_result  && viewbooked && booked_hotel
+				)==true)
+			ExcelUtil.setCellData("PASSED", rno, 0);
+		else
+			ExcelUtil.setCellData("FAILED", rno, 0);
 		Log.endTestCase("User_is_able_to_view_itinerary");
 	}
 

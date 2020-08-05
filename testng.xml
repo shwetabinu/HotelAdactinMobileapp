@@ -4,116 +4,116 @@
 <listeners>
 	<listener class-name="com.adactin.Mobileapphoteladactin.reportgeneration.TestListener" />
 </listeners> 
-	<!--  <test name="Login Verification with no user id and password">
+	 <!--   <test name="Login Verification with no user id and password">
 		<parameter name="config" value="EnvConfig.properties"/>
 		<classes>
-			<class name="com.adactin.Mobileapphoteladactin1.tests.BlankLoginVerificationTest" />		
+			<class name="com.adactin.Mobileapphoteladactin.tests.BlankLoginVerificationTest" />		
 		</classes>
 	</test> 
 	
 	<test name = "Login Verification with invalid user id and password">
 		<parameter name="config" value="EnvConfig.properties"/>
 		<classes>
-			<class name="com.adactin.Mobileapphoteladactin1.tests.InvalidLoginVerificationTest"/>
+			<class name="com.adactin.Mobileapphoteladactin.tests.InvalidLoginVerificationTest"/>
 		</classes>
 	</test>
 	
 	<test name = "Login verification with valid user id and password">
 		<parameter name="config" value="EnvConfig.properties"/>
 		<classes>
-			<class name="com.adactin.Mobileapphoteladactin1.tests.ValidLoginVerificationTest"/>
+			<class name="com.adactin.Mobileapphoteladactin.tests.ValidLoginVerificationTest"/>
 		</classes>
 	</test>
 	
 	<test name = "Book Now verification with no input">
 		<parameter name="config" value="EnvConfig.properties"/>
 		<classes>
-			<class name="com.adactin.Mobileapphoteladactin1.tests.BookHotel_BlankFields"/>
+			<class name="com.adactin.Mobileapphoteladactin.tests.BookHotel_BlankFields"/>
 		</classes>
 	</test>
 	
 	<test name = "Book hotel verification">
 		<parameter name="config" value="EnvConfig.properties"/>
 		<classes>
-			<class name="com.adactin.Mobileapphoteladactin1.tests.BookHotelVerificationTest"/>
+			<class name="com.adactin.Mobileapphoteladactin.tests.BookHotelVerificationTest"/>
 		</classes>
 	</test>
 	
 	<test name = "Booking cancelation verification">
 		<parameter name="config" value="EnvConfig.properties"/>
 		<classes>
-			<class name="com.adactin.Mobileapphoteladactin1.tests.BookingCancelationVerification"/>
+			<class name="com.adactin.Mobileapphoteladactin.tests.BookingCancelationVerification"/>
 		</classes>
 	</test>
-	
+	 
 	<test name = "Forgot Password verification">
 		<parameter name="config" value="EnvConfig.properties"/>
 		<classes>
-			<class name="com.adactin.Mobileapphoteladactin1.tests.ForgotPasswordVerification"/>
+			<class name="com.adactin.Mobileapphoteladactin.tests.ForgotPasswordVerification"/>
 		</classes>
 	</test>
 	
 	<test name = "Logout verification">
 		<parameter name="config" value="EnvConfig.properties"/>
 		<classes>
-			<class name="com.adactin.Mobileapphoteladactin1.tests.LogoutVerification"/>
+			<class name="com.adactin.Mobileapphoteladactin.tests.LogoutVerification"/>
 		</classes>
 	</test>
 	
 	<test name = "Reset Search Verification">
 		<parameter name="config" value="EnvConfig.properties"/>
 		<classes>
-			<class name="com.adactin.Mobileapphoteladactin1.tests.ResetSearchVerification"/>
+			<class name="com.adactin.Mobileapphoteladactin.tests.ResetSearchVerification"/>
 		</classes>
 	</test>
 	
 	<test name = "Search Hotel with all inputs">
 		<parameter name="config" value="EnvConfig.properties"/>
 		<classes>
-			<class name="com.adactin.Mobileapphoteladactin1.tests.SearchHotel_AllFields"/>
+			<class name="com.adactin.Mobileapphoteladactin.tests.SearchHotel_AllFields"/>
 		</classes>
 	</test>
 	
 	<test name = "Search hotel with no valid inputs">
 		<parameter name="config" value="EnvConfig.properties"/>
 		<classes>
-			<class name="com.adactin.Mobileapphoteladactin1.tests.SearchHotel_BlankFields"/>
+			<class name="com.adactin.Mobileapphoteladactin.tests.SearchHotel_BlankFields"/>
 		</classes>
 	</test>
 	
 	<test name = "Search hotel with only location">
 		<parameter name="config" value="EnvConfig.properties"/>
 		<classes>
-			<class name="com.adactin.Mobileapphoteladactin1.tests.SearchHotel_Location"/>
+			<class name="com.adactin.Mobileapphoteladactin.tests.SearchHotel_Location"/>
 		</classes>
 	</test>
 	
 	<test name = "Search hotel with location and hotel name">
 		<parameter name="config" value="EnvConfig.properties"/>
 		<classes>
-			<class name="com.adactin.Mobileapphoteladactin1.tests.SearchHotel_LocationHotelName"/>
+			<class name="com.adactin.Mobileapphoteladactin.tests.SearchHotel_LocationHotelName"/>
 		</classes>
 	</test>
 	
 	<test name = "Select Hotel Verification">
 		<parameter name="config" value="EnvConfig.properties"/>
 		<classes>
-			<class name="com.adactin.Mobileapphoteladactin1.tests.SelectHotelVerification"/>
+			<class name="com.adactin.Mobileapphoteladactin.tests.SelectHotelVerification"/>
 		</classes>
 	</test>
 	
 	<test name = "View Booked Hotel Details verification">
 		<parameter name="config" value="EnvConfig.properties"/>
 		<classes>
-			<class name="com.adactin.Mobileapphoteladactin1.tests.ViewBookedHotelDetails"/>
+			<class name="com.adactin.Mobileapphoteladactin.tests.ViewBookedHotelDetails"/>
 		</classes>
 	</test>
-	
+	 
 	<test name = "View Booked itinerary">
 	<parameter name="config" value="EnvConfig.properties"/>
 		<parameter name="config" value="EnvConfig.properties"/>
 		<classes>
-			<class name="com.adactin.Mobileapphoteladactin1.tests.ViewItineraryVerification"/>
+			<class name="com.adactin.Mobileapphoteladactin.tests.ViewItineraryVerification"/>
 		</classes>
 	</test>
 	
@@ -162,7 +162,7 @@
 		<classes>
 			<class name="com.adactin.Mobileapphoteladactin.tests.CheckinDateCancelVerification"/>
 		</classes>
-	</test>-->
+	</test>
 	
 	<test name= "Check-out date Verification">
 	<parameter name="config" value="EnvConfig.properties"/>
@@ -170,6 +170,32 @@
 			<class name="com.adactin.Mobileapphoteladactin.tests.CheckoutDateValidation"/>
 		</classes>
 	</test>
+	
+	<test name= "Check-out date Cancelation">
+	<parameter name="config" value="EnvConfig.properties"/>
+		<classes>
+			<class name="com.adactin.Mobileapphoteladactin.tests.CheckoutDateCancelVerification"/>
+		</classes>
+	</test>
+	<test name= "Adults per room dropdown validation">
+	<parameter name="config" value="EnvConfig.properties"/>
+		<classes>
+			<class name="com.adactin.Mobileapphoteladactin.tests.AdultsPerRoomVerification"/>
+		</classes>
+	</test>
+	  <test name= "Children per room dropdown validation">
+	<parameter name="config" value="EnvConfig.properties"/>
+		<classes>
+			<class name="com.adactin.Mobileapphoteladactin.tests.ChildrenPerRoomVerification"/>
+		</classes>
+	</test>-->
+	  <test name= "Children per room dropdown validation">
+	<parameter name="config" value="EnvConfig.properties"/>
+		<classes>
+			<class name="com.adactin.Mobileapphoteladactin.tests.ExitApp"/>
+		</classes>
+	</test>
+	
 	
 </suite> 
 

@@ -101,6 +101,11 @@ public class BookingCancelationVerification extends BaseClass {
 			ExtentTestManager.getTest().log(Status.FAIL,"The booking cancellation validation was unsuccessful");		
 		
 		Assert.assertTrue(cancel_outcome);
+		if((login_result && result && booked_result && cancel_result
+				&& cancel_outcome)==true)
+			ExcelUtil.setCellData("PASSED", rno, 0);
+		else
+			ExcelUtil.setCellData("FAILED", rno, 0);
 		Log.endTestCase("User_is_able_to_cancel_a_hotel_booking");
 		
 	}

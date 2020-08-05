@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Aug 03 16:07:19 AEST 2020</td>
+<td>Started on:</td><td>Wed Aug 05 12:51:25 AEST 2020</td>
 </tr>
-<tr><td>Total time:</td><td>23 seconds (23765 ms)</td>
+<tr><td>Total time:</td><td>150 seconds (150753 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,234 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.adactin.Mobileapphoteladactin.tests.BookHotelVerificationTest.User_is_able_to_book_a_hotel()'><b>User_is_able_to_book_a_hotel</b><br>Test class: com.adactin.Mobileapphoteladactin.tests.BookHotelVerificationTest</td>
+<td><div><pre>java.lang.AssertionError: expected [true] but found [false]
+	at com.adactin.Mobileapphoteladactin.tests.BookHotelVerificationTest.User_is_able_to_book_a_hotel(BookHotelVerificationTest.java:179)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace561772958", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace561772958'><pre>java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:97)
+	at org.testng.Assert.failNotEquals(Assert.java:969)
+	at org.testng.Assert.assertTrue(Assert.java:43)
+	at org.testng.Assert.assertTrue(Assert.java:53)
+	at com.adactin.Mobileapphoteladactin.tests.BookHotelVerificationTest.User_is_able_to_book_a_hotel(BookHotelVerificationTest.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at org.testng.TestRunner.privateRun(TestRunner.java:766)
+	at org.testng.TestRunner.run(TestRunner.java:587)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>137</td>
+<td>com.adactin.Mobileapphoteladactin.tests.BookHotelVerificationTest@a530d0a</td></tr>
+<tr>
+<td title='com.adactin.Mobileapphoteladactin.tests.BookingCancelationVerification.User_is_able_to_cancel_a_hotel_booking()'><b>User_is_able_to_cancel_a_hotel_booking</b><br>Test class: com.adactin.Mobileapphoteladactin.tests.BookingCancelationVerification</td>
+<td><div><pre>org.openqa.selenium.StaleElementReferenceException: Cached elements &apos;By.xpath: //android.view.View[contains(@text,&apos;hotel_name&apos;)]&apos; do not exist in DOM anymore
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;Aswins-Air&apos;, ip: &apos;fe80:0:0:0:1456:7f3c:c22c:1bbb%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.15.5&apos;, java.version: &apos;1.8.0_251&apos;
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appActivity: com.adactin.education.hotel..., appPackage: com.adactin.education.hotel..., automationName: UiAutomator2, databaseEnabled: false, desired: {appActivity: com.adactin.education.hotel..., appPackage: com.adactin.education.hotel..., automationName: UiAutomator2, deviceName: OnePlus 6, platformName: android, platformVersion: 10}, deviceApiLevel: 29, deviceManufacturer: OnePlus, deviceModel: ONEPLUS A6000, deviceName: d43f5b56, deviceScreenDensity: 420, deviceScreenSize: 1080x2280, deviceUDID: d43f5b56, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, pixelRatio: 2.625, platform: LINUX, platformName: Android, platformVersion: 10, statBarHeight: 80, takesScreenshot: true, viewportRect: {height: 1995, left: 0, top: 80, width: 1080}, warnings: {}, webStorageEnabled: false}
+Session ID: 0e7c33da-7220-42a5-8fce-0ebced7f60a3
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:239)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at io.appium.java_client.DefaultGenericMobileElement.execute(DefaultGenericMobileElement.java:45)
+	at io.appium.java_client.MobileElement.execute(MobileElement.java:1)
+	at io.appium.java_client.android.AndroidElement.execute(AndroidElement.java:1)
+	at org.openqa.selenium.remote.RemoteWebElement.isDisplayed(RemoteWebElement.java:326)
+	at org.openqa.selenium.support.ui.ExpectedConditions$9.apply(ExpectedConditions.java:274)
+	at org.openqa.selenium.support.ui.ExpectedConditions$9.apply(ExpectedConditions.java:270)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	at com.adactin.Mobileapphoteladactin.pages.Booked_Itinerary.checkCanceled(Booked_Itinerary.java:104)
+	at com.adactin.Mobileapphoteladactin.tests.BookingCancelationVerification.User_is_able_to_cancel_a_hotel_booking(BookingCancelationVerification.java:96)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1924999281", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1924999281'><pre>org.openqa.selenium.StaleElementReferenceException: Cached elements &apos;By.xpath: //android.view.View[contains(@text,&apos;hotel_name&apos;)]&apos; do not exist in DOM anymore
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;Aswins-Air&apos;, ip: &apos;fe80:0:0:0:1456:7f3c:c22c:1bbb%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.15.5&apos;, java.version: &apos;1.8.0_251&apos;
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appActivity: com.adactin.education.hotel..., appPackage: com.adactin.education.hotel..., automationName: UiAutomator2, databaseEnabled: false, desired: {appActivity: com.adactin.education.hotel..., appPackage: com.adactin.education.hotel..., automationName: UiAutomator2, deviceName: OnePlus 6, platformName: android, platformVersion: 10}, deviceApiLevel: 29, deviceManufacturer: OnePlus, deviceModel: ONEPLUS A6000, deviceName: d43f5b56, deviceScreenDensity: 420, deviceScreenSize: 1080x2280, deviceUDID: d43f5b56, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, pixelRatio: 2.625, platform: LINUX, platformName: Android, platformVersion: 10, statBarHeight: 80, takesScreenshot: true, viewportRect: {height: 1995, left: 0, top: 80, width: 1080}, warnings: {}, webStorageEnabled: false}
+Session ID: 0e7c33da-7220-42a5-8fce-0ebced7f60a3
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:239)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at io.appium.java_client.DefaultGenericMobileElement.execute(DefaultGenericMobileElement.java:45)
+	at io.appium.java_client.MobileElement.execute(MobileElement.java:1)
+	at io.appium.java_client.android.AndroidElement.execute(AndroidElement.java:1)
+	at org.openqa.selenium.remote.RemoteWebElement.isDisplayed(RemoteWebElement.java:326)
+	at org.openqa.selenium.support.ui.ExpectedConditions$9.apply(ExpectedConditions.java:274)
+	at org.openqa.selenium.support.ui.ExpectedConditions$9.apply(ExpectedConditions.java:270)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	at com.adactin.Mobileapphoteladactin.pages.Booked_Itinerary.checkCanceled(Booked_Itinerary.java:104)
+	at com.adactin.Mobileapphoteladactin.tests.BookingCancelationVerification.User_is_able_to_cancel_a_hotel_booking(BookingCancelationVerification.java:96)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at org.testng.TestRunner.privateRun(TestRunner.java:766)
+	at org.testng.TestRunner.run(TestRunner.java:587)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>22</td>
+<td>com.adactin.Mobileapphoteladactin.tests.BookingCancelationVerification@f5acb9d</td></tr>
+<tr>
+<td title='com.adactin.Mobileapphoteladactin.tests.SelectHotelVerification.User_is_able_to_select_hotel()'><b>User_is_able_to_select_hotel</b><br>Test class: com.adactin.Mobileapphoteladactin.tests.SelectHotelVerification</td>
+<td><div><pre>java.lang.AssertionError: expected [true] but found [false]
+	at com.adactin.Mobileapphoteladactin.tests.SelectHotelVerification.User_is_able_to_select_hotel(SelectHotelVerification.java:131)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace193041293", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace193041293'><pre>java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:97)
+	at org.testng.Assert.failNotEquals(Assert.java:969)
+	at org.testng.Assert.assertTrue(Assert.java:43)
+	at org.testng.Assert.assertTrue(Assert.java:53)
+	at com.adactin.Mobileapphoteladactin.tests.SelectHotelVerification.User_is_able_to_select_hotel(SelectHotelVerification.java:131)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at org.testng.TestRunner.privateRun(TestRunner.java:766)
+	at org.testng.TestRunner.run(TestRunner.java:587)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>42</td>
+<td>com.adactin.Mobileapphoteladactin.tests.SelectHotelVerification@4efac082</td></tr>
+<tr>
+<td title='com.adactin.Mobileapphoteladactin.tests.ViewBookedHotelDetails.User_is_able_to_view_itinerary()'><b>User_is_able_to_view_itinerary</b><br>Test class: com.adactin.Mobileapphoteladactin.tests.ViewBookedHotelDetails</td>
+<td><div><pre>java.lang.AssertionError: expected [true] but found [false]
+	at com.adactin.Mobileapphoteladactin.tests.ViewBookedHotelDetails.User_is_able_to_view_itinerary(ViewBookedHotelDetails.java:92)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace448288866", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace448288866'><pre>java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:97)
+	at org.testng.Assert.failNotEquals(Assert.java:969)
+	at org.testng.Assert.assertTrue(Assert.java:43)
+	at org.testng.Assert.assertTrue(Assert.java:53)
+	at com.adactin.Mobileapphoteladactin.tests.ViewBookedHotelDetails.User_is_able_to_view_itinerary(ViewBookedHotelDetails.java:92)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at org.testng.TestRunner.privateRun(TestRunner.java:766)
+	at org.testng.TestRunner.run(TestRunner.java:587)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>26</td>
+<td>com.adactin.Mobileapphoteladactin.tests.ViewBookedHotelDetails@272113c4</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -75,10 +303,90 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.adactin.Mobileapphoteladactin.tests.RoomNoDropdownVerification.User_is_able_to_view_the_list_of_options_in_the_Number_of_Rooms_drop_down_menu()'><b>User_is_able_to_view_the_list_of_options_in_the_Number_of_Rooms_drop_down_menu</b><br>Test class: com.adactin.Mobileapphoteladactin.tests.RoomNoDropdownVerification</td>
+<td title='com.adactin.Mobileapphoteladactin.tests.InvalidLoginVerificationTest.MAHA_TC01_TC_InvalidLoginVerification()'><b>MAHA_TC01_TC_InvalidLoginVerification</b><br>Test class: com.adactin.Mobileapphoteladactin.tests.InvalidLoginVerificationTest</td>
+<td></td>
+<td>16</td>
+<td>com.adactin.Mobileapphoteladactin.tests.InvalidLoginVerificationTest@fba92d3</td></tr>
+<tr>
+<td title='com.adactin.Mobileapphoteladactin.tests.BlankLoginVerificationTest.MAHA_TC02_TC_BlankLoginVerificationTest()'><b>MAHA_TC02_TC_BlankLoginVerificationTest</b><br>Test class: com.adactin.Mobileapphoteladactin.tests.BlankLoginVerificationTest</td>
+<td></td>
+<td>17</td>
+<td>com.adactin.Mobileapphoteladactin.tests.BlankLoginVerificationTest@446293d</td></tr>
+<tr>
+<td title='com.adactin.Mobileapphoteladactin.tests.SearchHotel_AllFields.MAHA_TC03_TC_SearchHotel_AllFieldsTest()'><b>MAHA_TC03_TC_SearchHotel_AllFieldsTest</b><br>Test class: com.adactin.Mobileapphoteladactin.tests.SearchHotel_AllFields</td>
+<td></td>
+<td>36</td>
+<td>com.adactin.Mobileapphoteladactin.tests.SearchHotel_AllFields@3e11f9e9</td></tr>
+<tr>
+<td title='com.adactin.Mobileapphoteladactin.tests.SearchHotel_BlankFields.MAHA_TC03_TC_SearchHotel_BlankFieldsTest()'><b>MAHA_TC03_TC_SearchHotel_BlankFieldsTest</b><br>Test class: com.adactin.Mobileapphoteladactin.tests.SearchHotel_BlankFields</td>
+<td></td>
+<td>20</td>
+<td>com.adactin.Mobileapphoteladactin.tests.SearchHotel_BlankFields@7bab3f1a</td></tr>
+<tr>
+<td title='com.adactin.Mobileapphoteladactin.tests.ValidLoginVerificationTest.MAHA_TC03_TC_ValidLoginVerificationTest()'><b>MAHA_TC03_TC_ValidLoginVerificationTest</b><br>Test class: com.adactin.Mobileapphoteladactin.tests.ValidLoginVerificationTest</td>
+<td></td>
+<td>16</td>
+<td>com.adactin.Mobileapphoteladactin.tests.ValidLoginVerificationTest@16610890</td></tr>
+<tr>
+<td title='com.adactin.Mobileapphoteladactin.tests.SearchHotel_Location.MAHA_TC04_TC_SearchHotel_LocationTest()'><b>MAHA_TC04_TC_SearchHotel_LocationTest</b><br>Test class: com.adactin.Mobileapphoteladactin.tests.SearchHotel_Location</td>
+<td></td>
+<td>21</td>
+<td>com.adactin.Mobileapphoteladactin.tests.SearchHotel_Location@82de64a</td></tr>
+<tr>
+<td title='com.adactin.Mobileapphoteladactin.tests.LogoutVerification.User_is_able_to_logout()'><b>User_is_able_to_logout</b><br>Test class: com.adactin.Mobileapphoteladactin.tests.LogoutVerification</td>
+<td></td>
+<td>17</td>
+<td>com.adactin.Mobileapphoteladactin.tests.LogoutVerification@485966cc</td></tr>
+<tr>
+<td title='com.adactin.Mobileapphoteladactin.tests.ResetSearchVerification.User_is_able_to_reset_the_search_criteria()'><b>User_is_able_to_reset_the_search_criteria</b><br>Test class: com.adactin.Mobileapphoteladactin.tests.ResetSearchVerification</td>
+<td></td>
+<td>43</td>
+<td>com.adactin.Mobileapphoteladactin.tests.ResetSearchVerification@3ee37e5a</td></tr>
+<tr>
+<td title='com.adactin.Mobileapphoteladactin.tests.SearchHotelScrollVerification.User_is_able_to_scroll_down_and_up_on_the_search_hotel_screen()'><b>User_is_able_to_scroll_down_and_up_on_the_search_hotel_screen</b><br>Test class: com.adactin.Mobileapphoteladactin.tests.SearchHotelScrollVerification</td>
+<td></td>
+<td>17</td>
+<td>com.adactin.Mobileapphoteladactin.tests.SearchHotelScrollVerification@13e344d</td></tr>
+<tr>
+<td title='com.adactin.Mobileapphoteladactin.tests.SearchHotel_LocationHotelName.User_is_able_to_search_hotel_with_location_and_hotelname()'><b>User_is_able_to_search_hotel_with_location_and_hotelname</b><br>Test class: com.adactin.Mobileapphoteladactin.tests.SearchHotel_LocationHotelName</td>
+<td></td>
+<td>90</td>
+<td>com.adactin.Mobileapphoteladactin.tests.SearchHotel_LocationHotelName@1b11171f</td></tr>
+<tr>
+<td title='com.adactin.Mobileapphoteladactin.tests.ForgotPasswordVerification.User_is_able_to_send_email()'><b>User_is_able_to_send_email</b><br>Test class: com.adactin.Mobileapphoteladactin.tests.ForgotPasswordVerification</td>
 <td></td>
 <td>23</td>
-<td>com.adactin.Mobileapphoteladactin.tests.RoomNoDropdownVerification@446293d</td></tr>
+<td>com.adactin.Mobileapphoteladactin.tests.ForgotPasswordVerification@306e95ec</td></tr>
+<tr>
+<td title='com.adactin.Mobileapphoteladactin.tests.BookHotel_BlankFields.User_is_able_to_view_error_Book_No_Input()'><b>User_is_able_to_view_error_Book_No_Input</b><br>Test class: com.adactin.Mobileapphoteladactin.tests.BookHotel_BlankFields</td>
+<td></td>
+<td>48</td>
+<td>com.adactin.Mobileapphoteladactin.tests.BookHotel_BlankFields@2fb3536e</td></tr>
+<tr>
+<td title='com.adactin.Mobileapphoteladactin.tests.ViewItineraryVerification.User_is_able_to_view_itinerary()'><b>User_is_able_to_view_itinerary</b><br>Test class: com.adactin.Mobileapphoteladactin.tests.ViewItineraryVerification</td>
+<td></td>
+<td>18</td>
+<td>com.adactin.Mobileapphoteladactin.tests.ViewItineraryVerification@4d154ccd</td></tr>
+<tr>
+<td title='com.adactin.Mobileapphoteladactin.tests.HotelDropdownVerification.User_is_able_to_view_list_of_hotels_in_the_drop_down_menu()'><b>User_is_able_to_view_list_of_hotels_in_the_drop_down_menu</b><br>Test class: com.adactin.Mobileapphoteladactin.tests.HotelDropdownVerification</td>
+<td></td>
+<td>17</td>
+<td>com.adactin.Mobileapphoteladactin.tests.HotelDropdownVerification@2ddc9a9f</td></tr>
+<tr>
+<td title='com.adactin.Mobileapphoteladactin.tests.RoomtypeDropdownVerification.User_is_able_to_view_list_of_options_in_the_Room_Type_drop_down_menu()'><b>User_is_able_to_view_list_of_options_in_the_Room_Type_drop_down_menu</b><br>Test class: com.adactin.Mobileapphoteladactin.tests.RoomtypeDropdownVerification</td>
+<td></td>
+<td>16</td>
+<td>com.adactin.Mobileapphoteladactin.tests.RoomtypeDropdownVerification@6d4d66d2</td></tr>
+<tr>
+<td title='com.adactin.Mobileapphoteladactin.tests.LocationDropdownVerification.User_is_able_to_view_the_drop_down_list_in_locations()'><b>User_is_able_to_view_the_drop_down_list_in_locations</b><br>Test class: com.adactin.Mobileapphoteladactin.tests.LocationDropdownVerification</td>
+<td></td>
+<td>18</td>
+<td>com.adactin.Mobileapphoteladactin.tests.LocationDropdownVerification@71ba6d4e</td></tr>
+<tr>
+<td title='com.adactin.Mobileapphoteladactin.tests.RoomNoDropdownVerification.User_is_able_to_view_the_list_of_options_in_the_Number_of_Rooms_drop_down_menu()'><b>User_is_able_to_view_the_list_of_options_in_the_Number_of_Rooms_drop_down_menu</b><br>Test class: com.adactin.Mobileapphoteladactin.tests.RoomNoDropdownVerification</td>
+<td></td>
+<td>150</td>
+<td>com.adactin.Mobileapphoteladactin.tests.RoomNoDropdownVerification@6e9175d8</td></tr>
 </table><p>
 </body>
 </html>

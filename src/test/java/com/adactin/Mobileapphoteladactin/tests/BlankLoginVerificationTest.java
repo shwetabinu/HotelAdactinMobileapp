@@ -71,6 +71,11 @@ public class BlankLoginVerificationTest extends BaseClass {
 		//Validating if blank login credentials error message is displayed
 		Assert.assertTrue(blankerror);
 		
+		if((login && blankerror)==true)
+			ExcelUtil.setCellData("PASSED", rno, 0);
+		else
+			ExcelUtil.setCellData("FAILED", rno, 0);
+		
 		Log.endTestCase("User_is_shown_error_message_when he_logins_without_username_"
 				+ "or/and_password");		
 		

@@ -139,7 +139,14 @@ public class SelectHotelVerification extends BaseClass{
 			ExtentTestManager.getTest().log(Status.FAIL,"The selection button click was unsuccessful");
 		
 		Assert.assertTrue(select_result);
-			
+		
+		if((login  && search && searchclick && select && daycalculate && pricecalculate && valid_result
+				&& select_result
+				)==true)
+			ExcelUtil.setCellData("PASSED", rno, 0);
+		else
+			ExcelUtil.setCellData("FAILED", rno, 0);
+		
 		Log.endTestCase("User_is_able_to_search_hotel_with_location_and_hotelname");	
 		
 	

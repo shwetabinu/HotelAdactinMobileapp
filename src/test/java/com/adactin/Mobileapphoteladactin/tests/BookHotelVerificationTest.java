@@ -207,7 +207,12 @@ public class BookHotelVerificationTest extends BaseClass{
 		else
 			ExtentTestManager.getTest().log(Status.FAIL,"The booked itinerary verification was unsuccessful");			
 		Assert.assertTrue(booked_result);
-	
+		if((loginresult && searchresult && search && selecthotel
+				&& selected_hotel && booknow && bookresult && book_confirm && gotobooked 
+				&& booked_result)==true)
+			ExcelUtil.setCellData("PASSED", rno, 0);
+		else
+			ExcelUtil.setCellData("FAILED", rno, 0);
 		Log.endTestCase("User_is_able_to_book_a_hotel");
 		
 		

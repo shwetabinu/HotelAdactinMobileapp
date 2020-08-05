@@ -66,6 +66,12 @@ public class ValidLoginVerificationTest extends BaseClass{
 		else
 			ExtentTestManager.getTest().log(Status.FAIL,"The welcome message validation was unsuccessful");
 		Assert.assertTrue(welcomemsg);
+		if((login  && welcomemsg
+				)==true)
+			ExcelUtil.setCellData("PASSED", rno, 0);
+		else
+			ExcelUtil.setCellData("FAILED", rno, 0);
+		
 		
 		Log.endTestCase("User_is_able_to_login_into_the_application");
 		

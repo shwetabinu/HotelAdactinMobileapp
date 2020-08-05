@@ -73,6 +73,12 @@ public class SearchHotelScrollVerification extends BaseClass{
 			
 			Assert.assertTrue(scrollresult);
 			
+			if((login  && scrollresult
+					)==true)
+				ExcelUtil.setCellData("PASSED", rno, 0);
+			else
+				ExcelUtil.setCellData("FAILED", rno, 0);
+			
 			
 			Log.endTestCase("User_is_able_to_scroll_down_and_up_on_the_search_hotel_screen");	
 			

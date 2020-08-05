@@ -85,6 +85,11 @@ public class ForgotPasswordVerification extends BaseClass {
 			ExtentTestManager.getTest().log(Status.FAIL,"The  verification text validation was unsuccessful");			
 		Assert.assertTrue(verifytext);
 		
+		if((login && emailenter && email &&  verifytext
+				)==true)
+			ExcelUtil.setCellData("PASSED", rno, 0);
+		else
+			ExcelUtil.setCellData("FAILED", rno, 0);
 		Log.endTestCase("User_is_able_to_send_email");
 		
 		

@@ -80,7 +80,11 @@ public class CheckinDateValidation extends BaseClass{
 			ExtentTestManager.getTest().log(Status.FAIL,"The done button click was unsuccessful");	
 		
 		Assert.assertTrue(doneclick);
-		
+		if((login && checkindate && doneclick
+				)==true)
+			ExcelUtil.setCellData("PASSED", rno, 0);
+		else
+			ExcelUtil.setCellData("FAILED", rno, 0);
 		
 		Log.endTestCase("User_is_able_to_enter_check_in_date_in_the_check_in_date_field");	
 		

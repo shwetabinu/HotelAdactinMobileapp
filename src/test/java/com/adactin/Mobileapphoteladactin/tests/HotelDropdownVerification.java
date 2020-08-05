@@ -74,7 +74,11 @@ public class HotelDropdownVerification extends BaseClass{
 		
 		Assert.assertTrue(hotitems);
 		
-		
+		if((login && hotitems 
+				)==true)
+			ExcelUtil.setCellData("PASSED", rno, 0);
+		else
+			ExcelUtil.setCellData("FAILED", rno, 0);
 		Log.endTestCase("User_is_able_to_view_list_of_hotels_in_the_drop_down_menu");	
 		
 	}

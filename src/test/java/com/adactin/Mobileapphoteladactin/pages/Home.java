@@ -1,5 +1,6 @@
 package com.adactin.Mobileapphoteladactin.pages;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.openqa.selenium.WebElement;
@@ -216,9 +217,10 @@ public class Home extends BaseClass {
 			ScrollUtil.pageScrollToText("Check-in Date");
 			// Clicks on check-in date
 			checkin_date.click();
+			screen.takeScreenshot("Checkin date validation");
 
 		} catch (Exception e) {
-			result=false;
+			result = false;
 
 		}
 		return result;
@@ -226,19 +228,20 @@ public class Home extends BaseClass {
 
 	/**
 	 * Method to click on Done button to select the date
+	 * 
 	 * @return boolean result
 	 */
 	public boolean clickonDone() {
-		boolean result=true;
+		boolean result = true;
 		try {
-			for (int i = 0; i < 2; i++)
-			{//Scrolls to select the date
+			for (int i = 0; i < 2; i++) {// Scrolls to select the date
 				ScrollUtil.calendarScroll();
-				//Clicks on done button
+				// Clicks on done button
 				donedate.click();
+				screen.takeScreenshot("Done button");
 			}
 		} catch (Exception e) {
-			result=false;
+			result = false;
 			e.printStackTrace();
 			Log.error("Error occurred while clicking on Done");
 		}
@@ -248,21 +251,23 @@ public class Home extends BaseClass {
 
 	/**
 	 * Method to click on Cancel button to select the date
+	 * 
 	 * @return boolean result
 	 */
 	public boolean clickonCancel() {
-		boolean result=true;
+		boolean result = true;
 		try {
 			for (int i = 0; i < 2; i++)
 
 			{
-				//Scrolls to select the date
+				// Scrolls to select the date
 				ScrollUtil.calendarScroll();
-				//Clicks on Cancel button
+				// Clicks on Cancel button
 				canceldate.click();
+				screen.takeScreenshot("Cancelation");
 			}
 		} catch (Exception e) {
-			result=false;
+			result = false;
 			e.printStackTrace();
 			Log.error("Error occurred while clicking on Cancel");
 		}
@@ -279,16 +284,113 @@ public class Home extends BaseClass {
 			// Scroll till check out date field
 			ScrollUtil.pageScrollToText("Check-out Date");
 			// Clicks on check-out date
+			WebDriverWait wait = new WebDriverWait(driver, 20);
+			wait.until(ExpectedConditions.elementToBeClickable(checkout_date));
 			checkout_date.click();
+			screen.takeScreenshot("Checkout Date");
 
 		} catch (Exception e) {
-			result=false;
+			result = false;
 
 		}
 		return result;
 	}
 
-	
+	/**
+	 * Method to enter Adults per room in the Home page
+	 * 
+	 * @throws IOException Exception while taking screenshot
+	 */
+	public boolean validateAdultsPerRoom(int rno) throws IOException {
+		boolean result = true;
+		try {
+
+			int expected_adultno_index = ExcelUtil.readExcel('c', "Adults per Room");
+			expected_adultsperroom = ExcelUtil.getCellData(rno, expected_adultno_index);
+			// Scroll till adults per room field
+			ScrollUtil.pageScrollToText("Adults per Room");
+			// Clicks on Adults per room field
+			adults_per_room.click();
+
+			String apr[] = expected_adultsperroom.split(",");
+			Log.info("The adults per room in the test data sheet is" + apr[0]);
+			Log.info(apr[1]);
+			int count = 0;
+			int k = 0;
+			// Comparing the expected and actual adults per room options
+			for (int j = 0; j < adultsroom_optns.size(); j++) {
+				System.out.println(adultsroom_optns.get(j).getText());
+				if (adultsroom_optns.get(j).getText().equalsIgnoreCase(apr[k])) {
+					{
+						count++;
+						k++;
+					}
+				}
+			}
+			Log.info("The total number of adults per room is" + count);
+			// Verifying the count of matched adults per rooms
+			if (count == 4)
+				result = true;
+			else
+				result = false;
+
+		} catch (Exception e) {
+			result = false;
+
+		}
+		screen.takeScreenshot("Adults per room validation");
+
+		return result;
+	}
+
+	/**
+	 * Method to enter Children per room in the Home page
+	 * 
+	 * @throws IOException Exception while taking screenshot
+	 */
+	public boolean validateChildrenPerRoom(int rno) throws IOException {
+		boolean result = true;
+		try {
+
+			int expected_childno_index = ExcelUtil.readExcel('c', "Children per Room");
+			expected_childrenperroom = ExcelUtil.getCellData(rno, expected_childno_index);
+
+			// Scroll till adults per room field
+			ScrollUtil.pageScrollToText("Children per Room");
+			// Clicks on Adults per room field
+			children_per_room.click();
+
+			String cpr[] = expected_childrenperroom.split(",");
+			Log.info("The adults per room in the test data sheet is" + cpr[0]);
+			Log.info(cpr[1]);
+			int count = 0;
+			int k = 0;
+			// Comparing the expected and actual adults per room options
+			for (int j = 0; j < childrensroom_optns.size(); j++) {
+				System.out.println(childrensroom_optns.get(j).getText());
+				if (childrensroom_optns.get(j).getText().equalsIgnoreCase(cpr[k])) {
+					{
+						count++;
+						k++;
+					}
+				}
+			}
+			Log.info("The total number of children per room is" + count);
+			// Verifying the count of matched adults per rooms
+			if (count == 4)
+				result = true;
+			else
+				result = false;
+
+		} catch (Exception e) {
+			result = false;
+
+		}
+		screen.takeScreenshot("Children per room validation");
+
+		return result;
+	}
+
 	/**
 	 * Method to verify in-line error when user first tries to search with no input
 	 * 

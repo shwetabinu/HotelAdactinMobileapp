@@ -91,6 +91,12 @@ public class SearchHotel_LocationHotelName extends BaseClass{
 			ExtentTestManager.getTest().log(Status.FAIL,"The Select Hotel page validation was unsuccessful");	
 		
 		Assert.assertTrue(hotel_result);
+		if((login && search && searchclick && hotel_result
+				)==true)
+			ExcelUtil.setCellData("PASSED", rno, 0);
+		else
+			ExcelUtil.setCellData("FAILED", rno, 0);
+		
 		
 		Log.endTestCase("User_is_able_to_search_hotel_with_location_and_hotelname");	
 		

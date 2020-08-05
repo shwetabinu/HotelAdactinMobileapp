@@ -2,15 +2,15 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Hotel Adactin Mobile App Regression Test Suite" duration-ms="24645" started-at="2020-08-04T12:08:45 AEST" finished-at="2020-08-04T12:09:09 AEST">
+  <suite name="Hotel Adactin Mobile App Regression Test Suite" duration-ms="11596" started-at="2020-08-05T13:39:46 AEST" finished-at="2020-08-05T13:39:58 AEST">
     <groups>
-      <group name="functionalTest">
-        <method signature="CheckoutDateValidation.User_should_be_able_to_enter_date_in_the_Check_out_date_field()[pri:0, instance:com.adactin.Mobileapphoteladactin.tests.CheckoutDateValidation@446293d]" name="User_should_be_able_to_enter_date_in_the_Check_out_date_field" class="com.adactin.Mobileapphoteladactin.tests.CheckoutDateValidation"/>
-      </group> <!-- functionalTest -->
+      <group name="sfunctionalTest">
+        <method signature="ExitApp.User_is_able_to_exit_the_application_when_he_clicks_on_the_back_button_of_the_phone()[pri:0, instance:com.adactin.Mobileapphoteladactin.tests.ExitApp@446293d]" name="User_is_able_to_exit_the_application_when_he_clicks_on_the_back_button_of_the_phone" class="com.adactin.Mobileapphoteladactin.tests.ExitApp"/>
+      </group> <!-- sfunctionalTest -->
     </groups>
-    <test name="Check-out date Verification" duration-ms="24645" started-at="2020-08-04T12:08:45 AEST" finished-at="2020-08-04T12:09:09 AEST">
-      <class name="com.adactin.Mobileapphoteladactin.tests.CheckoutDateValidation">
-        <test-method status="PASS" signature="propertyfileReader(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.adactin.Mobileapphoteladactin.tests.CheckoutDateValidation@446293d]" name="propertyfileReader" is-config="true" duration-ms="33" started-at="2020-08-04T12:08:45 AEST" finished-at="2020-08-04T12:08:45 AEST">
+    <test name="Children per room dropdown validation" duration-ms="11596" started-at="2020-08-05T13:39:46 AEST" finished-at="2020-08-05T13:39:58 AEST">
+      <class name="com.adactin.Mobileapphoteladactin.tests.ExitApp">
+        <test-method status="PASS" signature="propertyfileReader(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.adactin.Mobileapphoteladactin.tests.ExitApp@446293d]" name="propertyfileReader" is-config="true" duration-ms="34" started-at="2020-08-05T13:39:46 AEST" finished-at="2020-08-05T13:39:46 AEST">
           <params>
             <param index="0">
               <value>
@@ -19,22 +19,22 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@20921b9b]]>
+                <![CDATA[org.testng.TestRunner@31c269fd]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- propertyfileReader -->
-        <test-method status="PASS" signature="User_should_be_able_to_enter_date_in_the_Check_out_date_field()[pri:0, instance:com.adactin.Mobileapphoteladactin.tests.CheckoutDateValidation@446293d]" name="User_should_be_able_to_enter_date_in_the_Check_out_date_field" duration-ms="24005" started-at="2020-08-04T12:08:45 AEST" finished-at="2020-08-04T12:09:09 AEST">
+        <test-method status="PASS" signature="User_is_able_to_exit_the_application_when_he_clicks_on_the_back_button_of_the_phone()[pri:0, instance:com.adactin.Mobileapphoteladactin.tests.ExitApp@446293d]" name="User_is_able_to_exit_the_application_when_he_clicks_on_the_back_button_of_the_phone" duration-ms="11233" started-at="2020-08-05T13:39:46 AEST" finished-at="2020-08-05T13:39:57 AEST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- User_should_be_able_to_enter_date_in_the_Check_out_date_field -->
-        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin.tests.CheckoutDateValidation@446293d]" name="closeApp" is-config="true" duration-ms="473" started-at="2020-08-04T12:09:09 AEST" finished-at="2020-08-04T12:09:09 AEST">
+        </test-method> <!-- User_is_able_to_exit_the_application_when_he_clicks_on_the_back_button_of_the_phone -->
+        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin.tests.ExitApp@446293d]" name="closeApp" is-config="true" duration-ms="257" started-at="2020-08-05T13:39:57 AEST" finished-at="2020-08-05T13:39:58 AEST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApp -->
-      </class> <!-- com.adactin.Mobileapphoteladactin.tests.CheckoutDateValidation -->
-    </test> <!-- Check-out date Verification -->
+      </class> <!-- com.adactin.Mobileapphoteladactin.tests.ExitApp -->
+    </test> <!-- Children per room dropdown validation -->
   </suite> <!-- Hotel Adactin Mobile App Regression Test Suite -->
 </testng-results>

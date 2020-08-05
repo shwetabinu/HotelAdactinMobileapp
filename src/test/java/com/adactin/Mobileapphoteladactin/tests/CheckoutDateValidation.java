@@ -76,6 +76,11 @@ public class CheckoutDateValidation extends BaseClass{
 		
 		Assert.assertTrue(doneclick);
 		
+		if((login && checkoutdate && doneclick
+				)==true)
+			ExcelUtil.setCellData("PASSED", rno, 0);
+		else
+			ExcelUtil.setCellData("FAILED", rno, 0);
 		
 		Log.endTestCase("User_should_be_able_to_enter_date_in_the_Check_out_date_field");	
 		

@@ -91,6 +91,13 @@ public class ViewBookedHotelDetails extends BaseClass {
 		//Verifying the booked hotel details
 		Assert.assertTrue(bhd_details);
 		
+		if((login_result  && viewbooked && booked_hotel && bhd_details
+				)==true)
+			ExcelUtil.setCellData("PASSED", rno, 0);
+		else
+			ExcelUtil.setCellData("FAILED", rno, 0);
+		
+		
 		Log.endTestCase("User_is_able_to_view_booked_hotel_details");
 	}
 

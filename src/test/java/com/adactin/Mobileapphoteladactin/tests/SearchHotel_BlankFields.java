@@ -83,6 +83,12 @@ public class SearchHotel_BlankFields extends BaseClass {
 		else
 			ExtentTestManager.getTest().log(Status.FAIL,"The inline error verification was unsuccessful");			
 		Assert.assertTrue(inlineerror);
+		if((login && alertresult && searchclick && inlineerror
+				)==true)
+			ExcelUtil.setCellData("PASSED", rno, 0);
+		else
+			ExcelUtil.setCellData("FAILED", rno, 0);
+		
 		
 		Log.endTestCase("User_is_able_to_view_error_Search_No_Input");	
 		
