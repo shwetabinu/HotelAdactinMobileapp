@@ -188,14 +188,43 @@
 		<classes>
 			<class name="com.adactin.Mobileapphoteladactin.tests.ChildrenPerRoomVerification"/>
 		</classes>
-	</test>-->
+	</test>
 	  <test name= "Children per room dropdown validation">
 	<parameter name="config" value="EnvConfig.properties"/>
 		<classes>
 			<class name="com.adactin.Mobileapphoteladactin.tests.ExitApp"/>
 		</classes>
 	</test>
-	
+	  <test name= "Select Hotel Go back validation">
+	<parameter name="config" value="EnvConfig.properties"/>
+		<classes>
+			<class name="com.adactin.Mobileapphoteladactin.tests.SelectHotelGoBack"/>
+		</classes>
+	</test>
+	  <test name= "Selected Hotel Detail Go back validation">
+	<parameter name="config" value="EnvConfig.properties"/>
+		<classes>
+			<class name="com.adactin.Mobileapphoteladactin.tests.SelectedHotelGoBack"/>
+		</classes>
+	</test>
+	 <test name= "Booked Hotel Detail Go back validation">
+	<parameter name="config" value="EnvConfig.properties"/>
+		<classes>
+			<class name="com.adactin.Mobileapphoteladactin.tests.BookedHotelDetailsGoback"/>
+		</classes>
+	</test>-->
+	 <test name= "Booking confirmation screen scroll validation">
+	<parameter name="config" value="EnvConfig.properties"/>
+		<classes>
+			<class name="com.adactin.Mobileapphoteladactin.tests.BookingConfirmationScreenScroll"/>
+		</classes>
+	</test>
+	 <test name= "Search Hotel results scroll validation">
+	<parameter name="config" value="EnvConfig.properties"/>
+		<classes>
+			<class name="com.adactin.Mobileapphoteladactin.tests.SearchResultsScrollVerification"/>
+		</classes>
+	</test>
 	
 </suite> 
 

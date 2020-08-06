@@ -54,7 +54,7 @@
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="testlist-Hotel_Adactin_Mobile_App_Regression_Test_Suite">
-                    <span class="test-stats">1 test</span>
+                    <span class="test-stats">2 tests</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,7 +102,12 @@
                     <div class="method-list-content passed suite-Hotel_Adactin_Mobile_App_Regression_Test_Suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Hotel_Adactin_Mobile_App_Regression_Test_Suite" title="com.adactin.Mobileapphoteladactin.tests.ExitApp" hash-for-method="User_is_able_to_exit_the_application_when_he_clicks_on_the_back_button_of_the_phone">User_is_able_to_exit_the_application_when_he_clicks_on_the_back_button_of_the_phone</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Hotel_Adactin_Mobile_App_Regression_Test_Suite" title="com.adactin.Mobileapphoteladactin.tests.BookingConfirmationScreenScroll" hash-for-method="User_is_able_to_scroll_up_and_down_the_Booking_confirmation_screen">User_is_able_to_scroll_up_and_down_the_Booking_confirmation_screen</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Hotel_Adactin_Mobile_App_Regression_Test_Suite" title="com.adactin.Mobileapphoteladactin.tests.SearchResultsScrollVerification" hash-for-method="User_is_able_to_scroll_up_down_the_search_results_of_the_search_hotel_screen">User_is_able_to_scroll_up_down_the_search_results_of_the_search_hotel_screen</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Hotel_Adactin_Mobile_App_Regression_Test_Suite -->
@@ -120,14 +125,29 @@
           <div class="suite-Hotel_Adactin_Mobile_App_Regression_Test_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.adactin.Mobileapphoteladactin.tests.ExitApp</span>
+              <span class="class-name">com.adactin.Mobileapphoteladactin.tests.SearchResultsScrollVerification</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="User_is_able_to_exit_the_application_when_he_clicks_on_the_back_button_of_the_phone">
-                  </a> <!-- User_is_able_to_exit_the_application_when_he_clicks_on_the_back_button_of_the_phone -->
-                  <span class="method-name">User_is_able_to_exit_the_application_when_he_clicks_on_the_back_button_of_the_phone</span>
+                  <a name="User_is_able_to_scroll_up_down_the_search_results_of_the_search_hotel_screen">
+                  </a> <!-- User_is_able_to_scroll_up_down_the_search_results_of_the_search_hotel_screen -->
+                  <span class="method-name">User_is_able_to_scroll_up_down_the_search_results_of_the_search_hotel_screen</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Hotel_Adactin_Mobile_App_Regression_Test_Suite-class-passed -->
+          <div class="suite-Hotel_Adactin_Mobile_App_Regression_Test_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.adactin.Mobileapphoteladactin.tests.BookingConfirmationScreenScroll</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="User_is_able_to_scroll_up_and_down_the_Booking_confirmation_screen">
+                  </a> <!-- User_is_able_to_scroll_up_and_down_the_Booking_confirmation_screen -->
+                  <span class="method-name">User_is_able_to_scroll_up_and_down_the_Booking_confirmation_screen</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -145,12 +165,18 @@
   &lt;listeners&gt;
     &lt;listener class-name=&quot;com.adactin.Mobileapphoteladactin.reportgeneration.TestListener&quot;/&gt;
   &lt;/listeners&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;Children per room dropdown validation&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Booking confirmation screen scroll validation&quot;&gt;
     &lt;parameter name=&quot;config&quot; value=&quot;EnvConfig.properties&quot;/&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.adactin.Mobileapphoteladactin.tests.ExitApp&quot;/&gt;
+      &lt;class name=&quot;com.adactin.Mobileapphoteladactin.tests.BookingConfirmationScreenScroll&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Children per room dropdown validation --&gt;
+  &lt;/test&gt; &lt;!-- Booking confirmation screen scroll validation --&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Search Hotel results scroll validation&quot;&gt;
+    &lt;parameter name=&quot;config&quot; value=&quot;EnvConfig.properties&quot;/&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.adactin.Mobileapphoteladactin.tests.SearchResultsScrollVerification&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Search Hotel results scroll validation --&gt;
 &lt;/suite&gt; &lt;!-- Hotel Adactin Mobile App Regression Test Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -162,7 +188,10 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Children per room dropdown validation (1 class)</span>
+                <span class="test-name">Booking confirmation screen scroll validation (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">Search Hotel results scroll validation (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -173,10 +202,14 @@
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="test-group">
-              <span class="test-group-name">sfunctionalTest</span>
+              <span class="test-group-name">functionalTest</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">User_is_able_to_exit_the_application_when_he_clicks_on_the_back_button_of_the_phone</span>
+                <span class="method-in-group-name">User_is_able_to_scroll_up_and_down_the_Booking_confirmation_screen</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">User_is_able_to_scroll_up_down_the_search_results_of_the_search_hotel_screen</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -196,16 +229,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'User_is_able_to_exit_the_application_when_he_clicks_on_the_back_button_of_the_phone')
-data.setCell(0, 2, 'com.adactin.Mobileapphoteladactin.tests.ExitApp')
-data.setCell(0, 3, 11233);
+data.setCell(0, 1, 'User_is_able_to_scroll_up_and_down_the_Booking_confirmation_screen')
+data.setCell(0, 2, 'com.adactin.Mobileapphoteladactin.tests.BookingConfirmationScreenScroll')
+data.setCell(0, 3, 147060);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'User_is_able_to_scroll_up_down_the_search_results_of_the_search_hotel_screen')
+data.setCell(1, 2, 'com.adactin.Mobileapphoteladactin.tests.SearchResultsScrollVerification')
+data.setCell(1, 3, 21212);
 window.suiteTableData['Hotel_Adactin_Mobile_App_Regression_Test_Suite']= { tableData: data, tableDiv: 'times-div-Hotel_Adactin_Mobile_App_Regression_Test_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 11 seconds</span>
+              <span class="suite-total-time">Total running time: 2 minutes</span>
               <div id="times-div-Hotel_Adactin_Mobile_App_Regression_Test_Suite">
               </div> <!-- times-div-Hotel_Adactin_Mobile_App_Regression_Test_Suite -->
             </div> <!-- times-div -->
@@ -231,18 +268,37 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.adactin.Mobileapphoteladactin.tests.ExitApp</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.adactin.Mobileapphoteladactin.tests.BookingConfirmationScreenScroll</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">propertyfileReader(EnvConfig.properties, org.testng.TestRunner@31c269fd)</span>
+                <span class="method-name">propertyfileReader(EnvConfig.properties, org.testng.TestRunner@44bd4b0a)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <span class="method-name">User_is_able_to_exit_the_application_when_he_clicks_on_the_back_button_of_the_phone</span>
-                <span class="method-start">53 ms</span>
+                <span class="method-name">User_is_able_to_scroll_up_and_down_the_Booking_confirmation_screen</span>
+                <span class="method-start">39 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-test after">
+                <span class="method-name">closeSession</span>
+                <span class="method-start">147112 ms</span>
+              </div> <!-- configuration-test after -->
+              <div class="configuration-test after">
+                <span class="method-name">closeApp</span>
+                <span class="method-start">147577 ms</span>
+              </div> <!-- configuration-test after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.adactin.Mobileapphoteladactin.tests.SearchResultsScrollVerification</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">propertyfileReader(EnvConfig.properties, org.testng.TestRunner@6c008c24)</span>
+                <span class="method-start">158395 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">User_is_able_to_scroll_up_down_the_search_results_of_the_search_hotel_screen</span>
+                <span class="method-start">158409 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">closeApp</span>
-                <span class="method-start">11309 ms</span>
+                <span class="method-start">179639 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -34,6 +34,10 @@ public class Select_Hotel extends BaseClass {
 	@FindBy(xpath = "//android.view.View[2]/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View")
 	List<WebElement> hotel_list;
 	
+	@FindBy(xpath="//android.widget.Button")
+	WebElement back_btn;
+	
+	
 	String expected_hotel;
 	String expectedlist;
 	String[] expected_hotelslist = new String[100];
@@ -81,6 +85,24 @@ public class Select_Hotel extends BaseClass {
 		return result;
 	}
 
+	/**
+	 * Method to go back to the Search Hotel page
+	 * @return
+	 */
+	public boolean goBack()
+	{
+		boolean result=true;
+		try {
+			
+			back_btn.click();
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+			Log.error("Error occurred while going to the back page");
+		}
+		return result;
+		
+	}
 	/**
 	 * Method to read the hotel names displayed when searching with just location
 	 * The method verifies that list item is present for each type of hotel and

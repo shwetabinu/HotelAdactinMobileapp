@@ -4,53 +4,29 @@
   <listeners>
     <listener class-name="com.adactin.Mobileapphoteladactin.reportgeneration.TestListener"/>
   </listeners>
-  <test thread-count="5" name="Book hotel verification(failed)">
+  <test thread-count="5" name="Booking confirmation screen scroll validation(failed)">
     <parameter name="config" value="EnvConfig.properties"/>
     <classes>
-      <class name="com.adactin.Mobileapphoteladactin.tests.BookHotelVerificationTest">
+      <class name="com.adactin.Mobileapphoteladactin.tests.BookingConfirmationScreenScroll">
         <methods>
           <include name="closeSession"/>
+          <include name="User_is_able_to_scroll_up_and_down_the_Booking_confirmation_screen"/>
           <include name="closeApp"/>
-          <include name="User_is_able_to_book_a_hotel"/>
           <include name="propertyfileReader"/>
         </methods>
-      </class> <!-- com.adactin.Mobileapphoteladactin.tests.BookHotelVerificationTest -->
+      </class> <!-- com.adactin.Mobileapphoteladactin.tests.BookingConfirmationScreenScroll -->
     </classes>
-  </test> <!-- Book hotel verification(failed) -->
-  <test thread-count="5" name="Booking cancelation verification(failed)">
+  </test> <!-- Booking confirmation screen scroll validation(failed) -->
+  <test thread-count="5" name="Search Hotel results scroll validation(failed)">
     <parameter name="config" value="EnvConfig.properties"/>
     <classes>
-      <class name="com.adactin.Mobileapphoteladactin.tests.BookingCancelationVerification">
+      <class name="com.adactin.Mobileapphoteladactin.tests.SearchResultsScrollVerification">
         <methods>
-          <include name="User_is_able_to_cancel_a_hotel_booking"/>
+          <include name="MAHA_TC04_TC_SearchHotel_LocationTest"/>
           <include name="closeApp"/>
           <include name="propertyfileReader"/>
         </methods>
-      </class> <!-- com.adactin.Mobileapphoteladactin.tests.BookingCancelationVerification -->
+      </class> <!-- com.adactin.Mobileapphoteladactin.tests.SearchResultsScrollVerification -->
     </classes>
-  </test> <!-- Booking cancelation verification(failed) -->
-  <test thread-count="5" name="Select Hotel Verification(failed)">
-    <parameter name="config" value="EnvConfig.properties"/>
-    <classes>
-      <class name="com.adactin.Mobileapphoteladactin.tests.SelectHotelVerification">
-        <methods>
-          <include name="User_is_able_to_select_hotel"/>
-          <include name="closeApp"/>
-          <include name="propertyfileReader"/>
-        </methods>
-      </class> <!-- com.adactin.Mobileapphoteladactin.tests.SelectHotelVerification -->
-    </classes>
-  </test> <!-- Select Hotel Verification(failed) -->
-  <test thread-count="5" name="View Booked Hotel Details verification(failed)">
-    <parameter name="config" value="EnvConfig.properties"/>
-    <classes>
-      <class name="com.adactin.Mobileapphoteladactin.tests.ViewBookedHotelDetails">
-        <methods>
-          <include name="User_is_able_to_view_itinerary"/>
-          <include name="closeApp"/>
-          <include name="propertyfileReader"/>
-        </methods>
-      </class> <!-- com.adactin.Mobileapphoteladactin.tests.ViewBookedHotelDetails -->
-    </classes>
-  </test> <!-- View Booked Hotel Details verification(failed) -->
+  </test> <!-- Search Hotel results scroll validation(failed) -->
 </suite> <!-- Failed suite [Hotel Adactin Mobile App Regression Test Suite] -->

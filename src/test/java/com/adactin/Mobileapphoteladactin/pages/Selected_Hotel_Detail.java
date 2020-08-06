@@ -331,9 +331,19 @@ public class Selected_Hotel_Detail extends BaseClass {
 
 	/**
 	 * Method to go back to the previous page
+	 * @return 
 	 */
-	public void goback() {
+	public boolean goBack() {
+		boolean result=true;
 		//Clicking on goback button
-		go_back.click();
+		try{
+			go_back.click();
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+			Log.error("Error occurred while going back");
+			result=false;
+		}
+		return result;
 	}
 }

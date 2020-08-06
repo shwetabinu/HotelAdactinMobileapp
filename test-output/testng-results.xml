@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Hotel Adactin Mobile App Regression Test Suite" duration-ms="11596" started-at="2020-08-05T13:39:46 AEST" finished-at="2020-08-05T13:39:58 AEST">
+  <suite name="Hotel Adactin Mobile App Regression Test Suite" duration-ms="180124" started-at="2020-08-06T16:04:01 AEST" finished-at="2020-08-06T16:07:01 AEST">
     <groups>
-      <group name="sfunctionalTest">
-        <method signature="ExitApp.User_is_able_to_exit_the_application_when_he_clicks_on_the_back_button_of_the_phone()[pri:0, instance:com.adactin.Mobileapphoteladactin.tests.ExitApp@446293d]" name="User_is_able_to_exit_the_application_when_he_clicks_on_the_back_button_of_the_phone" class="com.adactin.Mobileapphoteladactin.tests.ExitApp"/>
-      </group> <!-- sfunctionalTest -->
+      <group name="functionalTest">
+        <method signature="BookingConfirmationScreenScroll.User_is_able_to_scroll_up_and_down_the_Booking_confirmation_screen()[pri:0, instance:com.adactin.Mobileapphoteladactin.tests.BookingConfirmationScreenScroll@2df9b86]" name="User_is_able_to_scroll_up_and_down_the_Booking_confirmation_screen" class="com.adactin.Mobileapphoteladactin.tests.BookingConfirmationScreenScroll"/>
+        <method signature="SearchResultsScrollVerification.User_is_able_to_scroll_up_down_the_search_results_of_the_search_hotel_screen()[pri:0, instance:com.adactin.Mobileapphoteladactin.tests.SearchResultsScrollVerification@3d6f0054]" name="User_is_able_to_scroll_up_down_the_search_results_of_the_search_hotel_screen" class="com.adactin.Mobileapphoteladactin.tests.SearchResultsScrollVerification"/>
+      </group> <!-- functionalTest -->
     </groups>
-    <test name="Children per room dropdown validation" duration-ms="11596" started-at="2020-08-05T13:39:46 AEST" finished-at="2020-08-05T13:39:58 AEST">
-      <class name="com.adactin.Mobileapphoteladactin.tests.ExitApp">
-        <test-method status="PASS" signature="propertyfileReader(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.adactin.Mobileapphoteladactin.tests.ExitApp@446293d]" name="propertyfileReader" is-config="true" duration-ms="34" started-at="2020-08-05T13:39:46 AEST" finished-at="2020-08-05T13:39:46 AEST">
+    <test name="Booking confirmation screen scroll validation" duration-ms="147615" started-at="2020-08-06T16:04:01 AEST" finished-at="2020-08-06T16:06:29 AEST">
+      <class name="com.adactin.Mobileapphoteladactin.tests.BookingConfirmationScreenScroll">
+        <test-method status="PASS" signature="propertyfileReader(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.adactin.Mobileapphoteladactin.tests.BookingConfirmationScreenScroll@2df9b86]" name="propertyfileReader" is-config="true" duration-ms="15" started-at="2020-08-06T16:04:01 AEST" finished-at="2020-08-06T16:04:01 AEST">
           <params>
             <param index="0">
               <value>
@@ -19,22 +20,54 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@31c269fd]]>
+                <![CDATA[org.testng.TestRunner@44bd4b0a]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- propertyfileReader -->
-        <test-method status="PASS" signature="User_is_able_to_exit_the_application_when_he_clicks_on_the_back_button_of_the_phone()[pri:0, instance:com.adactin.Mobileapphoteladactin.tests.ExitApp@446293d]" name="User_is_able_to_exit_the_application_when_he_clicks_on_the_back_button_of_the_phone" duration-ms="11233" started-at="2020-08-05T13:39:46 AEST" finished-at="2020-08-05T13:39:57 AEST">
+        <test-method status="PASS" signature="User_is_able_to_scroll_up_and_down_the_Booking_confirmation_screen()[pri:0, instance:com.adactin.Mobileapphoteladactin.tests.BookingConfirmationScreenScroll@2df9b86]" name="User_is_able_to_scroll_up_and_down_the_Booking_confirmation_screen" duration-ms="147060" started-at="2020-08-06T16:04:01 AEST" finished-at="2020-08-06T16:06:28 AEST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- User_is_able_to_exit_the_application_when_he_clicks_on_the_back_button_of_the_phone -->
-        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin.tests.ExitApp@446293d]" name="closeApp" is-config="true" duration-ms="257" started-at="2020-08-05T13:39:57 AEST" finished-at="2020-08-05T13:39:58 AEST">
+        </test-method> <!-- User_is_able_to_scroll_up_and_down_the_Booking_confirmation_screen -->
+        <test-method status="PASS" signature="closeSession()[pri:0, instance:com.adactin.Mobileapphoteladactin.tests.BookingConfirmationScreenScroll@2df9b86]" name="closeSession" is-config="true" duration-ms="465" started-at="2020-08-06T16:06:28 AEST" finished-at="2020-08-06T16:06:29 AEST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeSession -->
+        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin.tests.BookingConfirmationScreenScroll@2df9b86]" name="closeApp" is-config="true" duration-ms="0" started-at="2020-08-06T16:06:29 AEST" depends-on-methods="com.adactin.Mobileapphoteladactin.tests.BookingConfirmationScreenScroll.closeSession" finished-at="2020-08-06T16:06:29 AEST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApp -->
-      </class> <!-- com.adactin.Mobileapphoteladactin.tests.ExitApp -->
-    </test> <!-- Children per room dropdown validation -->
+      </class> <!-- com.adactin.Mobileapphoteladactin.tests.BookingConfirmationScreenScroll -->
+    </test> <!-- Booking confirmation screen scroll validation -->
+    <test name="Search Hotel results scroll validation" duration-ms="21694" started-at="2020-08-06T16:06:39 AEST" finished-at="2020-08-06T16:07:01 AEST">
+      <class name="com.adactin.Mobileapphoteladactin.tests.SearchResultsScrollVerification">
+        <test-method status="PASS" signature="propertyfileReader(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.adactin.Mobileapphoteladactin.tests.SearchResultsScrollVerification@3d6f0054]" name="propertyfileReader" is-config="true" duration-ms="13" started-at="2020-08-06T16:06:39 AEST" finished-at="2020-08-06T16:06:39 AEST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[EnvConfig.properties]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@6c008c24]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- propertyfileReader -->
+        <test-method status="PASS" signature="User_is_able_to_scroll_up_down_the_search_results_of_the_search_hotel_screen()[pri:0, instance:com.adactin.Mobileapphoteladactin.tests.SearchResultsScrollVerification@3d6f0054]" name="User_is_able_to_scroll_up_down_the_search_results_of_the_search_hotel_screen" duration-ms="21212" started-at="2020-08-06T16:06:39 AEST" finished-at="2020-08-06T16:07:01 AEST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- User_is_able_to_scroll_up_down_the_search_results_of_the_search_hotel_screen -->
+        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.adactin.Mobileapphoteladactin.tests.SearchResultsScrollVerification@3d6f0054]" name="closeApp" is-config="true" duration-ms="447" started-at="2020-08-06T16:07:01 AEST" finished-at="2020-08-06T16:07:01 AEST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApp -->
+      </class> <!-- com.adactin.Mobileapphoteladactin.tests.SearchResultsScrollVerification -->
+    </test> <!-- Search Hotel results scroll validation -->
   </suite> <!-- Hotel Adactin Mobile App Regression Test Suite -->
 </testng-results>
